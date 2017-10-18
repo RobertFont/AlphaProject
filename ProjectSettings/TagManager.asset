@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Cube
   - Cylinder
+  - Building
   layers:
   - Default
   - TransparentFX

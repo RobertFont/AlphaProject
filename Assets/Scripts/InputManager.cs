@@ -19,7 +19,9 @@ public class InputManager : MonoBehaviour {
     public float rotatateSpeed;
 
     public bool rotating;
-    public bool canPosisitioningBuild = false;
+
+    
+    
 
     void Start ()
     {
@@ -42,15 +44,12 @@ public class InputManager : MonoBehaviour {
 
         #endregion
 
-        if (canPosisitioningBuild && Input.GetKeyDown(KeyCode.Escape) ||
-            canPosisitioningBuild && Input.GetButtonDown("Fire2"))
+        if (Builder.canCreateBuild && Input.GetKeyDown(KeyCode.Escape) )         
         {
-            canPosisitioningBuild = false;
+            Builder.CantBuild(false);
         }
-        else if (Input.GetButtonDown("Fire2"))
-        {
-            canPosisitioningBuild = true;
-        }
+
+        
 
         #region Rotate
         if (Input.GetKey(KeyCode.Q)) rotate = 1;
@@ -85,8 +84,14 @@ public class InputManager : MonoBehaviour {
         camera.GetAxis(axis.x, axis.y);
         camera.GetRotate(rotate);
         mouseC.GetMouse(mousePosition);
-        //Builder.PosisitioningBuild(canPosisitioningBuild);
-        Builder.CreateBuild(Input.GetButtonDown("Fire1"));
+        CanPlace();
+        //Builder.CreateBuild(Input.GetButtonDown("Fire1"));
         //UiTrigger.GetMousePosition(mousePosition);
+    }
+
+    public void CanPlace()
+    {
+        if((mousePosition.y < 95) || (mousePosition.y > 490 && mousePosition.x > 1035) || (mousePosition.y > 535 && mousePosition.x < 415)) return;
+        else Builder.CreateBuild(Input.GetButtonDown("Fire1"));
     }
 }

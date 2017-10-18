@@ -12,6 +12,9 @@ public class BuilderScript : MonoBehaviour {
 
     public bool canCreateBuild = false;
     public bool canPosisitioningBuild = false;
+    
+
+    public bool buildingColliding = false;
 
     void Start()
     {
@@ -46,14 +49,9 @@ public class BuilderScript : MonoBehaviour {
         buildingInMouse.y = 0;
     }
 
-    /*public void PosisitioningBuild(bool canPositionBuild)
-    {
-        canCreateBuild = canPositionBuild;
-        build.SetActive(true);
-    }*/
-
     public void SelectBuildingCube()
     {
+        DesactiveOriginalBuilding();
         build = cube;
         canCreateBuild = true;
         build.SetActive(true);
@@ -61,6 +59,7 @@ public class BuilderScript : MonoBehaviour {
 
     public void SelectBuildingCylinder()
     {
+        DesactiveOriginalBuilding();
         build = Cylinder;
         canCreateBuild = true;
         build.SetActive(true);
@@ -68,6 +67,35 @@ public class BuilderScript : MonoBehaviour {
 
     public void CreateBuild(bool canBuild)
     {
-        if (canCreateBuild) canPosisitioningBuild = canBuild;
+        if (canCreateBuild && !buildingColliding) canPosisitioningBuild = canBuild;
     }
+
+    public void CantBuild(bool variable)
+    {
+        canCreateBuild = variable;
+    }
+
+    public void DesactiveOriginalBuilding()
+    {
+        cube.SetActive(false);
+        Cylinder.SetActive(false);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.collider.tag == "Building")
+        {
+            buildingColliding = true;
+        }
+    }
+
+    /*private void OnCollisionExit(Collision collision)
+    {
+        if(collision.other.tag == "Building")
+        {
+            buildingColliding = false;
+        }
+    }*/
+
+
 }
