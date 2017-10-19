@@ -92,6 +92,7 @@ public class BuilderScript : MonoBehaviour {
         Cylinder.SetActive(false);
     }
 
+
     /*private void OnCollisionEnter(Collision collision)
     {
         if(collision.collider.tag == "Building")
