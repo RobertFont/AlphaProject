@@ -1,2 +1,2 @@
 # AlphaProject
-Juego de recolección de recursos y construcción con el objetivo de construir una maravilla del mundo (o edificio mágico), con el objetivo de sobrevivir una amenaza.
+Juego de construcción de edificios. Los edificios producen recursos que deben ser gestionados con el objetivo de aumentar el tamaño de tu ciudad. Cada cierto tiempo el jugador se enfrentara a desafíos que deberá combatir para garantizar la supervivencia de su creciente metrópolis.
