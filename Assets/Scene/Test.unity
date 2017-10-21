@@ -574,9 +574,9 @@ GameObject:
   - component: {fileID: 825482971}
   - component: {fileID: 825482970}
   - component: {fileID: 825482969}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cylinder
-  m_TagString: Building
+  m_TagString: Cylinder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -838,7 +838,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 1acd10410813f2d4585062adb14be46c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1027,7 +1027,7 @@ GameObject:
   - component: {fileID: 1383908417}
   m_Layer: 8
   m_Name: Cube
-  m_TagString: Building
+  m_TagString: Cube
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1129,12 +1129,15 @@ MonoBehaviour:
   build: {fileID: 0}
   buildingInMouse: {x: 0, y: 0, z: 0}
   cube: {fileID: 1383908416}
-  Cylinder: {fileID: 825482967}
+  cylinder: {fileID: 825482967}
+  collisionZone: {fileID: 0}
+  cubeMaterial: {fileID: 2100000, guid: 431695a899e675148ad7133cc8548d85, type: 2}
+  cylinderMaterial: {fileID: 2100000, guid: 11164a49f47104949b898d0aef74718c, type: 2}
   collisionChecker: {fileID: 1383908420}
   colliderHalfSize: {x: 0.5, y: 0.5, z: 0.5}
-  Buildings:
+  layerBuild:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 512
   canCreateBuild: 0
   canPosisitioningBuild: 0
   buildingColliding: 0
