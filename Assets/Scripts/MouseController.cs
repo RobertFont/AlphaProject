@@ -23,9 +23,4 @@ public class MouseController : MonoBehaviour {
     {
         mousePosition = newMousePos;
     }
-
-    public void OnTriggerEnter2D(Collider2D other)
-    {
-        Debug.Log("Mouse is over GameObject.");
-    }
 }

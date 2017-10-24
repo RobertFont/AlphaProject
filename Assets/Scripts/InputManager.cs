@@ -49,8 +49,6 @@ public class InputManager : MonoBehaviour {
             Builder.CantBuild(false);
         }
 
-        
-
         #region Rotate
         if (Input.GetKey(KeyCode.Q)) rotate = 1;
         else if (Input.GetKey(KeyCode.E)) rotate = -1;
@@ -91,7 +89,8 @@ public class InputManager : MonoBehaviour {
 
     public void CanPlace()
     {
-        if((mousePosition.y < 95) || (mousePosition.y > 490 && mousePosition.x > 1035) || (mousePosition.y > 535 && mousePosition.x < 415)) return;
-        else Builder.CreateBuild(Input.GetButtonDown("Fire1"));
+        if ((mousePosition.y < 95) || (mousePosition.y > 490 && mousePosition.x > 1035) || (mousePosition.y > 535 && mousePosition.x < 415)) return;
+        else if (Input.GetButtonDown("Fire1")) Builder.CreateBuild();
+        else Builder.canPosisitioningBuild = false;
     }
 }
