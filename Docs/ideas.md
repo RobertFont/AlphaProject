@@ -30,7 +30,7 @@ References to other games
 Trees
 Bushes
 Fountains
-## Corebuildings:
+## Core Buildings:
 Town Hall
 House
 Lumber Mill
