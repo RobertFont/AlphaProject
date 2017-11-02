@@ -6,12 +6,12 @@ Juego de construcción de edificios. Los edificios producen recursos que deben s
 
 - This game offer the following features:
 
-Resource management.
+  - Resource management.
 
-Strategic placement.
+  - Strategic placement.
 
-Events that change the pace of the game.
+  - Events that change the pace of the game.
 
-A test of survival.
+  - A test of survival.
 
 ## [**License**](https://github.com/RobertFont/AlphaProject/blob/master/LICENSE)
