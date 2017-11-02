@@ -4,7 +4,7 @@ Juego de construcción de edificios. Los edificios producen recursos que deben s
 
 ## Features
 
-*This game offer the following features:
+- This game offer the following features:
 
 Resource management.
 
