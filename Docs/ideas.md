@@ -66,6 +66,7 @@
 * Werewolves
 * Vampires
 * Ghosts
+* Witches
 * Plagues
 * Fires
 * Sickness
