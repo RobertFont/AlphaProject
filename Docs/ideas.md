@@ -37,7 +37,41 @@
 * Gold Mine
 * Warehouse
 * Farm
+* Castle
+* Kings Halls
+## Advanced Buildings
+* Barracks
+* Volunteer Center
+* Fireman Station
+* Church
+* Herborist
+* Stables
+* Archery Range
+* Watch Tower
+* Witch Doctor House
+## High Advanced Buildings
+* Circus
+* Cathedral
+* Market
+* Workshop
+* Alchemy Shop
+* Blacksmith
 
+## Events
+* Thiefs
+* Barbarians
+* Werewolves
+* Vampires
+* Ghosts
+* Plagues
+* Fires
+* Sickness
+* Lost kid
+* Cat stuck in a tree
+* Doomsayer
+* Homeless people
+* Gypsys
+* Bad food
 
 
 
