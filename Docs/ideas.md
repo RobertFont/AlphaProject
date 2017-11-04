@@ -42,6 +42,7 @@
 ## Advanced Buildings
 * Barracks
 * Volunteer Center
+* Hunting Camp
 * Fireman Station
 * Church
 * Herborist
@@ -52,6 +53,8 @@
 ## High Advanced Buildings
 * Circus
 * Cathedral
+* Brothel
+* Cementery
 * Market
 * Workshop
 * Alchemy Shop
@@ -72,6 +75,14 @@
 * Homeless people
 * Gypsys
 * Bad food
+* Famous Bard
+* Beavers
+* Magpies
+* Wolves
+* Parasites
+* Drought
+* Heavy rains
+* Chivalrous dispute
 
 
 
