@@ -14,5 +14,5 @@ Builder game. Some of the buildings produce resources that will be managed by th
 
   - A test of survival.
 
-## License:
+## License
 SettleMen uses a MIT License. For more information [License](https://github.com/RobertFont/AlphaProject/blob/master/LICENSE)
