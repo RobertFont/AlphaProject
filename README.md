@@ -13,6 +13,13 @@ Builder game. Some of the buildings produce resources that will be managed by th
   - Events that change the pace of the game.
 
   - A test of survival.
+  
+## Contact Us
+### Mails
+- adri.arranz102@gmail.com
+- cristianluzon@gmail.com
+- jjorba95@gmail.com
+- rfontru@hotmail.com
 
 ## License
 SettleMen uses a MIT License. For more information [**License**](https://github.com/RobertFont/AlphaProject/blob/master/LICENSE)
