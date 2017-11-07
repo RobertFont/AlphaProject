@@ -1,6 +1,6 @@
 ![Banner](https://github.com/RobertFont/AlphaProject/blob/master/WikiResources/BannerPH03.png)
 
-Juego de construcción de edificios. Los edificios producen recursos que deben ser gestionados con el objetivo de aumentar el tamaño de tu ciudad. Cada cierto tiempo el jugador se enfrentara a desafíos que deberá combatir para garantizar la supervivencia de su creciente metrópolis.
+Builder game. Some of the buildings produce resources that will be managed by the player in order to increase the size of the city. From time to time the player will have to deal with challenging events that the player must resolve so that the city can thrive and prosper in an increasingly difficult environment, because as we know, where there are resources, there are also new enemies.
 
 ## Features
 
