@@ -4,7 +4,6 @@ Builder game. Some of the buildings produce resources that will be managed by th
 
 ## Features
 
-- This game offer the following features:
 
   - Resource management.
 
