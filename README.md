@@ -15,10 +15,10 @@ Builder game. Some of the buildings produce resources that will be managed by th
   
 ## Contact Us
 ### Mails
-- adri.arranz102@gmail.com
-- cristianluzon@gmail.com
-- jjorba95@gmail.com
-- rfontru@hotmail.com
+- Adriá Arranz: [adri.arranz102@gmail.com](adri.arranz102@gmail.com)
+- Cristian Luzón: [cristianluzon@gmail.com](cristianluzon@gmail.com)
+- Jordi Jorba: [jjorba95@gmail.com](jjorba95@gmail.com)
+- Robert Font: [rfontru@hotmail.com](rfontru@hotmail.com)
 
 ## License
 SettleMen uses a MIT License. For more information [**License**](https://github.com/RobertFont/AlphaProject/blob/master/LICENSE)
