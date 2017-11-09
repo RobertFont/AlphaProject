@@ -14,7 +14,6 @@ Builder game. Some of the buildings produce resources that will be managed by th
   - A test of survival.
   
 ## Contact Us
-### Mails
 - Adriá Arranz: [adri.arranz102@gmail.com](adri.arranz102@gmail.com)
 - Cristian Luzón: [cristianluzon@gmail.com](cristianluzon@gmail.com)
 - Jordi Jorba: [jjorba95@gmail.com](jjorba95@gmail.com)
