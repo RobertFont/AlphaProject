@@ -1,7 +1,7 @@
 ## PRE-ALPHA
 ### Game Desing Document
 - [x] Create basic GDD.
-- [ ] Create advanced GDD.
+- [ ] Update to advanced GDD.
 
 ### Concept Art
 - [x] 4 Building concepts
