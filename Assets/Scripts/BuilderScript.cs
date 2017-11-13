@@ -13,6 +13,16 @@ public class BuilderScript : MonoBehaviour {
     public Material cubeMaterial;
     public Material cylinderMaterial;
 
+    public GameObject townHall;
+    public Material townHallMaterial;
+    public GameObject house;
+    public Material houseMaterial;
+    public GameObject farm;
+    public Material farmMaterial;
+    public GameObject lumberMill;
+    public Material lumberMillMaterial;
+
+
     public Transform collisionChecker;
     public Vector3 colliderHalfSize;
     public LayerMask layerBuild;
@@ -72,6 +82,42 @@ public class BuilderScript : MonoBehaviour {
         DesactiveOriginalBuilding();
         build = cylinder;
         collisionChecker = cylinder.transform;
+        canCreateBuild = true;
+        build.SetActive(true);
+    }
+
+    public void SelectBuildingTawnHall()
+    {
+        DesactiveOriginalBuilding();
+        build = townHall;
+        collisionChecker = townHall.transform;
+        canCreateBuild = true;
+        build.SetActive(true);
+    }
+
+    public void SelectBuildingHouse()
+    {
+        DesactiveOriginalBuilding();
+        build = house;
+        collisionChecker = house.transform;
+        canCreateBuild = true;
+        build.SetActive(true);
+    }
+
+    public void SelectBuildingFarm()
+    {
+        DesactiveOriginalBuilding();
+        build = farm;
+        collisionChecker = farm.transform;
+        canCreateBuild = true;
+        build.SetActive(true);
+    }
+
+    public void SelectBuildingLumberMill()
+    {
+        DesactiveOriginalBuilding();
+        build = lumberMill;
+        collisionChecker = lumberMill.transform;
         canCreateBuild = true;
         build.SetActive(true);
     }
