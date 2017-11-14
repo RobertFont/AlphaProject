@@ -1,30 +1,30 @@
 - **Farm 2**
-![Farm1]()
+![Farm1](ConceptArt/)
 
 - **Farm 2**
-![Farm2]()
+![Farm2](ConceptArt/)
 
 - **Lumber Mill**
-![Lumbermill]()
+![Lumbermill](ConceptArt/)
 
 - **Town Hall**
-![Town hall]()
+![Town hall](ConceptArt/)
 
 - **Barrel**
-![Barrel](https://github.com/RobertFont/AlphaProject/blob/master/ConceptArt/ConceptPropBarrel01.png)
+![Barrel](ConceptArt/ConceptPropBarrel01.png)
 
 - **Box**
-![Box](https://github.com/RobertFont/AlphaProject/blob/master/ConceptArt/ConceptPropBox1.png)
+![Box](ConceptArt/ConceptPropBox1.png)
 
 - **Chimney**
-![Chimney](https://github.com/RobertFont/AlphaProject/blob/master/ConceptArt/ConceptPropChimney1.png)
+![Chimney](ConceptArt/ConceptPropChimney1.png)
 
 
 - **Tree 1**
 
-![Tree1](https://github.com/RobertFont/AlphaProject/blob/master/ConceptArt/ConceptTree01.png)
+![Tree1](ConceptArt/ConceptTree01.png)
 
 
 - **Tree 2**
 
-![Tree2](https://github.com/RobertFont/AlphaProject/blob/master/ConceptArt/ConceptTree02.PNG)
+![Tree2](ConceptArt/ConceptTree02.PNG)
