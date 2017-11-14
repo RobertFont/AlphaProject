@@ -7,16 +7,12 @@ public class BuilderScript : MonoBehaviour {
     public GameObject build;
     public Vector3 buildingInMouse;
 
-    public GameObject cube;
-    public GameObject cylinder;
-    public Material collisionZone;
-    public Material cubeMaterial;
-    public Material cylinderMaterial;
-
     public GameObject townHall;
-    public Material townHallMaterial;
     public GameObject house;
+    public Material collisionZone;
+    public Material townHallMaterial;
     public Material houseMaterial;
+
     public GameObject farm;
     public Material farmMaterial;
     public GameObject lumberMill;
@@ -36,9 +32,7 @@ public class BuilderScript : MonoBehaviour {
     void Start()
     {
         buildingInMouse = new Vector3(0, 0, 0);
-
-        cube.SetActive(false);
-        cylinder.SetActive(false);
+        DesactiveOriginalBuilding();
     }
 
     void Update()
@@ -68,25 +62,7 @@ public class BuilderScript : MonoBehaviour {
         buildingInMouse.y = 0;
     }
 
-    public void SelectBuildingCube()
-    {
-        DesactiveOriginalBuilding();
-        build = cube;
-        collisionChecker = cube.transform;
-        canCreateBuild = true;
-        build.SetActive(true);
-    }
-
-    public void SelectBuildingCylinder()
-    {
-        DesactiveOriginalBuilding();
-        build = cylinder;
-        collisionChecker = cylinder.transform;
-        canCreateBuild = true;
-        build.SetActive(true);
-    }
-
-    public void SelectBuildingTawnHall()
+    public void SelectBuildingTownHall()
     {
         DesactiveOriginalBuilding();
         build = townHall;
@@ -143,8 +119,10 @@ public class BuilderScript : MonoBehaviour {
 
     public void DesactiveOriginalBuilding()
     {
-        cube.SetActive(false);
-        cylinder.SetActive(false);
+        townHall.SetActive(false);
+        house.SetActive(false);
+        farm.SetActive(false);
+        lumberMill.SetActive(false);
     }
 
     private void OnDrawGizmos()
@@ -161,14 +139,18 @@ public class BuilderScript : MonoBehaviour {
 
     private void ChangeMaterialClone()
     {
-        if (build.tag == "Cube") build.GetComponent<Renderer>().material = cubeMaterial;
-        else if (build.tag == "Cylinder") build.GetComponent<Renderer>().material = cylinderMaterial;
+        if (build.tag == "TownHall") build.GetComponent<Renderer>().material = townHallMaterial;
+        else if (build.tag == "House") build.GetComponent<Renderer>().material = houseMaterial;
+        else if (build.tag == "Farm") build.GetComponent<Renderer>().material = houseMaterial;
+        else if (build.tag == "LumberMill") build.GetComponent<Renderer>().material = houseMaterial;
     }
 
     private void ChangeMaterialOriginal()
     {
-        if (build.tag == "Cube") build.GetComponent<Renderer>().material = cube.GetComponent<Renderer>().material;
-        else if (build.tag == "Cylinder") build.GetComponent<Renderer>().material = cylinder.GetComponent<Renderer>().material;
+        if (build.tag == "TownHall") build.GetComponent<Renderer>().material = townHall.GetComponent<Renderer>().material;
+        else if (build.tag == "House") build.GetComponent<Renderer>().material = houseMaterial;
+        else if (build.tag == "Farm") build.GetComponent<Renderer>().material = houseMaterial;
+        else if (build.tag == "LumberMill") build.GetComponent<Renderer>().material = house.GetComponent<Renderer>().material;
     }
 
     /*private void OnCollisionEnter(Collision collision)

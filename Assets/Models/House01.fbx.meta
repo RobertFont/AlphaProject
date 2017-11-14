@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 3cf699437612fca4ab2d4a2e34fcaab7
-timeCreated: 1510614315
+guid: 99f551876061ab74cb9b589d10dfa1aa
+timeCreated: 1510648982
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -9,14 +9,13 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Box093
-    9500000: //RootNode
+    4300000: Box139
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: 'Material #70'
-    second: {fileID: 2100000, guid: 0b829ff6400f81842a33e696f94807ed, type: 2}
+      name: 'Material #71'
+    second: {fileID: 2100000, guid: 0612515776556d147bad6a5499b114aa, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -46,7 +45,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.5
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
@@ -88,7 +87,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

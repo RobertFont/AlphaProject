@@ -4,9 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Cube
-  - Cylinder
   - Building
+  - TownHall
+  - House
+  - Farm
+  - LumberMill
   layers:
   - Default
   - TransparentFX
