@@ -921,12 +921,12 @@ Prefab:
     - target: {fileID: 224721848121280062, guid: 49c06ed624cd55a4ba989c865ccdeb35,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 392.5
+      value: 560.5
       objectReference: {fileID: 0}
     - target: {fileID: 224721848121280062, guid: 49c06ed624cd55a4ba989c865ccdeb35,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 278.5
+      value: 284
       objectReference: {fileID: 0}
     - target: {fileID: 114566932062003700, guid: 49c06ed624cd55a4ba989c865ccdeb35,
         type: 2}
@@ -948,6 +948,154 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2013881662}
+    - target: {fileID: 114955433999644910, guid: 49c06ed624cd55a4ba989c865ccdeb35,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ed38aefca35856f4087d23cb2f427a87,
+        type: 3}
+    - target: {fileID: 114955433999644910, guid: 49c06ed624cd55a4ba989c865ccdeb35,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114955433999644910, guid: 49c06ed624cd55a4ba989c865ccdeb35,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114955433999644910, guid: 49c06ed624cd55a4ba989c865ccdeb35,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114944770470153090, guid: 49c06ed624cd55a4ba989c865ccdeb35,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114944770470153090, guid: 49c06ed624cd55a4ba989c865ccdeb35,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114944770470153090, guid: 49c06ed624cd55a4ba989c865ccdeb35,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114944770470153090, guid: 49c06ed624cd55a4ba989c865ccdeb35,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7b128a883e5cd744a8cf1a279b3b7a62,
+        type: 3}
+    - target: {fileID: 114394609170585036, guid: 49c06ed624cd55a4ba989c865ccdeb35,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a8d689c63b1c1e04abd682dd5729ca27,
+        type: 3}
+    - target: {fileID: 114394609170585036, guid: 49c06ed624cd55a4ba989c865ccdeb35,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114394609170585036, guid: 49c06ed624cd55a4ba989c865ccdeb35,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114394609170585036, guid: 49c06ed624cd55a4ba989c865ccdeb35,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114808049205849604, guid: 49c06ed624cd55a4ba989c865ccdeb35,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: df8de56c81f476b4089e93b434874dd5,
+        type: 3}
+    - target: {fileID: 114808049205849604, guid: 49c06ed624cd55a4ba989c865ccdeb35,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114808049205849604, guid: 49c06ed624cd55a4ba989c865ccdeb35,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114808049205849604, guid: 49c06ed624cd55a4ba989c865ccdeb35,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114796365632234916, guid: 49c06ed624cd55a4ba989c865ccdeb35,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bbc391e5dd8dada4dbdf6d60b7ce69e8,
+        type: 3}
+    - target: {fileID: 114796365632234916, guid: 49c06ed624cd55a4ba989c865ccdeb35,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114796365632234916, guid: 49c06ed624cd55a4ba989c865ccdeb35,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114796365632234916, guid: 49c06ed624cd55a4ba989c865ccdeb35,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114073259580690188, guid: 49c06ed624cd55a4ba989c865ccdeb35,
+        type: 2}
+      propertyPath: m_Text
+      value: 75%
+      objectReference: {fileID: 0}
+    - target: {fileID: 114347771615266438, guid: 49c06ed624cd55a4ba989c865ccdeb35,
+        type: 2}
+      propertyPath: m_Text
+      value: Town Hall
+      objectReference: {fileID: 0}
+    - target: {fileID: 1449171350088590, guid: 49c06ed624cd55a4ba989c865ccdeb35, type: 2}
+      propertyPath: m_Name
+      value: TownHall
+      objectReference: {fileID: 0}
+    - target: {fileID: 1715374932087636, guid: 49c06ed624cd55a4ba989c865ccdeb35, type: 2}
+      propertyPath: m_Name
+      value: House
+      objectReference: {fileID: 0}
+    - target: {fileID: 114380963646701040, guid: 49c06ed624cd55a4ba989c865ccdeb35,
+        type: 2}
+      propertyPath: m_Text
+      value: 'House
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1086827789658426, guid: 49c06ed624cd55a4ba989c865ccdeb35, type: 2}
+      propertyPath: m_Name
+      value: Farm
+      objectReference: {fileID: 0}
+    - target: {fileID: 114929676663902446, guid: 49c06ed624cd55a4ba989c865ccdeb35,
+        type: 2}
+      propertyPath: m_Text
+      value: Farm
+      objectReference: {fileID: 0}
+    - target: {fileID: 1934657528095184, guid: 49c06ed624cd55a4ba989c865ccdeb35, type: 2}
+      propertyPath: m_Name
+      value: LumberMill
+      objectReference: {fileID: 0}
+    - target: {fileID: 114012583912213444, guid: 49c06ed624cd55a4ba989c865ccdeb35,
+        type: 2}
+      propertyPath: m_Text
+      value: Lumber Mill
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 49c06ed624cd55a4ba989c865ccdeb35, type: 2}
   m_IsPrefabParent: 0
