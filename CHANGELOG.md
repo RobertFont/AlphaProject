@@ -46,7 +46,7 @@
 - [ ] Temporal Models
 - [ ] 8 Final Props
 - [ ] 1 Final Building Modeling With Temporal textures
-- [ ] Enemy--------------
+- [ ] Enemy----- ---------
 - [ ] Boss-------------
 - [ ] Pause
 - [ ] Basic UI Elements
