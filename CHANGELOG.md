@@ -45,9 +45,7 @@
 - [ ] Basic Mecanics (Functionals & Testables)
 - [ ] Temporal Models
 - [ ] 8 Final Props
-- [ ] 1 Final Building Modeling With Temporal textures
-- [ ] Enemy----- ---------
-- [ ] Boss-------------
+- [ ] 3 Final Building Modeling With Temporal textures
 - [ ] Pause
 - [ ] Basic UI Elements
 - [ ] Provisional Controls
