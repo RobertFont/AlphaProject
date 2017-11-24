@@ -43,7 +43,7 @@ ___
   
 ### Screen Gameplay
 - [ ] Basic Mecanics (Functionals & Testables)
-- [ ] Temporal Models
+- [ ] Temporal Models(Placeholders)
 - [ ] 8 Final Props
 - [ ] 3 Final Building Modeling With Temporal textures
 - [ ] Pause
