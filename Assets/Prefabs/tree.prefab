@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 64069875143989294}
   - component: {fileID: 114118429274459874}
   m_Layer: 9
-  m_Name: Tree
+  m_Name: tree
   m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
