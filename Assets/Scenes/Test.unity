@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1564,7 +1564,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4610606581001126, guid: 18e4eba7344fc714f912527fe9ec33ce, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0.27273202
+      value: -0.1
       objectReference: {fileID: 0}
     - target: {fileID: 4610606581001126, guid: 18e4eba7344fc714f912527fe9ec33ce, type: 2}
       propertyPath: m_LocalRotation.x
@@ -1640,7 +1640,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 781048551}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 635, y: 474.24884, z: 0}
+  m_LocalPosition: {x: 635, y: 354.58765, z: 0}
   m_LocalScale: {x: 0.999996, y: 0.999996, z: 0.999996}
   m_Children:
   - {fileID: 104213080}
@@ -1932,8 +1932,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 910481261}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 426, y: 319, z: 0}
-  m_LocalScale: {x: 0.665625, y: 0.665625, z: 0.665625}
+  m_LocalPosition: {x: 194, y: 109, z: 0}
+  m_LocalScale: {x: 0.303125, y: 0.303125, z: 0.303125}
   m_Children:
   - {fileID: 1862652514}
   - {fileID: 1160487591}
@@ -2023,7 +2023,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4610606581001126, guid: 18e4eba7344fc714f912527fe9ec33ce, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 1.197
+      value: 1.06
       objectReference: {fileID: 0}
     - target: {fileID: 4610606581001126, guid: 18e4eba7344fc714f912527fe9ec33ce, type: 2}
       propertyPath: m_LocalRotation.x
@@ -2713,7 +2713,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1160487590}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -640, y: -479.24884, z: 0}
+  m_LocalPosition: {x: -640, y: -359.58765, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 556594567}
@@ -3375,7 +3375,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4610606581001126, guid: 18e4eba7344fc714f912527fe9ec33ce, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -0.58500004
+      value: -0.826
       objectReference: {fileID: 0}
     - target: {fileID: 4610606581001126, guid: 18e4eba7344fc714f912527fe9ec33ce, type: 2}
       propertyPath: m_LocalRotation.x
@@ -3772,7 +3772,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4610606581001126, guid: 18e4eba7344fc714f912527fe9ec33ce, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -2.399
+      value: -1.418
       objectReference: {fileID: 0}
     - target: {fileID: 4610606581001126, guid: 18e4eba7344fc714f912527fe9ec33ce, type: 2}
       propertyPath: m_LocalRotation.x
@@ -3825,7 +3825,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1862652513}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -635, y: 474.24884, z: 0}
+  m_LocalPosition: {x: -635, y: 354.58765, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1533862194}
@@ -3930,7 +3930,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4610606581001126, guid: 18e4eba7344fc714f912527fe9ec33ce, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 1.197
+      value: 1.122
       objectReference: {fileID: 0}
     - target: {fileID: 4610606581001126, guid: 18e4eba7344fc714f912527fe9ec33ce, type: 2}
       propertyPath: m_LocalRotation.x
@@ -4161,7 +4161,7 @@ MonoBehaviour:
   farmMaterial: {fileID: 2100000, guid: 7bd1aecc616d6b84a89c0582e645dc6f, type: 2}
   lumberMill: {fileID: 971771257}
   lumberMillMaterial: {fileID: 2100000, guid: 7bd1aecc616d6b84a89c0582e645dc6f, type: 2}
-  collisionChecker: {fileID: 0}
+  collisionChecker: {fileID: 895840625}
   colliderHalfSize: {x: 0.5, y: 0.5, z: 0.5}
   layerBuild:
     serializedVersion: 2
