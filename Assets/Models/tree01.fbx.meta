@@ -1,54 +1,35 @@
 fileFormatVersion: 2
-guid: 4e5d970c1da87a042b2dac979f40d4b2
-timeCreated: 1511821480
+guid: 50a45509a83fa56438435c71193d66b6
+timeCreated: 1511889872
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: polySurface1
-    100002: polySurface2
-    100004: polySurface3
-    100006: polySurface4
-    100008: transform14
-    100010: //RootNode
-    100012: copa
-    100014: medio
-    100016: pie
-    100018: tronco
-    400000: polySurface1
-    400002: polySurface2
-    400004: polySurface3
-    400006: polySurface4
-    400008: transform14
-    400010: //RootNode
-    400012: copa
-    400014: medio
-    400016: pie
-    400018: tronco
-    2300000: polySurface1
-    2300002: polySurface2
-    2300004: polySurface3
-    2300006: polySurface4
-    2300008: copa
-    2300010: medio
-    2300012: pie
-    2300014: tronco
-    3300000: polySurface1
-    3300002: polySurface2
-    3300004: polySurface3
-    3300006: polySurface4
-    3300008: copa
-    3300010: medio
-    3300012: pie
-    3300014: tronco
-    4300000: polySurface1
-    4300002: polySurface2
-    4300004: polySurface3
-    4300006: polySurface4
-    4300008: tronco
-    4300010: pie
-    4300012: medio
-    4300014: copa
+    100000: copa
+    100002: copa 1
+    100004: medio
+    100006: pie
+    100008: transform1
+    100010: transform2
+    100012: transform3
+    100014: transform4
+    100016: tree
+    100018: //RootNode
+    100020: tronco
+    400000: copa
+    400002: copa 1
+    400004: medio
+    400006: pie
+    400008: transform1
+    400010: transform2
+    400012: transform3
+    400014: transform4
+    400016: tree
+    400018: //RootNode
+    400020: tronco
+    2300000: copa
+    3300000: copa
+    4300000: copa
   externalObjects:
   - first:
       type: UnityEngine:Material
