@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class OptionsBehaviour : MonoBehaviour
 {
+    [Header("General")]
 
 
     [Header("Graphics")]
