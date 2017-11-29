@@ -6,7 +6,7 @@ TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
   fontSize: 16
-  forceTextureCase: -2
+  forceTextureCase: -1
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
@@ -14,14 +14,14 @@ TrueTypeFontImporter:
   fontNames:
   - Gravity
   fallbackFontReferences:
-  - {fileID: 12800000, guid: 1dc6121032028684e9bd62a65f883901, type: 3}
-  - {fileID: 12800000, guid: 0cd6c0e06f963ba4497e67aa7ac498b8, type: 3}
+  - {instanceID: 0}
+  - {instanceID: 0}
   - {fileID: 12800000, guid: 83bed8e301c4ad74db2190de3fa93ac2, type: 3}
   - {fileID: 12800000, guid: 43e417080e2d63141b49c41e2e4363fc, type: 3}
-  - {fileID: 12800000, guid: 25d86bea5cdef6a43baa43c70dfcb530, type: 3}
+  - {instanceID: 0}
   customCharacters: 
   fontRenderingMode: 0
-  ascentCalculationMode: 1
+  ascentCalculationMode: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
