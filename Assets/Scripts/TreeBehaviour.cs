@@ -9,8 +9,7 @@ public class TreeBehaviour : MonoBehaviour {
     private Vector3 treeRotation;
     private float random;
     public Transform tree;
-    //public GameObject treeMid;
-    //public GameObject treeBot;
+    
 
     // Use this for initialization
     void Start ()
@@ -23,12 +22,8 @@ public class TreeBehaviour : MonoBehaviour {
         treeRotation = new Vector3(0, Random.RandomRange(0.0f, 360.0f), 0);
 
         tree.localScale = treeSize;
-        //treeMid.transform.localScale = treeSize;
-        //treeBot.transform.localScale = treeSize;
-
         tree.transform.Rotate(treeRotation);
-        //treeMid.transform.Rotate(treeRotation);
-        //treeBot.transform.Rotate(treeRotation);
+        
     }
 	
 }
