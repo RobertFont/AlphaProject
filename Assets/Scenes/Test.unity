@@ -1513,7 +1513,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 781048551}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 635, y: 355.58997, z: 0}
+  m_LocalPosition: {x: 635, y: 355, z: 0}
   m_LocalScale: {x: 0.999996, y: 0.999996, z: 0.999996}
   m_Children:
   - {fileID: 104213080}
@@ -1706,6 +1706,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.68, y: 2.1, z: 1.99}
   m_Center: {x: -1.02, y: 0.91, z: -0.07014733}
+--- !u!114 &895840629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 895840624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5e2288aac28aaa4d9177de13848bcd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  workers: 0
 --- !u!1 &898725371
 GameObject:
   m_ObjectHideFlags: 0
@@ -1805,8 +1817,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 910481261}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 169.5, y: 95.5, z: 0}
-  m_LocalScale: {x: 0.26484376, y: 0.26484376, z: 0.26484376}
+  m_LocalPosition: {x: 640, y: 360, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1862652514}
   - {fileID: 1160487591}
@@ -2577,7 +2589,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1160487590}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -640, y: -360.58997, z: 0}
+  m_LocalPosition: {x: -640, y: -360, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 556594567}
@@ -3506,7 +3518,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1862652513}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -635, y: 355.58997, z: 0}
+  m_LocalPosition: {x: -635, y: 355, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1533862194}
@@ -3762,6 +3774,7 @@ GameObject:
   - component: {fileID: 2013881663}
   - component: {fileID: 2013881662}
   - component: {fileID: 2013881664}
+  - component: {fileID: 2013881665}
   m_Layer: 0
   m_Name: MouseCotroller
   m_TagString: Untagged
@@ -3791,6 +3804,13 @@ MonoBehaviour:
   farmMaterial: {fileID: 2100000, guid: 7bd1aecc616d6b84a89c0582e645dc6f, type: 2}
   lumberMill: {fileID: 971771257}
   lumberMillMaterial: {fileID: 2100000, guid: 7bd1aecc616d6b84a89c0582e645dc6f, type: 2}
+  lumbMillCostWood: 100
+  farmCostWood: 100
+  mineCostWood: 100
+  houseCostWood: 100
+  houseCostGold: 100
+  townHallCostWood: 200
+  townHallCostGold: 200
   collisionChecker: {fileID: 895840625}
   colliderHalfSize: {x: 0.5, y: 0.5, z: 0.5}
   layerBuild:
@@ -3826,6 +3846,32 @@ MonoBehaviour:
   build: {fileID: 2013881662}
   mousePosition: {x: 0, y: 0}
   mouseTransform: {fileID: 2013881663}
+--- !u!114 &2013881665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2013881661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e135ba2f0b64b14abc765dcec9d7503, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wood: 500
+  food: 500
+  gold: 500
+  happiness: 100
+  currentPop: 0
+  maxPop: 0
+  house: 0
+  lumberMill: 0
+  farm: 0
+  townHall: 0
+  woodUi: {fileID: 1130931510}
+  foodUi: {fileID: 981584816}
+  goldUi: {fileID: 158836058}
+  happinessUi: {fileID: 1341776886}
+  populationUi: {fileID: 47217667}
 --- !u!1 &2060267050
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,19 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HouseAssign : MonoBehaviour
+public class WorkersBehaviour : MonoBehaviour
 {
+    public int workers = 0;
+	
 
-
-	// Use this for initialization
 	void Start ()
     {
-
-	}
+        
+    }
 	
-	// Update is called once per frame
 	void Update ()
     {
-		
+        if(this.gameObject.layer == 8)
+            return; 
 	}
 }

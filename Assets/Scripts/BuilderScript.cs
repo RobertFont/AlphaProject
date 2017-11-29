@@ -6,6 +6,7 @@ public class BuilderScript : MonoBehaviour {
 
     public GameObject build;
     public Vector3 buildingInMouse;
+    ResourceManager resource;
 
     public GameObject townHall;
     public GameObject house;
@@ -18,6 +19,14 @@ public class BuilderScript : MonoBehaviour {
     public GameObject lumberMill;
     public Material lumberMillMaterial;
 
+    [Header("Costs")]
+    public int lumbMillCostWood = 100;
+    public int farmCostWood = 100;
+    public int mineCostWood = 100;
+    public int houseCostWood = 100;
+    public int houseCostGold = 100;
+    public int townHallCostWood = 200;
+    public int townHallCostGold = 200;
 
     public Transform collisionChecker;
     public Vector3 colliderHalfSize;
@@ -33,6 +42,7 @@ public class BuilderScript : MonoBehaviour {
     {
         buildingInMouse = new Vector3(0, 0, 0);
         DesactiveOriginalBuilding();
+        resource = this.GetComponent<ResourceManager>();
     }
 
     void Update()
@@ -64,7 +74,9 @@ public class BuilderScript : MonoBehaviour {
 
     public void SelectBuildingTownHall()
     {
+        canCreateBuild = false;
         DesactiveOriginalBuilding();
+        if(resource.wood < houseCostWood || resource.gold < townHallCostGold) return;
         build = townHall;
         collisionChecker = townHall.transform;
         canCreateBuild = true;
@@ -73,7 +85,9 @@ public class BuilderScript : MonoBehaviour {
 
     public void SelectBuildingHouse()
     {
+        canCreateBuild = false;
         DesactiveOriginalBuilding();
+        if(resource.wood < houseCostWood || resource.gold < houseCostGold) return;
         build = house;
         collisionChecker = house.transform;
         canCreateBuild = true;
@@ -82,7 +96,9 @@ public class BuilderScript : MonoBehaviour {
 
     public void SelectBuildingFarm()
     {
+        canCreateBuild = false;
         DesactiveOriginalBuilding();
+        if(resource.wood < farmCostWood) return;
         build = farm;
         collisionChecker = farm.transform;
         canCreateBuild = true;
@@ -91,7 +107,9 @@ public class BuilderScript : MonoBehaviour {
 
     public void SelectBuildingLumberMill()
     {
+        canCreateBuild = false;
         DesactiveOriginalBuilding();
+        if(resource.wood < lumbMillCostWood) return;
         build = lumberMill;
         collisionChecker = lumberMill.transform;
         canCreateBuild = true;
@@ -104,9 +122,11 @@ public class BuilderScript : MonoBehaviour {
 
         if (canPosisitioningBuild)
         {
+            
             ChangeMaterialClone();
             build.layer = 9;
             Instantiate(build, buildingInMouse, new Quaternion(0, 12, 0, 0));
+            RemoveResources();
             build.layer = 8;
             ChangeMaterialOriginal();
         }
@@ -151,6 +171,28 @@ public class BuilderScript : MonoBehaviour {
         else if (build.tag == "House") build.GetComponent<Renderer>().material = houseMaterial;
         else if (build.tag == "Farm") build.GetComponent<Renderer>().material = houseMaterial;
         else if (build.tag == "LumberMill") build.GetComponent<Renderer>().material = house.GetComponent<Renderer>().material;
+    }
+
+    private void RemoveResources()
+    {
+        if(build.tag == "TownHall")
+        {
+            resource.RemoveWood(townHallCostWood);
+            resource.RemoveGold(townHallCostGold);
+        }
+        else if(build.tag == "House")
+        {
+            resource.RemoveWood(houseCostWood);
+            resource.RemoveGold(houseCostGold);
+        }
+        else if(build.tag == "Farm")
+        {
+            resource.RemoveWood(farmCostWood);
+        }
+        else if(build.tag == "LumberMill")
+        {
+            resource.RemoveWood(lumbMillCostWood);
+        }
     }
 
     /*private void OnCollisionEnter(Collision collision)
