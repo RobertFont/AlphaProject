@@ -1692,7 +1692,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 781048551}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 635.00006, y: 355.8231, z: 0}
+  m_LocalPosition: {x: 635, y: 355.1223, z: 0}
   m_LocalScale: {x: 0.999996, y: 0.999996, z: 0.999996}
   m_Children:
   - {fileID: 104213080}
@@ -1896,7 +1896,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5e2288aac28aaa4d9177de13848bcd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  workers: 0
+  currentWorkers: 0
+  maxWorkers: 0
+  building: {fileID: 2013881662}
 --- !u!1 &898725371
 GameObject:
   m_ObjectHideFlags: 0
@@ -1996,8 +1998,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 910481261}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 121.5, y: 68.5, z: 0}
-  m_LocalScale: {x: 0.18984373, y: 0.18984373, z: 0.18984373}
+  m_LocalPosition: {x: 327, y: 184, z: 0}
+  m_LocalScale: {x: 0.5109375, y: 0.5109375, z: 0.5109375}
   m_Children:
   - {fileID: 1862652514}
   - {fileID: 1160487591}
@@ -2078,6 +2080,20 @@ GameObject:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 49e417c11828aee4d9eff5d77db53f41, type: 3}
   m_PrefabInternal: {fileID: 451066089}
+--- !u!114 &971771259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 971771257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5e2288aac28aaa4d9177de13848bcd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentWorkers: 0
+  maxWorkers: 0
+  building: {fileID: 2013881662}
 --- !u!65 &971771261
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2314,8 +2330,8 @@ GameObject:
   - component: {fileID: 1068263266}
   - component: {fileID: 1068263265}
   - component: {fileID: 1068263269}
-  m_Layer: 0
-  m_Name: Quad
+  m_Layer: 10
+  m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2784,7 +2800,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1160487590}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -640.00006, y: -360.8231, z: 0}
+  m_LocalPosition: {x: -640, y: -360.1223, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 556594567}
@@ -3495,6 +3511,20 @@ GameObject:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: d1a026b65d3d43d46892a6c6a0fe49a9, type: 3}
   m_PrefabInternal: {fileID: 1020903664}
+--- !u!114 &1488258061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1488258059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5e2288aac28aaa4d9177de13848bcd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentWorkers: 0
+  maxWorkers: 0
+  building: {fileID: 2013881662}
 --- !u!65 &1488258063
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3713,7 +3743,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1862652513}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -635.00006, y: 355.8231, z: 0}
+  m_LocalPosition: {x: -635, y: 355.1223, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1533862194}
@@ -3975,6 +4005,20 @@ GameObject:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 99f551876061ab74cb9b589d10dfa1aa, type: 3}
   m_PrefabInternal: {fileID: 1190736852}
+--- !u!114 &1994705637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1994705635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5e2288aac28aaa4d9177de13848bcd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentWorkers: 0
+  maxWorkers: 0
+  building: {fileID: 2013881662}
 --- !u!65 &1994705639
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4009,6 +4053,7 @@ GameObject:
   - component: {fileID: 2013881662}
   - component: {fileID: 2013881664}
   - component: {fileID: 2013881665}
+  - component: {fileID: 2013881666}
   m_Layer: 0
   m_Name: MouseCotroller
   m_TagString: Untagged
@@ -4072,7 +4117,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2013881661}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: da9bdea2fee616742af394b06ea08dd9, type: 3}
   m_Name: 
@@ -4106,6 +4151,22 @@ MonoBehaviour:
   goldUi: {fileID: 158836058}
   happinessUi: {fileID: 1341776886}
   populationUi: {fileID: 47217667}
+--- !u!114 &2013881666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2013881661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 224b021c788ec754ca0b61e0746e6a1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxDistance: Infinity
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 1024
+  build: {fileID: 0}
 --- !u!1 &2060267050
 GameObject:
   m_ObjectHideFlags: 0

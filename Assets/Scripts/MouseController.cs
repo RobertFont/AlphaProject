@@ -8,7 +8,8 @@ public class MouseController : MonoBehaviour {
     public Vector2 mousePosition;
     public Transform mouseTransform;
 
-    void Start () {
+    void Start ()
+    {
 		
 	}
 	

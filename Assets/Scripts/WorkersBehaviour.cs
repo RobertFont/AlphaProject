@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class WorkersBehaviour : MonoBehaviour
 {
-    public int workers = 0;
+    public int currentWorkers = 0;
+    public int maxWorkers = 0;
+    public BuilderScript building;
 	
 
 	void Start ()
@@ -14,7 +16,19 @@ public class WorkersBehaviour : MonoBehaviour
 	
 	void Update ()
     {
-        if(this.gameObject.layer == 8)
-            return; 
+        switch(building.tag)
+        {
+            case "LumberMill":
+                maxWorkers = 4;
+                break;
+
+            case "Mne":
+                maxWorkers = 2;
+                break;
+
+            case "Farm":
+                maxWorkers = 6;
+                break;
+        }
 	}
 }
