@@ -43,6 +43,7 @@ public class BuilderScript : MonoBehaviour {
         buildingInMouse = new Vector3(0, 0, 0);
         DesactiveOriginalBuilding();
         resource = this.GetComponent<ResourceManager>();
+        colliderHalfSize = build.GetComponent<BoxCollider>().size/2;
     }
 
     void Update()
@@ -55,7 +56,7 @@ public class BuilderScript : MonoBehaviour {
         }
         else
         {
-            if (build != null) build.SetActive(false); 
+            if (build != null) build.SetActive(false);
         }
     }
 
@@ -66,18 +67,13 @@ public class BuilderScript : MonoBehaviour {
         else buildingColliding = false;
     }
 
-    public void GetBuldingMouse(Vector2 mousePos)
-    {
-        buildingInMouse = Camera.main.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, 10));
-        buildingInMouse.y = 0;
-    }
-
     public void SelectBuildingTownHall()
     {
         canCreateBuild = false;
         DesactiveOriginalBuilding();
-        if(resource.wood < houseCostWood || resource.gold < townHallCostGold) return;
+        if (!CompareResources()) return;
         build = townHall;
+        colliderHalfSize = build.GetComponent<BoxCollider>().size/2;
         collisionChecker = townHall.transform;
         canCreateBuild = true;
         build.SetActive(true);
@@ -87,8 +83,9 @@ public class BuilderScript : MonoBehaviour {
     {
         canCreateBuild = false;
         DesactiveOriginalBuilding();
-        if(resource.wood < houseCostWood || resource.gold < houseCostGold) return;
+        if (!CompareResources()) return;
         build = house;
+        colliderHalfSize = build.GetComponent<BoxCollider>().size/2;
         collisionChecker = house.transform;
         canCreateBuild = true;
         build.SetActive(true);
@@ -98,8 +95,9 @@ public class BuilderScript : MonoBehaviour {
     {
         canCreateBuild = false;
         DesactiveOriginalBuilding();
-        if(resource.wood < farmCostWood) return;
+        if (!CompareResources()) return;
         build = farm;
+        colliderHalfSize = build.GetComponent<BoxCollider>().size/2;
         collisionChecker = farm.transform;
         canCreateBuild = true;
         build.SetActive(true);
@@ -109,8 +107,9 @@ public class BuilderScript : MonoBehaviour {
     {
         canCreateBuild = false;
         DesactiveOriginalBuilding();
-        if(resource.wood < lumbMillCostWood) return;
+        if (!CompareResources()) return;
         build = lumberMill;
+        colliderHalfSize = build.GetComponent<BoxCollider>().size/2;
         collisionChecker = lumberMill.transform;
         canCreateBuild = true;
         build.SetActive(true);
@@ -118,6 +117,12 @@ public class BuilderScript : MonoBehaviour {
 
     public void CreateBuild()
     {
+        if (!CompareResources())
+        {
+            canCreateBuild = false;
+            return;
+        }
+
         if (canCreateBuild && buildingColliding == false) canPosisitioningBuild = true;
 
         if (canPosisitioningBuild)
@@ -148,7 +153,7 @@ public class BuilderScript : MonoBehaviour {
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.magenta;
-        Gizmos.DrawWireCube(collisionChecker.position, colliderHalfSize * 2);
+        Gizmos.DrawWireCube(collisionChecker.position, colliderHalfSize*2);
     }
 
     private void ChangeColorOnCollision()
@@ -193,6 +198,36 @@ public class BuilderScript : MonoBehaviour {
         {
             resource.RemoveWood(lumbMillCostWood);
         }
+    }
+
+    private bool CompareResources()
+    {
+        if (build.tag == "TownHall")
+        {
+            if (resource.wood < houseCostWood || resource.gold < townHallCostGold) return false;
+            else return true;
+        }
+        else if (build.tag == "House")
+        {
+            if (resource.wood < houseCostWood || resource.gold < houseCostGold) return false;
+            else return true;
+        }
+        else if (build.tag == "Farm")
+        {
+            if (resource.wood < farmCostWood) return false;
+            else return true;
+        }
+        else if (build.tag == "LumberMill")
+        {
+            if (resource.wood < lumbMillCostWood) return false;
+            else return true;
+        }
+        else return false;
+    }
+
+    public void RaycastHitPointBuilder(Vector3 pos)
+    {
+        buildingInMouse = pos;
     }
 
     /*private void OnCollisionEnter(Collision collision)

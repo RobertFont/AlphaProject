@@ -6,17 +6,20 @@ public class RaycastMouseController : MonoBehaviour
 {
     public float maxDistance = Mathf.Infinity;
     public LayerMask layerMask;
-    public BuilderScript build;
+    private BuilderScript build;
 
     // Use this for initialization
     void Start()
     {
-
+        build = this.GetComponent<BuilderScript>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (build.canCreateBuild) layerMask = 1 << 10;
+        else layerMask = 1 << 9;
+
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit = new RaycastHit();
 
@@ -24,6 +27,9 @@ public class RaycastMouseController : MonoBehaviour
         {
             Debug.DrawLine(ray.origin, hit.point, Color.red, 1);
             Debug.Log(hit.transform.name);
+            build.RaycastHitPointBuilder(hit.point);
         }
+        //En el else hay que poner que no pille el mar como terrain;
+        else return;
     }
 }

@@ -9,7 +9,6 @@ public class InputManager : MonoBehaviour {
     public Vector2 mousePosition;
     public CameraBehaviour camera;
     public Camera mainCamera;
-    public MouseController mouseC;
     public BuilderScript Builder;
     public UiTrigger UiTrigger;
 
@@ -81,7 +80,6 @@ public class InputManager : MonoBehaviour {
 
         camera.GetAxis(axis.x, axis.y);
         camera.GetRotate(rotate);
-        mouseC.GetMouse(mousePosition);
         CanPlace();
         //Builder.CreateBuild(Input.GetButtonDown("Fire1"));
         //UiTrigger.GetMousePosition(mousePosition);
