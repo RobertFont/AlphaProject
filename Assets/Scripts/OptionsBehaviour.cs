@@ -8,6 +8,10 @@ public class OptionsBehaviour : MonoBehaviour
 
 
     [Header("Graphics")]
+
+    public int resolutionX = 22;
+    public int resolutionY = 22;
+    bool fullScreen = false;
     bool vSync = false;
     bool sSAO = false;
     bool activeShadows = true;
@@ -22,6 +26,7 @@ public class OptionsBehaviour : MonoBehaviour
 
     [Header("Controls")]
 
+
     [Header("Change SubMenus")]
     public GameObject generalMenu;
     public GameObject graphicsMenu;
@@ -32,7 +37,6 @@ public class OptionsBehaviour : MonoBehaviour
     {
         SetSavedOptions();
         SetGeneralMenu();
-
     }
 
     #region General
@@ -58,16 +62,19 @@ public class OptionsBehaviour : MonoBehaviour
     #endregion
 
     #region Graphics
-    public void Resolution(int res)
+    public void SetResolution(string res)
     {
-        if (res == 1) Screen.SetResolution(1280, 720, Screen.fullScreen);
-        else if (res == 2) Screen.SetResolution(1600, 1024, Screen.fullScreen);
-        else if (res == 3) Screen.SetResolution(1920, 1080, Screen.fullScreen);
+        string[] sRes = res.Split(',');
+        Debug.Log(sRes[0] + sRes[1]);
+        resolutionX = res[0];
+        resolutionY = res[1];
+        Screen.SetResolution(resolutionX, resolutionY, Screen.fullScreen);
     }
 
     public void FullScreenMode()
     {
-        Screen.fullScreen = !Screen.fullScreen;
+        fullScreen = !fullScreen;
+        Screen.fullScreen = fullScreen;
     }
 
     public void SetFPS()
@@ -196,6 +203,8 @@ public class OptionsBehaviour : MonoBehaviour
         controlsMenu.SetActive(true);
     }
     #endregion
+
+    #region ExtraOptions
     public void SetSavedOptions()
     {
         /*vSync = ;
@@ -231,4 +240,5 @@ public class OptionsBehaviour : MonoBehaviour
         antiAliasing = ;
         particlesSys = ;*/
     }
+#endregion
 }
