@@ -5,6 +5,8 @@ using UnityEngine.AI;
 
 public class PeasantBehaviour : MonoBehaviour
 {
+    enum PeasantState { Idle, Working, Frightened, };
+    [SerializeField] PeasantState state;
     private NavMeshAgent agent;
 
     [Header("Path")]
@@ -15,10 +17,30 @@ public class PeasantBehaviour : MonoBehaviour
     void Start ()
     {
         agent = GetComponent<NavMeshAgent>();
+        state = PeasantState.Idle;
     }
 	
 	// Update is called once per frame
 	void Update ()
+    {
+        switch (state)
+        {
+            case PeasantState.Idle:
+                IdleUpdate();
+                break;
+            case PeasantState.Working:
+                WorikingUpdate();
+                break;
+            case PeasantState.Frightened:
+                break;
+            default:
+                break;
+        }
+        
+    }
+
+    #region Updates
+    void IdleUpdate()
     {
         if (agent.remainingDistance <= agent.stoppingDistance + 0.1f)
         {
@@ -28,4 +50,27 @@ public class PeasantBehaviour : MonoBehaviour
 
         agent.SetDestination(points[pathIndex].position);
     }
+
+    void WorikingUpdate()
+    {
+        if (this.tag == "Lumberjack")
+        {
+
+        }
+        else SetIdle();
+    }
+    #endregion
+
+    #region Sets
+    void SetIdle()
+    {
+        state = PeasantState.Idle;
+    }
+
+    void SetWorking()
+    {
+        state = PeasantState.Working;
+    }
+#endregion  
+
 }
