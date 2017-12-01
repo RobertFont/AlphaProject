@@ -15,11 +15,11 @@ public class TreeBehaviour : MonoBehaviour {
     void Start ()
     {
         tree = this.transform;
-        random = Random.RandomRange(0.7f, 1.2f);
+        random = Random.Range(0.7f, 1.2f);
         treeSize = tree.localScale;
         
-        treeSize = new Vector3(random, Random.RandomRange(0.7f, 1.4f), random);
-        treeRotation = new Vector3(0, Random.RandomRange(0.0f, 360.0f), 0);
+        treeSize = new Vector3(random, Random.Range(0.7f, 1.4f), random);
+        treeRotation = new Vector3(0, Random.Range(0.0f, 360.0f), 0);
 
         tree.localScale = treeSize;
         tree.transform.Rotate(treeRotation);
