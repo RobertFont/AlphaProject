@@ -9,6 +9,8 @@ TagManager:
   - House
   - Farm
   - LumberMill
+  - Unemployed
+  - Lumberjack
   layers:
   - Default
   - TransparentFX

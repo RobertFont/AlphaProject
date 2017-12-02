@@ -26,22 +26,15 @@ public class ResourceManager : MonoBehaviour
     public int lumberMill = 0;
     public int farm = 0;
     public int townHall = 0;
-
     [Header("UI Resources")]
     public Text woodUi;
     public Text foodUi;
     public Text goldUi;
     public Text happinessUi;
     public Text populationUi;
-    
-    // public List<Buildings> buildingLists;
-
-    // Use this for initialization
-    public void Start ()
-    {
-        
-
-    }
+    [Header("Utilities")]
+    public int timer = 0;
+    public PeasantSpawn peasant;
 
     // Update is called once per frame
     public void Update ()
@@ -51,6 +44,7 @@ public class ResourceManager : MonoBehaviour
         goldUi.text = gold.ToString();
         foodUi.text = food.ToString();
         happinessUi.text = happiness + "%";
+        AddCurrentPopFromTime();
     }
 
     public void AddWood(int value)
@@ -81,5 +75,36 @@ public class ResourceManager : MonoBehaviour
     public void RemoveGold(int value)
     {
         gold -= value;
+    }
+
+    public void AddMaxPop(int value)
+    {
+        maxPop += value;
+    }
+
+    public void RemoveMaxPop(int value)
+    {
+        maxPop -= value;
+    }
+
+    public void RemoveCurrentPop(int value)
+    {
+        currentPop -= value;
+    }
+
+    public void AddCurrentPopFromTime()
+    {
+        if (currentPop < maxPop)
+        {
+            timer++;
+
+            if (timer > 1200)
+            {
+                currentPop++;
+                peasant.Spawner();
+                timer = 0;
+            }
+        }
+        else return;
     }
 }

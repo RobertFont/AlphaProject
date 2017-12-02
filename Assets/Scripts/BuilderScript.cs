@@ -189,6 +189,7 @@ public class BuilderScript : MonoBehaviour {
         {
             resource.RemoveWood(houseCostWood);
             resource.RemoveGold(houseCostGold);
+            resource.AddMaxPop(4);
         }
         else if(build.tag == "Farm")
         {
