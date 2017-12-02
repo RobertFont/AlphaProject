@@ -18,10 +18,7 @@ public class InputManager : MonoBehaviour {
     public float rotatateSpeed;
 
     public bool rotating;
-
     
-    
-
     void Start ()
     {
         camera = GetComponent<CameraBehaviour>();

@@ -5,59 +5,89 @@ using UnityEngine.AI;
 
 public class PeasantBehaviour : MonoBehaviour
 {
-    enum PeasantState { Idle, Working, Frightened, };
-    [SerializeField] PeasantState state;
+    public enum PeasantState { Idle, Working, Frightened, };
+    [SerializeField] public PeasantState state;
     private NavMeshAgent agent;
+    public ResourceManager resource;
+
+    [SerializeField] private float visionRange;
+    [SerializeField] private float distanceFromTarget;
+    [SerializeField] private bool started = true;
 
     [Header("Path")]
-    public Transform[] points;
+    public List<Transform> points;
+    //public Transform[] points;
     private int pathIndex = 0;
 
     // Use this for initialization
-    void Start ()
+    void MyStart()
     {
-        agent = GetComponent<NavMeshAgent>();
-        state = PeasantState.Idle;
+        agent = this.GetComponent<NavMeshAgent>();
+        SetIdle();
+        points.Add(GameObject.FindGameObjectWithTag("TownHall").transform);
+        resource = GameObject.FindGameObjectWithTag("Player").GetComponent<ResourceManager>();
+        visionRange = 0.2f;
+        started = !started;
+
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+    // Update is called once per frame
+    void Update()
     {
+        if (started) MyStart();
+        if (points.Count > 2) points.Remove(points[2]);
+
         switch (state)
         {
             case PeasantState.Idle:
                 IdleUpdate();
                 break;
             case PeasantState.Working:
-                WorikingUpdate();
+                //WorikingUpdate();
                 break;
             case PeasantState.Frightened:
                 break;
             default:
                 break;
         }
-        
+
     }
 
     #region Updates
     void IdleUpdate()
     {
+        distanceFromTarget = agent.remainingDistance;
+        
         if (agent.remainingDistance <= agent.stoppingDistance + 0.1f)
         {
+            if (pathIndex == 0) GatherResources();
             pathIndex++;
-            if (pathIndex >= points.Length) pathIndex = 0;
+            if (pathIndex >= points.Count)
+            {
+                
+                pathIndex = 0;
+            }
         }
-
-        agent.SetDestination(points[pathIndex].position);
+        
+        agent.SetDestination(points[pathIndex].transform.position);
     }
 
     void WorikingUpdate()
     {
-        if (this.tag == "Lumberjack")
+          
+        if (agent.remainingDistance <= agent.stoppingDistance + 0.1f)
         {
-
+            pathIndex++;
+            if (pathIndex >= points.Count)
+            {
+                //if (this.tag == "Lumberjack") resource.AddWood(20);
+                pathIndex = 0;
+                    
+            }
         }
-        else SetIdle();
+
+        agent.SetDestination(points[pathIndex].transform.position);
+        
     }
     #endregion
 
@@ -71,6 +101,20 @@ public class PeasantBehaviour : MonoBehaviour
     {
         state = PeasantState.Working;
     }
-#endregion  
+    #endregion
 
+     void GatherResources()
+    {
+        if(agent.remainingDistance <= visionRange)
+        {
+            Debug.Log("please work");
+            if (this.tag == "Lumberjack") resource.AddWood(20);
+        }
+    }
+
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, visionRange);
+    }
 }

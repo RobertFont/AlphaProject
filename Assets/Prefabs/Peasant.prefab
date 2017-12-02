@@ -108,6 +108,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ecd4dbd5465944458f899783d8569df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  resource: {fileID: 0}
+  visionRange: 0
+  distanceFromTarget: 0
+  started: 1
   points: []
 --- !u!195 &195935176221250332
 NavMeshAgent:
@@ -118,7 +123,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 1
+  m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120

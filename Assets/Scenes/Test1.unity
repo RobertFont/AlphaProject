@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1624,7 +1624,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 781048551}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 635, y: 354.7633, z: 0}
+  m_LocalPosition: {x: 635, y: 438.3442, z: 0}
   m_LocalScale: {x: 0.999996, y: 0.999996, z: 0.999996}
   m_Children:
   - {fileID: 104213080}
@@ -1807,8 +1807,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 786221512}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 422.5, y: 237.5, z: 0}
-  m_LocalScale: {x: 1.05625, y: 1.05625, z: 1.05625}
+  m_LocalPosition: {x: 460.5, y: 319, z: 0}
+  m_LocalScale: {x: 1.15125, y: 1.15125, z: 1.15125}
   m_Children:
   - {fileID: 1595917524}
   m_Father: {fileID: 0}
@@ -1925,6 +1925,17 @@ MonoBehaviour:
   currentWorkers: 0
   maxWorkers: 0
   building: {fileID: 2013881662}
+--- !u!114 &895840630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 895840624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09473d119d316304d987f31380190eaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &898725371
 GameObject:
   m_ObjectHideFlags: 0
@@ -2024,8 +2035,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 910481261}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 422.5, y: 237.5, z: 0}
-  m_LocalScale: {x: 0.66015625, y: 0.66015625, z: 0.66015625}
+  m_LocalPosition: {x: 460.5, y: 319, z: 0}
+  m_LocalScale: {x: 0.71953124, y: 0.71953124, z: 0.71953124}
   m_Children:
   - {fileID: 1862652514}
   - {fileID: 1160487591}
@@ -2130,7 +2141,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.5, y: 1, z: 1.8}
+  m_Size: {x: 3.11, y: 1, z: 2.68}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &971771263
 MonoBehaviour:
@@ -2143,9 +2154,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b20e413e56a4fb43a403c760f750bb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
   maxWorkers: 4
   currentWorkers: 0
   finder: {fileID: 0}
+--- !u!114 &971771264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 971771257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09473d119d316304d987f31380190eaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &981584814
 GameObject:
   m_ObjectHideFlags: 0
@@ -2582,6 +2605,10 @@ Prefab:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1776965417622640, guid: 18e4eba7344fc714f912527fe9ec33ce, type: 2}
+      propertyPath: m_TagString
+      value: Tree
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 18e4eba7344fc714f912527fe9ec33ce, type: 2}
   m_IsPrefabParent: 0
@@ -2796,7 +2823,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1160487590}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -640, y: -359.7633, z: 0}
+  m_LocalPosition: {x: -640, y: -443.3442, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 556594567}
@@ -3537,6 +3564,17 @@ BoxCollider:
 Transform:
   m_PrefabParentObject: {fileID: 400104, guid: 1a5f108305d57184c98670c78238dcfd, type: 3}
   m_PrefabInternal: {fileID: 662218678}
+--- !u!114 &1500543792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1500543786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09473d119d316304d987f31380190eaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1533862193
 GameObject:
   m_ObjectHideFlags: 0
@@ -3890,7 +3928,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1862652513}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -635, y: 354.7633, z: 0}
+  m_LocalPosition: {x: -635, y: 438.3442, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1533862194}
@@ -4202,7 +4240,7 @@ GameObject:
   - component: {fileID: 2013881666}
   m_Layer: 0
   m_Name: MouseCotroller
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 7707008975528953803, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4268,7 +4306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e135ba2f0b64b14abc765dcec9d7503, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wood: 50000
+  wood: 500
   food: 500
   gold: 500
   happiness: 100
