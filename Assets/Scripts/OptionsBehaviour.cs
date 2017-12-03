@@ -9,8 +9,7 @@ public class OptionsBehaviour : MonoBehaviour
 
     [Header("Graphics")]
 
-    public int resolutionX = 22;
-    public int resolutionY = 22;
+    public int resolution = 0;
     bool fullScreen = false;
     bool vSync = false;
     bool sSAO = false;
@@ -19,7 +18,8 @@ public class OptionsBehaviour : MonoBehaviour
     ShadowResolution ShadowRes = ShadowResolution.Medium;
     int QualityLevel = 1;
     int antiAliasing = 0;
-    ParticleSystem particlesSys;
+    public ParticleSystem particlesSys;
+    ParticleBehaviour allParticles;
 
     [Header("Sound")]
     public float sliderVolume = 0;
@@ -62,13 +62,21 @@ public class OptionsBehaviour : MonoBehaviour
     #endregion
 
     #region Graphics
-    public void SetResolution(string res)
+    public void SetResolution(int res)
     {
-        string[] sRes = res.Split(',');
-        Debug.Log(sRes[0] + sRes[1]);
-        resolutionX = res[0];
-        resolutionY = res[1];
-        Screen.SetResolution(resolutionX, resolutionY, Screen.fullScreen);
+        resolution = res;
+        if (resolution == 0)
+        {
+            Screen.SetResolution(1280, 720, Screen.fullScreen);
+        }
+        else if (resolution == 1)
+        {
+            Screen.SetResolution(1600, 1024, Screen.fullScreen);
+        }
+        else if (resolution == 2)
+        {
+            Screen.SetResolution(1920, 1080, Screen.fullScreen);
+        }
     }
 
     public void FullScreenMode()
@@ -128,14 +136,15 @@ public class OptionsBehaviour : MonoBehaviour
     public void SSAO(bool value)
     {
         sSAO = value;
-        
     }
 
     public void Particles()
     {//revisar
         particles = !particles;
-        if (particles) particlesSys.Play();
-        else if (!particles) particlesSys.Stop();
+
+        //SetParticleState(particles);
+        /*if (particles) particlesSys.Play();
+        else if (!particles) particlesSys.Stop();*/
     }
 
     public void AciveShadow(int value)
@@ -207,7 +216,9 @@ public class OptionsBehaviour : MonoBehaviour
     #region ExtraOptions
     public void SetSavedOptions()
     {
-        /*vSync = ;
+        /*resolution
+        SetResolution(int res)
+        vSync = ;
         sSAO = ;
         activeShadows = ;
         particles = ;
