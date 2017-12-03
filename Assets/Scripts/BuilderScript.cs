@@ -7,6 +7,7 @@ public class BuilderScript : MonoBehaviour {
     public GameObject build;
     public Vector3 buildingInMouse;
     ResourceManager resource;
+    public InputManager input;
 
     public GameObject townHall;
     public GameObject house;
@@ -48,6 +49,8 @@ public class BuilderScript : MonoBehaviour {
 
     void Update()
     {
+        if (input.paused) return;
+
         if (canCreateBuild)
         {
             build.transform.position = buildingInMouse;

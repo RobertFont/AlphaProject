@@ -11,6 +11,8 @@ public class InputManager : MonoBehaviour {
     public Camera mainCamera;
     public BuilderScript Builder;
     public UiTrigger UiTrigger;
+    public GameObject pauseSystem;
+    public GameObject construcionUI;
 
     public float rotate;
     public float zoomSpeed;
@@ -18,7 +20,8 @@ public class InputManager : MonoBehaviour {
     public float rotatateSpeed;
 
     public bool rotating;
-    
+    public bool paused = false;
+
     void Start ()
     {
         camera = GetComponent<CameraBehaviour>();
@@ -44,6 +47,9 @@ public class InputManager : MonoBehaviour {
         {
             Builder.CantBuild(false);
         }
+
+
+        if (Input.GetButtonDown("Pause")) TogglePause();
 
         #region Rotate
         if (Input.GetKey(KeyCode.Q)) rotate = 1;
@@ -88,4 +94,26 @@ public class InputManager : MonoBehaviour {
         else if (Input.GetButtonDown("Fire1")) Builder.CreateBuild();
         else Builder.canPosisitioningBuild = false;
     }
+
+    void TogglePause()
+    {
+        if(!paused)
+        {
+            pauseSystem.SetActive(true);
+            construcionUI.SetActive(false);
+            Time.timeScale = 0.0f;
+            paused = true;
+        }
+        else if(paused)
+        {
+            pauseSystem.SetActive(false);
+            construcionUI.SetActive(true);
+            Time.timeScale = 1.0f;
+            paused = false;
+        }
+        
+        
+    }
+
+
 }
