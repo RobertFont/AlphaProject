@@ -31,6 +31,8 @@ public class InputManager : MonoBehaviour {
 	
 	void Update ()
     {
+        if (Input.GetButtonDown("Pause")) TogglePause();
+        if (paused) return;
         #region Axis
         axis.x = Input.GetAxis("Horizontal");
         axis.y = Input.GetAxis("Vertical");
@@ -47,9 +49,12 @@ public class InputManager : MonoBehaviour {
         {
             Builder.CantBuild(false);
         }
+        #region Speed
+        if (Input.GetButtonDown("Speed1")) Time.timeScale = 1.0f;
+        if (Input.GetButtonDown("Speed2")) Time.timeScale = 1.5f;
+        if (Input.GetButtonDown("Speed3")) Time.timeScale = 2.0f;
+        #endregion
 
-
-        if (Input.GetButtonDown("Pause")) TogglePause();
 
         #region Rotate
         if (Input.GetKey(KeyCode.Q)) rotate = 1;
