@@ -46,7 +46,7 @@ ___
 - [ ] Temporal Models(Placeholders)
 - [ ] 8 Final Props
 - [ ] 3 Final Building Modeling With Temporal textures
-- [ ] Pause
+- [x] Pause
 - [ ] Basic UI Elements
 - [x] Provisional Controls
 - [x] 5 Particle Sytems
