@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BuildingBehaviour : MonoBehaviour
 {
-    public enum BuildingState { closed, open }
+    public enum BuildingState { open, closed }
     public BuildingState state;
     public int maxWorkers = 4;
     public int currentWorkers = 0;
@@ -14,7 +14,7 @@ public class BuildingBehaviour : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
-		
+        state = BuildingState.closed;
 	}
 	
 	// Update is called once per frame
@@ -36,9 +36,7 @@ public class BuildingBehaviour : MonoBehaviour
                 }
                 
                 SetWorkers();
-
                 
-
                 break;
             case BuildingState.closed:
                 if(peasants.Count > 0)
@@ -58,10 +56,7 @@ public class BuildingBehaviour : MonoBehaviour
 
     void SetWorkers()
     {
-        /*peasants[0].GetComponent<PeasantBehaviour>().state = PeasantBehaviour.PeasantState.Working;
-        peasants[1].GetComponent<PeasantBehaviour>().state = PeasantBehaviour.PeasantState.Working;
-        peasants[2].GetComponent<PeasantBehaviour>().state = PeasantBehaviour.PeasantState.Working;
-        peasants[3].GetComponent<PeasantBehaviour>().state = PeasantBehaviour.PeasantState.Working;*/
+        
         
         if (peasants[0].GetComponent<PeasantBehaviour>().points.Count < 2)
         {

@@ -9,7 +9,7 @@ public class PeasantBehaviour : MonoBehaviour
     [SerializeField] public PeasantState state;
     private NavMeshAgent agent;
     public ResourceManager resource;
-
+    bool gatheredResoruce = false;
     [SerializeField] private float visionRange;
     [SerializeField] private float distanceFromTarget;
     [SerializeField] private bool started = true;
@@ -17,7 +17,7 @@ public class PeasantBehaviour : MonoBehaviour
     [Header("Path")]
     public List<Transform> points;
     //public Transform[] points;
-    private int pathIndex = 0;
+    [SerializeField] private int pathIndex = 0;
 
     // Use this for initialization
     void MyStart()
@@ -60,7 +60,12 @@ public class PeasantBehaviour : MonoBehaviour
         
         if (agent.remainingDistance <= agent.stoppingDistance + 0.1f)
         {
-            if (pathIndex == 0) GatherResources();
+            if (pathIndex == 0)
+            {
+                GatherResources();
+                gatheredResoruce = false;
+            }
+            if (pathIndex == 1) gatheredResoruce = true;
             pathIndex++;
             if (pathIndex >= points.Count)
             {
@@ -105,6 +110,7 @@ public class PeasantBehaviour : MonoBehaviour
 
      void GatherResources()
     {
+        if (gatheredResoruce == false) return;
         if(agent.remainingDistance <= visionRange)
         {
             Debug.Log("please work");

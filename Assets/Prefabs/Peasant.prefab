@@ -114,6 +114,7 @@ MonoBehaviour:
   distanceFromTarget: 0
   started: 1
   points: []
+  pathIndex: 0
 --- !u!195 &195935176221250332
 NavMeshAgent:
   m_ObjectHideFlags: 1

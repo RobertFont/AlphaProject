@@ -98,7 +98,7 @@ public class ResourceManager : MonoBehaviour
         {
             timer++;
 
-            if (timer > 1200)
+            if (timer > 120)
             {
                 currentPop++;
                 peasant.Spawner();
