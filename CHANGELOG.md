@@ -24,7 +24,7 @@ ___
 - [ ] Upgrade Screen Mockups
 
 ### General
-- [ ] Scene Transition Animation
+- [x] Scene Transition Animation
 - [ ] God Mode (F10)
 - [ ] Victory/Defeat Conditions
 
@@ -38,8 +38,8 @@ ___
 
 ### Screen Options
 - Basic Settings
-  - [ ] Resolution (720 Default - 1200 - 1080)
-  - [ ] Quality (Fast - Good - Fantastic - Ultra)
+  - [x] Resolution (720 Default - 1200 - 1080)
+  - [x] Quality (Fast - Good - Fantastic - Ultra)
   
 ### Screen Gameplay
 - [ ] Basic Mecanics (Functionals & Testables)
@@ -48,9 +48,9 @@ ___
 - [ ] 3 Final Building Modeling With Temporal textures
 - [ ] Pause
 - [ ] Basic UI Elements
-- [ ] Provisional Controls
-- [ ] 5 Particle Sytems
-- [ ] 5 Sound FX
+- [x] Provisional Controls
+- [x] 5 Particle Sytems
+- [x] 5 Sound FX
 
 ### Screen Ending
 - [ ] Custom Background & Message for Victory/Defeat
