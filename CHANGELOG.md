@@ -16,7 +16,7 @@ ___
 - [ ] Extended Game Design Document
 - [ ] Level Design Map
 - [ ] Concept Art buildings and environment
-- [ ] Buildings Thumbnails
+- [x] Buildings Thumbnails
 - [ ] Props Thumbnails
 - [ ] Buildings Size Chart
 - [ ] Level Props Size Chart
@@ -34,7 +34,7 @@ ___
 ### Screen Title
 - [ ] Title Final Art Implemented
 - [ ] Title Entrance Animation
-- [ ] Basic Menu Buttons (Start - Options - Exit)
+- [x] Basic Menu Buttons (Start - Options - Exit)
 
 ### Screen Options
 - Basic Settings
