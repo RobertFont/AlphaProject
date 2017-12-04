@@ -11,7 +11,9 @@ public class BuildingBehaviour : MonoBehaviour
     public int currentWorkers = 0;
     public GameObject finder;
     public GameObject finderTree;
-    List<GameObject> peasants = new List<GameObject>();
+    [SerializeField]List<GameObject> peasants = new List<GameObject>();
+    [SerializeField] private bool started = true;
+    [SerializeField] int numFor;
 
     public GameObject[] trees;
    
@@ -20,7 +22,16 @@ public class BuildingBehaviour : MonoBehaviour
     void Start ()
     {
         state = BuildingState.closed;
+        started = true;
 	}
+
+    void MyStart()
+    {
+        trees = GameObject.FindGameObjectsWithTag("Tree");
+        finderTree = GetClosestTree(trees).gameObject;
+        Debug.Log("funcion MYstart");
+        started = false;
+    }
 	
     
 	// Update is called once per frame
@@ -30,19 +41,16 @@ public class BuildingBehaviour : MonoBehaviour
         switch (state)
         {
             case BuildingState.open:
-                
+                if (started) MyStart();
                 if(currentWorkers < maxWorkers)
                 {
-                    trees = GameObject.FindGameObjectsWithTag("Tree");
-                    
-
                     if (GameObject.FindGameObjectWithTag("Unemployed"))
                     {
                         Debug.Log("Trabajador encontrado");
                         finder = GameObject.FindGameObjectWithTag("Unemployed");
                         finder.tag = "Lumberjack";
                         peasants.Add(finder);
-                        currentWorkers++;
+                        currentWorkers = peasants.Count;
                     }
                 }
                 
@@ -50,14 +58,15 @@ public class BuildingBehaviour : MonoBehaviour
                 
                 break;
             case BuildingState.closed:
-                if(peasants.Count > 0)
-                {
-                    peasants[0].tag = "Unemployed";
-                    peasants[1].tag = "Unemployed";
-                    peasants[2].tag = "Unemployed";
-                    peasants[3].tag = "Unemployed";
-                    peasants.RemoveRange(0, currentWorkers);
-                }
+                peasants[0].tag = "Unemployed";
+                peasants[1].tag = "Unemployed";
+                peasants[2].tag = "Unemployed";
+                peasants[3].tag = "Unemployed";
+                peasants.RemoveRange(0, 4);
+                currentWorkers = 0;
+                finderTree.GetComponent<TreeBehaviour>().currentWorkers = 0;
+                finderTree = null;
+                started = true;
                 
                 break;
             default:
@@ -67,44 +76,62 @@ public class BuildingBehaviour : MonoBehaviour
 
     void SetWorkers()
     {
-        for(int i = 0; i < 4; i++)
+        
+        /*for (int i = 0; i < maxWorkers; i++)
         {
+            numFor = i;
+            Debug.Log("entre en el for" + i);
             if (peasants[i].GetComponent<PeasantBehaviour>().points.Count < 2)
             {
-
-                peasants[i].GetComponent<PeasantBehaviour>().points.Add(GetClosestTree(trees));
+                Debug.Log("entro en el if");
+                peasants[i].GetComponent<PeasantBehaviour>().points.Add(finderTree.transform);
                 peasants[i].GetComponent<PeasantBehaviour>().points[0] = this.transform;
-                finderTree = GetClosestTree(trees).gameObject;
-                finderTree.GetComponent<TreeBehaviour>().currentWorkers++;
+                
 
             }
-        }
-        
-        /*if (peasants[0].GetComponent<PeasantBehaviour>().points.Count < 2)
+            
+            
+
+            //;
+            
+        }*/
+
+        if (peasants[0].GetComponent<PeasantBehaviour>().points.Count < 2)
         {
-            
-            peasants[0].GetComponent<PeasantBehaviour>().points.Add(GetClosestTree(trees));
+            Debug.Log("firstWorker");
+            peasants[0].GetComponent<PeasantBehaviour>().points.Add(finderTree.transform);
             peasants[0].GetComponent<PeasantBehaviour>().points[0] = this.transform;
-            
+            finderTree.GetComponent<TreeBehaviour>().currentWorkers = 1;
+
         }
         if (peasants[1].GetComponent<PeasantBehaviour>().points.Count < 2)
         {
-            peasants[1].GetComponent<PeasantBehaviour>().points.Add(GetClosestTree(trees));
+            Debug.Log("secondWorker");
+
+            peasants[1].GetComponent<PeasantBehaviour>().points.Add(finderTree.transform); 
             peasants[1].GetComponent<PeasantBehaviour>().points[0] = this.transform;
+            finderTree.GetComponent<TreeBehaviour>().currentWorkers = 2;
 
         }
         if (peasants[2].GetComponent<PeasantBehaviour>().points.Count < 2)
         {
-            peasants[2].GetComponent<PeasantBehaviour>().points.Add(GetClosestTree(trees));
+            Debug.Log("thirdWorker");
+
+            peasants[2].GetComponent<PeasantBehaviour>().points.Add(finderTree.transform); 
             peasants[2].GetComponent<PeasantBehaviour>().points[0] = this.transform;
+            finderTree.GetComponent<TreeBehaviour>().currentWorkers = 3;
 
         }
         if (peasants[3].GetComponent<PeasantBehaviour>().points.Count < 2)
         {
-            peasants[3].GetComponent<PeasantBehaviour>().points.Add(GetClosestTree(trees));
+            Debug.Log("fourthWorker");
+
+            peasants[3].GetComponent<PeasantBehaviour>().points.Add(finderTree.transform);
             peasants[3].GetComponent<PeasantBehaviour>().points[0] = this.transform;
-            
-        }*/
+            finderTree.GetComponent<TreeBehaviour>().currentWorkers = 4;
+
+        }
+        
     }
 
     Transform GetClosestTree(GameObject[] trees)

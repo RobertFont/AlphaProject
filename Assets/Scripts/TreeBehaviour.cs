@@ -35,6 +35,7 @@ public class TreeBehaviour : MonoBehaviour {
     private void Update()
     {
         if (currentWorkers == maxWorkers) peasantWorking = false;
+        else peasantWorking = true;
     }
 
 }

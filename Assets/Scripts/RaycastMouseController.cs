@@ -40,10 +40,15 @@ public class RaycastMouseController : MonoBehaviour
 
     public void SelectBuilding()
     {
-        if(Input.GetMouseButtonUp(0))
+        if(Input.GetButtonUp("Fire1"))
         {
             buildingSelected = hit.transform.gameObject.GetComponent<BuildingBehaviour>();
             hit.transform.gameObject.GetComponent<BuildingBehaviour>().state = BuildingBehaviour.BuildingState.open;
         }
+        else if(Input.GetButtonUp("Fire2"))
+            {
+                buildingSelected = hit.transform.gameObject.GetComponent<BuildingBehaviour>();
+                hit.transform.gameObject.GetComponent<BuildingBehaviour>().state = BuildingBehaviour.BuildingState.closed;
+            }
     }
 }

@@ -59,6 +59,11 @@ public class PeasantBehaviour : MonoBehaviour
     #region Updates
     void IdleUpdate()
     {
+        if(this.tag == "Unemployed")
+        {
+            points[0] = (GameObject.FindGameObjectWithTag("TownHall").transform);
+            points.Remove(points[1]);
+        }
         distanceFromTarget = agent.remainingDistance;
         
         if (agent.remainingDistance <= agent.stoppingDistance + 0.1f)
