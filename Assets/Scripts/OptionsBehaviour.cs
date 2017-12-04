@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class OptionsBehaviour : MonoBehaviour
 {
@@ -22,7 +23,7 @@ public class OptionsBehaviour : MonoBehaviour
     ParticleBehaviour allParticles;
 
     [Header("Sound")]
-    public float sliderVolume = 0;
+    public float sliderVolume = 0.5f;
 
     [Header("Controls")]
 
@@ -162,9 +163,9 @@ public class OptionsBehaviour : MonoBehaviour
     #endregion
 
     #region Sounds
-    public void SetGeneralSoundLevel(float value)
+    public void SetGeneralSoundLevel(Slider slider)
     {
-        sliderVolume = GUI.HorizontalSlider(new Rect(25, 25, 200, 60), value, 0.0f, 1.0f);
+        sliderVolume = slider.value;
         AudioListener.volume = sliderVolume;
     }
 
