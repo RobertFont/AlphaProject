@@ -5,6 +5,7 @@ using UnityEngine;
 public class LogoEvent : MonoBehaviour
 {
     Animation anim;
+    bool loaded = false;
 
     public void Start()
     {
@@ -13,10 +14,11 @@ public class LogoEvent : MonoBehaviour
 
     public void Update()
     {
-        if (!anim.isPlaying)
+        if (!anim.isPlaying && !loaded)
         {
             LevelLogic level = GameObject.Find("LevelManager").GetComponent<LevelLogic>();
             level.SetTitleScene();
+            loaded = true;
         }
     }
 }
