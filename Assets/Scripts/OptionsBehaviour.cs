@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class OptionsBehaviour : MonoBehaviour
 {
+    LevelLogic level;
+
     [Header("General")]
 
 
@@ -36,6 +38,7 @@ public class OptionsBehaviour : MonoBehaviour
     
     private void Start()
     {
+        level = GameObject.Find("LevelManager").GetComponent<LevelLogic>();
         SetSavedOptions();
         SetGeneralMenu();
     }
@@ -229,7 +232,7 @@ public class OptionsBehaviour : MonoBehaviour
         particlesSys = ;*/
     }
 
-    public void SaveOption()
+    public void ResetSettingOption()
     {
         /*vSync = ;
         sSAO = ;
@@ -241,16 +244,9 @@ public class OptionsBehaviour : MonoBehaviour
         particlesSys = ;*/
     }
 
-    public void ResetSettingOption()
+    public void BackToTitle()
     {
-        /*vSync = ;
-        sSAO = ;
-        activeShadows = ;
-        particles = ;
-        ShadowResolution ShadowRes = ;
-        QualityLevel = ;
-        antiAliasing = ;
-        particlesSys = ;*/
+        level.SetTitleScene();
     }
 #endregion
 }

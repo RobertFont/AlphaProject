@@ -94,6 +94,33 @@ public class LevelLogic : MonoBehaviour {
         blackScreen.CrossFadeAlpha(1, fadeTime, true);
     }
 
+
+    public void SetLogoScene()
+    {
+        StartLoad(1);
+    }
+
+    public void SetTitleScene()
+    {
+        StartLoad(2);
+
+    }
+
+    public void SetOptionsScene()
+    {
+        StartLoad(3);
+    }
+
+    public void SetGameplayScene()
+    {
+        StartLoad(4);
+    }
+
+    public void SetEndingScene()
+    {
+        StartLoad(5);
+    }
+
     IEnumerator Loading()
     {
         while(loading)
