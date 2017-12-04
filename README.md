@@ -1,4 +1,4 @@
-![Banner](WikiResources/BannerPH05.png)
+![Banner](WikiResources/BannerPH06.png)
 
 Builder game. Some of the buildings produce resources that will be managed by the player in order to increase the size of the city. From time to time the player will have to deal with challenging events that the player must resolve so that the city can thrive and prosper in an increasingly difficult environment, because as we know, where there are resources, there are also new enemies.
 
