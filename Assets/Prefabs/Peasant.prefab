@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 23741637546496126}
   - component: {fileID: 195935176221250332}
   - component: {fileID: 114765974346407962}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Peasant
   m_TagString: Untagged
   m_Icon: {fileID: 0}

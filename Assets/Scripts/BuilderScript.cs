@@ -35,9 +35,9 @@ public class BuilderScript : MonoBehaviour {
 
     public bool canCreateBuild = false;
     public bool canPosisitioningBuild = false;
-    
-
     public bool buildingColliding = false;
+
+    public string originalHouseName;
 
     void Start()
     {
@@ -74,8 +74,8 @@ public class BuilderScript : MonoBehaviour {
     {
         canCreateBuild = false;
         DesactiveOriginalBuilding();
-        if (!CompareResources()) return;
         build = townHall;
+        if (!CompareResources()) return;
         colliderHalfSize = build.GetComponent<BoxCollider>().size/2;
         collisionChecker = townHall.transform;
         canCreateBuild = true;
@@ -86,8 +86,8 @@ public class BuilderScript : MonoBehaviour {
     {
         canCreateBuild = false;
         DesactiveOriginalBuilding();
-        if (!CompareResources()) return;
         build = house;
+        if (!CompareResources()) return;
         colliderHalfSize = build.GetComponent<BoxCollider>().size/2;
         collisionChecker = house.transform;
         canCreateBuild = true;
@@ -98,8 +98,8 @@ public class BuilderScript : MonoBehaviour {
     {
         canCreateBuild = false;
         DesactiveOriginalBuilding();
-        if (!CompareResources()) return;
         build = farm;
+        if (!CompareResources()) return;
         colliderHalfSize = build.GetComponent<BoxCollider>().size/2;
         collisionChecker = farm.transform;
         canCreateBuild = true;
@@ -110,8 +110,8 @@ public class BuilderScript : MonoBehaviour {
     {
         canCreateBuild = false;
         DesactiveOriginalBuilding();
-        if (!CompareResources()) return;
         build = lumberMill;
+        if (!CompareResources()) return;
         colliderHalfSize = build.GetComponent<BoxCollider>().size/2;
         collisionChecker = lumberMill.transform;
         canCreateBuild = true;
@@ -132,10 +132,13 @@ public class BuilderScript : MonoBehaviour {
         {
             
             ChangeMaterialClone();
+            originalHouseName = build.name;
+            ChangeBuildName();
             build.layer = 9;
             Instantiate(build, buildingInMouse, new Quaternion(0, 12, 0, 0));
             RemoveResources();
             build.layer = 8;
+            build.name = originalHouseName;
             ChangeMaterialOriginal();
         }
     }
@@ -181,6 +184,11 @@ public class BuilderScript : MonoBehaviour {
         else if (build.tag == "LumberMill") build.GetComponent<Renderer>().material = house.GetComponent<Renderer>().material;
     }
 
+    private void ChangeBuildName()
+    {
+        if (build.tag == "House") build.name = "House" + resource.house;
+    }
+
     private void RemoveResources()
     {
         if(build.tag == "TownHall")
@@ -193,6 +201,7 @@ public class BuilderScript : MonoBehaviour {
             resource.RemoveWood(houseCostWood);
             resource.RemoveGold(houseCostGold);
             resource.AddMaxPop(4);
+            resource.AddHouse();
         }
         else if(build.tag == "Farm")
         {
@@ -208,7 +217,7 @@ public class BuilderScript : MonoBehaviour {
     {
         if (build.tag == "TownHall")
         {
-            if (resource.wood < houseCostWood || resource.gold < townHallCostGold) return false;
+            if (resource.wood < townHallCostWood || resource.gold < townHallCostGold) return false;
             else return true;
         }
         else if (build.tag == "House")

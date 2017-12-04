@@ -107,4 +107,9 @@ public class ResourceManager : MonoBehaviour
         }
         else return;
     }
+
+    public void AddHouse()
+    {
+        house += 1;
+    }
 }

@@ -37,6 +37,7 @@ public class PeasantBehaviour : MonoBehaviour
         if (started) MyStart();
         if (points.Count > 2) points.Remove(points[2]);
 
+
         switch (state)
         {
             case PeasantState.Idle:
