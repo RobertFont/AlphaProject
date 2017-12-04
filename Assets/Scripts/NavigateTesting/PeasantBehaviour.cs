@@ -26,7 +26,9 @@ public class PeasantBehaviour : MonoBehaviour
         SetIdle();
         points.Add(GameObject.FindGameObjectWithTag("TownHall").transform);
         resource = GameObject.FindGameObjectWithTag("Player").GetComponent<ResourceManager>();
-        visionRange = 0.2f;
+        visionRange = 0.4f;
+        agent.speed = Random.RandomRange(1.8f, 2.2f);
+        //agent.obstacleAvoidanceType = 0;
         started = !started;
 
     }

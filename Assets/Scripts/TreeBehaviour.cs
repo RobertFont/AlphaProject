@@ -9,11 +9,17 @@ public class TreeBehaviour : MonoBehaviour {
     private Vector3 treeRotation;
     private float random;
     public Transform tree;
-    
+    public bool peasantWorking;
+    public int currentWorkers;
+    public int maxWorkers;
+
 
     // Use this for initialization
     void Start ()
     {
+        peasantWorking = true;
+        currentWorkers = 0;
+        maxWorkers = 4;
         tree = this.transform;
         random = Random.Range(0.7f, 1.2f);
         treeSize = tree.localScale;
@@ -25,5 +31,10 @@ public class TreeBehaviour : MonoBehaviour {
         tree.transform.Rotate(treeRotation);
         
     }
-	
+
+    private void Update()
+    {
+        if (currentWorkers == maxWorkers) peasantWorking = false;
+    }
+
 }
