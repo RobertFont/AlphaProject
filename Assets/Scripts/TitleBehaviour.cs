@@ -6,13 +6,11 @@ public class TitleBehaviour : MonoBehaviour
 {
     LevelLogic level;
 
-    // Use this for initialization
     void Start()
     {
         level = GameObject.Find("LevelManager").GetComponent<LevelLogic>();
     }
 	
-	// Update is called once per frame
 	void Update()
     {
 		

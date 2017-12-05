@@ -38,9 +38,9 @@ public class OptionsBehaviour : MonoBehaviour
     
     private void Start()
     {
+        SetGeneralMenu();
         level = GameObject.Find("LevelManager").GetComponent<LevelLogic>();
         SetSavedOptions();
-        SetGeneralMenu();
     }
 
     #region General
