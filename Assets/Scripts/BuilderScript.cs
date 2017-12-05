@@ -5,6 +5,7 @@ using UnityEngine;
 public class BuilderScript : MonoBehaviour {
 
     public GameObject build;
+    public EventBehaviour someEvent;
     public Vector3 buildingInMouse;
     ResourceManager resource;
     public InputManager input;
@@ -187,6 +188,7 @@ public class BuilderScript : MonoBehaviour {
     private void ChangeBuildName()
     {
         if (build.tag == "House") build.name = "House" + resource.house;
+        if (build.tag == "Farm") build.name = "Farm" + resource.farm;
     }
 
     private void RemoveResources()
@@ -206,6 +208,7 @@ public class BuilderScript : MonoBehaviour {
         else if(build.tag == "Farm")
         {
             resource.RemoveWood(farmCostWood);
+            resource.AddFarm();
         }
         else if(build.tag == "LumberMill")
         {

@@ -1070,7 +1070,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 49e417c11828aee4d9eff5d77db53f41, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.17
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 49e417c11828aee4d9eff5d77db53f41, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1078,7 +1078,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 49e417c11828aee4d9eff5d77db53f41, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.28
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 49e417c11828aee4d9eff5d77db53f41, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1589,7 +1589,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 896ca18fa9ef73149b01601924ac6929, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.26
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 896ca18fa9ef73149b01601924ac6929, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1735,7 +1735,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 781048551}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 635, y: 354.68, z: 0}
+  m_LocalPosition: {x: 635, y: 355.20102, z: 0}
   m_LocalScale: {x: 0.999996, y: 0.999996, z: 0.999996}
   m_Children:
   - {fileID: 104213080}
@@ -1918,8 +1918,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 786221512}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 250, y: 140.5, z: 0}
-  m_LocalScale: {x: 0.625, y: 0.625, z: 0.625}
+  m_LocalPosition: {x: 199, y: 112, z: 0}
+  m_LocalScale: {x: 0.4975, y: 0.4975, z: 0.4975}
   m_Children:
   - {fileID: 1595917524}
   m_Father: {fileID: 0}
@@ -2243,8 +2243,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 910481261}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 250, y: 140.5, z: 0}
-  m_LocalScale: {x: 0.390625, y: 0.390625, z: 0.390625}
+  m_LocalPosition: {x: 199, y: 112, z: 0}
+  m_LocalScale: {x: 0.3109375, y: 0.3109375, z: 0.3109375}
   m_Children:
   - {fileID: 1862652514}
   - {fileID: 1160487591}
@@ -3051,7 +3051,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1160487590}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -440, y: -359.68, z: 0}
+  m_LocalPosition: {x: -440, y: -360.20102, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 556594567}
@@ -3161,7 +3161,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 99f551876061ab74cb9b589d10dfa1aa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.566
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 99f551876061ab74cb9b589d10dfa1aa, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3169,7 +3169,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 99f551876061ab74cb9b589d10dfa1aa, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.24
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 99f551876061ab74cb9b589d10dfa1aa, type: 3}
       propertyPath: m_LocalRotation.x
@@ -4125,16 +4125,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65b9777e00d57194d90025c8434327f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 2
   fireParticle: {fileID: 1521154276112452, guid: e6cd1327e069ca24b8eb66fc62daa31e,
+    type: 2}
+  bugParticle: {fileID: 1156733210784358, guid: a76d23e47b8124746bc01472a53ffa22,
     type: 2}
   originalHouse: {fileID: 1994705635}
   housesArray: []
+  farmsArray: []
   startFire: {x: 0, y: 0, z: 0}
+  startBugs: {x: 0, y: 0, z: 0}
   selectHouse: 0
+  selectFarm: 0
   maxHouses: 0
+  maxFarms: 0
   houses: []
+  farms: []
   resource: {fileID: 2013881665}
-  contador: 0
+  houseCounter: 0
+  farmCounter: 0
 --- !u!1 &1595917523
 GameObject:
   m_ObjectHideFlags: 0
@@ -4497,7 +4506,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1862652513}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -635, y: 354.68, z: 0}
+  m_LocalPosition: {x: -635, y: 355.20102, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1533862194}
@@ -4826,6 +4835,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   build: {fileID: 895840624}
+  someEvent: {fileID: 0}
   buildingInMouse: {x: 0, y: 0, z: 0}
   input: {fileID: 596363846}
   townHall: {fileID: 1500543786}

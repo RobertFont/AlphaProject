@@ -112,4 +112,8 @@ public class ResourceManager : MonoBehaviour
     {
         house += 1;
     }
+    public void AddFarm()
+    {
+        farm += 1;
+    }
 }
