@@ -6,16 +6,40 @@ ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Box172
+    100004: pPlane3
     400000: //RootNode
+    400002: Box172
+    400004: pPlane3
     2300000: //RootNode
+    2300002: Box172
+    2300004: pPlane3
     3300000: //RootNode
+    3300002: Box172
+    3300004: pPlane3
     4300000: Box172
+    4300002: pPlane3
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: 'Material #70'
     second: {fileID: 2100000, guid: 01f394bff49373f4992e01158d639ae4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 269123292ec4b6145bc3fd86cc99ce32, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert2
+    second: {fileID: 2100000, guid: 4d55dbe1a56535d44a459f0ed389afc2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert3
+    second: {fileID: 2100000, guid: 7bf2477557ad1434181df79c36cfe477, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
