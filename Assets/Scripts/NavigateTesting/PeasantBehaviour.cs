@@ -39,7 +39,6 @@ public class PeasantBehaviour : MonoBehaviour
         if (started) MyStart();
         if (points.Count > 2) points.Remove(points[2]);
 
-
         switch (state)
         {
             case PeasantState.Idle:
@@ -130,7 +129,7 @@ public class PeasantBehaviour : MonoBehaviour
     {
         if(other.tag == "Tree")
         {
-            if(pathIndex == 1) return;
+            if(gatheredResoruce) return;
             Debug.Log("tree found");
             gatheredResoruce = true;
             pathIndex = 0; ;
@@ -138,7 +137,7 @@ public class PeasantBehaviour : MonoBehaviour
 
         if(other.tag == "LumberMill")
         {
-            if(pathIndex == 0) return;
+            if(!gatheredResoruce) return;
             Debug.Log("lumbermill found");
             
              GatherResources();
