@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 23715160742777004}
   - component: {fileID: 64069875143989294}
   - component: {fileID: 114118429274459874}
+  - component: {fileID: 65609292944694286}
   m_Layer: 9
   m_Name: tree
   m_TagString: Building
@@ -99,6 +100,18 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 50a45509a83fa56438435c71193d66b6, type: 3}
+--- !u!65 &65609292944694286
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1776965417622640}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.3130609, z: 1}
+  m_Center: {x: 0, y: 0.65653044, z: 0}
 --- !u!114 &114118429274459874
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -111,3 +124,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tree: {fileID: 0}
+  peasantWorking: 0
+  currentWorkers: 0
+  maxWorkers: 0

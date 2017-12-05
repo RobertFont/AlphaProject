@@ -66,7 +66,7 @@ public class PeasantBehaviour : MonoBehaviour
         }
         distanceFromTarget = agent.remainingDistance;
         
-        if (agent.remainingDistance <= agent.stoppingDistance + 0.1f)
+        /*if (agent.remainingDistance <= agent.stoppingDistance + 0.1f)
         {
             if (pathIndex == 0)
             {
@@ -80,7 +80,7 @@ public class PeasantBehaviour : MonoBehaviour
                 
                 pathIndex = 0;
             }
-        }
+        }*/
         
         agent.SetDestination(points[pathIndex].transform.position);
     }
@@ -119,13 +119,35 @@ public class PeasantBehaviour : MonoBehaviour
      void GatherResources()
     {
         if (gatheredResoruce == false) return;
-        if(agent.remainingDistance <= visionRange)
-        {
-            Debug.Log("please work");
-            if (this.tag == "Lumberjack") resource.AddWood(20);
-        }
+        
+        Debug.Log("please work");
+        if (this.tag == "Lumberjack") resource.AddWood(20);
+        gatheredResoruce = false;
+        
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Tree")
+        {
+            if(pathIndex == 1) return;
+            Debug.Log("tree found");
+            gatheredResoruce = true;
+            pathIndex = 0; ;
+        }
+
+        if(other.tag == "LumberMill")
+        {
+            if(pathIndex == 0) return;
+            Debug.Log("lumbermill found");
+            
+             GatherResources();
+             pathIndex = 1;
+            
+        }
+        Debug.Log("collider found");
+
+    }
     void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
