@@ -60,11 +60,12 @@ public class PeasantBehaviour : MonoBehaviour
     {
         if(this.tag == "Unemployed")
         {
+            Debug.Log("Unemployed");
             points[0] = (GameObject.FindGameObjectWithTag("TownHall").transform);
-            points.Remove(points[1]);
+            if (points[1] != null) points.Remove(points[1]);
         }
         distanceFromTarget = agent.remainingDistance;
-        
+
         /*if (agent.remainingDistance <= agent.stoppingDistance + 0.1f)
         {
             if (pathIndex == 0)
@@ -80,7 +81,6 @@ public class PeasantBehaviour : MonoBehaviour
                 pathIndex = 0;
             }
         }*/
-        
         agent.SetDestination(points[pathIndex].transform.position);
     }
 
@@ -132,17 +132,15 @@ public class PeasantBehaviour : MonoBehaviour
             if(gatheredResoruce) return;
             Debug.Log("tree found");
             gatheredResoruce = true;
-            pathIndex = 0; ;
+            pathIndex = 0;
         }
 
         if(other.tag == "LumberMill")
         {
             if(!gatheredResoruce) return;
             Debug.Log("lumbermill found");
-            
-             GatherResources();
-             pathIndex = 1;
-            
+            GatherResources();
+            pathIndex = 1;
         }
         Debug.Log("collider found");
 
