@@ -76,12 +76,12 @@ public class BuildingBehaviour : MonoBehaviour
 
     void SetWorkers()
     {
-        
+        Debug.Log(this.transform.GetChildCount());
         if (peasants[0].GetComponent<PeasantBehaviour>().points.Count < 2)
         {
             Debug.Log("firstWorker");
             peasants[0].GetComponent<PeasantBehaviour>().points.Add(finderTree.transform);
-            peasants[0].GetComponent<PeasantBehaviour>().points[0] = this.transform;
+            peasants[0].GetComponent<PeasantBehaviour>().points[0] = this.transform.GetChild(0);
             finderTree.GetComponent<TreeBehaviour>().currentWorkers = 1;
 
         }
@@ -90,7 +90,7 @@ public class BuildingBehaviour : MonoBehaviour
             Debug.Log("secondWorker");
 
             peasants[1].GetComponent<PeasantBehaviour>().points.Add(finderTree.transform); 
-            peasants[1].GetComponent<PeasantBehaviour>().points[0] = this.transform;
+            peasants[1].GetComponent<PeasantBehaviour>().points[0] = this.transform.GetChild(0);
             finderTree.GetComponent<TreeBehaviour>().currentWorkers = 2;
 
         }
@@ -99,7 +99,7 @@ public class BuildingBehaviour : MonoBehaviour
             Debug.Log("thirdWorker");
 
             peasants[2].GetComponent<PeasantBehaviour>().points.Add(finderTree.transform); 
-            peasants[2].GetComponent<PeasantBehaviour>().points[0] = this.transform;
+            peasants[2].GetComponent<PeasantBehaviour>().points[0] = this.transform.GetChild(0);
             finderTree.GetComponent<TreeBehaviour>().currentWorkers = 3;
 
         }
@@ -108,7 +108,7 @@ public class BuildingBehaviour : MonoBehaviour
             Debug.Log("fourthWorker");
 
             peasants[3].GetComponent<PeasantBehaviour>().points.Add(finderTree.transform);
-            peasants[3].GetComponent<PeasantBehaviour>().points[0] = this.transform;
+            peasants[3].GetComponent<PeasantBehaviour>().points[0] = this.transform.GetChild(0);
             finderTree.GetComponent<TreeBehaviour>().currentWorkers = 4;
 
         }

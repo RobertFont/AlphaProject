@@ -12,6 +12,7 @@ TagManager:
   - Unemployed
   - Lumberjack
   - Tree
+  - Farmer
   layers:
   - Default
   - TransparentFX

@@ -75,6 +75,7 @@ public class BuilderScript : MonoBehaviour {
     {
         canCreateBuild = false;
         DesactiveOriginalBuilding();
+        if (resource.townHall == 1) return;
         build = townHall;
         if (!CompareResources()) return;
         colliderHalfSize = build.GetComponent<BoxCollider>().size/2;
@@ -87,6 +88,7 @@ public class BuilderScript : MonoBehaviour {
     {
         canCreateBuild = false;
         DesactiveOriginalBuilding();
+        if (resource.townHall == 0) return;
         build = house;
         if (!CompareResources()) return;
         colliderHalfSize = build.GetComponent<BoxCollider>().size/2;
@@ -99,6 +101,7 @@ public class BuilderScript : MonoBehaviour {
     {
         canCreateBuild = false;
         DesactiveOriginalBuilding();
+        if (resource.townHall == 0) return;
         build = farm;
         if (!CompareResources()) return;
         colliderHalfSize = build.GetComponent<BoxCollider>().size/2;
@@ -111,6 +114,7 @@ public class BuilderScript : MonoBehaviour {
     {
         canCreateBuild = false;
         DesactiveOriginalBuilding();
+        if (resource.townHall == 0) return;
         build = lumberMill;
         if (!CompareResources()) return;
         colliderHalfSize = build.GetComponent<BoxCollider>().size/2;
@@ -141,6 +145,12 @@ public class BuilderScript : MonoBehaviour {
             build.layer = 8;
             build.name = originalHouseName;
             ChangeMaterialOriginal();
+
+            if (resource.townHall == 1 && build == townHall)
+            {
+                canCreateBuild = false;
+                DesactiveOriginalBuilding();
+            }
         }
     }
 
@@ -189,6 +199,7 @@ public class BuilderScript : MonoBehaviour {
     {
         if (build.tag == "House") build.name = "House" + resource.house;
         if (build.tag == "Farm") build.name = "Farm" + resource.farm;
+        if (build.tag == "TownHall") build.name = "TownCenter";
     }
 
     private void RemoveResources()
@@ -197,6 +208,7 @@ public class BuilderScript : MonoBehaviour {
         {
             resource.RemoveWood(townHallCostWood);
             resource.RemoveGold(townHallCostGold);
+            resource.AddTownHall();
         }
         else if(build.tag == "House")
         {

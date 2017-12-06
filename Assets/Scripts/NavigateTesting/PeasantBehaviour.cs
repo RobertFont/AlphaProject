@@ -26,10 +26,12 @@ public class PeasantBehaviour : MonoBehaviour
     {
         agent = this.GetComponent<NavMeshAgent>();
         SetIdle();
-        points.Add(GameObject.FindGameObjectWithTag("TownHall").transform);
+        points.Add(GameObject.FindGameObjectWithTag("TownHall").transform.GetChild(0));
+        points.Add(GameObject.FindGameObjectWithTag("TownHall").transform.GetChild(0));
         resource = GameObject.FindGameObjectWithTag("Player").GetComponent<ResourceManager>();
         visionRange = 0.4f;
         agent.speed = Random.Range(1.8f, 2.2f);
+        gatheredResoruce = false;
         //agent.obstacleAvoidanceType = 0;
         started = !started;
 
@@ -66,12 +68,13 @@ public class PeasantBehaviour : MonoBehaviour
         if (this.tag == "Unemployed")
         {
             Debug.Log("Unemployed");
-            points[0] = (GameObject.FindGameObjectWithTag("TownHall").transform);
+            points[0] = (GameObject.FindGameObjectWithTag("TownHall").transform).GetChild(0);
+            //points[1] = (GameObject.FindGameObjectWithTag("House").transform);
             if (points[1] != null) points.Remove(points[1]);
         }
         distanceFromTarget = agent.remainingDistance;
 
-        distanceFromA = Vector3.Distance(points[pathIndex].position, this.transform.position);
+        
         
         agent.SetDestination(points[pathIndex].transform.position);
     }
@@ -129,12 +132,12 @@ public class PeasantBehaviour : MonoBehaviour
 
         if(other.tag == "LumberMill")
         {
-            if(!gatheredResoruce) return;
+            //if(!gatheredResoruce) return;
             Debug.Log("lumbermill found");
             GatherResources();
             pathIndex = 1;
         }
-        Debug.Log("collider found");
+        //Debug.Log("collider found");
 
     }
     void OnDrawGizmos()

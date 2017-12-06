@@ -126,6 +126,11 @@ public class ResourceManager : MonoBehaviour
         farm += 1;
     }
 
+    public void AddTownHall()
+    {
+        townHall += 1;
+    }
+
     public void EatingFood()
     {
         int necessaryFood = currentPop * 2;
@@ -134,8 +139,7 @@ public class ResourceManager : MonoBehaviour
         {
             if (mealTime > 12)
             {
-                mealTime = 0;
-
+                
                 if (food >= necessaryFood)
                 {
                     food -= necessaryFood;
@@ -146,6 +150,8 @@ public class ResourceManager : MonoBehaviour
                     happiness -= 1;
                     Debug.Log("insufficient food");
                 }
+
+                mealTime = 0;
             }
             else mealTime += Time.deltaTime;
         }
