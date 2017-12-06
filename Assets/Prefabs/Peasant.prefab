@@ -100,7 +100,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!65 &65267859818660794
 BoxCollider:
@@ -141,6 +141,8 @@ MonoBehaviour:
   resource: {fileID: 0}
   visionRange: 0
   distanceFromTarget: 0
+  distanceFromA: 0
+  distanceFromB: 0
   started: 1
   points: []
   pathIndex: 0
@@ -157,7 +159,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0.2
+  m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1

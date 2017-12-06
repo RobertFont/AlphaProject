@@ -77,25 +77,6 @@ public class BuildingBehaviour : MonoBehaviour
     void SetWorkers()
     {
         
-        /*for (int i = 0; i < maxWorkers; i++)
-        {
-            numFor = i;
-            Debug.Log("entre en el for" + i);
-            if (peasants[i].GetComponent<PeasantBehaviour>().points.Count < 2)
-            {
-                Debug.Log("entro en el if");
-                peasants[i].GetComponent<PeasantBehaviour>().points.Add(finderTree.transform);
-                peasants[i].GetComponent<PeasantBehaviour>().points[0] = this.transform;
-                
-
-            }
-            
-            
-
-            //;
-            
-        }*/
-
         if (peasants[0].GetComponent<PeasantBehaviour>().points.Count < 2)
         {
             Debug.Log("firstWorker");

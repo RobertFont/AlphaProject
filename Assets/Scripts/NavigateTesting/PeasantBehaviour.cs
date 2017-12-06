@@ -12,6 +12,8 @@ public class PeasantBehaviour : MonoBehaviour
     bool gatheredResoruce = false;
     [SerializeField] private float visionRange;
     [SerializeField] private float distanceFromTarget;
+    [SerializeField] private float distanceFromA;
+    [SerializeField] private float distanceFromB;
     [SerializeField] private bool started = true;
 
     [Header("Path")]
@@ -58,7 +60,10 @@ public class PeasantBehaviour : MonoBehaviour
     #region Updates
     void IdleUpdate()
     {
-        if(this.tag == "Unemployed")
+        distanceFromA = Vector3.Distance(points[0].position, this.transform.position);
+        distanceFromB = Vector3.Distance(points[1].position, this.transform.position);
+
+        if (this.tag == "Unemployed")
         {
             Debug.Log("Unemployed");
             points[0] = (GameObject.FindGameObjectWithTag("TownHall").transform);
@@ -66,21 +71,8 @@ public class PeasantBehaviour : MonoBehaviour
         }
         distanceFromTarget = agent.remainingDistance;
 
-        /*if (agent.remainingDistance <= agent.stoppingDistance + 0.1f)
-        {
-            if (pathIndex == 0)
-            {
-                GatherResources();
-                gatheredResoruce = false;
-            }
-            if (pathIndex == 1) gatheredResoruce = true;
-            pathIndex++;
-            if (pathIndex >= points.Count)
-            {
-                
-                pathIndex = 0;
-            }
-        }*/
+        distanceFromA = Vector3.Distance(points[pathIndex].position, this.transform.position);
+        
         agent.SetDestination(points[pathIndex].transform.position);
     }
 

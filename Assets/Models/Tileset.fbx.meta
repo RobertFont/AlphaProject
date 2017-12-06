@@ -1,0 +1,177 @@
+fileFormatVersion: 2
+guid: e092947d0910b2b4c95282a06de452a4
+timeCreated: 1512520968
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: pPlane66
+    100002: pPlane67
+    100004: pPlane73
+    100006: pPlane74
+    100008: pPlane75
+    100010: pPlane76
+    100012: pPlane77
+    100014: pPlane78
+    100016: pPlane79
+    100018: pPlane80
+    100020: TileAbajo
+    100022: TileArriba
+    100024: TileCentro
+    100026: TileDerecha
+    100028: TileESquinaInferiorIzq
+    100030: TileEsquinaSuperiorIzq
+    100032: TileIzquierda
+    100034: //RootNode
+    400000: pPlane66
+    400002: pPlane67
+    400004: pPlane73
+    400006: pPlane74
+    400008: pPlane75
+    400010: pPlane76
+    400012: pPlane77
+    400014: pPlane78
+    400016: pPlane79
+    400018: pPlane80
+    400020: TileAbajo
+    400022: TileArriba
+    400024: TileCentro
+    400026: TileDerecha
+    400028: TileESquinaInferiorIzq
+    400030: TileEsquinaSuperiorIzq
+    400032: TileIzquierda
+    400034: //RootNode
+    2300000: pPlane66
+    2300002: pPlane67
+    2300004: pPlane73
+    2300006: pPlane74
+    2300008: pPlane75
+    2300010: pPlane76
+    2300012: pPlane77
+    2300014: pPlane78
+    2300016: pPlane79
+    2300018: pPlane80
+    2300020: TileAbajo
+    2300022: TileArriba
+    2300024: TileCentro
+    2300026: TileDerecha
+    2300028: TileESquinaInferiorIzq
+    2300030: TileEsquinaSuperiorIzq
+    2300032: TileIzquierda
+    3300000: pPlane66
+    3300002: pPlane67
+    3300004: pPlane73
+    3300006: pPlane74
+    3300008: pPlane75
+    3300010: pPlane76
+    3300012: pPlane77
+    3300014: pPlane78
+    3300016: pPlane79
+    3300018: pPlane80
+    3300020: TileAbajo
+    3300022: TileArriba
+    3300024: TileCentro
+    3300026: TileDerecha
+    3300028: TileESquinaInferiorIzq
+    3300030: TileEsquinaSuperiorIzq
+    3300032: TileIzquierda
+    4300000: TileCentro
+    4300002: TileAbajo
+    4300004: TileDerecha
+    4300006: TileIzquierda
+    4300008: TileArriba
+    4300010: TileEsquinaSuperiorIzq
+    4300012: pPlane66
+    4300014: pPlane67
+    4300016: TileESquinaInferiorIzq
+    4300018: pPlane73
+    4300020: pPlane74
+    4300022: pPlane75
+    4300024: pPlane76
+    4300026: pPlane77
+    4300028: pPlane78
+    4300030: pPlane79
+    4300032: pPlane80
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: UltimateTexture01
+    second: {fileID: 2100000, guid: f2808966685c7a647a0d38b47dfd7ed6, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
