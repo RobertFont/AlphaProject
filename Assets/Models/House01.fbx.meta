@@ -11,12 +11,18 @@ ModelImporter:
     3300000: //RootNode
     4300000: Box139
     4300002: pCube198
+    4300004: pPlane32
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: 'Material #71'
     second: {fileID: 2100000, guid: 0612515776556d147bad6a5499b114aa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: UltimateTexture03
+    second: {fileID: 2100000, guid: f2808966685c7a647a0d38b47dfd7ed6, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule

@@ -219,6 +219,7 @@ ModelImporter:
     3300002: //RootNode
     4300000: pCube201
     4300002: TownHall
+    4300004: polySurface284
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -230,6 +231,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Roca
     second: {fileID: 2100000, guid: 34f9cf71b295e9c45ab826dfdde962b6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: UltimateTexture02
+    second: {fileID: 2100000, guid: f2808966685c7a647a0d38b47dfd7ed6, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule

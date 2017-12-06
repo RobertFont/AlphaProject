@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 5561ec010e1f3ca409032884e3045308
-timeCreated: 1512426190
+guid: 2d9c4e3730233774f9c370bff80136c7
+timeCreated: 1512596367
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -9,13 +9,13 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Box259
+    4300000: pCube211
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: 'Material #72'
-    second: {fileID: 2100000, guid: 10a91cf20513ed849b46343e1ab29fc1, type: 2}
+      name: UltimateTexture01
+    second: {fileID: 2100000, guid: f2808966685c7a647a0d38b47dfd7ed6, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
