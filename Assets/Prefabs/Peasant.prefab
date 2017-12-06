@@ -139,6 +139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   resource: {fileID: 0}
+  gatheredResoruce: 0
   visionRange: 0
   distanceFromTarget: 0
   distanceFromA: 0

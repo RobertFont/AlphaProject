@@ -9,6 +9,7 @@ public class RaycastMouseController : MonoBehaviour
     private BuilderScript build;
     RaycastHit hit = new RaycastHit();
     BuildingBehaviour buildingSelected;
+    FarmBehaviour farmSelected;
 
 
     // Use this for initialization
@@ -30,7 +31,7 @@ public class RaycastMouseController : MonoBehaviour
         {
             Debug.DrawLine(ray.origin, hit.point, Color.red, 1);
             Debug.Log(hit.transform.name);
-            SelectBuilding();
+            SelectBuildings();
             build.RaycastHitPointBuilder(hit.point);
 
         }
@@ -38,17 +39,45 @@ public class RaycastMouseController : MonoBehaviour
         else return;
     }
 
+
+    public void SelectBuildings()
+    {
+        if(hit.transform.tag == "Farm") SelectFarm();
+        if(hit.transform.tag == "LumberMill") SelectBuilding();
+
+        
+    }
     public void SelectBuilding()
     {
         if(Input.GetButtonUp("Fire1"))
         {
+            Debug.Log("algo");
             buildingSelected = hit.transform.gameObject.GetComponent<BuildingBehaviour>();
             hit.transform.gameObject.GetComponent<BuildingBehaviour>().state = BuildingBehaviour.BuildingState.open;
+
         }
         else if(Input.GetButtonUp("Fire2"))
             {
                 buildingSelected = hit.transform.gameObject.GetComponent<BuildingBehaviour>();
                 hit.transform.gameObject.GetComponent<BuildingBehaviour>().state = BuildingBehaviour.BuildingState.closed;
-            }
+
+        }
+    }
+
+    public void SelectFarm()
+    {
+        if (Input.GetButtonUp("Fire1"))
+        {
+           
+            Debug.Log("algo no va");
+            farmSelected = hit.transform.gameObject.GetComponent<FarmBehaviour>();
+            hit.transform.gameObject.GetComponent<FarmBehaviour>().state = FarmBehaviour.BuildingState.open;
+        }
+        else if (Input.GetButtonUp("Fire2"))
+        {
+            
+            farmSelected = hit.transform.gameObject.GetComponent<FarmBehaviour>();
+            hit.transform.gameObject.GetComponent<FarmBehaviour>().state = FarmBehaviour.BuildingState.closed;
+        }
     }
 }

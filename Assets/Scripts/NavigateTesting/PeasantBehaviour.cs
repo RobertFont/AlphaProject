@@ -9,7 +9,7 @@ public class PeasantBehaviour : MonoBehaviour
     [SerializeField] public PeasantState state;
     private NavMeshAgent agent;
     public ResourceManager resource;
-    bool gatheredResoruce = false;
+    public bool gatheredResoruce = false;
     [SerializeField] private float visionRange;
     [SerializeField] private float distanceFromTarget;
     [SerializeField] private float distanceFromA;
@@ -64,6 +64,7 @@ public class PeasantBehaviour : MonoBehaviour
     {
         distanceFromA = Vector3.Distance(points[0].position, this.transform.position);
         distanceFromB = Vector3.Distance(points[1].position, this.transform.position);
+        distanceFromTarget = agent.remainingDistance;
 
         if (this.tag == "Unemployed")
         {
@@ -72,10 +73,12 @@ public class PeasantBehaviour : MonoBehaviour
             //points[1] = (GameObject.FindGameObjectWithTag("House").transform);
             if (points[1] != null) points.Remove(points[1]);
         }
-        distanceFromTarget = agent.remainingDistance;
+        else if (this.tag == "Farmer")
+        {
+            //agent.SetDestination(points[0].transform.position);
+            pathIndex = 0;
+        }
 
-        
-        
         agent.SetDestination(points[pathIndex].transform.position);
     }
 
@@ -110,12 +113,13 @@ public class PeasantBehaviour : MonoBehaviour
     }
     #endregion
 
-     void GatherResources()
+    public void GatherResources()
     {
         if (gatheredResoruce == false) return;
         
         Debug.Log("please work");
-        if (this.tag == "Lumberjack") resource.AddWood(20);
+        if (this.tag == "Lumberjack") resource.AddWood(2);
+        if (this.tag == "Farmer") resource.AddFood(5);
         gatheredResoruce = false;
         
     }

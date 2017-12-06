@@ -52,6 +52,12 @@ public class ResourceManager : MonoBehaviour
         goldUi.text = gold.ToString();
         foodUi.text = food.ToString();
         happinessUi.text = happiness + "%";
+
+        if (happiness > 100) happiness = 100;
+        if (happiness < 0) happiness = 0;
+        if (food < 0) food = 0;
+        if (gold < 0) gold = 0;
+        if (wood < 0) wood = 0;
     }
 
     #region Add and Remove resources
@@ -107,7 +113,7 @@ public class ResourceManager : MonoBehaviour
         {
             timer++;
 
-            if (timer > 120)
+            if (timer > 120/Time.timeScale)
             {
                 currentPop++;
                 peasant.Spawner();
@@ -137,16 +143,18 @@ public class ResourceManager : MonoBehaviour
 
         if (currentPop >= 1)
         {
-            if (mealTime > 12)
+            if (mealTime > 12/Time.timeScale)
             {
                 
                 if (food >= necessaryFood)
                 {
                     food -= necessaryFood;
+                    happiness += 1;
                     Debug.Log("Consumed Food; " + necessaryFood);
                 }
                 else
                 {
+                    food -= necessaryFood;
                     happiness -= 1;
                     Debug.Log("insufficient food");
                 }
