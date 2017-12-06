@@ -13,6 +13,9 @@ TagManager:
   - Lumberjack
   - Tree
   - Farmer
+  - GoldMine
+  - Mine
+  - MineWorker
   layers:
   - Default
   - TransparentFX

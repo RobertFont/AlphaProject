@@ -26,6 +26,7 @@ public class ResourceManager : MonoBehaviour
     public int lumberMill = 0;
     public int farm = 0;
     public int townHall = 0;
+    public int goldMine = 0;
     [Header("UI Resources")]
     public Text woodUi;
     public Text foodUi;

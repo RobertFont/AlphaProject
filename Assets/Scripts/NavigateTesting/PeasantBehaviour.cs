@@ -119,6 +119,7 @@ public class PeasantBehaviour : MonoBehaviour
         
         Debug.Log("please work");
         if (this.tag == "Lumberjack") resource.AddWood(2);
+        if (this.tag == "MineWorker") resource.AddGold(5);
         if (this.tag == "Farmer") resource.AddFood(5);
         gatheredResoruce = false;
         
@@ -126,22 +127,45 @@ public class PeasantBehaviour : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Tree")
+        if(this.tag == "Lumberjack")
         {
-            if(gatheredResoruce) return;
-            Debug.Log("tree found");
-            gatheredResoruce = true;
-            pathIndex = 0;
+            if (other.tag == "Tree")
+            {
+                if (gatheredResoruce) return;
+                Debug.Log("tree found");
+                gatheredResoruce = true;
+                pathIndex = 0;
+            }
+
+            if (other.tag == "LumberMill")
+            {
+                //if(!gatheredResoruce) return;
+                Debug.Log("lumbermill found");
+                GatherResources();
+                pathIndex = 1;
+            }
+
         }
 
-        if(other.tag == "LumberMill")
+        if(this.tag == "MineWorker")
         {
-            //if(!gatheredResoruce) return;
-            Debug.Log("lumbermill found");
-            GatherResources();
-            pathIndex = 1;
+            if (other.tag == "Mine")
+            {
+                if (gatheredResoruce) return;
+                Debug.Log("Mine found");
+                gatheredResoruce = true;
+                pathIndex = 0;
+            }
+
+            if (other.tag == "GoldMine")
+            {
+                //if(!gatheredResoruce) return;
+                Debug.Log("GoldMine found");
+                GatherResources();
+                pathIndex = 1;
+            }
         }
-        //Debug.Log("collider found");
+
 
     }
     void OnDrawGizmos()

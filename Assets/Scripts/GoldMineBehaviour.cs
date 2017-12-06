@@ -3,21 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-public class BuildingBehaviour : MonoBehaviour
+public class GoldMineBehaviour : MonoBehaviour
 {
     public enum BuildingState { open, closed }
     public BuildingState state;
     public int maxWorkers = 4;
     public int currentWorkers = 0;
     public GameObject finder;
-    public GameObject finderTree;
-
+    public GameObject finderMine;
     [SerializeField]List<GameObject> peasants = new List<GameObject>();
     [SerializeField] private bool started = true;
     [SerializeField] int numFor;
-
-    public GameObject[] trees;
-  
+    
+    public GameObject[] mines;
 
 
     // Use this for initialization
@@ -29,16 +27,17 @@ public class BuildingBehaviour : MonoBehaviour
 
     void MyStart()
     {
-        
-        trees = GameObject.FindGameObjectsWithTag("Tree");
-        finderTree = GetClosestTree(trees).gameObject;
-        
-      
         Debug.Log("funcion MYstart");
+        mines = GameObject.FindGameObjectsWithTag("Mine");
+        Debug.Log("encontro las minas");
+        finderMine = GetClosestMine(mines).gameObject;
+        Debug.Log("decidio cual esta cerca");
+
+
+
         started = false;
     }
 	
-    
 	// Update is called once per frame
 	void Update ()
     {
@@ -46,20 +45,21 @@ public class BuildingBehaviour : MonoBehaviour
         switch (state)
         {
             case BuildingState.open:
+                Debug.Log("open");
                 if (started) MyStart();
-              
                 if (currentWorkers < maxWorkers)
                 {
+                    Debug.Log("Buscando peasants");
+
                     if (GameObject.FindGameObjectWithTag("Unemployed"))
                     {
                         Debug.Log("Trabajador encontrado");
                         finder = GameObject.FindGameObjectWithTag("Unemployed");
-                        finder.tag = "Lumberjack";
+                        finder.tag = "MineWorker";
                         peasants.Add(finder);
                         currentWorkers = peasants.Count;
                     }
                 }
-                
                 
                 SetWorkers();
                 
@@ -71,8 +71,8 @@ public class BuildingBehaviour : MonoBehaviour
                 peasants[3].tag = "Unemployed";
                 peasants.Clear();
                 currentWorkers = 0;
-                finderTree.GetComponent<TreeBehaviour>().currentWorkers = 0;
-                finderTree = null;
+                finderMine.GetComponent<MineBehaviour>().currentWorkers = 0;
+                finderMine = null;
                 started = true;
                 
                 break;
@@ -84,53 +84,48 @@ public class BuildingBehaviour : MonoBehaviour
     void SetWorkers()
     {
         
-
-      
-       
-            Debug.Log("esto es un asseradero");
-            
-
-            if (peasants[0].GetComponent<PeasantBehaviour>().points.Count < 2)
-            {
-                Debug.Log("firstWorker");
-                peasants[0].GetComponent<PeasantBehaviour>().points.Add(finderTree.transform);
-                peasants[0].GetComponent<PeasantBehaviour>().points[0] = this.transform.GetChild(0);
-                finderTree.GetComponent<TreeBehaviour>().currentWorkers = 1;
-
-            }
-            if (peasants[1].GetComponent<PeasantBehaviour>().points.Count < 2)
-            {
-                Debug.Log("secondWorker");
-
-                peasants[1].GetComponent<PeasantBehaviour>().points.Add(finderTree.transform);
-                peasants[1].GetComponent<PeasantBehaviour>().points[0] = this.transform.GetChild(0);
-                finderTree.GetComponent<TreeBehaviour>().currentWorkers = 2;
-
-            }
-            if (peasants[2].GetComponent<PeasantBehaviour>().points.Count < 2)
-            {
-                Debug.Log("thirdWorker");
-
-                peasants[2].GetComponent<PeasantBehaviour>().points.Add(finderTree.transform);
-                peasants[2].GetComponent<PeasantBehaviour>().points[0] = this.transform.GetChild(0);
-                finderTree.GetComponent<TreeBehaviour>().currentWorkers = 3;
-
-            }
-            if (peasants[3].GetComponent<PeasantBehaviour>().points.Count < 2)
-            {
-                Debug.Log("fourthWorker");
-
-                peasants[3].GetComponent<PeasantBehaviour>().points.Add(finderTree.transform);
-                peasants[3].GetComponent<PeasantBehaviour>().points[0] = this.transform.GetChild(0);
-                finderTree.GetComponent<TreeBehaviour>().currentWorkers = 4;
-
-            }
+        Debug.Log("esto es una mina");
         
+        if (peasants[0].GetComponent<PeasantBehaviour>().points.Count < 2)
+        {
+                
+            Debug.Log("firstWorker");
+            peasants[0].GetComponent<PeasantBehaviour>().points.Add(finderMine.transform);
+            peasants[0].GetComponent<PeasantBehaviour>().points[0] = this.transform.GetChild(0);
+            finderMine.GetComponent<MineBehaviour>().currentWorkers = 1;
 
+        }
+        if (peasants[1].GetComponent<PeasantBehaviour>().points.Count < 2)
+        {
+            Debug.Log("secondWorker");
 
+            peasants[1].GetComponent<PeasantBehaviour>().points.Add(finderMine.transform);
+            peasants[1].GetComponent<PeasantBehaviour>().points[0] = this.transform.GetChild(0);
+            finderMine.GetComponent<MineBehaviour>().currentWorkers = 2;
+
+        }
+        if (peasants[2].GetComponent<PeasantBehaviour>().points.Count < 2)
+        {
+            Debug.Log("thirdWorker");
+
+            peasants[2].GetComponent<PeasantBehaviour>().points.Add(finderMine.transform);
+            peasants[2].GetComponent<PeasantBehaviour>().points[0] = this.transform.GetChild(0);
+            finderMine.GetComponent<MineBehaviour>().currentWorkers = 3;
+
+        }
+        if (peasants[3].GetComponent<PeasantBehaviour>().points.Count < 2)
+        {
+            Debug.Log("fourthWorker");
+
+            peasants[3].GetComponent<PeasantBehaviour>().points.Add(finderMine.transform);
+            peasants[3].GetComponent<PeasantBehaviour>().points[0] = this.transform.GetChild(0);
+            finderMine.GetComponent<MineBehaviour>().currentWorkers = 4;
+
+        }
+        
     }
 
-    Transform GetClosestTree(GameObject[] prop)
+    Transform GetClosestMine(GameObject[] prop)
     {
         Transform tMin = null;
         float minDist = Mathf.Infinity;
@@ -138,7 +133,7 @@ public class BuildingBehaviour : MonoBehaviour
         foreach (GameObject t in prop)
         {
             float dist = Vector3.Distance(t.transform.position, currentPos);
-            if(t.GetComponent<TreeBehaviour>().peasantWorking)
+            if(t.GetComponent<MineBehaviour>().peasantWorking)
             {
                 if (dist < minDist)
                 {

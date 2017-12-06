@@ -10,6 +10,8 @@ public class RaycastMouseController : MonoBehaviour
     RaycastHit hit = new RaycastHit();
     BuildingBehaviour buildingSelected;
     FarmBehaviour farmSelected;
+    GoldMineBehaviour mineSelected;
+
 
 
     // Use this for initialization
@@ -44,8 +46,9 @@ public class RaycastMouseController : MonoBehaviour
     {
         if(hit.transform.tag == "Farm") SelectFarm();
         if(hit.transform.tag == "LumberMill") SelectBuilding();
+        if(hit.transform.tag == "GoldMine") SelectMine();
 
-        
+
     }
     public void SelectBuilding()
     {
@@ -78,6 +81,23 @@ public class RaycastMouseController : MonoBehaviour
             
             farmSelected = hit.transform.gameObject.GetComponent<FarmBehaviour>();
             hit.transform.gameObject.GetComponent<FarmBehaviour>().state = FarmBehaviour.BuildingState.closed;
+        }
+    }
+
+    public void SelectMine()
+    {
+        if (Input.GetButtonUp("Fire1"))
+        {
+
+            Debug.Log("algo no va");
+            mineSelected = hit.transform.gameObject.GetComponent<GoldMineBehaviour>();
+            hit.transform.gameObject.GetComponent<GoldMineBehaviour>().state = GoldMineBehaviour.BuildingState.open;
+        }
+        else if (Input.GetButtonUp("Fire2"))
+        {
+
+            mineSelected = hit.transform.gameObject.GetComponent<GoldMineBehaviour>();
+            hit.transform.gameObject.GetComponent<GoldMineBehaviour>().state = GoldMineBehaviour.BuildingState.closed;
         }
     }
 }
