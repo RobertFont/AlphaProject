@@ -34,19 +34,27 @@ public class ResourceManager : MonoBehaviour
     public Text populationUi;
     [Header("Utilities")]
     public int timer = 0;
+    public float mealTime = 0;
     public PeasantSpawn peasant;
 
     // Update is called once per frame
     public void Update ()
+    {
+        UpdateUI();
+        AddCurrentPopFromTime();
+        EatingFood();
+    }
+
+    public void UpdateUI()
     {
         populationUi.text = currentPop + "/" + maxPop;
         woodUi.text = wood.ToString();
         goldUi.text = gold.ToString();
         foodUi.text = food.ToString();
         happinessUi.text = happiness + "%";
-        AddCurrentPopFromTime();
     }
 
+    #region Add and Remove resources
     public void AddWood(int value)
     {
         wood += value;
@@ -91,6 +99,7 @@ public class ResourceManager : MonoBehaviour
     {
         currentPop -= value;
     }
+#endregion
 
     public void AddCurrentPopFromTime()
     {
@@ -115,5 +124,30 @@ public class ResourceManager : MonoBehaviour
     public void AddFarm()
     {
         farm += 1;
+    }
+
+    public void EatingFood()
+    {
+        int necessaryFood = currentPop * 2;
+
+        if (currentPop >= 1)
+        {
+            if (mealTime > 12)
+            {
+                mealTime = 0;
+
+                if (food >= necessaryFood)
+                {
+                    food -= necessaryFood;
+                    Debug.Log("Consumed Food; " + necessaryFood);
+                }
+                else
+                {
+                    happiness -= 1;
+                    Debug.Log("insufficient food");
+                }
+            }
+            else mealTime += Time.deltaTime;
+        }
     }
 }

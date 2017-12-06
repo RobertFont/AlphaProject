@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -988,6 +988,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09473d119d316304d987f31380190eaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &279295371
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4152506728073532, guid: e6cd1327e069ca24b8eb66fc62daa31e, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152506728073532, guid: e6cd1327e069ca24b8eb66fc62daa31e, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152506728073532, guid: e6cd1327e069ca24b8eb66fc62daa31e, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 4.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152506728073532, guid: e6cd1327e069ca24b8eb66fc62daa31e, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152506728073532, guid: e6cd1327e069ca24b8eb66fc62daa31e, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152506728073532, guid: e6cd1327e069ca24b8eb66fc62daa31e, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152506728073532, guid: e6cd1327e069ca24b8eb66fc62daa31e, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152506728073532, guid: e6cd1327e069ca24b8eb66fc62daa31e, type: 2}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: e6cd1327e069ca24b8eb66fc62daa31e, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &295268911
 Prefab:
   m_ObjectHideFlags: 0
@@ -3463,7 +3505,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 781048551}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 635, y: 617.736, z: 0}
+  m_LocalPosition: {x: 635, y: 355.52402, z: 0}
   m_LocalScale: {x: 0.999996, y: 0.999996, z: 0.999996}
   m_Children:
   - {fileID: 104213080}
@@ -3646,8 +3688,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 786221512}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 259.5, y: 252.5, z: 0}
-  m_LocalScale: {x: 0.64875, y: 0.64875, z: 0.64875}
+  m_LocalPosition: {x: 229, y: 129, z: 0}
+  m_LocalScale: {x: 0.5725, y: 0.5725, z: 0.5725}
   m_Children:
   - {fileID: 1595917524}
   m_Father: {fileID: 0}
@@ -3974,9 +4016,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5e2288aac28aaa4d9177de13848bcd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentWorkers: 0
-  maxWorkers: 0
-  building: {fileID: 2013881662}
 --- !u!1 &898725371
 GameObject:
   m_ObjectHideFlags: 0
@@ -4144,8 +4183,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 910481261}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 259.5, y: 252.5, z: 0}
-  m_LocalScale: {x: 0.40546876, y: 0.40546876, z: 0.40546876}
+  m_LocalPosition: {x: 229, y: 129, z: 0}
+  m_LocalScale: {x: 0.3578125, y: 0.3578125, z: 0.3578125}
   m_Children:
   - {fileID: 1862652514}
   - {fileID: 1160487591}
@@ -4436,9 +4475,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5e2288aac28aaa4d9177de13848bcd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentWorkers: 0
-  maxWorkers: 0
-  building: {fileID: 2013881662}
 --- !u!65 &971771261
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5910,7 +5946,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1160487590}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -440, y: -622.736, z: 0}
+  m_LocalPosition: {x: -440, y: -360.52402, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 556594567}
@@ -7874,9 +7910,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5e2288aac28aaa4d9177de13848bcd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentWorkers: 0
-  maxWorkers: 0
-  building: {fileID: 2013881662}
 --- !u!65 &1500543788
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9777,7 +9810,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1862652513}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -635, y: 617.736, z: 0}
+  m_LocalPosition: {x: -635, y: 355.52402, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1533862194}
@@ -10207,9 +10240,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5e2288aac28aaa4d9177de13848bcd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentWorkers: 0
-  maxWorkers: 0
-  building: {fileID: 2013881662}
 --- !u!65 &1994705639
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10384,7 +10414,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wood: 500
-  food: 500
+  food: 50
   gold: 50000000
   happiness: 100
   currentPop: 0
@@ -10399,6 +10429,7 @@ MonoBehaviour:
   happinessUi: {fileID: 1341776886}
   populationUi: {fileID: 47217667}
   timer: 0
+  mealTime: 0
   peasant: {fileID: 2068034571}
 --- !u!114 &2013881666
 MonoBehaviour:
