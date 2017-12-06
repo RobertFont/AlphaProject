@@ -33,10 +33,13 @@ public class BuilderScript : MonoBehaviour {
     public Transform collisionChecker;
     public Vector3 colliderHalfSize;
     public LayerMask layerBuild;
+    public float radiusSphere = 10.0f;
 
     public bool canCreateBuild = false;
     public bool canPosisitioningBuild = false;
     public bool buildingColliding = false;
+    public bool canPlace = true;
+    public bool cantPlace = false;
 
     public string originalHouseName;
 
@@ -69,6 +72,7 @@ public class BuilderScript : MonoBehaviour {
         Collider[] hitCollider = Physics.OverlapBox(collisionChecker.position, colliderHalfSize, Quaternion.identity, layerBuild);
         if (hitCollider.Length != 0) buildingColliding = true;
         else buildingColliding = false;
+        //CanPlaceLumberMill();
     }
 
     public void SelectBuildingTownHall()
@@ -131,7 +135,10 @@ public class BuilderScript : MonoBehaviour {
             return;
         }
 
-        if (canCreateBuild && buildingColliding == false) canPosisitioningBuild = true;
+        if ((canCreateBuild && buildingColliding == false))
+        {
+            canPosisitioningBuild = true;
+        }
 
         if (canPosisitioningBuild)
         {
@@ -171,6 +178,7 @@ public class BuilderScript : MonoBehaviour {
     {
         Gizmos.color = Color.magenta;
         Gizmos.DrawWireCube(collisionChecker.position, colliderHalfSize*2);
+        if (build.tag == "LumberMill") Gizmos.DrawWireSphere(build.transform.position, radiusSphere);
     }
 
     private void ChangeColorOnCollision()
@@ -257,6 +265,29 @@ public class BuilderScript : MonoBehaviour {
     {
         buildingInMouse = pos;
     }
+
+    /*public void CanPlaceLumberMill()
+    {
+        if (build.tag == "LumberMill")
+        {
+            int i = 0;
+
+            Collider[] lumberMillChecker = Physics.OverlapSphere(build.transform.position, radiusSphere);
+
+            while (i < lumberMillChecker.Length)
+            {
+                Debug.Log("Hello, " + lumberMillChecker[i]);
+                if (lumberMillChecker[i].tag == "Tree") canPlace = true;
+                if (lumberMillChecker[i].tag == "Lumbermill") cantPlace = true;
+                i++;
+            }
+        }
+        else
+        {
+            canPlace = true;
+            cantPlace = false;
+        }
+    }*/
 
     /*private void OnCollisionEnter(Collision collision)
     {

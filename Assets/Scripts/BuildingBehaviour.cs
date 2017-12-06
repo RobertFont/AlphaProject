@@ -16,7 +16,6 @@ public class BuildingBehaviour : MonoBehaviour
     [SerializeField] int numFor;
 
     public GameObject[] trees;
-   
 
     // Use this for initialization
     void Start ()

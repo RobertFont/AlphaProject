@@ -24,9 +24,12 @@ GameObject:
   - component: {fileID: 64069875143989294}
   - component: {fileID: 114118429274459874}
   - component: {fileID: 65609292944694286}
+  - component: {fileID: 114724163528702078}
+  - component: {fileID: 65485571120793716}
+  - component: {fileID: 114424635898170860}
   m_Layer: 9
   m_Name: tree
-  m_TagString: Building
+  m_TagString: Tree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38,7 +41,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1776965417622640}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.162607, y: 0, z: 7.185}
+  m_LocalPosition: {x: 0, y: -0.65653044, z: -2.468}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -100,6 +103,18 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 50a45509a83fa56438435c71193d66b6, type: 3}
+--- !u!65 &65485571120793716
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1776965417622640}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.2, y: 0.41, z: 0.16}
+  m_Center: {x: 0, y: 0.4, z: 0}
 --- !u!65 &65609292944694286
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -110,7 +125,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.3130609, z: 1}
+  m_Size: {x: 1.56, y: 1.3130609, z: 1.61}
   m_Center: {x: 0, y: 0.65653044, z: 0}
 --- !u!114 &114118429274459874
 MonoBehaviour:
@@ -127,3 +142,25 @@ MonoBehaviour:
   peasantWorking: 0
   currentWorkers: 0
   maxWorkers: 0
+--- !u!114 &114424635898170860
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1776965417622640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09473d119d316304d987f31380190eaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114724163528702078
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1776965417622640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09473d119d316304d987f31380190eaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
