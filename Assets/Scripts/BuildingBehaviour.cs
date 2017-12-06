@@ -16,6 +16,7 @@ public class BuildingBehaviour : MonoBehaviour
     [SerializeField] int numFor;
 
     public GameObject[] trees;
+   
 
     // Use this for initialization
     void Start ()
@@ -61,7 +62,7 @@ public class BuildingBehaviour : MonoBehaviour
                 peasants[1].tag = "Unemployed";
                 peasants[2].tag = "Unemployed";
                 peasants[3].tag = "Unemployed";
-                peasants.RemoveRange(0, 4);
+                peasants.Clear();
                 currentWorkers = 0;
                 finderTree.GetComponent<TreeBehaviour>().currentWorkers = 0;
                 finderTree = null;
