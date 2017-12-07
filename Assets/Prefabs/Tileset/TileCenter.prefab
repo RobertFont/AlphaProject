@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33376285770449098}
   - component: {fileID: 23014724493463786}
   - component: {fileID: 114906165917568210}
+  - component: {fileID: 65643552997533108}
   m_Layer: 10
   m_Name: TileCenter
   m_TagString: Untagged
@@ -83,6 +84,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1758563830326350}
   m_Mesh: {fileID: 4300000, guid: e092947d0910b2b4c95282a06de452a4, type: 3}
+--- !u!65 &65643552997533108
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1758563830326350}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.5, y: 0.00000017881393, z: 4.5}
+  m_Center: {x: 0, y: 0.00000008940697, z: 0}
 --- !u!114 &114906165917568210
 MonoBehaviour:
   m_ObjectHideFlags: 1
