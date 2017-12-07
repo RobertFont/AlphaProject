@@ -8,27 +8,29 @@ public class OptionsBehaviour : MonoBehaviour
     LevelLogic level;
 
     [Header("General")]
+    public Dropdown lenguageDD;
+    public Dropdown hUDInfoDD;
 
 
     [Header("Graphics")]
-
-    public int resolution = 0;
+    int resolution = 0;
+    public Dropdown resolutionDD;
     bool fullScreen = false;
     bool vSync = false;
     bool sSAO = false;
     bool activeShadows = true;
     bool particles = false;
-    ShadowResolution ShadowRes = ShadowResolution.Medium;
+    ShadowResolution shadowRes = ShadowResolution.Medium;
+    public Dropdown shadowResDD;
     int QualityLevel = 1;
+    public Dropdown QualityLevelDD;
     int antiAliasing = 0;
-    public ParticleSystem particlesSys;
-    ParticleBehaviour allParticles;
+    public Dropdown antiAliasingDD;
 
     [Header("Sound")]
     public float sliderVolume = 0.5f;
 
     [Header("Controls")]
-
 
     [Header("Change SubMenus")]
     public GameObject generalMenu;
@@ -44,19 +46,36 @@ public class OptionsBehaviour : MonoBehaviour
     }
 
     #region General
-    public void SetLenguage(string value)
+    public void SetLenguage()
     {
-        
+        switch (lenguageDD.value)
+        {
+            case 0:
+
+                break;
+            case 1:
+
+                break;
+            case 2:
+
+                break;
+            case 3:
+
+                break;
+        }
     }
 
-    public void ShowExtraInformation(int value)
+    public void ShowExtraInformation()
     {
-        
-    }
+        switch (lenguageDD.value)
+        {
+            case 0:
 
-    public void AlertMessages(bool value)
-    {
-        
+                break;
+            case 1:
+
+                break;
+        }
     }
 
     public void HudSize(int value)
@@ -66,32 +85,31 @@ public class OptionsBehaviour : MonoBehaviour
     #endregion
 
     #region Graphics
-    public void SetResolution(int res)
+    public void SetResolution()
     {
-        resolution = res;
-        if (resolution == 0)
+        switch (resolutionDD.value)
         {
-            Screen.SetResolution(1280, 720, Screen.fullScreen);
+            case 0:
+                Screen.SetResolution(800, 600, fullScreen);
+                break;
+            case 1:
+                Screen.SetResolution(1280, 720, fullScreen);
+                break;
+            case 2:
+                Screen.SetResolution(1600, 1024, fullScreen);
+                break;
+            case 3:
+                Screen.SetResolution(1920, 1080, fullScreen);
+                 break;
         }
-        else if (resolution == 1)
-        {
-            Screen.SetResolution(1600, 1024, Screen.fullScreen);
-        }
-        else if (resolution == 2)
-        {
-            Screen.SetResolution(1920, 1080, Screen.fullScreen);
-        }
+
+        resolution = resolutionDD.value;
     }
 
     public void FullScreenMode()
     {
         fullScreen = !fullScreen;
         Screen.fullScreen = fullScreen;
-    }
-
-    public void SetFPS()
-    {
-        
     }
 
     public void VSync()
@@ -101,39 +119,37 @@ public class OptionsBehaviour : MonoBehaviour
         else QualitySettings.vSyncCount = 0;
     }
 
-    public void Quality(int value)
+    public void SetQuality()
     {
-        QualityLevel = value;
+       QualityLevel = QualityLevelDD.value;
         QualitySettings.SetQualityLevel(QualityLevel);
     }
 
-    public void SetShadowResolution(string name)
+    public void SetShadowResolution()
     {
-        if (name == "Low")
+        switch (lenguageDD.value)
         {
-            ShadowResolution ShadowRes = ShadowResolution.Low;
-            QualitySettings.shadowResolution = ShadowRes;
+            case 0:
+                shadowRes = ShadowResolution.Low;
+                break;
+            case 1:
+                shadowRes = ShadowResolution.Medium;
+                break;
+            case 2:
+                shadowRes = ShadowResolution.High;
+                break;
+            case 3:
+                shadowRes = ShadowResolution.VeryHigh;
+                break;
         }
-        else if (name == "Medium")
-        {
-            ShadowResolution ShadowRes = ShadowResolution.Medium;
-            QualitySettings.shadowResolution = ShadowRes;
-        }
-        else if (name == "High")
-        {
-            ShadowResolution ShadowRes = ShadowResolution.High;
-            QualitySettings.shadowResolution = ShadowRes;
-        }
-        else if (name == "VeryHigh")
-        {
-            ShadowResolution ShadowRes = ShadowResolution.VeryHigh;
-            QualitySettings.shadowResolution = ShadowRes;
-        }
+
+        Debug.Log("Update");
+        QualitySettings.shadowResolution = shadowRes;
     }
 
-    public void Antialising(int value)
+    public void SetAntialising()
     {
-        antiAliasing = value;
+        antiAliasing = antiAliasingDD.value;
         QualitySettings.antiAliasing = antiAliasing;
     }
 
@@ -142,14 +158,6 @@ public class OptionsBehaviour : MonoBehaviour
         sSAO = value;
     }
 
-    public void Particles()
-    {//revisar
-        particles = !particles;
-
-        //SetParticleState(particles);
-        /*if (particles) particlesSys.Play();
-        else if (!particles) particlesSys.Stop();*/
-    }
 
     public void AciveShadow(int value)
     {
