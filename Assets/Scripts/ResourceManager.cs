@@ -37,6 +37,7 @@ public class ResourceManager : MonoBehaviour
     public int timer = 0;
     public float mealTime = 0;
     public PeasantSpawn peasant;
+    public InputManager input;
 
     // Update is called once per frame
     public void Update ()
@@ -48,6 +49,9 @@ public class ResourceManager : MonoBehaviour
 
     public void UpdateUI()
     {
+        if (input.godMode) GodModePrivileges();
+
+
         populationUi.text = currentPop + "/" + maxPop;
         woodUi.text = wood.ToString();
         goldUi.text = gold.ToString();
@@ -164,5 +168,13 @@ public class ResourceManager : MonoBehaviour
             }
             else mealTime += Time.deltaTime;
         }
+    }
+
+    public void GodModePrivileges()
+    {
+        wood = 500;
+        food = 500;
+        gold = 500;
+        happiness = 100;
     }
 }

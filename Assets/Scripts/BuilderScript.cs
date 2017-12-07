@@ -231,7 +231,7 @@ public class BuilderScript : MonoBehaviour {
 
     private void RemoveResources()
     {
-        if(build.tag == "TownHall")
+         if(build.tag == "TownHall")
         {
             resource.RemoveWood(townHallCostWood);
             resource.RemoveGold(townHallCostGold);
@@ -261,7 +261,11 @@ public class BuilderScript : MonoBehaviour {
 
     private bool CompareResources()
     {
-        if (build.tag == "TownHall")
+        if (input.godMode)
+        { 
+            return true;
+        }
+        else if (build.tag == "TownHall")
         {
             if (resource.wood < townHallCostWood || resource.gold < townHallCostGold) return false;
             else return true;

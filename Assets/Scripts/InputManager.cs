@@ -22,6 +22,8 @@ public class InputManager : MonoBehaviour {
     public bool rotating;
     public bool paused = false;
 
+    public bool godMode = false;
+
     void Start ()
     {
         camera = GetComponent<CameraBehaviour>();
@@ -86,6 +88,10 @@ public class InputManager : MonoBehaviour {
         #endregion
         #endregion
 
+        if (Input.GetButtonDown("GodMode")) godMode = !godMode;
+
+        Debug.Log("GodMode:" + godMode);
+
         camera.GetAxis(axis.x, axis.y);
         camera.GetRotate(rotate);
         CanPlace();
@@ -116,9 +122,5 @@ public class InputManager : MonoBehaviour {
             Time.timeScale = 1.0f;
             paused = false;
         }
-        
-        
     }
-
-
 }

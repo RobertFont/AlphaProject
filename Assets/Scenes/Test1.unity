@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -2923,6 +2923,7 @@ MonoBehaviour:
   rotatateSpeed: 0
   rotating: 0
   paused: 0
+  godMode: 0
 --- !u!1001 &605549506
 Prefab:
   m_ObjectHideFlags: 0
@@ -3925,7 +3926,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 781048551}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 635, y: 440.17908, z: 0}
+  m_LocalPosition: {x: 635, y: 355.34958, z: 0}
   m_LocalScale: {x: 0.999996, y: 0.999996, z: 0.999996}
   m_Children:
   - {fileID: 104213080}
@@ -4108,8 +4109,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 786221512}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 363, y: 252.5, z: 0}
-  m_LocalScale: {x: 0.9075, y: 0.9075, z: 0.9075}
+  m_LocalPosition: {x: 400.5, y: 225.5, z: 0}
+  m_LocalScale: {x: 1.00125, y: 1.00125, z: 1.00125}
   m_Children:
   - {fileID: 1595917524}
   m_Father: {fileID: 0}
@@ -4704,8 +4705,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 910481261}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 363, y: 252.5, z: 0}
-  m_LocalScale: {x: 0.5671875, y: 0.5671875, z: 0.5671875}
+  m_LocalPosition: {x: 400.5, y: 225.5, z: 0}
+  m_LocalScale: {x: 0.62578124, y: 0.62578124, z: 0.62578124}
   m_Children:
   - {fileID: 1862652514}
   - {fileID: 1160487591}
@@ -6496,7 +6497,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1160487590}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -440, y: -445.17908, z: 0}
+  m_LocalPosition: {x: -440, y: -360.34958, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 556594567}
@@ -10740,7 +10741,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1862652513}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -635, y: 440.17908, z: 0}
+  m_LocalPosition: {x: -635, y: 355.34958, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1533862194}
@@ -11476,6 +11477,7 @@ MonoBehaviour:
   timer: 0
   mealTime: 0
   peasant: {fileID: 2068034571}
+  input: {fileID: 596363846}
 --- !u!114 &2013881666
 MonoBehaviour:
   m_ObjectHideFlags: 0
