@@ -231,7 +231,7 @@ public class BuilderScript : MonoBehaviour {
 
     private void RemoveResources()
     {
-         if(build.tag == "TownHall")
+        if(build.tag == "TownHall")
         {
             resource.RemoveWood(townHallCostWood);
             resource.RemoveGold(townHallCostGold);

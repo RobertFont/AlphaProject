@@ -11,6 +11,7 @@ public class BuildingBehaviour : MonoBehaviour
     public int currentWorkers = 0;
     public GameObject finder;
     public GameObject finderTree;
+    public bool destroy = false;
 
     [SerializeField]List<GameObject> peasants = new List<GameObject>();
     [SerializeField] private bool started = true;
@@ -36,6 +37,7 @@ public class BuildingBehaviour : MonoBehaviour
       
         Debug.Log("funcion MYstart");
         started = false;
+        destroy = false;
     }
 	
     
@@ -74,7 +76,10 @@ public class BuildingBehaviour : MonoBehaviour
                 finderTree.GetComponent<TreeBehaviour>().currentWorkers = 0;
                 finderTree = null;
                 started = true;
-                
+
+                if (destroy) Destroy(this.gameObject);
+
+
                 break;
             default:
                 break;
@@ -90,7 +95,7 @@ public class BuildingBehaviour : MonoBehaviour
             Debug.Log("esto es un asseradero");
             
 
-            if (peasants[0].GetComponent<PeasantBehaviour>().points.Count < 2)
+            if (peasants[0].GetComponent<PeasantBehaviour>().points.Count < 2 || peasants[0].GetComponent<PeasantBehaviour>().points[0] == null)
             {
                 Debug.Log("firstWorker");
                 peasants[0].GetComponent<PeasantBehaviour>().points.Add(finderTree.transform);
@@ -98,7 +103,7 @@ public class BuildingBehaviour : MonoBehaviour
                 finderTree.GetComponent<TreeBehaviour>().currentWorkers = 1;
 
             }
-            if (peasants[1].GetComponent<PeasantBehaviour>().points.Count < 2)
+            if (peasants[1].GetComponent<PeasantBehaviour>().points.Count < 2 || peasants[1].GetComponent<PeasantBehaviour>().points[0] == null)
             {
                 Debug.Log("secondWorker");
 
@@ -107,7 +112,7 @@ public class BuildingBehaviour : MonoBehaviour
                 finderTree.GetComponent<TreeBehaviour>().currentWorkers = 2;
 
             }
-            if (peasants[2].GetComponent<PeasantBehaviour>().points.Count < 2)
+            if (peasants[2].GetComponent<PeasantBehaviour>().points.Count < 2 || peasants[2].GetComponent<PeasantBehaviour>().points[0] == null)
             {
                 Debug.Log("thirdWorker");
 
@@ -116,7 +121,7 @@ public class BuildingBehaviour : MonoBehaviour
                 finderTree.GetComponent<TreeBehaviour>().currentWorkers = 3;
 
             }
-            if (peasants[3].GetComponent<PeasantBehaviour>().points.Count < 2)
+            if (peasants[3].GetComponent<PeasantBehaviour>().points.Count < 2 || peasants[3].GetComponent<PeasantBehaviour>().points[0] == null)
             {
                 Debug.Log("fourthWorker");
 
@@ -151,6 +156,14 @@ public class BuildingBehaviour : MonoBehaviour
         return tMin;
     }
 
-    
+    public void DestroyBuilding()
+    {
+        Debug.Log("destroy activo");
+        state = BuildingState.closed;
+        destroy = true;
+
+    }
+
+
 
 }

@@ -14,6 +14,7 @@ public class GoldMineBehaviour : MonoBehaviour
     [SerializeField]List<GameObject> peasants = new List<GameObject>();
     [SerializeField] private bool started = true;
     [SerializeField] int numFor;
+    public bool destroy = false;
     
     public GameObject[] mines;
 
@@ -32,9 +33,8 @@ public class GoldMineBehaviour : MonoBehaviour
         Debug.Log("encontro las minas");
         finderMine = GetClosestMine(mines).gameObject;
         Debug.Log("decidio cual esta cerca");
-
-
-
+        
+        destroy = false;
         started = false;
     }
 	
@@ -74,7 +74,9 @@ public class GoldMineBehaviour : MonoBehaviour
                 finderMine.GetComponent<MineBehaviour>().currentWorkers = 0;
                 finderMine = null;
                 started = true;
-                
+
+                if (destroy) Destroy(this.gameObject);
+
                 break;
             default:
                 break;
@@ -86,7 +88,7 @@ public class GoldMineBehaviour : MonoBehaviour
         
         Debug.Log("esto es una mina");
         
-        if (peasants[0].GetComponent<PeasantBehaviour>().points.Count < 2)
+        if (peasants[0].GetComponent<PeasantBehaviour>().points.Count < 2 || (peasants[0].GetComponent<PeasantBehaviour>().points[0] == null))
         {
                 
             Debug.Log("firstWorker");
@@ -95,7 +97,7 @@ public class GoldMineBehaviour : MonoBehaviour
             finderMine.GetComponent<MineBehaviour>().currentWorkers = 1;
 
         }
-        if (peasants[1].GetComponent<PeasantBehaviour>().points.Count < 2)
+        if (peasants[1].GetComponent<PeasantBehaviour>().points.Count < 2 || (peasants[1].GetComponent<PeasantBehaviour>().points[0] == null))
         {
             Debug.Log("secondWorker");
 
@@ -104,7 +106,7 @@ public class GoldMineBehaviour : MonoBehaviour
             finderMine.GetComponent<MineBehaviour>().currentWorkers = 2;
 
         }
-        if (peasants[2].GetComponent<PeasantBehaviour>().points.Count < 2)
+        if (peasants[2].GetComponent<PeasantBehaviour>().points.Count < 2 || (peasants[2].GetComponent<PeasantBehaviour>().points[0] == null))
         {
             Debug.Log("thirdWorker");
 
@@ -113,7 +115,7 @@ public class GoldMineBehaviour : MonoBehaviour
             finderMine.GetComponent<MineBehaviour>().currentWorkers = 3;
 
         }
-        if (peasants[3].GetComponent<PeasantBehaviour>().points.Count < 2)
+        if (peasants[3].GetComponent<PeasantBehaviour>().points.Count < 2 || (peasants[3].GetComponent<PeasantBehaviour>().points[0] == null))
         {
             Debug.Log("fourthWorker");
 
@@ -146,6 +148,14 @@ public class GoldMineBehaviour : MonoBehaviour
         return tMin;
     }
 
-    
+    public void DestroyBuilding()
+    {
+        Debug.Log("destroy activo");
+        state = BuildingState.closed;
+        destroy = true;
+
+    }
+
+
 
 }

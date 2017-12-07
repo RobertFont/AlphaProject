@@ -9,8 +9,8 @@ public class InputManager : MonoBehaviour {
     public Vector2 mousePosition;
     public CameraBehaviour camera;
     public Camera mainCamera;
-    public BuilderScript Builder;
-    public UiTrigger UiTrigger;
+    public BuilderScript builder;
+    public UiConstruction uiConstruction;
     public GameObject pauseSystem;
     public GameObject construcionUI;
 
@@ -35,6 +35,11 @@ public class InputManager : MonoBehaviour {
     {
         if (Input.GetButtonDown("Pause")) TogglePause();
         if (paused) return;
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (!builder.canCreateBuild) uiConstruction.StopConstruction();
+        }
         #region Axis
         axis.x = Input.GetAxis("Horizontal");
         axis.y = Input.GetAxis("Vertical");
@@ -47,10 +52,11 @@ public class InputManager : MonoBehaviour {
 
         #endregion
 
-        if (Builder.canCreateBuild && Input.GetKeyDown(KeyCode.Escape) )         
+        if (builder.canCreateBuild && Input.GetKeyDown(KeyCode.Escape) )         
         {
-            Builder.CantBuild(false);
+            builder.CantBuild(false);
         }
+        
         #region Speed
         if (Input.GetButtonDown("Speed1")) Time.timeScale = 1.0f;
         if (Input.GetButtonDown("Speed2")) Time.timeScale = 1.5f;
@@ -102,8 +108,8 @@ public class InputManager : MonoBehaviour {
     public void CanPlace()
     {
         if ((mousePosition.y < 95) || (mousePosition.y > 490 && mousePosition.x > 1035) || (mousePosition.y > 535 && mousePosition.x < 415)) return;
-        else if (Input.GetButtonDown("Fire1")) Builder.CreateBuild();
-        else Builder.canPosisitioningBuild = false;
+        else if (Input.GetButtonDown("Fire1")) builder.CreateBuild();
+        else builder.canPosisitioningBuild = false;
     }
 
     void TogglePause()

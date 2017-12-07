@@ -63,6 +63,8 @@ public class ResourceManager : MonoBehaviour
         if (food < 0) food = 0;
         if (gold < 0) gold = 0;
         if (wood < 0) wood = 0;
+        if (currentPop < 0) currentPop = 0;
+        if (maxPop < 0) maxPop = 0;
     }
 
     #region Add and Remove resources
@@ -127,21 +129,28 @@ public class ResourceManager : MonoBehaviour
         }
         else return;
     }
-
+    #region AddBuildings
     public void AddHouse()
     {
         house += 1;
+    }
+    public void AddHouse(int value)
+    {
+        house += value; 
     }
     public void AddFarm()
     {
         farm += 1;
     }
-
+    public void AddFarm(int value)
+    {
+        farm += value;
+    }
     public void AddTownHall()
     {
         townHall += 1;
     }
-
+    #endregion
     public void EatingFood()
     {
         int necessaryFood = currentPop * 2;
@@ -169,7 +178,6 @@ public class ResourceManager : MonoBehaviour
             else mealTime += Time.deltaTime;
         }
     }
-
     public void GodModePrivileges()
     {
         wood = 500;
@@ -177,4 +185,5 @@ public class ResourceManager : MonoBehaviour
         gold = 500;
         happiness = 100;
     }
-}
+    
+} //donde esta max pop? la funcion

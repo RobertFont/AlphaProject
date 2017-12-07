@@ -11,6 +11,7 @@ public class FarmBehaviour : MonoBehaviour
     public int currentWorkers = 0;
     public GameObject finder;
     public float counter;
+    public bool destroy = false;
 
     [SerializeField] List<GameObject> peasants = new List<GameObject>();
     [SerializeField] private bool started = true;
@@ -20,12 +21,14 @@ public class FarmBehaviour : MonoBehaviour
     {
         state = BuildingState.closed;
         started = true;
+        destroy = false;
     }
 
     void MyStart()
     {
         Debug.Log("funcion MYstart");
         started = false;
+        destroy = false;
     }
     
     // Update is called once per frame
@@ -79,7 +82,8 @@ public class FarmBehaviour : MonoBehaviour
                 peasants.Clear();
                 currentWorkers = 0;
                 started = true;
-
+                if (destroy) Destroy(this.gameObject); 
+               
                 break;
             default:
                 break;
@@ -89,17 +93,17 @@ public class FarmBehaviour : MonoBehaviour
     void SetWorkers()
     {
         Debug.Log(this.transform.GetChildCount()+ "farms");
-        if (currentWorkers < maxWorkers)
+        if (peasants[0].GetComponent<PeasantBehaviour>().points.Count < 2 || (peasants[0].GetComponent<PeasantBehaviour>().points[0] == null))
         {
             Debug.Log("firstWorker");
-
+            
             peasants[1].GetComponent<PeasantBehaviour>().points.Add(this.transform.GetChild(0));
             peasants[0].GetComponent<PeasantBehaviour>().points[0] = this.transform.GetChild(0);
             peasants[0].GetComponent<PeasantBehaviour>().points[1] = this.transform.GetChild(1);
 
 
         }
-        if (peasants[1].GetComponent<PeasantBehaviour>().points.Count < 2)
+        if (peasants[1].GetComponent<PeasantBehaviour>().points.Count < 2 || (peasants[1].GetComponent<PeasantBehaviour>().points[0] == null))
         {
             Debug.Log("secondWorker");
 
@@ -110,6 +114,14 @@ public class FarmBehaviour : MonoBehaviour
 
         }
        
+
+    }
+
+    public void DestroyBuilding()
+    {
+        Debug.Log("destroy activo");
+        state = BuildingState.closed;
+        destroy = true;
 
     }
     

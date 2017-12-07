@@ -54,7 +54,7 @@ public class PeasantBehaviour : MonoBehaviour
         if (resource.happiness > 75) agent.speed = maxSpeed;
         else if (resource.happiness < 50) agent.speed = minSpeed;
         else agent.speed = currentSpeed;
-        Debug.Log(agent.speed);
+        //Debug.Log(agent.speed);
 
         switch (state)
         {
@@ -81,9 +81,8 @@ public class PeasantBehaviour : MonoBehaviour
 
         if (this.tag == "Unemployed")
         {
-            Debug.Log("Unemployed");
+            //Debug.Log("Unemployed");
             points[0] = (GameObject.FindGameObjectWithTag("TownHall").transform).GetChild(0);
-            //points[1] = (GameObject.FindGameObjectWithTag("House").transform);
             if (points[1] != null) points.Remove(points[1]);
         }
         else if (this.tag == "Farmer")
@@ -130,7 +129,7 @@ public class PeasantBehaviour : MonoBehaviour
     {
         if (gatheredResoruce == false) return;
         
-        Debug.Log("please work");
+       
         if (this.tag == "Lumberjack") resource.AddWood(2);
         if (this.tag == "MineWorker") resource.AddGold(5);
         if (this.tag == "Farmer") resource.AddFood(5);
