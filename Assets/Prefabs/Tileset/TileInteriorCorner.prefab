@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33757438780803098}
   - component: {fileID: 23182726839752712}
   - component: {fileID: 114011498108836474}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: TileInteriorCorner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
