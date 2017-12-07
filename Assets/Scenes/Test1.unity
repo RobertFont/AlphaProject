@@ -3926,7 +3926,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 781048551}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 635, y: 355.34958, z: 0}
+  m_LocalPosition: {x: 635, y: 355.04068, z: 0}
   m_LocalScale: {x: 0.999996, y: 0.999996, z: 0.999996}
   m_Children:
   - {fileID: 104213080}
@@ -4109,8 +4109,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 786221512}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 400.5, y: 225.5, z: 0}
-  m_LocalScale: {x: 1.00125, y: 1.00125, z: 1.00125}
+  m_LocalPosition: {x: 491.5, y: 276.5, z: 0}
+  m_LocalScale: {x: 1.22875, y: 1.22875, z: 1.22875}
   m_Children:
   - {fileID: 1595917524}
   m_Father: {fileID: 0}
@@ -4705,8 +4705,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 910481261}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 400.5, y: 225.5, z: 0}
-  m_LocalScale: {x: 0.62578124, y: 0.62578124, z: 0.62578124}
+  m_LocalPosition: {x: 491.5, y: 276.5, z: 0}
+  m_LocalScale: {x: 0.7679688, y: 0.7679688, z: 0.7679688}
   m_Children:
   - {fileID: 1862652514}
   - {fileID: 1160487591}
@@ -5092,7 +5092,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 11, y: 1, z: 9}
+  m_Size: {x: 9.5, y: 1, z: 7.5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &976662551
 Prefab:
@@ -6497,7 +6497,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1160487590}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -440, y: -360.34958, z: 0}
+  m_LocalPosition: {x: -440, y: -360.04068, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 556594567}
@@ -10741,7 +10741,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1862652513}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -635, y: 355.34958, z: 0}
+  m_LocalPosition: {x: -635, y: 355.04068, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1533862194}

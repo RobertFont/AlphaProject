@@ -34,10 +34,10 @@ public class PeasantBehaviour : MonoBehaviour
         points.Add(GameObject.FindGameObjectWithTag("TownHall").transform.GetChild(0));
         resource = GameObject.FindGameObjectWithTag("Player").GetComponent<ResourceManager>();
         visionRange = 0.4f;
-        agent.speed = Random.Range(1.8f, 2.2f);
+        agent.speed = Random.Range(1.4f, 1.8f);
 
         currentSpeed = agent.speed;
-        maxSpeed = currentSpeed * 1.5f;
+        maxSpeed = currentSpeed * 1.2f;
         minSpeed = currentSpeed * 0.75f;
         gatheredResoruce = false;
         //agent.obstacleAvoidanceType = 0;
