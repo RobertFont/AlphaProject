@@ -1,45 +1,38 @@
 fileFormatVersion: 2
-guid: 896ca18fa9ef73149b01601924ac6929
-timeCreated: 1510648982
+guid: 92fcb72dc6956574ca455fcefafc86a9
+timeCreated: 1512640194
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Box172
-    100004: pPlane3
+    100002: polySurface358
+    100004: polySurface366
+    100006: Animated
     400000: //RootNode
-    400002: Box172
-    400004: pPlane3
-    2300000: //RootNode
-    2300002: Box172
-    2300004: pPlane3
-    3300000: //RootNode
-    3300002: Box172
-    3300004: pPlane3
-    4300000: Box172
-    4300002: pPlane3
+    400002: polySurface358
+    400004: polySurface366
+    400006: Animated
+    2300000: polySurface358
+    2300002: polySurface366
+    2300004: Animated
+    2300006: //RootNode
+    3300000: polySurface358
+    3300002: polySurface366
+    3300004: Animated
+    3300006: //RootNode
+    4300000: polySurface366
+    4300002: polySurface358
+    4300004: Base
+    4300006: Animated
+    7400000: Take 001
+    9500000: //RootNode
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: 'Material #70'
-    second: {fileID: 2100000, guid: 01f394bff49373f4992e01158d639ae4, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert1
-    second: {fileID: 2100000, guid: 269123292ec4b6145bc3fd86cc99ce32, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert2
-    second: {fileID: 2100000, guid: 4d55dbe1a56535d44a459f0ed389afc2, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert3
-    second: {fileID: 2100000, guid: 7bf2477557ad1434181df79c36cfe477, type: 2}
+      name: UltimateTexture01
+    second: {fileID: 2100000, guid: f2808966685c7a647a0d38b47dfd7ed6, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -65,7 +58,35 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 1
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -111,7 +132,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

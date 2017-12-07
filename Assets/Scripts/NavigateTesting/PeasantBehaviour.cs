@@ -16,6 +16,10 @@ public class PeasantBehaviour : MonoBehaviour
     [SerializeField] private float distanceFromB;
     [SerializeField] private bool started = true;
 
+    public float currentSpeed;
+    public float maxSpeed;
+    public float minSpeed;
+
     [Header("Path")]
     public List<Transform> points;
     //public Transform[] points;
@@ -31,6 +35,10 @@ public class PeasantBehaviour : MonoBehaviour
         resource = GameObject.FindGameObjectWithTag("Player").GetComponent<ResourceManager>();
         visionRange = 0.4f;
         agent.speed = Random.Range(1.8f, 2.2f);
+
+        currentSpeed = agent.speed;
+        maxSpeed = currentSpeed * 1.5f;
+        minSpeed = currentSpeed * 0.75f;
         gatheredResoruce = false;
         //agent.obstacleAvoidanceType = 0;
         started = !started;
@@ -42,6 +50,11 @@ public class PeasantBehaviour : MonoBehaviour
     {
         if (started) MyStart();
         if (points.Count > 2) points.Remove(points[2]);
+
+        if (resource.happiness > 75) agent.speed = maxSpeed;
+        else if (resource.happiness < 50) agent.speed = minSpeed;
+        else agent.speed = currentSpeed;
+        Debug.Log(agent.speed);
 
         switch (state)
         {

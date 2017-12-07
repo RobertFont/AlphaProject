@@ -145,6 +145,9 @@ MonoBehaviour:
   distanceFromA: 0
   distanceFromB: 0
   started: 1
+  currentSpeed: 0
+  maxSpeed: 0
+  minSpeed: 0
   points: []
   pathIndex: 0
 --- !u!195 &195935176221250332
