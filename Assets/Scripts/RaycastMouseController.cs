@@ -103,7 +103,7 @@ public class RaycastMouseController : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            if (hit.transform.tag == "Farm" || hit.transform.tag == "LumberMill" || hit.transform.tag == "GoldMine") uiTrigger.SelectBuilding(hit.transform.gameObject);
+            if (hit.transform.tag == "Farm" || hit.transform.tag == "LumberMill" || hit.transform.tag == "GoldMine" || hit.transform.tag == "House") uiTrigger.SelectBuilding(hit.transform.gameObject);
             else uiTrigger.DeselectBuilding();
         }
         Debug.Log("edificio seleccionado");
