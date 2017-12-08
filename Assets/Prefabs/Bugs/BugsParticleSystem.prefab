@@ -188,7 +188,7 @@ Transform:
   m_GameObject: {fileID: 1834582134630276}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0.52, y: 0.765, z: -1.364}
-  m_LocalScale: {x: 0.07171565, y: 0.07171565, z: 0.07171565}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4747530954739654}
   m_RootOrder: 0
@@ -200,7 +200,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1156733210784358}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -15.655836, y: 0, z: 2.9927373}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4656205730640366}
@@ -285,7 +285,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -738293584
+  randomSeed: 443127816
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3602,7 +3602,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -402965286
+  randomSeed: 200699237
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -6919,7 +6919,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -661678953
+  randomSeed: 853785474
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -10236,7 +10236,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 308011692
+  randomSeed: 1560878539
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -13553,7 +13553,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1631798468
+  randomSeed: 1914274371
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -16870,7 +16870,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1386328232
+  randomSeed: 1531131634
   InitialModule:
     serializedVersion: 3
     enabled: 1
