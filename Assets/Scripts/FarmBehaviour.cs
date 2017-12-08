@@ -73,16 +73,26 @@ public class FarmBehaviour : MonoBehaviour
 
                 }
 
+                destroy = false;
+
+
                 //SetWorkers();
 
                 break;
             case BuildingState.closed:
-                peasants[0].tag = "Unemployed";
-                peasants[1].tag = "Unemployed";
-                peasants.Clear();
+                if (peasants != null)
+                {
+                    peasants[0].tag = "Unemployed";
+                    peasants[1].tag = "Unemployed";
+                    peasants.Clear();
+                }
                 currentWorkers = 0;
                 started = true;
-                if (destroy) Destroy(this.gameObject); 
+                if (destroy)
+                {
+                    Debug.Log("destruyendo");
+                    Destroy(this.gameObject);
+                }
                
                 break;
             default:
@@ -92,7 +102,7 @@ public class FarmBehaviour : MonoBehaviour
 
     void SetWorkers()
     {
-        Debug.Log(this.transform.GetChildCount()+ "farms");
+        Debug.Log(this.transform.GetChildCount() + "farms");
         if (peasants[0].GetComponent<PeasantBehaviour>().points.Count < 2 || (peasants[0].GetComponent<PeasantBehaviour>().points[0] == null))
         {
             Debug.Log("firstWorker");
@@ -120,8 +130,8 @@ public class FarmBehaviour : MonoBehaviour
     public void DestroyBuilding()
     {
         Debug.Log("destroy activo");
-        state = BuildingState.closed;
         destroy = true;
+        state = BuildingState.closed;
 
     }
     

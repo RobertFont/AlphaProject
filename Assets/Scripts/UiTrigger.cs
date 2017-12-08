@@ -16,6 +16,7 @@ public class UiTrigger : MonoBehaviour
     public GameObject[] peasantGoldMiner;
     public List<GameObject> peasants;
     public int randomPeasant;
+    public int sumOfPeasants;
     
 
 
@@ -48,7 +49,8 @@ public class UiTrigger : MonoBehaviour
         peasants.AddRange(peasantFarmer.ToList<GameObject>());
         peasants.AddRange(peasantGoldMiner.ToList<GameObject>());
 
-        //ahora no llga aqui
+        sumOfPeasants = peasantFarmer.Length + peasantGoldMiner.Length + peasantLumberJack.Length + peasantUnemployed.Length;
+
         if (buildingSelected.tag == "House")
         {
             resource.AddWood(houseRestoreWood);
@@ -57,22 +59,64 @@ public class UiTrigger : MonoBehaviour
             resource.RemoveCurrentPop(4);
             resource.AddHouse(-1);
 
-            randomPeasant = Random.Range(0, peasants.Count());
-            Destroy(peasants[randomPeasant]);
-            peasants.RemoveAt(randomPeasant);
+            if (sumOfPeasants > 3)
+            {
+                randomPeasant = Random.Range(0, peasants.Count());
+                Destroy(peasants[randomPeasant]);
+                peasants.RemoveAt(randomPeasant);
 
-            randomPeasant = Random.Range(0, peasants.Count());
-            Destroy(peasants[randomPeasant]);
-            peasants.RemoveAt(randomPeasant);
+                randomPeasant = Random.Range(0, peasants.Count());
+                Destroy(peasants[randomPeasant]);
+                peasants.RemoveAt(randomPeasant);
 
-            randomPeasant = Random.Range(0, peasants.Count());
-            Destroy(peasants[randomPeasant]);
-            peasants.RemoveAt(randomPeasant);
+                randomPeasant = Random.Range(0, peasants.Count());
+                Destroy(peasants[randomPeasant]);
+                peasants.RemoveAt(randomPeasant);
 
-            randomPeasant = Random.Range(0, peasants.Count());
-            Destroy(peasants[randomPeasant]);
-            peasants.RemoveAt(randomPeasant);
-           
+                randomPeasant = Random.Range(0, peasants.Count());
+                Destroy(peasants[randomPeasant]);
+                peasants.RemoveAt(randomPeasant);
+            }
+            else if (sumOfPeasants > 2)
+            {
+
+                randomPeasant = Random.Range(0, peasants.Count());
+                Destroy(peasants[randomPeasant]);
+                peasants.RemoveAt(randomPeasant);
+
+                randomPeasant = Random.Range(0, peasants.Count());
+                Destroy(peasants[randomPeasant]);
+                peasants.RemoveAt(randomPeasant);
+
+                randomPeasant = Random.Range(0, peasants.Count());
+                Destroy(peasants[randomPeasant]);
+                peasants.RemoveAt(randomPeasant);
+            }
+            else if (sumOfPeasants > 1)
+            {
+
+                randomPeasant = Random.Range(0, peasants.Count());
+                Destroy(peasants[randomPeasant]);
+                peasants.RemoveAt(randomPeasant);
+
+                randomPeasant = Random.Range(0, peasants.Count());
+                Destroy(peasants[randomPeasant]);
+                peasants.RemoveAt(randomPeasant);
+            }
+            else if (sumOfPeasants > 0)
+            {
+
+                randomPeasant = Random.Range(0, peasants.Count());
+                Destroy(peasants[randomPeasant]);
+                peasants.RemoveAt(randomPeasant);
+            }
+            else if (resource.currentPop == 0) Debug.Log("calculaste mal");
+            
+
+              
+
+
+
             Destroy(buildingSelected);
             buildingSelected = null;
 

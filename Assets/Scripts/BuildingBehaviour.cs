@@ -61,17 +61,23 @@ public class BuildingBehaviour : MonoBehaviour
                         currentWorkers = peasants.Count;
                     }
                 }
-                
-                
+
+                destroy = false;
+
                 SetWorkers();
                 
                 break;
             case BuildingState.closed:
-                peasants[0].tag = "Unemployed";
-                peasants[1].tag = "Unemployed";
-                peasants[2].tag = "Unemployed";
-                peasants[3].tag = "Unemployed";
-                peasants.Clear();
+                if(peasants != null)
+                {
+                    peasants[0].tag = "Unemployed";
+                    peasants[1].tag = "Unemployed";
+                    peasants[2].tag = "Unemployed";
+                    peasants[3].tag = "Unemployed";
+                    peasants.Clear();
+                }
+                
+                
                 currentWorkers = 0;
                 finderTree.GetComponent<TreeBehaviour>().currentWorkers = 0;
                 finderTree = null;
@@ -158,9 +164,10 @@ public class BuildingBehaviour : MonoBehaviour
 
     public void DestroyBuilding()
     {
+        destroy = true;
         Debug.Log("destroy activo");
         state = BuildingState.closed;
-        destroy = true;
+        
 
     }
 

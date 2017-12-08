@@ -62,20 +62,26 @@ public class GoldMineBehaviour : MonoBehaviour
                 }
                 
                 SetWorkers();
+                destroy = false;
                 
                 break;
             case BuildingState.closed:
-                peasants[0].tag = "Unemployed";
-                peasants[1].tag = "Unemployed";
-                peasants[2].tag = "Unemployed";
-                peasants[3].tag = "Unemployed";
-                peasants.Clear();
+                if (peasants != null)
+                {
+                    peasants[0].tag = "Unemployed";
+                    peasants[1].tag = "Unemployed";
+                    peasants[2].tag = "Unemployed";
+                    peasants[3].tag = "Unemployed";
+                    peasants.Clear();
+                }
+
                 currentWorkers = 0;
                 finderMine.GetComponent<MineBehaviour>().currentWorkers = 0;
                 finderMine = null;
+                if (destroy) Destroy(this.gameObject);
                 started = true;
 
-                if (destroy) Destroy(this.gameObject);
+                
 
                 break;
             default:
@@ -150,9 +156,10 @@ public class GoldMineBehaviour : MonoBehaviour
 
     public void DestroyBuilding()
     {
+        destroy = true;
         Debug.Log("destroy activo");
         state = BuildingState.closed;
-        destroy = true;
+        
 
     }
 

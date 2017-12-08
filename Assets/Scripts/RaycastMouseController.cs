@@ -106,6 +106,7 @@ public class RaycastMouseController : MonoBehaviour
 
     public void SelectBuildingInformation()
     {
-        if (Input.GetButtonUp("Fire1")) uiTrigger.SelectBuilding(hit.transform.gameObject);
+        if (Input.GetButtonDown("Fire1")) uiTrigger.SelectBuilding(hit.transform.gameObject);
+        Debug.Log("edificio seleccionado");
     }
 }
