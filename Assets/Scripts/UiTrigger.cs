@@ -9,14 +9,17 @@ public class UiTrigger : MonoBehaviour
    
     public RaycastMouseController rayCast;
     public ResourceManager resource;
+    public ParticleSystem SelectedParticles;
     public GameObject buildingSelected;
     public GameObject[] peasantUnemployed; 
     public GameObject[] peasantLumberJack; 
     public GameObject[] peasantFarmer;
     public GameObject[] peasantGoldMiner;
+    public Text stateText;
     public List<GameObject> peasants;
     public int randomPeasant;
     public int sumOfPeasants;
+    
     
 
 
@@ -31,11 +34,20 @@ public class UiTrigger : MonoBehaviour
         buildingSelected = building;
     }
 
-    /*private void Update()
+    private void Update()
     {
-        if (buildingSelected == null) this.transform.GetChild(0).gameObject.SetActive(false);
-        else this.transform.GetChild(0).gameObject.SetActive(true);
-    }*/
+        if (buildingSelected == null)
+        {
+            this.transform.GetChild(0).gameObject.SetActive(false);
+            SelectedParticles.gameObject.SetActive(false);
+        }
+        else
+        {
+            this.transform.GetChild(0).gameObject.SetActive(true);
+            SelectedParticles.gameObject.SetActive(true);
+            SelectedParticles.gameObject.transform.position = buildingSelected.transform.position;
+        }
+    }
 
     public void DestroyBuilding() 
     {
@@ -111,11 +123,6 @@ public class UiTrigger : MonoBehaviour
                 peasants.RemoveAt(randomPeasant);
             }
             else if (resource.currentPop == 0) Debug.Log("calculaste mal");
-            
-
-              
-
-
 
             Destroy(buildingSelected);
             buildingSelected = null;
@@ -146,5 +153,42 @@ public class UiTrigger : MonoBehaviour
 
         peasants.Clear();
 
+    }
+
+    public void ChangeBuildingStateOpen()
+    {
+        if (buildingSelected.tag == "Farm")
+        {
+            buildingSelected.GetComponent<FarmBehaviour>().state = FarmBehaviour.BuildingState.open;
+        }
+        else if (buildingSelected.tag == "LumberMill")
+        {
+            buildingSelected.GetComponent<BuildingBehaviour>().state = BuildingBehaviour.BuildingState.open;
+        }
+        else if (buildingSelected.tag == "GoldMine")
+        {
+            buildingSelected.GetComponent<GoldMineBehaviour>().state = GoldMineBehaviour.BuildingState.open;
+        }
+    }
+
+    public void ChangeBuildingStateClose()
+    {
+        if (buildingSelected.tag == "Farm")
+        {
+            buildingSelected.GetComponent<FarmBehaviour>().state = FarmBehaviour.BuildingState.closed;
+        }
+        else if (buildingSelected.tag == "LumberMill")
+        {
+            buildingSelected.GetComponent<BuildingBehaviour>().state = BuildingBehaviour.BuildingState.closed;
+        }
+        else if (buildingSelected.tag == "GoldMine")
+        {
+            buildingSelected.GetComponent<GoldMineBehaviour>().state = GoldMineBehaviour.BuildingState.closed;
+        }
+    }
+
+    public void DeselectBuilding()
+    {
+        buildingSelected = null;
     }
 }

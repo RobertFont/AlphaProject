@@ -75,6 +75,8 @@ public class PeasantBehaviour : MonoBehaviour
     #region Updates
     void IdleUpdate()
     {
+        agent.SetDestination(points[pathIndex].transform.position);
+
         distanceFromA = Vector3.Distance(points[0].position, this.transform.position);
         distanceFromB = Vector3.Distance(points[1].position, this.transform.position);
         distanceFromTarget = agent.remainingDistance;
@@ -90,8 +92,6 @@ public class PeasantBehaviour : MonoBehaviour
             //agent.SetDestination(points[0].transform.position);
             pathIndex = 0;
         }
-
-        agent.SetDestination(points[pathIndex].transform.position);
     }
 
     void WorikingUpdate()

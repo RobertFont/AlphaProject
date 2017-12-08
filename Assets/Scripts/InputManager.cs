@@ -10,6 +10,7 @@ public class InputManager : MonoBehaviour {
     public CameraBehaviour camera;
     public Camera mainCamera;
     public BuilderScript builder;
+    public UiTrigger uiTrigger;
     public UiConstruction uiConstruction;
     public GameObject pauseSystem;
     public GameObject construcionUI;
@@ -39,6 +40,7 @@ public class InputManager : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (!builder.canCreateBuild) uiConstruction.StopConstruction();
+            uiTrigger.DeselectBuilding();
         }
         #region Axis
         axis.x = Input.GetAxis("Horizontal");
