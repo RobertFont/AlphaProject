@@ -80,7 +80,7 @@ public class FarmBehaviour : MonoBehaviour
 
                 break;
             case BuildingState.closed:
-                if (peasants != null)
+                if (currentWorkers > 0)
                 {
                     peasants[0].tag = "Unemployed";
                     peasants[1].tag = "Unemployed";

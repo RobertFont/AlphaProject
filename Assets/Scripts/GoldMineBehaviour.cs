@@ -66,7 +66,7 @@ public class GoldMineBehaviour : MonoBehaviour
                 
                 break;
             case BuildingState.closed:
-                if (peasants != null)
+                if (currentWorkers > 0)
                 {
                     peasants[0].tag = "Unemployed";
                     peasants[1].tag = "Unemployed";
@@ -78,7 +78,6 @@ public class GoldMineBehaviour : MonoBehaviour
                 currentWorkers = 0;
                 finderMine.GetComponent<MineBehaviour>().currentWorkers = 0;
                 finderMine = null;
-                if (destroy) Destroy(this.gameObject);
                 started = true;
 
                 
@@ -156,11 +155,10 @@ public class GoldMineBehaviour : MonoBehaviour
 
     public void DestroyBuilding()
     {
-        destroy = true;
         Debug.Log("destroy activo");
         state = BuildingState.closed;
+        Destroy(this.gameObject);
         
-
     }
 
 
