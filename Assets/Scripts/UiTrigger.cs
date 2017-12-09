@@ -28,7 +28,7 @@ public class UiTrigger : MonoBehaviour
 
     public void SelectBuilding(GameObject building)
     {
-        if (input.mousePosition.x < 112 && input.mousePosition.y < 72 && this.transform.GetChild(0).gameObject.activeSelf) return;
+        if (EventSystem.current.IsPointerOverGameObject()) return;
 
         buildingSelected = building;
     }

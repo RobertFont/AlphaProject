@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class InputManager : MonoBehaviour {
 
@@ -111,7 +112,7 @@ public class InputManager : MonoBehaviour {
     {
         //if ((mousePosition.y < 95) || (mousePosition.y > 490 && mousePosition.x > 1035) || (mousePosition.y > 535 && mousePosition.x < 415)) return;
         //          Buildings                             Resources                                             Menu
-        if ((mousePosition.y < 90) || (mousePosition.y > 480 && mousePosition.x < 71) || (mousePosition.y > 560 && mousePosition.x > 125)) return;
+        if (EventSystem.current.IsPointerOverGameObject()) return;
         else if (Input.GetButtonDown("Fire1")) builder.CreateBuild();
         else builder.canPosisitioningBuild = false;
     }

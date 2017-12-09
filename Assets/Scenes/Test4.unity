@@ -1063,6 +1063,8 @@ MonoBehaviour:
   finder: {fileID: 0}
   counter: 0
   destroy: 0
+  gatherCounter: 12
+  weatherEvent: {fileID: 0}
   peasants: []
   started: 1
 --- !u!23 &329407841
@@ -5649,7 +5651,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 775525198}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -640, y: -360.32877, z: 0}
+  m_LocalPosition: {x: -640, y: -360.07056, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 846728644}
@@ -5675,6 +5677,7 @@ MonoBehaviour:
   rayCast: {fileID: 2013881666}
   resource: {fileID: 2013881665}
   SelectedParticles: {fileID: 497839884}
+  input: {fileID: 0}
   buildingSelected: {fileID: 0}
   peasantUnemployed: []
   peasantLumberJack: []
@@ -5711,7 +5714,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 781048551}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 635, y: 355.32877, z: 0}
+  m_LocalPosition: {x: 635, y: 355.07056, z: 0}
   m_LocalScale: {x: 0.999996, y: 0.999996, z: 0.999996}
   m_Children:
   - {fileID: 104213080}
@@ -5894,8 +5897,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 786221512}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 365, y: 205.5, z: 0}
-  m_LocalScale: {x: 0.9125, y: 0.9125, z: 0.9125}
+  m_LocalPosition: {x: 567, y: 319, z: 0}
+  m_LocalScale: {x: 1.4175, y: 1.4175, z: 1.4175}
   m_Children:
   - {fileID: 1595917524}
   m_Father: {fileID: 0}
@@ -6489,8 +6492,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 910481261}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 365, y: 205.5, z: 0}
-  m_LocalScale: {x: 0.5703125, y: 0.5703125, z: 0.5703125}
+  m_LocalPosition: {x: 567, y: 319, z: 0}
+  m_LocalScale: {x: 0.8859375, y: 0.8859375, z: 0.8859375}
   m_Children:
   - {fileID: 1862652514}
   - {fileID: 1160487591}
@@ -7321,7 +7324,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1160487590}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -100, y: -360.32877, z: 0}
+  m_LocalPosition: {x: -100, y: -360.07056, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 556594567}
@@ -8773,6 +8776,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 2
   fireParticle: {fileID: 855287778}
+  rainParticle: {fileID: 0}
+  dustParticle: {fileID: 0}
   houseSelected: {fileID: 0}
   farmSelected: {fileID: 0}
   bugParticle: {fileID: 1213422629}
@@ -8792,12 +8797,19 @@ MonoBehaviour:
   farmCounter: 0
   fireStarted: 0
   bugStarted: 0
+  rainStarted: 0
+  dustStarted: 0
   randomTimer: 0
   eventTimerFire: 0
   eventTimerBugs: 0
+  eventTimerRain: 0
+  eventTimerDust: 0
   eventChance: 0
+  weatherChance: 0
   fireChance: 0
   bugsChance: 0
+  rainChance: 0
+  dustChance: 0
 --- !u!1 &1595917523
 GameObject:
   m_ObjectHideFlags: 0
@@ -8822,7 +8834,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1595917523}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 350, y: -175.20547, z: 0}
+  m_LocalPosition: {x: 350, y: -175.04408, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 786221516}
@@ -9631,7 +9643,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1862652513}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -635, y: 355.32877, z: 0}
+  m_LocalPosition: {x: -635, y: 355.07056, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1533862194}
