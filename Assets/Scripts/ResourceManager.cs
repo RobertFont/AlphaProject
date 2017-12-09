@@ -59,7 +59,11 @@ public class ResourceManager : MonoBehaviour
         happinessUi.text = happiness + "%";
 
         if (happiness > 100) happiness = 100;
-        if (happiness < 0) happiness = 0;
+        if (happiness < 0)
+        {
+            happiness = 0;
+            Time.timeScale = 0.0f;
+        }
         if (food < 0) food = 0;
         if (gold < 0) gold = 0;
         if (wood < 0) wood = 0;

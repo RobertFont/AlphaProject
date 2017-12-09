@@ -8,6 +8,8 @@ public class EventBehaviour : MonoBehaviour {
     public enum EventSelection { Fire, Bugs, Idle };
     [SerializeField] private EventSelection state;
     public GameObject fireParticle;
+    public GameObject rainParticle;
+    public GameObject dustParticle;
     public GameObject houseSelected;
     public GameObject farmSelected;
     public GameObject bugParticle;
@@ -29,20 +31,30 @@ public class EventBehaviour : MonoBehaviour {
 
     public bool fireStarted = false;
     public bool bugStarted = false;
+    public bool rainStarted = false;
+    public bool dustStarted = false;
     public float randomTimer;
     public float eventTimerFire;
     public float eventTimerBugs;
+    public float eventTimerRain;
+    public float eventTimerDust;
     public int eventChance;
+    public int weatherChance;
     public int fireChance;
     public int bugsChance;
+    public int rainChance;
+    public int dustChance;
 
     // Use this for initialization
     void Start()
     {
         state = EventSelection.Idle;
         eventChance = 1000;
+        weatherChance = 1000;
         fireChance = 5;
         bugsChance = 10;
+        rainChance = 20;
+        dustChance = 10;
     }
 
     // Update is called once per frame
@@ -53,13 +65,16 @@ public class EventBehaviour : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.F)) StartEventFire();
         if (Input.GetKeyDown(KeyCode.G)) StartEventBugs();
+        if (Input.GetKeyDown(KeyCode.R)) StartEventRain();
+        if (Input.GetKeyDown(KeyCode.T)) StartEventDust();
 
         randomTimer += Time.deltaTime;
         if (randomTimer >= 20 / Time.timeScale)
         {
             randomTimer = 0;
             eventChance = Random.Range(0, 100);
-            
+            weatherChance = Random.Range(0, 100);
+
             SelectEvent();
             
         }
@@ -70,11 +85,29 @@ public class EventBehaviour : MonoBehaviour {
             eventTimerBugs += Time.deltaTime;
             farmSelected.GetComponent<FarmBehaviour>().counter = 0;
         }
+        if (rainStarted)
+        {
+            eventTimerRain += Time.deltaTime;
+        }
+        if (dustStarted)
+        {
+            eventTimerDust += Time.deltaTime;
+        }
 
         if (eventTimerFire > 10 /Time.timeScale)
         {
             EndFire();
             Debug.Log("ACaba el fuego");
+        }
+
+        if (eventTimerRain > 20 / Time.timeScale)
+        {
+            EndRain();
+        }
+
+        if (eventTimerDust > 20 / Time.timeScale)
+        {
+            EndDust();
         }
 
         if (eventTimerBugs > 30 / Time.timeScale)
@@ -99,6 +132,7 @@ public class EventBehaviour : MonoBehaviour {
     public void StartEventFire()
     {
         if (fireStarted) return;
+        if (rainStarted) return;
         resource.happiness -= 10;
         selectHouse = Random.Range(0, maxHouses);
         houseSelected = housesArray[selectHouse];
@@ -126,32 +160,61 @@ public class EventBehaviour : MonoBehaviour {
         bugStarted = true;
     }
 
+    public void StartEventRain()
+    {
+        if (dustStarted) return;
+        if (rainStarted) return;
+        rainParticle.SetActive(true);
+        if (fireStarted) EndFire();
+
+        rainStarted = true;
+    }
+
+    public void StartEventDust()
+    {
+        if (rainStarted) return;
+        if (dustStarted) return;
+        dustParticle.SetActive(true);
+
+        dustStarted = true;
+    }
+
     public void SelectEvent()
     {
-        if ((eventChance < 5) && (resource.house > 0) && !fireStarted)
+        if ((eventChance < fireChance) && (resource.house > 0) && !fireStarted)
         {
             builder.canCreateBuild = false;
             StartCoroutine(WaitTimerFire());
             UpdateHousesList();
 
         }
-        else if ((eventChance < 10) && (resource.farm > 0) && !bugStarted)
+        else if ((eventChance < bugsChance) && (resource.farm > 0) && !bugStarted)
         {
             builder.canCreateBuild = false;
             StartCoroutine(WaitTimerBugs());
             UpdateHousesList();
         }
+
+        if (weatherChance < dustChance) StartEventDust();
+        else if (weatherChance < rainChance)
+        {
+            StartEventRain();
+        }
+        
         
     }
 
     public void EndFire()
     {
-        resource.happiness -= 10;
-        Destroy(houseSelected);
-        houses.Remove(houseSelected);
+        if (rainStarted)
+        {
+            resource.happiness -= 10;
+            Destroy(houseSelected);
+            houses.Remove(houseSelected);
+            resource.RemoveMaxPop(4);
+            resource.AddHouse(-1);
+        }
         fireParticle.SetActive(false);
-        resource.RemoveMaxPop(4);
-        resource.AddHouse(-1);
         fireStarted = false;
         eventTimerFire = 0;
         state = EventSelection.Idle;
@@ -165,6 +228,20 @@ public class EventBehaviour : MonoBehaviour {
         bugStarted = false;
         eventTimerBugs = 0;
         UpdateHousesList();
+    }
+
+    public void EndRain()
+    {
+        rainParticle.SetActive(false);
+        rainStarted = false;
+        eventTimerRain = 0;
+    }
+
+    public void EndDust()
+    {
+        dustParticle.SetActive(false);
+        dustStarted = false;
+        eventTimerDust = 0;
     }
 
     public void UpdateHousesList()

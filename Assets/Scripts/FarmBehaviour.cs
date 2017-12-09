@@ -12,6 +12,8 @@ public class FarmBehaviour : MonoBehaviour
     public GameObject finder;
     public float counter;
     public bool destroy = false;
+    public int gatherCounter = 12;
+    public EventBehaviour weatherEvent;
 
     [SerializeField] List<GameObject> peasants = new List<GameObject>();
     [SerializeField] private bool started = true;
@@ -62,8 +64,14 @@ public class FarmBehaviour : MonoBehaviour
                     peasants[0].GetComponent<PeasantBehaviour>().gatheredResoruce = true;
                     peasants[1].GetComponent<PeasantBehaviour>().gatheredResoruce = true;
 
+                    if (weatherEvent.rainStarted) gatherCounter = 6;
+                    else if (weatherEvent.dustStarted) gatherCounter = 20;
+                    else gatherCounter = 12;
+
+                    
+
                     counter += Time.deltaTime;
-                    if(counter > 12/Time.timeScale)
+                    if(counter > gatherCounter/Time.timeScale)
                     {
                         peasants[0].GetComponent<PeasantBehaviour>().GatherResources();
                         peasants[1].GetComponent<PeasantBehaviour>().GatherResources();
