@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class OptionsBehaviour : MonoBehaviour
 {
     LevelLogic level;
+    PlaySound sounds;
 
     [Header("General")]
     public Dropdown lenguageDD;
@@ -31,6 +32,7 @@ public class OptionsBehaviour : MonoBehaviour
     public float sliderVolume = 0.5f;
 
     [Header("Controls")]
+    //Image controls;
 
     [Header("Change SubMenus")]
     public GameObject generalMenu;
@@ -42,6 +44,7 @@ public class OptionsBehaviour : MonoBehaviour
     {
         SetGeneralMenu();
         level = GameObject.Find("LevelManager").GetComponent<LevelLogic>();
+        sounds = GameObject.Find("LevelManager").GetComponent<PlaySound>();
         SetSavedOptions();
     }
 
@@ -180,14 +183,14 @@ public class OptionsBehaviour : MonoBehaviour
         AudioListener.volume = sliderVolume;
     }
 
-    public void SetFXSoundLevel(int value)
+    public void SetFXSoundLevel(Slider slider)
     {
-
+        sounds.fXVolume = slider.value;
     }
 
-    public void SetMusicLevel(bool value)
+    public void SetMusicLevel(Slider slider)
     {
-
+        sounds.musicVolume = slider.value;
     }
     #endregion
 

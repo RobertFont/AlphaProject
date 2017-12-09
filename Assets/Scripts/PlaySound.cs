@@ -4,17 +4,32 @@ using UnityEngine;
 
 public class PlaySound : MonoBehaviour
 {
-    public AudioClip[] clips;
+    public AudioClip[] musix;
+    public AudioClip[] fX;
 
-    public void Play(int index, float volume, float pitch)
+    public float musicVolume = 0.5f;
+    public float fXVolume = 0.5f;
+
+    public void PlayMusic(int index, bool loop)
     {
         AudioSource audioSource = this.gameObject.AddComponent<AudioSource>();
-        audioSource.clip = clips[index];
-        audioSource.volume = volume;
-        audioSource.pitch = pitch;
-
+        audioSource.clip = musix[index];
+        audioSource.volume = musicVolume;
+        audioSource.loop = loop;
+        
         audioSource.Play();
-        Destroy(audioSource, clips[index].length);
+        Destroy(audioSource, musix[index].length);
     }
 
+    public void PlayFX(int index, float pitch, bool loop)
+    {
+        AudioSource audioSource = this.gameObject.AddComponent<AudioSource>();
+        audioSource.clip = fX[index];
+        audioSource.volume = fXVolume;
+        audioSource.pitch = pitch;
+        audioSource.loop = loop;
+
+        audioSource.Play();
+        Destroy(audioSource, fX[index].length);
+    }
 }
