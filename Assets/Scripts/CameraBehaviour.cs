@@ -28,7 +28,6 @@ public class CameraBehaviour : MonoBehaviour {
         transform.Translate(Vector3.right * X * Time.deltaTime * 10, this.transform);
         transform.Translate(Vector3.forward * Y * Time.deltaTime * 10, this.transform);
         transform.position = new Vector3(transform.position.x, 0, transform.position.z);
-        
     }
 
     public void GetRotate(float rotate)

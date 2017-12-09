@@ -109,7 +109,9 @@ public class InputManager : MonoBehaviour {
 
     public void CanPlace()
     {
-        if ((mousePosition.y < 95) || (mousePosition.y > 490 && mousePosition.x > 1035) || (mousePosition.y > 535 && mousePosition.x < 415)) return;
+        //if ((mousePosition.y < 95) || (mousePosition.y > 490 && mousePosition.x > 1035) || (mousePosition.y > 535 && mousePosition.x < 415)) return;
+        //          Buildings                             Resources                                             Menu
+        if ((mousePosition.y < 90) || (mousePosition.y > 480 && mousePosition.x < 71) || (mousePosition.y > 560 && mousePosition.x > 125)) return;
         else if (Input.GetButtonDown("Fire1")) builder.CreateBuild();
         else builder.canPosisitioningBuild = false;
     }

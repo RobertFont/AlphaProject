@@ -6,10 +6,10 @@ using UnityEngine.EventSystems;
  using System.Linq;
 public class UiTrigger : MonoBehaviour
 {
-   
     public RaycastMouseController rayCast;
     public ResourceManager resource;
     public ParticleSystem SelectedParticles;
+    public InputManager input;
     public GameObject buildingSelected;
     public GameObject[] peasantUnemployed; 
     public GameObject[] peasantLumberJack; 
@@ -20,9 +20,6 @@ public class UiTrigger : MonoBehaviour
     public int randomPeasant;
     public int sumOfPeasants;
     
-    
-
-
     int houseRestoreWood;
     int houseRestoreGold;
     int farmRestoreWood;
@@ -31,6 +28,8 @@ public class UiTrigger : MonoBehaviour
 
     public void SelectBuilding(GameObject building)
     {
+        if (input.mousePosition.x < 112 && input.mousePosition.y < 72 && this.transform.GetChild(0).gameObject.activeSelf) return;
+
         buildingSelected = building;
     }
 
@@ -46,6 +45,7 @@ public class UiTrigger : MonoBehaviour
             this.transform.GetChild(0).gameObject.SetActive(true);
             SelectedParticles.gameObject.SetActive(true);
             SelectedParticles.gameObject.transform.position = buildingSelected.transform.position;
+
         }
     }
 
