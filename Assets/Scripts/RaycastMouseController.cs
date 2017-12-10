@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class RaycastMouseController : MonoBehaviour
 {
@@ -27,8 +28,8 @@ public class RaycastMouseController : MonoBehaviour
         if (build.canCreateBuild) layerMask = 1 << 10;
         else layerMask = 1 << 9;
 
+
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        
 
         if (Physics.Raycast(ray, out hit, maxDistance, layerMask, QueryTriggerInteraction.Ignore))
         {
@@ -44,7 +45,9 @@ public class RaycastMouseController : MonoBehaviour
 
     public void SelectBuildings()
     {
-        if(hit.transform.tag == "Farm") SelectFarm();
+        if (EventSystem.current.IsPointerOverGameObject()) return;
+
+        if (hit.transform.tag == "Farm") SelectFarm();
         if(hit.transform.tag == "LumberMill") SelectBuilding();
         if(hit.transform.tag == "GoldMine") SelectMine();
         SelectBuildingInformation();

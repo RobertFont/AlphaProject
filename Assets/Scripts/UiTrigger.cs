@@ -28,9 +28,7 @@ public class UiTrigger : MonoBehaviour
 
     public void SelectBuilding(GameObject building)
     {
-        if (EventSystem.current.IsPointerOverGameObject()) return;
-
-        buildingSelected = building;
+       buildingSelected = building;
     }
 
     private void Update()

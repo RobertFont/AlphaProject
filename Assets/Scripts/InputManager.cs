@@ -66,7 +66,6 @@ public class InputManager : MonoBehaviour {
         if (Input.GetButtonDown("Speed3")) Time.timeScale = 2.0f;
         #endregion
 
-
         #region Rotate
         if (Input.GetKey(KeyCode.Q)) rotate = 1;
         else if (Input.GetKey(KeyCode.E)) rotate = -1;
@@ -110,8 +109,6 @@ public class InputManager : MonoBehaviour {
 
     public void CanPlace()
     {
-        //if ((mousePosition.y < 95) || (mousePosition.y > 490 && mousePosition.x > 1035) || (mousePosition.y > 535 && mousePosition.x < 415)) return;
-        //          Buildings                             Resources                                             Menu
         if (EventSystem.current.IsPointerOverGameObject()) return;
         else if (Input.GetButtonDown("Fire1")) builder.CreateBuild();
         else builder.canPosisitioningBuild = false;
