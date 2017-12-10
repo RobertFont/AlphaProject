@@ -25,6 +25,7 @@ public class EventBehaviour : MonoBehaviour {
     public List<GameObject> farms;
     public ResourceManager resource;
     public BuilderScript builder;
+    public EventIconsBehaviour icons;
     
     public int houseCounter;
     public int farmCounter;
@@ -138,6 +139,7 @@ public class EventBehaviour : MonoBehaviour {
         houseSelected = housesArray[selectHouse];
         Debug.Log("fuego");
         startFire = houseSelected.transform.position;
+        icons.FireIconStart();
         fireParticle.SetActive(true);
         //Instantiate(fireParticle, startFire, new Quaternion(0, 0, 0, 0));
         fireParticle.transform.position = houseSelected.transform.position;
@@ -153,6 +155,7 @@ public class EventBehaviour : MonoBehaviour {
 
         Debug.Log("bichos");
         startBugs = farmSelected.transform.position;
+        icons.BugsIconStart();
         bugParticle.SetActive(true);
         bugParticle.transform.position = farmSelected.transform.position;
         state = EventSelection.Idle;
@@ -165,9 +168,10 @@ public class EventBehaviour : MonoBehaviour {
         if (dustStarted) return;
         if (rainStarted) return;
         rainParticle.SetActive(true);
-        if (fireStarted) EndFire();
 
         rainStarted = true;
+
+        if (fireStarted) EndFire();
     }
 
     public void StartEventDust()
@@ -206,7 +210,7 @@ public class EventBehaviour : MonoBehaviour {
 
     public void EndFire()
     {
-        if (rainStarted)
+        if (!rainStarted)
         {
             resource.happiness -= 10;
             Destroy(houseSelected);
@@ -215,6 +219,7 @@ public class EventBehaviour : MonoBehaviour {
             resource.AddHouse(-1);
         }
         fireParticle.SetActive(false);
+        icons.FireIconEnd();
         fireStarted = false;
         eventTimerFire = 0;
         state = EventSelection.Idle;
@@ -224,6 +229,7 @@ public class EventBehaviour : MonoBehaviour {
     public void EndBugs()
     {
         resource.happiness -= 5;
+        icons.BugsIconEnd();
         bugParticle.SetActive(false);
         bugStarted = false;
         eventTimerBugs = 0;

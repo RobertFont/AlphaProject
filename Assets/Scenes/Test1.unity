@@ -389,12 +389,12 @@ GameObject:
   - component: {fileID: 71372872}
   - component: {fileID: 71372871}
   m_Layer: 5
-  m_Name: Event1
+  m_Name: Weather
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &71372870
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2252,6 +2252,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 429292910}
+  - component: {fileID: 429292911}
   m_Layer: 5
   m_Name: EventIcons
   m_TagString: Untagged
@@ -2282,6 +2283,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &429292911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 429292909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bef55155c78baca4ab95f5e214773682, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireTexture: {fileID: 0}
+  bugsTexture: {fileID: 0}
+  timer: 0
 --- !u!4 &430141257 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4648545335781376, guid: 18e4eba7344fc714f912527fe9ec33ce,
@@ -6880,7 +6895,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &691441560
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7390,7 +7405,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 775525198}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -640, y: -360.07056, z: 0}
+  m_LocalPosition: {x: -640, y: -360, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 846728644}
@@ -7453,7 +7468,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 781048551}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 635, y: 355.07056, z: 0}
+  m_LocalPosition: {x: 635, y: 355, z: 0}
   m_LocalScale: {x: 0.999996, y: 0.999996, z: 0.999996}
   m_Children:
   - {fileID: 104213080}
@@ -7636,8 +7651,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 786221512}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 567, y: 319, z: 0}
-  m_LocalScale: {x: 1.4175, y: 1.4175, z: 1.4175}
+  m_LocalPosition: {x: 544, y: 306, z: 0}
+  m_LocalScale: {x: 1.36, y: 1.36, z: 1.36}
   m_Children:
   - {fileID: 1595917524}
   m_Father: {fileID: 0}
@@ -7856,12 +7871,12 @@ GameObject:
   - component: {fileID: 818386718}
   - component: {fileID: 818386717}
   m_Layer: 5
-  m_Name: Event3
+  m_Name: Bugs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &818386716
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8392,8 +8407,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 910481261}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 567, y: 319, z: 0}
-  m_LocalScale: {x: 0.8859375, y: 0.8859375, z: 0.8859375}
+  m_LocalPosition: {x: 544, y: 306, z: 0}
+  m_LocalScale: {x: 0.85, y: 0.85, z: 0.85}
   m_Children:
   - {fileID: 1862652514}
   - {fileID: 1160487591}
@@ -10095,7 +10110,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1160487590}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -100, y: -360.07056, z: 0}
+  m_LocalPosition: {x: -100, y: -360, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 556594567}
@@ -11173,7 +11188,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1338376681
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12894,6 +12909,7 @@ MonoBehaviour:
   farms: []
   resource: {fileID: 2013881665}
   builder: {fileID: 2013881662}
+  icons: {fileID: 429292911}
   houseCounter: 0
   farmCounter: 0
   fireStarted: 0
@@ -13013,7 +13029,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1595917523}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 350, y: -175.04408, z: 0}
+  m_LocalPosition: {x: 350, y: -175, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 786221516}
@@ -14769,7 +14785,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1862652513}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -635, y: 355.07056, z: 0}
+  m_LocalPosition: {x: -635, y: 355, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1533862194}
@@ -15993,12 +16009,12 @@ GameObject:
   - component: {fileID: 2071435141}
   - component: {fileID: 2071435140}
   m_Layer: 5
-  m_Name: Event2
+  m_Name: Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2071435139
 RectTransform:
   m_ObjectHideFlags: 0
