@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114106599751772974}
   - component: {fileID: 64643156662939104}
   - component: {fileID: 114497832757099120}
+  - component: {fileID: 114659281242662038}
   m_Layer: 10
   m_Name: Rock03
   m_TagString: Untagged
@@ -119,5 +120,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0b1a3e16e62593a4fade820beb53dd9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114659281242662038
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1259128907797592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 579f94e631fbc9a47bfcbdd8c87c235d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

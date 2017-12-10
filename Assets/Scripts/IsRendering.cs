@@ -15,8 +15,8 @@ public class IsRendering : MonoBehaviour
 	
 	void Update ()
     {
-        /*if (I_Can_See(mesh.gameObject)) mesh.enabled = true;
-        else if (!I_Can_See(mesh.gameObject)) mesh.enabled = false;*/
+        if (I_Can_See(mesh.gameObject)) mesh.enabled = true;
+        else if (!I_Can_See(mesh.gameObject)) mesh.enabled = false;
     }
 
     private bool I_Can_See(GameObject Object)

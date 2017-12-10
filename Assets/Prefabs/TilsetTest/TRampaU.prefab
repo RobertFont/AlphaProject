@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 23446072627680956}
   - component: {fileID: 114163517531294098}
   - component: {fileID: 64773314624419710}
+  - component: {fileID: 114887652419689844}
   m_Layer: 10
   m_Name: TRampaU
   m_TagString: Untagged
@@ -107,5 +108,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09473d119d316304d987f31380190eaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114887652419689844
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1005530737956922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 579f94e631fbc9a47bfcbdd8c87c235d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 23788271631007790}
   - component: {fileID: 114371207210347296}
   - component: {fileID: 64438693176767932}
+  - component: {fileID: 114988010462751390}
   m_Layer: 10
   m_Name: TEXCornerDL
   m_TagString: Untagged
@@ -107,5 +108,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09473d119d316304d987f31380190eaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114988010462751390
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1496073941823902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 579f94e631fbc9a47bfcbdd8c87c235d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

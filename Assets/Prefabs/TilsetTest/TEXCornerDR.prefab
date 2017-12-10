@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 23517775846823066}
   - component: {fileID: 114890628723298966}
   - component: {fileID: 64098397092550202}
+  - component: {fileID: 114460153834446056}
   m_Layer: 10
   m_Name: TEXCornerDR
   m_TagString: Untagged
@@ -98,6 +99,17 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300010, guid: e092947d0910b2b4c95282a06de452a4, type: 3}
+--- !u!114 &114460153834446056
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1310733493581136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 579f94e631fbc9a47bfcbdd8c87c235d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114890628723298966
 MonoBehaviour:
   m_ObjectHideFlags: 1

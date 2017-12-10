@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 23242454249331194}
   - component: {fileID: 114976926548432650}
   - component: {fileID: 64287348119010470}
+  - component: {fileID: 114125957616241668}
   m_Layer: 10
   m_Name: TRampaR
   m_TagString: Untagged
@@ -98,6 +99,17 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300006, guid: e092947d0910b2b4c95282a06de452a4, type: 3}
+--- !u!114 &114125957616241668
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1995421383757610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 579f94e631fbc9a47bfcbdd8c87c235d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114976926548432650
 MonoBehaviour:
   m_ObjectHideFlags: 1
