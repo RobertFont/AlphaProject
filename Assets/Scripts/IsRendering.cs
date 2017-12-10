@@ -2,69 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IsRendering : MonoBehaviour {
-
-    Renderer yourRender;
-    bool isRendering = true;
+public class IsRendering : MonoBehaviour
+{
     MeshRenderer mesh;
-
-    [SerializeField]Camera cam;
-
-    Vector3 screenBottomLeft;
-    Vector3 screenTopRight;
-    Vector3 screenBottomRight;
-    Vector3 screenTopLeft;
+    Camera cam;
 
     void Start ()
     {
-        yourRender = GetComponent<Renderer>();
-
         mesh = GetComponent<MeshRenderer>();
-
-        //cam = GameObject.FindGameObjectWithTag("MainCamera");
+        cam = Camera.main;
     }
 	
-	// Update is called once per frame
 	void Update ()
     {
-        /*if (yourRender.isVisible)
-        {
-            isRendering = true;
-        }
-        else if (!yourRender.isVisible)
-        {
-            isRendering = false;
-        }
-
-        
-
-        Debug.Log("Render= " + isRendering);*/
-
-
-
-        screenBottomLeft = cam.ViewportToWorldPoint(new Vector3(0, 0, transform.position.z));
-        screenTopRight = cam.ViewportToWorldPoint(new Vector3(1, 1, transform.position.z));
-
-        screenBottomRight = cam.ViewportToWorldPoint(new Vector3(1, 0, transform.position.z));
-        screenTopLeft = cam.ViewportToWorldPoint(new Vector3(0, 1, transform.position.z));
-
-        isRendering = amIVisible();
-
-
-        mesh.enabled = isRendering;
+        /*if (I_Can_See(mesh.gameObject)) mesh.enabled = true;
+        else if (!I_Can_See(mesh.gameObject)) mesh.enabled = false;*/
     }
 
-    bool amIVisible()
+    private bool I_Can_See(GameObject Object)
     {
-        if (transform.position.x > screenTopRight.x || transform.position.x < screenTopLeft.x)
-        {
-            return false;
-        }
-        if (transform.position.y > screenTopRight.y || transform.position.y < screenBottomRight.y)
-        {
-            return false;
-        }
-
-        return true;
+        Plane[] planes = GeometryUtility.CalculateFrustumPlanes(cam);
+        if (GeometryUtility.TestPlanesAABB(planes, Object.GetComponent<Collider>().bounds)) return true;
+        else return false;
     }
 }

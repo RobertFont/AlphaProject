@@ -201,12 +201,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4de6d3bd0dd9ddd47a0edb758c21a703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clips:
-  - {fileID: 8300000, guid: 3e80feb72939bcb42b64624bde96cb1f, type: 3}
-  - {fileID: 8300000, guid: 6880014ee2abb1042a4779c556b383bb, type: 3}
-  - {fileID: 8300000, guid: f7693800ec9b1094f9e1afc178062290, type: 3}
-  - {fileID: 8300000, guid: cd6b4d32ea6e47443b281c0852c40f85, type: 3}
-  - {fileID: 8300000, guid: 6880014ee2abb1042a4779c556b383bb, type: 3}
+  musix: []
+  fX: []
+  musicVolume: 0.5
+  fXVolume: 0.5
 --- !u!4 &692741525
 Transform:
   m_ObjectHideFlags: 0
@@ -250,7 +248,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 579f94e631fbc9a47bfcbdd8c87c235d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 1345396561}
 --- !u!23 &850390855
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -347,7 +344,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 579f94e631fbc9a47bfcbdd8c87c235d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 1345396561}
 --- !u!23 &1001632125
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -444,7 +440,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 579f94e631fbc9a47bfcbdd8c87c235d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 1345396561}
 --- !u!23 &1066377371
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -586,7 +581,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1345396558}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 82, z: 0}
+  m_LocalPosition: {x: 0, y: 160.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -634,7 +629,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 579f94e631fbc9a47bfcbdd8c87c235d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 1345396561}
 --- !u!23 &1914158171
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -731,7 +725,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 579f94e631fbc9a47bfcbdd8c87c235d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 1345396561}
 --- !u!23 &1995568321
 MeshRenderer:
   m_ObjectHideFlags: 0
