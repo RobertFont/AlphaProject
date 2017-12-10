@@ -14,10 +14,10 @@
 ___
 ## ALPHA
 - [ ] Extended Game Design Document
-- [ ] Level Design Map
+- [X] Level Design Map
 - [ ] Concept Art buildings and environment
 - [x] Buildings Thumbnails
-- [ ] Props Thumbnails
+- [X] Props Thumbnails
 - [ ] Buildings Size Chart
 - [ ] Level Props Size Chart
 - [ ] Level Flow Map
@@ -25,15 +25,15 @@ ___
 
 ### General
 - [x] Scene Transition Animation
-- [ ] God Mode (F10)
+- [X] God Mode (F10)
 - [ ] Victory/Defeat Conditions
 
 ### Screen Logo
-- [ ] Enter Animation
+- [X] Enter Animation
 
 ### Screen Title
-- [ ] Title Final Art Implemented
-- [ ] Title Entrance Animation
+- [X] Title Final Art Implemented
+- [X] Title Entrance Animation
 - [x] Basic Menu Buttons (Start - Options - Exit)
 
 ### Screen Options
@@ -42,16 +42,16 @@ ___
   - [x] Quality (Fast - Good - Fantastic - Ultra)
   
 ### Screen Gameplay
-- [ ] Basic Mecanics (Functionals & Testables)
-- [ ] Temporal Models(Placeholders)
+- [X] Basic Mecanics (Functionals & Testables)
+- [X] Temporal Models(Placeholders)
 - [ ] 8 Final Props
 - [ ] 3 Final Building Modeling With Temporal textures
 - [x] Pause
-- [ ] Basic UI Elements
+- [X] Basic UI Elements
 - [x] Provisional Controls
 - [x] 5 Particle Sytems
 - [x] 5 Sound FX
 
 ### Screen Ending
-- [ ] Custom Background & Message for Victory/Defeat
+- [X] Custom Background & Message for Victory/Defeat
 ___
