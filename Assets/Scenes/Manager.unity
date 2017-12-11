@@ -177,8 +177,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1248413336}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 289.5, y: 163, z: 0}
-  m_LocalScale: {x: 0.45234376, y: 0.45234376, z: 0.45234376}
+  m_LocalPosition: {x: 345.5, y: 194.5, z: 0}
+  m_LocalScale: {x: 0.53984374, y: 0.53984374, z: 0.53984374}
   m_Children:
   - {fileID: 1853417649}
   m_Father: {fileID: 0}
@@ -246,17 +246,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musix:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: e03878c89c97e9d4eac9b083e0e2b5d1, type: 3}
+  - {fileID: 8300000, guid: 9f06805ed452e4c4d9eb1bea0184bbfc, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   fX:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 3e80feb72939bcb42b64624bde96cb1f, type: 3}
+  - {fileID: 8300000, guid: 6880014ee2abb1042a4779c556b383bb, type: 3}
+  - {fileID: 8300000, guid: f7693800ec9b1094f9e1afc178062290, type: 3}
+  - {fileID: 8300000, guid: ab7862b0b2f37ca4b80525e85b47b391, type: 3}
+  - {fileID: 8300000, guid: 41fc4c8de8fcb604dbea5874df6c83f6, type: 3}
+  musicVolume: 0.5
+  fXVolume: 0.5
 --- !u!1 &1853417648
 GameObject:
   m_ObjectHideFlags: 0
