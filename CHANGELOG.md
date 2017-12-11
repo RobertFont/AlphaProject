@@ -45,12 +45,12 @@ ___
 - [X] Basic Mecanics (Functionals & Testables)
 - [X] Temporal Models(Placeholders)
 - [ ] 8 Final Props
-- [ ] 3 Final Building Modeling With Temporal textures
+- [X] 3 Final Building Modeling With Temporal textures
 - [x] Pause
 - [X] Basic UI Elements
 - [x] Provisional Controls
 - [x] 5 Particle Sytems
-- [x] 5 Sound FX
+- [ ] 5 Sound FX
 
 ### Screen Ending
 - [X] Custom Background & Message for Victory/Defeat
