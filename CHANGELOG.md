@@ -45,7 +45,7 @@ ___
 - [X] Basic Mecanics (Functionals & Testables)
 - [X] Temporal Models(Placeholders)
 - [ ] 8 Final Props
-- [ ] 3 Final Building Modeling With Temporal textures
+- [X] 3 Final Building Modeling With Temporal textures
 - [x] Pause
 - [X] Basic UI Elements
 - [x] Provisional Controls
