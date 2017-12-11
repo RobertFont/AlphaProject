@@ -6,10 +6,12 @@ public class LogoEvent : MonoBehaviour
 {
     Animation anim;
     bool loaded = false;
+    PlaySound music;
 
     public void Start()
     {
         anim = GetComponent<Animation>();
+        music = GameObject.Find("LevelManager").GetComponent<PlaySound>();
     }
 
     public void Update()
@@ -18,6 +20,7 @@ public class LogoEvent : MonoBehaviour
         {
             LevelLogic level = GameObject.Find("LevelManager").GetComponent<LevelLogic>();
             level.SetTitleScene();
+            music.PlayMusic(0, true);
             loaded = true;
         }
     }

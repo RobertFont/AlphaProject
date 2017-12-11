@@ -6,30 +6,42 @@ public class PlaySound : MonoBehaviour
 {
     public AudioClip[] musix;
     public AudioClip[] fX;
+    public AudioSource audioSourceMusic;
+    public AudioSource audioSourceFX;
 
     public float musicVolume = 0.5f;
     public float fXVolume = 0.5f;
 
     public void PlayMusic(int index, bool loop)
     {
-        AudioSource audioSource = this.gameObject.AddComponent<AudioSource>();
-        audioSource.clip = musix[index];
-        audioSource.volume = musicVolume;
-        audioSource.loop = loop;
-        
-        audioSource.Play();
-        Destroy(audioSource, musix[index].length);
+        audioSourceMusic = this.gameObject.AddComponent<AudioSource>();
+        audioSourceMusic.clip = musix[index];
+        audioSourceMusic.volume = musicVolume;
+        audioSourceMusic.loop = loop;
+
+        audioSourceMusic.Play();
+        Destroy(audioSourceMusic, musix[index].length);
+    }
+
+    public void StopMusic()
+    {
+        audioSourceMusic.Stop();
     }
 
     public void PlayFX(int index, float pitch, bool loop)
     {
-        AudioSource audioSource = this.gameObject.AddComponent<AudioSource>();
-        audioSource.clip = fX[index];
-        audioSource.volume = fXVolume;
-        audioSource.pitch = pitch;
-        audioSource.loop = loop;
+        audioSourceFX = this.gameObject.AddComponent<AudioSource>();
+        audioSourceFX.clip = fX[index];
+        audioSourceFX.volume = fXVolume;
+        audioSourceFX.pitch = pitch;
+        audioSourceFX.loop = loop;
 
-        audioSource.Play();
-        Destroy(audioSource, fX[index].length);
+        audioSourceFX.Play();
+        Destroy(audioSourceFX, fX[index].length);
+    }
+
+    public void StopFX()
+    {
+        audioSourceFX.Stop();
     }
 }

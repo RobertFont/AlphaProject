@@ -19,6 +19,8 @@ public class LevelLogic : MonoBehaviour {
     private bool loading = false;
     private int sceneToLoad;
 
+    public PlaySound sounds;
+
     public Image blackScreen;
     private float fadeTime = 0.25f;
 
@@ -103,7 +105,6 @@ public class LevelLogic : MonoBehaviour {
     public void SetTitleScene()
     {
         StartLoad(2);
-
     }
 
     public void SetOptionsScene()
@@ -114,11 +115,14 @@ public class LevelLogic : MonoBehaviour {
     public void SetGameplayScene()
     {
         StartLoad(4);
+        sounds.StopMusic();
+        sounds.PlayMusic(1, true);
     }
 
     public void SetEndingScene()
     {
         StartLoad(5);
+        sounds.StopMusic();
     }
 
     IEnumerator Loading()
@@ -134,7 +138,6 @@ public class LevelLogic : MonoBehaviour {
             }
             yield return null;
         }
-        
     }
 
     IEnumerator WaitingLoad()

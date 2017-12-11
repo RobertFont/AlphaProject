@@ -233,6 +233,7 @@ MonoBehaviour:
   backScene: 0
   currentScene: 0
   nextScene: 0
+  sounds: {fileID: 1619233292}
   blackScreen: {fileID: 1853417650}
 --- !u!114 &1619233292
 MonoBehaviour:
