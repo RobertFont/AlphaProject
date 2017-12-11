@@ -14,6 +14,7 @@ public class FarmBehaviour : MonoBehaviour
     public bool destroy = false;
     public int gatherCounter = 12;
     public EventBehaviour weatherEvent;
+    public Vector3 rotateBlades;
 
     [SerializeField] List<GameObject> peasants = new List<GameObject>();
     [SerializeField] private bool started = true;
@@ -61,15 +62,30 @@ public class FarmBehaviour : MonoBehaviour
 
                 if (currentWorkers == maxWorkers)
                 {
+                    
                     peasants[0].GetComponent<PeasantBehaviour>().gatheredResoruce = true;
                     peasants[1].GetComponent<PeasantBehaviour>().gatheredResoruce = true;
 
-                    if (weatherEvent.rainStarted) gatherCounter = 6;
-                    else if (weatherEvent.dustStarted) gatherCounter = 20;
-                    else gatherCounter = 12;
+                    if(weatherEvent.rainStarted)
+                    {
+                        rotateBlades.z = 2 * Time.timeScale;
+                        gatherCounter = 6;
+                    }
+                    else if(weatherEvent.dustStarted)
+                    {
+                        rotateBlades.z = 0.5f * Time.timeScale;
+                        gatherCounter = 20;
+                    }
+                    else
+                    {
+                        rotateBlades.z = 1 * Time.timeScale;
+                        gatherCounter = 12;
+                    }
 
+                    if(weatherEvent.bugStarted) rotateBlades.z = 0;
                     
-
+                    
+                    this.transform.GetChild(8).Rotate(rotateBlades);
                     counter += Time.deltaTime;
                     if(counter > gatherCounter/Time.timeScale)
                     {
