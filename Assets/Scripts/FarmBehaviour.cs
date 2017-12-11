@@ -15,6 +15,9 @@ public class FarmBehaviour : MonoBehaviour
     public int gatherCounter = 12;
     public EventBehaviour weatherEvent;
     public Vector3 rotateBlades;
+    public Vector3 scaleWheat;
+    public Vector3 scaleWheatBack;
+    public Vector3 scaleWheatFront;
 
     [SerializeField] List<GameObject> peasants = new List<GameObject>();
     [SerializeField] private bool started = true;
@@ -25,6 +28,9 @@ public class FarmBehaviour : MonoBehaviour
         state = BuildingState.closed;
         started = true;
         destroy = false;
+        scaleWheat = new Vector3(1, 0, 1);
+        scaleWheatBack = this.transform.GetChild(7).localScale;
+        scaleWheatFront = this.transform.GetChild(6).localScale;
     }
 
     void MyStart()
@@ -33,7 +39,11 @@ public class FarmBehaviour : MonoBehaviour
         started = false;
         destroy = false;
     }
-    
+
+    private void FixedUpdate()
+    {
+        this.transform.GetChild(8).Rotate(rotateBlades);
+    }
     // Update is called once per frame
     void Update()
     {
@@ -70,27 +80,34 @@ public class FarmBehaviour : MonoBehaviour
                     {
                         rotateBlades.z = 2 * Time.timeScale;
                         gatherCounter = 6;
+                        scaleWheat.y += 0.16f * Time.deltaTime * Time.timeScale;
                     }
                     else if(weatherEvent.dustStarted)
                     {
                         rotateBlades.z = 0.5f * Time.timeScale;
                         gatherCounter = 20;
+                        scaleWheat.y += 0.05f * Time.deltaTime * Time.timeScale;
                     }
                     else
                     {
                         rotateBlades.z = 1 * Time.timeScale;
                         gatherCounter = 12;
+                        scaleWheat.y += Time.deltaTime * 0.083f * Time.timeScale;
                     }
-                    
-                    this.transform.GetChild(8).Rotate(rotateBlades);
+
                     counter += Time.deltaTime;
-                    if(counter > gatherCounter/Time.timeScale)
+
+                    if (scaleWheat.y > 1) scaleWheat.y = 1;
+                    if (counter > gatherCounter/Time.timeScale)
                     {
                         peasants[0].GetComponent<PeasantBehaviour>().GatherResources();
                         peasants[1].GetComponent<PeasantBehaviour>().GatherResources();
 
+                        scaleWheat.y = 0.1f;
                         counter = 0;
                     }
+
+                    ScaleWheat();
 
                 }
 
@@ -154,6 +171,20 @@ public class FarmBehaviour : MonoBehaviour
         destroy = true;
         state = BuildingState.closed;
 
+    }
+
+    public void ScaleWheat()
+    {
+        scaleWheatBack.y = scaleWheat.y;
+        scaleWheatFront.y = scaleWheat.y;
+        this.transform.GetChild(0).localScale = scaleWheat;
+        this.transform.GetChild(1).localScale = scaleWheat;
+        this.transform.GetChild(2).localScale = scaleWheat;
+        this.transform.GetChild(3).localScale = scaleWheat;
+        this.transform.GetChild(4).localScale = scaleWheat;
+        this.transform.GetChild(5).localScale = scaleWheat;
+        this.transform.GetChild(6).localScale = scaleWheatFront;
+        this.transform.GetChild(7).localScale = scaleWheatBack;
     }
     
 }
