@@ -114,7 +114,7 @@ public class InputManager : MonoBehaviour {
         else builder.canPosisitioningBuild = false;
     }
 
-    void TogglePause()
+    public void TogglePause()
     {
         if(!paused)
         {
