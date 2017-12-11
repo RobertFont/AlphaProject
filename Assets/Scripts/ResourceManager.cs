@@ -18,6 +18,9 @@ public class ResourceManager : MonoBehaviour
     public int wood = 500;
     public int food = 500;
     public int gold = 500;
+    public int maxWood = 500;
+    public int maxFood = 500;
+    public int maxGold = 500;
     public int happiness = 100;
     public int currentPop = 0;
     public int maxPop = 0;
@@ -27,6 +30,7 @@ public class ResourceManager : MonoBehaviour
     public int farm = 0;
     public int townHall = 0;
     public int goldMine = 0;
+    public int warehouse = 0;
     [Header("UI Resources")]
     public Text woodUi;
     public Text foodUi;
@@ -51,7 +55,13 @@ public class ResourceManager : MonoBehaviour
     {
         if (input.godMode) GodModePrivileges();
 
+        maxFood = 500 + (200 * warehouse);
+        maxGold = 500 + (200 * warehouse);
+        maxWood = 500 + (200 * warehouse);
 
+        if (food > maxFood) food = maxFood;
+        if (gold > maxGold) gold = maxGold;
+        if (wood > maxWood) wood = maxWood;
         populationUi.text = currentPop + "/" + maxPop;
         woodUi.text = wood.ToString();
         goldUi.text = gold.ToString();
@@ -142,6 +152,7 @@ public class ResourceManager : MonoBehaviour
     {
         house += value; 
     }
+
     public void AddFarm()
     {
         farm += 1;
@@ -150,11 +161,40 @@ public class ResourceManager : MonoBehaviour
     {
         farm += value;
     }
+
     public void AddTownHall()
     {
         townHall += 1;
     }
+
+    public void AddWareHouse()
+    {
+        warehouse += 1;
+    }
+    public void AddWareHouse(int value)
+    {
+        warehouse += value;
+    }
+
+    public void AddLumberMill()
+    {
+        lumberMill += 1;
+    }
+    public void AddLumberMill(int value)
+    {
+        lumberMill += value;
+    }
+
+    public void AddGoldMine()
+    {
+        goldMine += 1;
+    }
+    public void AddGoldMine(int value)
+    {
+        goldMine += value;
+    }
     #endregion
+
     public void EatingFood()
     {
         int necessaryFood = currentPop * 2;

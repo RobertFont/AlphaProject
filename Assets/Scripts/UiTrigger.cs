@@ -147,6 +147,13 @@ public class UiTrigger : MonoBehaviour
             buildingSelected.GetComponent<GoldMineBehaviour>().DestroyBuilding();
             buildingSelected = null;
         }
+        else if (buildingSelected.tag == "Warehouse")
+        {
+            resource.AddWood(goldMineRestoreWood);
+            resource.AddWareHouse(-1);
+            Destroy(buildingSelected);
+            buildingSelected = null;
+        }
         else Debug.Log("Edificio" + buildingSelected + "no se puede destruir");
 
         peasants.Clear();

@@ -16,6 +16,7 @@ TagManager:
   - GoldMine
   - Mine
   - MineWorker
+  - Warehouse
   layers:
   - Default
   - TransparentFX

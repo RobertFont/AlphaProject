@@ -57,14 +57,11 @@ public class RaycastMouseController : MonoBehaviour
     {
         if(Input.GetButtonUp("Fire1"))
         {
-            Debug.Log("algo");
             buildingSelected = hit.transform.gameObject.GetComponent<BuildingBehaviour>();
-            //hit.transform.gameObject.GetComponent<BuildingBehaviour>().state = BuildingBehaviour.BuildingState.open;
         }
         else if(Input.GetButtonUp("Fire2"))
         {
                 buildingSelected = hit.transform.gameObject.GetComponent<BuildingBehaviour>();
-                //hit.transform.gameObject.GetComponent<BuildingBehaviour>().state = BuildingBehaviour.BuildingState.closed;
         }
     }
 
@@ -73,15 +70,12 @@ public class RaycastMouseController : MonoBehaviour
         if (Input.GetButtonUp("Fire1"))
         {
            
-            Debug.Log("algo no va");
             farmSelected = hit.transform.gameObject.GetComponent<FarmBehaviour>();
-            //hit.transform.gameObject.GetComponent<FarmBehaviour>().state = FarmBehaviour.BuildingState.open;
         }
         else if (Input.GetButtonUp("Fire2"))
         {
             
             farmSelected = hit.transform.gameObject.GetComponent<FarmBehaviour>();
-            //hit.transform.gameObject.GetComponent<FarmBehaviour>().state = FarmBehaviour.BuildingState.closed;
         }
     }
 
@@ -92,13 +86,11 @@ public class RaycastMouseController : MonoBehaviour
 
             Debug.Log("algo no va");
             mineSelected = hit.transform.gameObject.GetComponent<GoldMineBehaviour>();
-            //hit.transform.gameObject.GetComponent<GoldMineBehaviour>().state = GoldMineBehaviour.BuildingState.open;
         }
         else if (Input.GetButtonUp("Fire2"))
         {
 
             mineSelected = hit.transform.gameObject.GetComponent<GoldMineBehaviour>();
-            //hit.transform.gameObject.GetComponent<GoldMineBehaviour>().state = GoldMineBehaviour.BuildingState.closed;
         }
     }
 
@@ -106,7 +98,7 @@ public class RaycastMouseController : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            if (hit.transform.tag == "Farm" || hit.transform.tag == "LumberMill" || hit.transform.tag == "GoldMine" || hit.transform.tag == "House") uiTrigger.SelectBuilding(hit.transform.gameObject);
+            if (hit.transform.tag == "Farm" || hit.transform.tag == "LumberMill" || hit.transform.tag == "GoldMine" || hit.transform.tag == "House" || hit.transform.tag == "Warehouse") uiTrigger.SelectBuilding(hit.transform.gameObject);
             else uiTrigger.DeselectBuilding();
         }
         Debug.Log("edificio seleccionado");

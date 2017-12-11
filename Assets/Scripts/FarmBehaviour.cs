@@ -81,9 +81,6 @@ public class FarmBehaviour : MonoBehaviour
                         rotateBlades.z = 1 * Time.timeScale;
                         gatherCounter = 12;
                     }
-
-                    if(weatherEvent.bugStarted) rotateBlades.z = 0;
-                    
                     
                     this.transform.GetChild(8).Rotate(rotateBlades);
                     counter += Time.deltaTime;

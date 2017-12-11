@@ -22,6 +22,8 @@ public class BuilderScript : MonoBehaviour {
     public Material lumberMillMaterial;
     public GameObject goldMine;
     public Material goldMineMaterial;
+    public GameObject warehouse;
+    public Material warehouseMaterial;
 
     [Header("Costs")]
     public int lumbMillCostWood = 100;
@@ -29,8 +31,10 @@ public class BuilderScript : MonoBehaviour {
     public int mineCostWood = 100;
     public int houseCostWood = 100;
     public int houseCostGold = 100;
-    public int townHallCostWood = 200;
-    public int townHallCostGold = 200;
+    public int townHallCostWood = 150;
+    public int townHallCostGold = 150;
+    public int warehouseCostWood = 300;
+    public int warehouseCostGold = 200;
 
     public Transform collisionChecker;
     public Vector3 colliderHalfSize;
@@ -142,6 +146,19 @@ public class BuilderScript : MonoBehaviour {
         build.SetActive(true);
     }
 
+    public void SelectBuildingWarehouse()
+    {
+        canCreateBuild = false;
+        DesactiveOriginalBuilding();
+        if (resource.townHall == 0) return;
+        build = warehouse;
+        if (!CompareResources()) return;
+        colliderHalfSize = build.GetComponent<BoxCollider>().size / 2;
+        collisionChecker = warehouse.transform;
+        canCreateBuild = true;
+        build.SetActive(true);
+    }
+
     public void CreateBuild()
     {
         if (!CompareResources())
@@ -188,6 +205,8 @@ public class BuilderScript : MonoBehaviour {
         farm.SetActive(false);
         lumberMill.SetActive(false);
         goldMine.SetActive(false);
+        warehouse.SetActive(false);
+
     }
 
     private void OnDrawGizmos()
@@ -210,6 +229,7 @@ public class BuilderScript : MonoBehaviour {
         else if (build.tag == "Farm") build.GetComponent<Renderer>().material = farmMaterial;
         else if (build.tag == "LumberMill") build.GetComponent<Renderer>().material = lumberMillMaterial;
         else if (build.tag == "GoldMine") build.GetComponent<Renderer>().material = goldMineMaterial;
+        else if (build.tag == "Warehouse") build.GetComponent<Renderer>().material = warehouseMaterial;
     }
 
     private void ChangeMaterialOriginal()
@@ -219,6 +239,7 @@ public class BuilderScript : MonoBehaviour {
         else if (build.tag == "Farm") build.GetComponent<Renderer>().material = farm.GetComponent<Renderer>().material; 
         else if (build.tag == "GoldMine") build.GetComponent<Renderer>().material = goldMine.GetComponent<Renderer>().material;
         else if (build.tag == "LumberMill") build.GetComponent<Renderer>().material = lumberMill.GetComponent<Renderer>().material;
+        else if (build.tag == "Warehouse") build.GetComponent<Renderer>().material = warehouse.GetComponent<Renderer>().material;
     }
 
     private void ChangeBuildName()
@@ -227,6 +248,7 @@ public class BuilderScript : MonoBehaviour {
         if (build.tag == "Farm") build.name = "Farm" + resource.farm;
         if (build.tag == "TownHall") build.name = "TownCenter";
         if (build.tag == "GoldMine") build.name = "GoldMine" + resource.goldMine;
+        if (build.tag == "WareHouse") build.name = "WareHouse" + resource.goldMine;
     }
 
     private void RemoveResources()
@@ -252,10 +274,21 @@ public class BuilderScript : MonoBehaviour {
         else if(build.tag == "LumberMill")
         {
             resource.RemoveWood(lumbMillCostWood);
+            resource.AddLumberMill();
         }
         else if (build.tag == "GoldMine")
         {
             resource.RemoveWood(mineCostWood);
+            resource.AddGoldMine();
+        }
+        else if (build.tag == "Warehouse")
+        {
+            resource.RemoveWood(warehouseCostWood);
+            resource.RemoveGold(warehouseCostWood);
+            resource.AddWareHouse();
+
+            warehouseCostGold += 100;
+            warehouseCostWood += 150;
         }
     }
 
@@ -288,6 +321,11 @@ public class BuilderScript : MonoBehaviour {
         else if (build.tag == "GoldMine")
         {
             if (resource.wood < mineCostWood) return false;
+            else return true;
+        }
+        else if (build.tag == "Warehouse")
+        {
+            if (resource.wood < warehouseCostWood || resource.gold < warehouseCostGold) return false;
             else return true;
         }
         else return false;
