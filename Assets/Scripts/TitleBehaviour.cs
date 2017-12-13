@@ -7,36 +7,20 @@ using UnityEngine.UI;
 public class TitleBehaviour : MonoBehaviour
 {
     LevelLogic level;
-    public Image titleLogo;
-    public Color titleColor;
+    public GameObject title;
+    public GameObject buttons;
+    public GameObject groupName;
+    public GameObject names;
     public float timeCounter = 0;
 
     void Start()
     {
-        level = GameObject.Find("LevelManager").GetComponent<LevelLogic>();
-        titleColor = titleLogo.color;
+        //level = GameObject.Find("LevelManager").GetComponent<LevelLogic>();
     }
 	
 	void Update()
     {
-        if (timeCounter < 0.5f)
-        {
-            timeCounter += Time.deltaTime;
-        }
-        else
-        {
-            timeCounter = 2;
-
-            if (titleColor.a >= 1.0f)
-            {
-                titleColor.a = 1.0f;
-            }
-            else if (titleColor.a < 1.0f)
-            {
-                titleColor.a += 0.01f;
-            }
-            titleLogo.color = titleColor;
-        }
+        
     }
 
     public void Continue()
