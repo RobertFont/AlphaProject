@@ -17,6 +17,7 @@ TagManager:
   - Mine
   - MineWorker
   - Warehouse
+  - Castle
   layers:
   - Default
   - TransparentFX

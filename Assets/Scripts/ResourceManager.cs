@@ -14,6 +14,8 @@ public class Buildings
 
 public class ResourceManager : MonoBehaviour
 {
+    LevelLogic level;
+
     [Header("Resources")]
     public int wood = 500;
     public int food = 500;
@@ -31,6 +33,7 @@ public class ResourceManager : MonoBehaviour
     public int townHall = 0;
     public int goldMine = 0;
     public int warehouse = 0;
+    public int castle = 0;
     [Header("UI Resources")]
     public Text woodUi;
     public Text foodUi;
@@ -42,13 +45,41 @@ public class ResourceManager : MonoBehaviour
     public float mealTime = 0;
     public PeasantSpawn peasant;
     public InputManager input;
+    public bool victory = false;
+    public bool gameEnded = false;
 
+    public GameObject victoryImage;
+    public GameObject defeatImage;
+    public GameObject endingButton;
+    public GameObject continueButton;
+
+    private void Start()
+    {
+        level = GameObject.Find("LevelManager").GetComponent<LevelLogic>();
+    }
     // Update is called once per frame
     public void Update ()
     {
         UpdateUI();
         AddCurrentPopFromTime();
         EatingFood();
+        if(!gameEnded)
+        {
+            if(castle >= 1)
+            {
+                victory = true;
+                ToggleEnding();
+            }
+            
+        }
+
+        if(happiness < 0)
+        {
+            victory = false;
+            ToggleEnding();
+
+        }
+
     }
 
     public void UpdateUI()
@@ -72,7 +103,7 @@ public class ResourceManager : MonoBehaviour
         if (happiness < 0)
         {
             happiness = 0;
-            Time.timeScale = 0.0f;
+            
         }
         if (food < 0) food = 0;
         if (gold < 0) gold = 0;
@@ -193,6 +224,15 @@ public class ResourceManager : MonoBehaviour
     {
         goldMine += value;
     }
+
+    public void AddCastle()
+    {
+        castle += 1;
+    }
+    public void AddCastle(int value)
+    {
+        castle += value;
+    }
     #endregion
 
     public void EatingFood()
@@ -224,10 +264,49 @@ public class ResourceManager : MonoBehaviour
     }
     public void GodModePrivileges()
     {
-        wood = 500;
-        food = 500;
-        gold = 500;
+        wood = 5000;
+        food = 5000;
+        gold = 5000;
         happiness = 100;
     }
+
+    public void ToggleEnding()
+    {
+        
+        if(victory)
+        {
+            victoryImage.SetActive(true);
+            continueButton.SetActive(true);
+
+        }
+        else if(!victory)
+        {
+            defeatImage.SetActive(true);
+        }
+
+        endingButton.SetActive(true);
+        Time.timeScale = 0.0f;
+    }
+
+    public void EndGame()
+    {
+        level.SetTitleScene();
+    }
+
+    public void ContinueGame()
+    {
+        gameEnded = true;
+
+    }
+
+    public void DesactivateEndingScreen()
+    {
+        victoryImage.SetActive(false);
+        continueButton.SetActive(false);
+        defeatImage.SetActive(false);
+        endingButton.SetActive(false);
+    }
+
+
     
-} //donde esta max pop? la funcion
+} 

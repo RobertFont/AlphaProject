@@ -24,6 +24,8 @@ public class BuilderScript : MonoBehaviour {
     public Material goldMineMaterial;
     public GameObject warehouse;
     public Material warehouseMaterial;
+    public GameObject castle;
+    public Material castleMaterial;
 
     [Header("Costs")]
     public int lumbMillCostWood = 100;
@@ -35,6 +37,8 @@ public class BuilderScript : MonoBehaviour {
     public int townHallCostGold = 150;
     public int warehouseCostWood = 300;
     public int warehouseCostGold = 200;
+    public int castleCostWood = 750;
+    public int castleCostGold = 750;
 
     public Transform collisionChecker;
     public Vector3 colliderHalfSize;
@@ -159,6 +163,19 @@ public class BuilderScript : MonoBehaviour {
         build.SetActive(true);
     }
 
+    public void SelectBuildingCastle()
+    {
+        canCreateBuild = false;
+        DesactiveOriginalBuilding();
+        if(resource.townHall == 0) return;
+        build = castle;
+        if(!CompareResources()) return;
+        colliderHalfSize = build.GetComponent<BoxCollider>().size / 2;
+        collisionChecker = castle.transform;
+        canCreateBuild = true;
+        build.SetActive(true);
+    }
+
     public void CreateBuild()
     {
         if (!CompareResources())
@@ -206,6 +223,7 @@ public class BuilderScript : MonoBehaviour {
         lumberMill.SetActive(false);
         goldMine.SetActive(false);
         warehouse.SetActive(false);
+        castle.SetActive(false);
 
     }
 
@@ -230,6 +248,7 @@ public class BuilderScript : MonoBehaviour {
         else if (build.tag == "LumberMill") build.GetComponent<Renderer>().material = lumberMillMaterial;
         else if (build.tag == "GoldMine") build.GetComponent<Renderer>().material = goldMineMaterial;
         else if (build.tag == "Warehouse") build.GetComponent<Renderer>().material = warehouseMaterial;
+        else if (build.tag == "Castle") build.GetComponent<Renderer>().material = castleMaterial;
     }
 
     private void ChangeMaterialOriginal()
@@ -240,6 +259,7 @@ public class BuilderScript : MonoBehaviour {
         else if (build.tag == "GoldMine") build.GetComponent<Renderer>().material = goldMine.GetComponent<Renderer>().material;
         else if (build.tag == "LumberMill") build.GetComponent<Renderer>().material = lumberMill.GetComponent<Renderer>().material;
         else if (build.tag == "Warehouse") build.GetComponent<Renderer>().material = warehouse.GetComponent<Renderer>().material;
+        else if (build.tag == "Castle") build.GetComponent<Renderer>().material = castle.GetComponent<Renderer>().material;
     }
 
     private void ChangeBuildName()
@@ -247,6 +267,7 @@ public class BuilderScript : MonoBehaviour {
         if (build.tag == "House") build.name = "House" + resource.house;
         if (build.tag == "Farm") build.name = "Farm" + resource.farm;
         if (build.tag == "TownHall") build.name = "TownCenter";
+        if (build.tag == "Castle") build.name = "Castle";
         if (build.tag == "GoldMine") build.name = "GoldMine" + resource.goldMine;
         if (build.tag == "WareHouse") build.name = "WareHouse" + resource.goldMine;
     }
@@ -258,6 +279,12 @@ public class BuilderScript : MonoBehaviour {
             resource.RemoveWood(townHallCostWood);
             resource.RemoveGold(townHallCostGold);
             resource.AddTownHall();
+        }
+        else if(build.tag == "Castle")
+        {
+            resource.RemoveWood(castleCostWood);
+            resource.RemoveGold(castleCostWood);
+            resource.AddCastle();
         }
         else if(build.tag == "House")
         {
@@ -326,6 +353,11 @@ public class BuilderScript : MonoBehaviour {
         else if (build.tag == "Warehouse")
         {
             if (resource.wood < warehouseCostWood || resource.gold < warehouseCostGold) return false;
+            else return true;
+        }
+        else if(build.tag == "Castle")
+        {
+            if(resource.wood < castleCostWood || resource.gold < castleCostGold) return false;
             else return true;
         }
         else return false;
