@@ -52,6 +52,7 @@ public class ResourceManager : MonoBehaviour
     public GameObject defeatImage;
     public GameObject endingButton;
     public GameObject continueButton;
+    public GameObject canvas;
 
     private void Start()
     {
@@ -272,8 +273,14 @@ public class ResourceManager : MonoBehaviour
 
     public void ToggleEnding()
     {
-        
-        if(victory)
+        canvas.transform.GetChild(1).gameObject.SetActive(false);
+        canvas.transform.GetChild(2).gameObject.SetActive(false);
+        canvas.transform.GetChild(3).gameObject.SetActive(false);
+        canvas.transform.GetChild(4).gameObject.SetActive(false);
+        canvas.transform.GetChild(5).gameObject.SetActive(false);
+        GetComponent<BuilderScript>().CantBuild(false);
+
+        if (victory)
         {
             victoryImage.SetActive(true);
             continueButton.SetActive(true);
@@ -290,11 +297,18 @@ public class ResourceManager : MonoBehaviour
 
     public void EndGame()
     {
+        Time.timeScale = 1.0f;
+        DesactivateEndingScreen();
+
         level.SetTitleScene();
     }
 
     public void ContinueGame()
     {
+        Time.timeScale = 1.0f;
+        DesactivateEndingScreen();
+
+
         gameEnded = true;
 
     }
@@ -305,6 +319,12 @@ public class ResourceManager : MonoBehaviour
         continueButton.SetActive(false);
         defeatImage.SetActive(false);
         endingButton.SetActive(false);
+
+        canvas.transform.GetChild(1).gameObject.SetActive(true);
+        canvas.transform.GetChild(2).gameObject.SetActive(true);
+        canvas.transform.GetChild(3).gameObject.SetActive(true);
+        canvas.transform.GetChild(4).gameObject.SetActive(true);
+        canvas.transform.GetChild(5).gameObject.SetActive(true);
     }
 
 

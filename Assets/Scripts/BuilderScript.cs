@@ -63,7 +63,11 @@ public class BuilderScript : MonoBehaviour {
 
     void Update()
     {
-        if (input.paused) return;
+        if (input.paused || resource.gameEnded)
+        {
+            CantBuild(false);
+            return;
+        }
 
         if (canCreateBuild)
         {
