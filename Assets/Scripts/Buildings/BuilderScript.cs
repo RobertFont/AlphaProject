@@ -58,7 +58,7 @@ public class BuilderScript : MonoBehaviour {
         buildingInMouse = new Vector3(0, 0, 0);
         DesactiveOriginalBuilding();
         resource = this.GetComponent<ResourceManager>();
-        colliderHalfSize = build.GetComponent<BoxCollider>().size/2;
+        //colliderHalfSize = build.GetComponent<BoxCollider>().size/2;
     }
 
     void Update()
@@ -235,7 +235,7 @@ public class BuilderScript : MonoBehaviour {
     {
         Gizmos.color = Color.magenta;
         Gizmos.DrawWireCube(collisionChecker.position, colliderHalfSize*2);
-        if (build.tag == "LumberMill") Gizmos.DrawWireSphere(build.transform.position, radiusSphere);
+        //if (build.tag == "LumberMill") Gizmos.DrawWireSphere(build.transform.position, radiusSphere);
     }
 
     private void ChangeColorOnCollision()
