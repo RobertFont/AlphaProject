@@ -742,7 +742,6 @@ GameObject:
   - component: {fileID: 1104421566}
   - component: {fileID: 1104421565}
   - component: {fileID: 1104421564}
-  - component: {fileID: 1104421568}
   m_Layer: 5
   m_Name: TitleMenu
   m_TagString: Untagged
@@ -818,8 +817,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1104421563}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 283, y: 159, z: 0}
-  m_LocalScale: {x: 0.4421875, y: 0.4421875, z: 0.4421875}
+  m_LocalPosition: {x: 340.5, y: 191.5, z: 0}
+  m_LocalScale: {x: 0.53203124, y: 0.53203124, z: 0.53203124}
   m_Children:
   - {fileID: 858762205}
   - {fileID: 2103543858}
@@ -832,23 +831,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!95 &1104421568
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1104421563}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b1d8f68f48c3dbf42aa7a1113ecbab1c, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1134631875
 GameObject:
   m_ObjectHideFlags: 0
@@ -859,6 +841,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1134631876}
   - component: {fileID: 1134631877}
+  - component: {fileID: 1134631878}
   m_Layer: 5
   m_Name: Title
   m_TagString: Untagged
@@ -906,6 +889,23 @@ MonoBehaviour:
   groupName: {fileID: 2012140617}
   names: {fileID: 2037450619}
   timeCounter: 0
+--- !u!95 &1134631878
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1134631875}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2660393f8c354f84896db51c3dbfd8da, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1192254560
 GameObject:
   m_ObjectHideFlags: 0
@@ -1878,7 +1878,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2103543858
 Transform:
   m_ObjectHideFlags: 0
