@@ -8,8 +8,6 @@
 
 ## **Town Hall**
 ![Town hall](/ConceptArt/ConceptArt01.png)
-## **Barrel**
-![Barrel](/ConceptArt/ConceptPropBarrel01.png)
 
 ## **Props**
 ![Box](/ConceptArt/PropsThumbnails.png)
