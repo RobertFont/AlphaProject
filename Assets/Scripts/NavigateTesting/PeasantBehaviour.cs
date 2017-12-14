@@ -177,8 +177,6 @@ public class PeasantBehaviour : MonoBehaviour
                 pathIndex = 1;
             }
         }
-
-
     }
     void OnDrawGizmos()
     {

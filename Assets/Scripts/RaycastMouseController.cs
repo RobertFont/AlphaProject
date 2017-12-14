@@ -23,7 +23,7 @@ public class RaycastMouseController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (build.canCreateBuild) layerMask = 1 << 10;
         else layerMask = 1 << 9;
