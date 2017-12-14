@@ -15,12 +15,12 @@ ___
 ## ALPHA
 - [ ] Extended Game Design Document
 - [X] Level Design Map
-- [ ] Concept Art buildings and environment
+- [x] Concept Art buildings and environment
 - [x] Buildings Thumbnails
 - [X] Props Thumbnails
-- [ ] Buildings Size Chart
-- [ ] Level Props Size Chart
-- [ ] Level Flow Map
+- [x] Buildings Size Chart
+- [x] Level Props Size Chart
+- [x] Level Flow Map
 - [ ] Upgrade Screen Mockups
 
 ### General
