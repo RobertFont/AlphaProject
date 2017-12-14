@@ -27,6 +27,16 @@ public class BuilderScript : MonoBehaviour {
     public GameObject castle;
     public Material castleMaterial;
 
+    [Header("NavMeshPrefabs")]
+    public GameObject navMeshSelected;
+    public GameObject townHallNavMesh;
+    public GameObject houseNavMesh;
+    public GameObject farmNavMesh;
+    public GameObject lumberMillNavMesh;
+    public GameObject goldMineNavMesh;
+    public GameObject warehouseNavMesh;
+    public GameObject castleNavMesh;
+
     [Header("Costs")]
     public int lumbMillCostWood = 100;
     public int farmCostWood = 100;
@@ -199,8 +209,10 @@ public class BuilderScript : MonoBehaviour {
             ChangeMaterialClone();
             originalHouseName = build.name;
             ChangeBuildName();
+            SelectNavMesh();
             build.layer = 9;
             Instantiate(build, buildingInMouse, new Quaternion(0, 12, 0, 0));
+            Instantiate(navMeshSelected, buildingInMouse, new Quaternion(0, 12, 0, 0));
             RemoveResources();
             build.layer = 8;
             build.name = originalHouseName;
@@ -273,7 +285,19 @@ public class BuilderScript : MonoBehaviour {
         if (build.tag == "TownHall") build.name = "TownCenter";
         if (build.tag == "Castle") build.name = "Castle";
         if (build.tag == "GoldMine") build.name = "GoldMine" + resource.goldMine;
-        if (build.tag == "WareHouse") build.name = "WareHouse" + resource.goldMine;
+        if (build.tag == "Warehouse") build.name = "WareHouse" + resource.goldMine;
+    }
+
+    private void SelectNavMesh()
+    {
+        if (build.tag == "House") navMeshSelected = houseNavMesh;
+        else if (build.tag == "Farm") navMeshSelected = houseNavMesh;
+        else if (build.tag == "TownHall") navMeshSelected = houseNavMesh;
+        else if (build.tag == "Castle") navMeshSelected = houseNavMesh;
+        else if (build.tag == "GoldMine") navMeshSelected = houseNavMesh;
+        else if (build.tag == "Warehouse") navMeshSelected = houseNavMesh;
+        else if (build.tag == "LumberMill") navMeshSelected = houseNavMesh;
+
     }
 
     private void RemoveResources()
