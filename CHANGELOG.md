@@ -26,7 +26,7 @@ ___
 ### General
 - [x] Scene Transition Animation
 - [X] God Mode (F10)
-- [ ] Victory/Defeat Conditions
+- [x] Victory/Defeat Conditions
 
 ### Screen Logo
 - [X] Enter Animation
@@ -50,7 +50,7 @@ ___
 - [X] Basic UI Elements
 - [x] Provisional Controls
 - [x] 5 Particle Sytems
-- [ ] 5 Sound FX
+- [x] 5 Sound FX
 
 ### Screen Ending
 - [X] Custom Background & Message for Victory/Defeat
