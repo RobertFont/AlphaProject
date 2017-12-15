@@ -53,6 +53,7 @@ public class ResourceManager : MonoBehaviour
     public GameObject endingButton;
     public GameObject continueButton;
     public GameObject canvas;
+    public GameObject endingBackground;
 
     private void Start()
     {
@@ -280,7 +281,7 @@ public class ResourceManager : MonoBehaviour
         canvas.transform.GetChild(5).gameObject.SetActive(false);
         GetComponent<BuilderScript>().CantBuild(false);
 
-        if (victory)
+        if(victory)
         {
             victoryImage.SetActive(true);
             continueButton.SetActive(true);
@@ -290,7 +291,7 @@ public class ResourceManager : MonoBehaviour
         {
             defeatImage.SetActive(true);
         }
-
+        endingBackground.gameObject.SetActive(true);
         endingButton.SetActive(true);
         Time.timeScale = 0.0f;
     }
@@ -319,6 +320,7 @@ public class ResourceManager : MonoBehaviour
         continueButton.SetActive(false);
         defeatImage.SetActive(false);
         endingButton.SetActive(false);
+        endingBackground.gameObject.SetActive(false);
 
         canvas.transform.GetChild(1).gameObject.SetActive(true);
         canvas.transform.GetChild(2).gameObject.SetActive(true);
