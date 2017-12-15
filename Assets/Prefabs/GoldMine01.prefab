@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4143362652438540}
   - component: {fileID: 65151849168936378}
   - component: {fileID: 114505980863816576}
+  - component: {fileID: 33033560448983002}
   m_Layer: 9
   m_Name: NavMesh
   m_TagString: Untagged
@@ -55,7 +56,7 @@ Transform:
   m_GameObject: {fileID: 1234098863226734}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 1, z: 3.1}
   m_Children: []
   m_Father: {fileID: 4424278336282784}
   m_RootOrder: 0
@@ -108,6 +109,13 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!33 &33033560448983002
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1234098863226734}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &33559079859349874
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -137,7 +145,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 1, z: 3.1}
+  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114484874578223996
 MonoBehaviour:
