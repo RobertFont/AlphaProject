@@ -42,6 +42,7 @@ public class ResourceManager : MonoBehaviour
     public Text populationUi;
     [Header("Utilities")]
     public int timer = 0;
+    public int bridgeCost = 1;
     public float mealTime = 0;
     public PeasantSpawn peasant;
     public InputManager input;

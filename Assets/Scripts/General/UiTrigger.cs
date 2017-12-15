@@ -154,6 +154,16 @@ public class UiTrigger : MonoBehaviour
             Destroy(buildingSelected);
             buildingSelected = null;
         }
+        else if (buildingSelected.tag == "Bridge")
+        {
+            if(resource.wood > 100 * resource.bridgeCost)
+            {
+                resource.wood -= 100 * resource.bridgeCost;
+                resource.bridgeCost++;
+                buildingSelected.SetActive(false);
+                buildingSelected = null;
+            }
+        }
         else Debug.Log("Edificio" + buildingSelected + "no se puede destruir");
 
         peasants.Clear();
