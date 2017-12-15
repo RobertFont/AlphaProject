@@ -33,7 +33,6 @@ public class GoldMineBehaviour : MonoBehaviour
         Debug.Log("encontro las minas");
         finderMine = GetClosestMine(mines).gameObject;
         Debug.Log("decidio cual esta cerca");
-        
         destroy = false;
         started = false;
     }
@@ -76,7 +75,7 @@ public class GoldMineBehaviour : MonoBehaviour
                 }
 
                 currentWorkers = 0;
-                finderMine.GetComponent<MineBehaviour>().currentWorkers = 0;
+                if (finderMine != null) finderMine.GetComponent<MineBehaviour>().currentWorkers = 0;
                 finderMine = null;
                 started = true;
 

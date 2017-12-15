@@ -9,8 +9,8 @@ public class BuildingBehaviour : MonoBehaviour
     public BuildingState state;
     public int maxWorkers = 4;
     public int currentWorkers = 0;
-    public GameObject finder;
-    public GameObject finderTree;
+    GameObject finder;
+    GameObject finderTree;
     public bool destroy = false;
 
     [SerializeField]List<GameObject> peasants = new List<GameObject>();
@@ -26,15 +26,16 @@ public class BuildingBehaviour : MonoBehaviour
     {
         state = BuildingState.closed;
         started = true;
-	}
+
+        finder = null;
+        finderTree = null;
+    }
 
     void MyStart()
     {
         
         trees = GameObject.FindGameObjectsWithTag("Tree");
         finderTree = GetClosestTree(trees).gameObject;
-        
-      
         Debug.Log("funcion MYstart");
         started = false;
         destroy = false;
@@ -68,7 +69,7 @@ public class BuildingBehaviour : MonoBehaviour
                 
                 break;
             case BuildingState.closed:
-                finderTree.GetComponent<TreeBehaviour>().currentWorkers = 0;
+                if (finderTree != null) finderTree.GetComponent<TreeBehaviour>().currentWorkers = 0;
                 finderTree = null;
 
                 if (currentWorkers > 0)

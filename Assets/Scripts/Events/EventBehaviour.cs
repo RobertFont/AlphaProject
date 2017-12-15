@@ -58,7 +58,7 @@ public class EventBehaviour : MonoBehaviour {
         bugsChance = 10;
         rainChance = 20;
         dustChance = 10;
-        soundFX = GameObject.Find("LevelManager").GetComponent<PlaySound>();
+        if (soundFX != null) soundFX = GameObject.Find("LevelManager").GetComponent<PlaySound>();
     }
 
     // Update is called once per frame
@@ -136,7 +136,7 @@ public class EventBehaviour : MonoBehaviour {
     {
         if (fireStarted) return;
         if (rainStarted) return;
-        soundFX.PlayFX(2, 1, false);
+        if (soundFX != null) soundFX.PlayFX(2, 1, false);
         resource.happiness -= 10;
         selectHouse = Random.Range(0, maxHouses);
         houseSelected = housesArray[selectHouse];
@@ -153,7 +153,7 @@ public class EventBehaviour : MonoBehaviour {
     public void StartEventBugs()
     {
         if (bugStarted) return;
-        soundFX.PlayFX(1, 1, false);
+        if (soundFX != null) soundFX.PlayFX(1, 1, false);
         selectFarm = Random.Range(0, maxFarms);
         farmSelected = farmsArray[selectFarm];
 
@@ -169,12 +169,12 @@ public class EventBehaviour : MonoBehaviour {
 
     public void StartEventRain()
     {
-        soundFX.StopFX();
+        if (soundFX != null) soundFX.StopFX();
         if (dustStarted) return;
         if (rainStarted) return;
         rainParticle.SetActive(true);
         rain.SetActive(true);
-        soundFX.PlayFX(3, 1, true);
+        if (soundFX != null) soundFX.PlayFX(3, 1, true);
 
         rainStarted = true;
 
@@ -186,7 +186,7 @@ public class EventBehaviour : MonoBehaviour {
         if (rainStarted) return;
         if (dustStarted) return;
         dustParticle.SetActive(true);
-        soundFX.PlayFX(4, 1, true);
+        if (soundFX != null) soundFX.PlayFX(4, 1, true);
 
         dustStarted = true;
     }
@@ -248,7 +248,7 @@ public class EventBehaviour : MonoBehaviour {
     {
         rainParticle.SetActive(false);
         rain.SetActive(false);
-        soundFX.StopFX();
+        if (soundFX != null) soundFX.StopFX();
         rainStarted = false;
         eventTimerRain = 0;
     }
@@ -256,7 +256,7 @@ public class EventBehaviour : MonoBehaviour {
     public void EndDust()
     {
         dustParticle.SetActive(false);
-        soundFX.StopFX();
+        if (soundFX != null) soundFX.StopFX();
         dustStarted = false;
         eventTimerDust = 0;
     }

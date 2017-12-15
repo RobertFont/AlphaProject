@@ -58,7 +58,7 @@ public class ResourceManager : MonoBehaviour
 
     private void Start()
     {
-        level = GameObject.Find("LevelManager").GetComponent<LevelLogic>();
+        if(level != null) level = GameObject.Find("LevelManager").GetComponent<LevelLogic>();
     }
     // Update is called once per frame
     public void Update ()
