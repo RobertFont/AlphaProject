@@ -11,10 +11,10 @@
 
 ## **Props**
 ![Box](/ConceptArt/PropsThumbnails.png)
-### **Props Size Chart**
+- ### **Props Size Chart**
 ![Props](/ConceptArt/PropsSizeChart.png)
 
 ## **Buildings**
 ![Tree2](/ConceptArt/BuildingsThumbnails.png)
-### **Buildings Size Chart**
+- ### **Buildings Size Chart**
 ![BuildingSizeChart](/ConceptArt/BuildingSizeChart.png)
