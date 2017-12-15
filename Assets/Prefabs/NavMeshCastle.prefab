@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4283834950389282}
   - component: {fileID: 114185312701739570}
   - component: {fileID: 65266274638339706}
+  - component: {fileID: 33376349678136634}
   m_Layer: 9
   m_Name: NavMeshCastle
   m_TagString: Untagged
@@ -41,6 +42,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &33376349678136634
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1586955796480040}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!65 &65266274638339706
 BoxCollider:
   m_ObjectHideFlags: 1

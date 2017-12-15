@@ -291,12 +291,12 @@ public class BuilderScript : MonoBehaviour {
     private void SelectNavMesh()
     {
         if (build.tag == "House") navMeshSelected = houseNavMesh;
-        else if (build.tag == "Farm") navMeshSelected = houseNavMesh;
-        else if (build.tag == "TownHall") navMeshSelected = houseNavMesh;
-        else if (build.tag == "Castle") navMeshSelected = houseNavMesh;
-        else if (build.tag == "GoldMine") navMeshSelected = houseNavMesh;
-        else if (build.tag == "Warehouse") navMeshSelected = houseNavMesh;
-        else if (build.tag == "LumberMill") navMeshSelected = houseNavMesh;
+        else if (build.tag == "Farm") navMeshSelected = farmNavMesh;
+        else if (build.tag == "TownHall") navMeshSelected = townHallNavMesh;
+        else if (build.tag == "Castle") navMeshSelected = castleNavMesh;
+        else if (build.tag == "GoldMine") navMeshSelected = goldMineNavMesh;
+        else if (build.tag == "Warehouse") navMeshSelected = warehouseNavMesh;
+        else if (build.tag == "LumberMill") navMeshSelected = lumberMillNavMesh;
 
     }
 

@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4764664012924452}
   - component: {fileID: 65406321354597722}
   - component: {fileID: 114842915235365572}
+  - component: {fileID: 33262206533821276}
   m_Layer: 9
   m_Name: NavMeshGoldMine
   m_TagString: Untagged
@@ -41,6 +42,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &33262206533821276
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1546662838056048}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!65 &65406321354597722
 BoxCollider:
   m_ObjectHideFlags: 1
