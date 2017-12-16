@@ -18,10 +18,9 @@ public class LevelLogic : MonoBehaviour {
     private AsyncOperation asynUnLoad = null;
     private bool loading = false;
     private int sceneToLoad;
-
     public PlaySound sounds;
-
     public Image blackScreen;
+    public Image loadingBar;
     private float fadeTime = 0.25f;
 
     // Use this for initialization
@@ -31,16 +30,18 @@ public class LevelLogic : MonoBehaviour {
         if(SceneManager.sceneCount >= 2) SceneManager.SetActiveScene(SceneManager.GetSceneAt(1));
 
         UpdateSceneState();
+        //loadingBar.gameObject.SetActive(false);
 
-        if(currentScene == managerScene) StartLoad(nextScene);
+
+        if (currentScene == managerScene) StartLoad(nextScene);
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-		
+
         // Input manager
-        if(Input.GetKey(KeyCode.AltGr))
+        if (Input.GetKey(KeyCode.AltGr))
         {
             if(Input.GetKeyDown(KeyCode.N)) StartLoad(nextScene);
             if(Input.GetKeyDown(KeyCode.B)) StartLoad(backScene);
@@ -89,11 +90,14 @@ public class LevelLogic : MonoBehaviour {
     void FadeIn()
     {
         blackScreen.CrossFadeAlpha(0, fadeTime, true);
+        loadingBar.CrossFadeAlpha(0, fadeTime, true);
     }
 
     void FadeOut()
     {
         blackScreen.CrossFadeAlpha(1, fadeTime, true);
+        loadingBar.CrossFadeAlpha(1, fadeTime, true);
+
     }
 
 
@@ -129,9 +133,12 @@ public class LevelLogic : MonoBehaviour {
     {
         while(loading)
         {
+            loadingBar.rectTransform.Rotate(0, 0, 1);
+
             Debug.Log(asynLoad.progress);
             if((asynUnLoad == null || asynUnLoad.isDone) && asynLoad.isDone)
             {
+
                 SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(sceneToLoad));
                 UpdateSceneState();
                 loading = false;

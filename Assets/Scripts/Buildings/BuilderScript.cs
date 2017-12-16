@@ -27,15 +27,15 @@ public class BuilderScript : MonoBehaviour {
     public GameObject castle;
     public Material castleMaterial;
 
-    [Header("NavMeshPrefabs")]
-    public GameObject navMeshSelected;
-    public GameObject townHallNavMesh;
-    public GameObject houseNavMesh;
-    public GameObject farmNavMesh;
-    public GameObject lumberMillNavMesh;
-    public GameObject goldMineNavMesh;
-    public GameObject warehouseNavMesh;
-    public GameObject castleNavMesh;
+    [Header("BuildingsPrefabs")]
+    public GameObject buildingSelected;
+    public GameObject townHallPrefab;
+    public GameObject housePrefab;
+    public GameObject farmPrefab;
+    public GameObject lumberMillPrefab;
+    public GameObject goldMinePrefab;
+    public GameObject warehousePrefab;
+    public GameObject castlePrefab;
 
     [Header("Costs")]
     public int lumbMillCostWood = 100;
@@ -209,10 +209,9 @@ public class BuilderScript : MonoBehaviour {
             ChangeMaterialClone();
             originalHouseName = build.name;
             ChangeBuildName();
-            SelectNavMesh();
+            SelectBuilding();
             build.layer = 9;
-            Instantiate(build, buildingInMouse, new Quaternion(0, 12, 0, 0));
-            Instantiate(navMeshSelected, buildingInMouse, new Quaternion(0, 12, 0, 0));
+            Instantiate(buildingSelected, buildingInMouse, new Quaternion(0, 12, 0, 0));
             RemoveResources();
             build.layer = 8;
             build.name = originalHouseName;
@@ -287,16 +286,16 @@ public class BuilderScript : MonoBehaviour {
         if (build.tag == "GoldMine") build.name = "GoldMine" + resource.goldMine;
         if (build.tag == "Warehouse") build.name = "WareHouse" + resource.goldMine;
     }
-
-    private void SelectNavMesh()
+    
+    private void SelectBuilding()
     {
-        if (build.tag == "House") navMeshSelected = houseNavMesh;
-        else if (build.tag == "Farm") navMeshSelected = farmNavMesh;
-        else if (build.tag == "TownHall") navMeshSelected = townHallNavMesh;
-        else if (build.tag == "Castle") navMeshSelected = castleNavMesh;
-        else if (build.tag == "GoldMine") navMeshSelected = goldMineNavMesh;
-        else if (build.tag == "Warehouse") navMeshSelected = warehouseNavMesh;
-        else if (build.tag == "LumberMill") navMeshSelected = lumberMillNavMesh;
+        if (build.tag == "House") buildingSelected = housePrefab;
+        else if (build.tag == "Farm") buildingSelected = farmPrefab;
+        else if (build.tag == "TownHall") buildingSelected = townHallPrefab;
+        else if (build.tag == "Castle") buildingSelected = castlePrefab;
+        else if (build.tag == "GoldMine") buildingSelected = goldMinePrefab;
+        else if (build.tag == "Warehouse") buildingSelected = warehousePrefab;
+        else if (build.tag == "LumberMill") buildingSelected = lumberMillPrefab;
 
     }
 

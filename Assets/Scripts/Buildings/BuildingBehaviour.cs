@@ -177,9 +177,10 @@ public class BuildingBehaviour : MonoBehaviour
 
     public void DestroyBuilding()
     {
+        state = BuildingState.closed;
+
         destroy = true;
         Debug.Log("destroy activo");
-        state = BuildingState.closed;
     }
 
 
