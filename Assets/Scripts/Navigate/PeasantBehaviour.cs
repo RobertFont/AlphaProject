@@ -30,8 +30,7 @@ public class PeasantBehaviour : MonoBehaviour
     {
         agent = this.GetComponent<NavMeshAgent>();
         SetIdle();
-        points.Add(GameObject.FindGameObjectWithTag("TownHall").transform.GetChild(0));
-        points.Add(GameObject.FindGameObjectWithTag("TownHall").transform.GetChild(0));
+        points.Add(GameObject.FindGameObjectWithTag("TownHall").transform.GetChild(1));
         resource = GameObject.FindGameObjectWithTag("Player").GetComponent<ResourceManager>();
         visionRange = 0.4f;
         agent.speed = Random.Range(1.4f, 1.8f);
@@ -40,6 +39,7 @@ public class PeasantBehaviour : MonoBehaviour
         maxSpeed = currentSpeed * 1.2f;
         minSpeed = currentSpeed * 0.75f;
         gatheredResoruce = false;
+        this.transform.position = GameObject.FindGameObjectWithTag("TownHall").transform.GetChild(1).transform.position;
         //agent.obstacleAvoidanceType = 0;
         started = !started;
 
@@ -77,15 +77,15 @@ public class PeasantBehaviour : MonoBehaviour
     {
         agent.SetDestination(points[pathIndex].transform.position);
 
-        distanceFromA = Vector3.Distance(points[0].position, this.transform.position);
-        distanceFromB = Vector3.Distance(points[1].position, this.transform.position);
-        distanceFromTarget = agent.remainingDistance;
-
         if (this.tag == "Unemployed")
         {
             //Debug.Log("Unemployed");
-            points[0] = (GameObject.FindGameObjectWithTag("TownHall").transform).GetChild(0);
-            if (points[1] != null) points.Remove(points[1]);
+            points[0] = GameObject.FindGameObjectWithTag("TownHall").transform.GetChild(0);
+
+            if (points.Count >= 2)
+            {
+                if (points[1] != null) points.Remove(points[1]);
+            }
         }
         else if (this.tag == "Farmer")
         {
@@ -96,7 +96,6 @@ public class PeasantBehaviour : MonoBehaviour
 
     void WorikingUpdate()
     {
-          
         if (agent.remainingDistance <= agent.stoppingDistance + 0.1f)
         {
             pathIndex++;
