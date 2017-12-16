@@ -25,6 +25,7 @@ public class FarmBehaviour : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        weatherEvent = GameObject.Find("EventSolver").GetComponent<EventBehaviour>();
         state = BuildingState.closed;
         started = true;
         destroy = false;
@@ -38,6 +39,9 @@ public class FarmBehaviour : MonoBehaviour
         Debug.Log("funcion MYstart");
         started = false;
         destroy = false;
+        scaleWheat = new Vector3(1, 0, 1);
+        scaleWheatBack = this.transform.GetChild(7).localScale;
+        scaleWheatFront = this.transform.GetChild(6).localScale;
     }
 
     private void FixedUpdate()
@@ -78,18 +82,23 @@ public class FarmBehaviour : MonoBehaviour
 
                     if(weatherEvent.rainStarted)
                     {
+                        Debug.Log("llueve");
                         rotateBlades.z = 2 * Time.timeScale;
                         gatherCounter = 6;
                         scaleWheat.y += 0.16f * Time.deltaTime * Time.timeScale;
                     }
                     else if(weatherEvent.dustStarted)
                     {
+                        Debug.Log("dust");
+
                         rotateBlades.z = 0.5f * Time.timeScale;
                         gatherCounter = 20;
                         scaleWheat.y += 0.05f * Time.deltaTime * Time.timeScale;
                     }
                     else
                     {
+                        Debug.Log("nada");
+
                         rotateBlades.z = 1 * Time.timeScale;
                         gatherCounter = 12;
                         scaleWheat.y += Time.deltaTime * 0.083f * Time.timeScale;
