@@ -39,7 +39,7 @@ public class LevelLogic : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-
+        Debug.Log("Update");
         // Input manager
         if (Input.GetKey(KeyCode.AltGr))
         {
@@ -97,9 +97,7 @@ public class LevelLogic : MonoBehaviour {
     {
         blackScreen.CrossFadeAlpha(1, fadeTime, true);
         loadingBar.CrossFadeAlpha(1, fadeTime, true);
-
     }
-
 
     public void SetLogoScene()
     {
@@ -131,8 +129,9 @@ public class LevelLogic : MonoBehaviour {
 
     IEnumerator Loading()
     {
-        while(loading)
+        while (loading)
         {
+            Debug.Log("Loading");
             loadingBar.rectTransform.Rotate(0, 0, 1);
 
             Debug.Log(asynLoad.progress);
@@ -149,6 +148,8 @@ public class LevelLogic : MonoBehaviour {
 
     IEnumerator WaitingLoad()
     {
+        Debug.Log("WaitingLoad");
+
         yield return new WaitForSeconds(fadeTime);
         Load();
     }
