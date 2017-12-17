@@ -286,7 +286,7 @@ public class ResourceManager : MonoBehaviour
         {
             victoryImage.SetActive(true);
             continueButton.SetActive(true);
-
+            
         }
         else if(!victory)
         {
@@ -294,22 +294,22 @@ public class ResourceManager : MonoBehaviour
         }
         endingBackground.gameObject.SetActive(true);
         endingButton.SetActive(true);
-        Time.timeScale = 0.0f;
+        //Time.timeScale = 0.0f;
     }
 
     public void EndGame()
     {
-        Time.timeScale = 1.0f;
+        //Time.timeScale = 1.0f;
         DesactivateEndingScreen();
 
-        level.SetTitleScene();
+        if (level != null) level.SetTitleScene();
     }
 
     public void ContinueGame()
     {
-        Time.timeScale = 1.0f;
+        //Time.timeScale = 1.0f;
         DesactivateEndingScreen();
-
+        GetComponent<BuilderScript>().CantBuild(true);
 
         gameEnded = true;
 
