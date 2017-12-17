@@ -12,7 +12,6 @@ public class OptionsBehaviour : MonoBehaviour
     public Dropdown lenguageDD;
     public Dropdown hUDInfoDD;
 
-
     [Header("Graphics")]
     int resolution = 0;
     public Dropdown resolutionDD;
@@ -185,12 +184,12 @@ public class OptionsBehaviour : MonoBehaviour
 
     public void SetFXSoundLevel(Slider slider)
     {
-        sounds.fXVolume = slider.value;
+        if (sounds != null) sounds.fXVolume = slider.value;
     }
 
     public void SetMusicLevel(Slider slider)
     {
-        sounds.musicVolume = slider.value;
+        if (sounds != null) sounds.musicVolume = slider.value;
     }
     #endregion
 
@@ -257,7 +256,7 @@ public class OptionsBehaviour : MonoBehaviour
 
     public void BackToTitle()
     {
-        level.SetTitleScene();
+        if (level != null) level.SetTitleScene();
     }
 #endregion
 }

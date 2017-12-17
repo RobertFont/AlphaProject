@@ -17,11 +17,6 @@ public class TitleBehaviour : MonoBehaviour
     {
         level = GameObject.Find("LevelManager").GetComponent<LevelLogic>();
     }
-	
-	void Update()
-    {
-        
-    }
 
     public void Continue()
     {
@@ -30,7 +25,7 @@ public class TitleBehaviour : MonoBehaviour
 
     public void NewGame()
     {
-        level.SetGameplayScene();
+        if (level != null) level.SetGameplayScene();
     }
 
     public void LoadGame()
@@ -40,7 +35,7 @@ public class TitleBehaviour : MonoBehaviour
 
     public void SetOptionsScene()
     {
-        level.SetOptionsScene();
+        if (level != null) level.SetOptionsScene();
     }
 
     public void ExitGame()

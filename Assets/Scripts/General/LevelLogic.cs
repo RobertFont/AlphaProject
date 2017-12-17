@@ -117,14 +117,14 @@ public class LevelLogic : MonoBehaviour {
     public void SetGameplayScene()
     {
         StartLoad(4);
-        sounds.StopMusic();
-        sounds.PlayMusic(1, true);
+        if (sounds != null) sounds.StopMusic();
+        if (sounds != null) sounds.PlayMusic(1, true);
     }
 
     public void SetEndingScene()
     {
         StartLoad(5);
-        sounds.StopMusic();
+        if (sounds != null) sounds.StopMusic();
     }
 
     IEnumerator Loading()
