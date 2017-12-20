@@ -5,15 +5,10 @@ using UnityEngine;
 public class BridgeBehaviour : MonoBehaviour {
 
     UiTrigger info;
-    
-    // Use this for initialization
-    void Start()
-    {
-        info = GameObject.Find("InformationButton").GetComponent<UiTrigger>();
-    }
 
     public void OnMouseUpAsButton()
     {
+        if(info == null) info = GameObject.Find("InformationButton").GetComponent<UiTrigger>();
         Debug.Log("funciona");
         info.buildingSelected = this.gameObject;
     }

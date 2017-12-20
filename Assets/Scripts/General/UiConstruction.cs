@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class UiConstruction : MonoBehaviour
 {
-
     public void StopConstruction()
     {
         this.gameObject.SetActive(false);

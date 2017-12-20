@@ -17,10 +17,8 @@ using System.Collections;
         while (i < mesh.vertices.Length)
         {
             randomTimes[i] = Random.Range(range.x, range.y);
-
             i++;
         }
-
     }
 
     void Update()

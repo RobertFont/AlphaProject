@@ -15,7 +15,6 @@ public class CameraBehaviour : MonoBehaviour {
     public float rotateSpeed = 0.5f;
 
     public Vector3 cameraPos;
-
     public Vector3 cameraRotation;
 
     void Start ()
