@@ -16,8 +16,10 @@ public class InputManager : MonoBehaviour {
     public GameObject pauseSystem;
     public GameObject construcionUI;
 
-    public float rotate;
-    public float zoomSpeed;
+    LevelLogic level;
+
+    public float rotate = 0;
+    public float zoomSpeed = 15f;
     public Vector3 zoom;
     public float rotatateSpeed;
 
@@ -26,15 +28,11 @@ public class InputManager : MonoBehaviour {
 
     public bool godMode = false;
 
-    void Start ()
+    public void MyUpdate ()
     {
-        camera = GetComponent<CameraBehaviour>();
-        zoomSpeed = 15f;
-        rotate = 0;
-    }
-	
-	void Update ()
-    {
+        if (GameObject.Find("LevelManager") != null) level = GameObject.Find("LevelManager").GetComponent<LevelLogic>();
+        if (camera == null) camera = GetComponent<CameraBehaviour>();
+
         if (Input.GetButtonDown("Pause")) TogglePause();
         if (paused) return;
 
@@ -97,6 +95,14 @@ public class InputManager : MonoBehaviour {
         #endregion
 
         if (Input.GetButtonDown("GodMode")) godMode = !godMode;
+
+        if (Input.GetKey(KeyCode.AltGr) && level != null)
+        {
+            if (Input.GetKeyDown(KeyCode.N)) level.StartLoad(level.nextScene);
+            if (Input.GetKeyDown(KeyCode.B)) level.StartLoad(level.backScene);
+            if (Input.GetKeyDown(KeyCode.R)) level.StartLoad(level.currentScene);
+            if (Input.GetKeyDown(KeyCode.C)) level.StartLoad(level.menuScene);
+        }
 
         Debug.Log("GodMode:" + godMode);
 

@@ -9,15 +9,13 @@ public class RaycastMouseController : MonoBehaviour
     public LayerMask layerMask;
     private BuilderScript build;
     RaycastHit hit = new RaycastHit();
-    BuildingBehaviour buildingSelected;
+    LumberMillBehaviour lumberMillSelelcted;
     FarmBehaviour farmSelected;
     GoldMineBehaviour mineSelected;
     public UiTrigger uiTrigger; 
 
-
-
     // Use this for initialization
-    void Start()
+   public void MyStart()
     {
         build = this.GetComponent<BuilderScript>();
         layerMask = 1 << 10;
@@ -60,11 +58,11 @@ public class RaycastMouseController : MonoBehaviour
     {
         if(Input.GetButtonUp("Fire1"))
         {
-            buildingSelected = hit.transform.gameObject.GetComponent<BuildingBehaviour>();
+            lumberMillSelelcted = hit.transform.gameObject.GetComponent<LumberMillBehaviour>();
         }
         else if(Input.GetButtonUp("Fire2"))
         {
-                buildingSelected = hit.transform.gameObject.GetComponent<BuildingBehaviour>();
+                lumberMillSelelcted = hit.transform.gameObject.GetComponent<LumberMillBehaviour>();
         }
     }
 

@@ -63,7 +63,7 @@ public class BuilderScript : MonoBehaviour {
 
     public string originalHouseName;
 
-    void Start()
+    public void MyStart()
     {
         buildingInMouse = new Vector3(0, 0, 0);
         DesactiveOriginalBuilding();
@@ -71,7 +71,7 @@ public class BuilderScript : MonoBehaviour {
         //colliderHalfSize = build.GetComponent<BoxCollider>().size/2;
     }
 
-    void Update()
+    public void MyUpdate()
     {
         if (input.paused || resource.gameEnded)
         {

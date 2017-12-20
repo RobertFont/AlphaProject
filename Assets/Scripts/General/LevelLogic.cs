@@ -11,7 +11,7 @@ public class LevelLogic : MonoBehaviour {
     public int currentScene;
     public int nextScene;
     private int managerScene = 0; //realmente sobra
-    private int menuScene = 1; 
+    public int menuScene = 1; 
     private int sceneCountInBuildSettings;
     [Header("Load parameters")]
     private AsyncOperation asynLoad = null;
@@ -30,14 +30,12 @@ public class LevelLogic : MonoBehaviour {
         if(SceneManager.sceneCount >= 2) SceneManager.SetActiveScene(SceneManager.GetSceneAt(1));
 
         UpdateSceneState();
-        //loadingBar.gameObject.SetActive(false);
-
 
         if (currentScene == managerScene) StartLoad(nextScene);
 	}
 	
 	// Update is called once per frame
-	void Update ()
+	/*void Update ()
     {
         Debug.Log("Update");
         // Input manager
@@ -48,8 +46,7 @@ public class LevelLogic : MonoBehaviour {
             if(Input.GetKeyDown(KeyCode.R)) StartLoad(currentScene);
             if(Input.GetKeyDown(KeyCode.C)) StartLoad(menuScene);
         }
-	}
-
+	}*/
 
     void UpdateSceneState()
     {
@@ -64,7 +61,7 @@ public class LevelLogic : MonoBehaviour {
         
     }
 
-    void StartLoad(int index)
+    public void StartLoad(int index)
     {
         if(loading)
         {

@@ -31,7 +31,7 @@ public class UiTrigger : MonoBehaviour
        buildingSelected = building;
     }
 
-    private void Update()
+    public void MyUpdate()
     {
         if (buildingSelected == null)
         {
@@ -138,7 +138,7 @@ public class UiTrigger : MonoBehaviour
         else if (buildingSelected.tag == "LumberMill")
         {
             resource.AddWood(lumberMillRestoreWood);
-            buildingSelected.GetComponent<BuildingBehaviour>().DestroyBuilding();
+            buildingSelected.GetComponent<LumberMillBehaviour>().DestroyBuilding();
             buildingSelected = null;
         }
         else if (buildingSelected.tag == "GoldMine")
@@ -178,7 +178,7 @@ public class UiTrigger : MonoBehaviour
         }
         else if (buildingSelected.tag == "LumberMill")
         {
-            buildingSelected.GetComponent<BuildingBehaviour>().state = BuildingBehaviour.BuildingState.open;
+            buildingSelected.GetComponent<LumberMillBehaviour>().state = LumberMillBehaviour.BuildingState.open;
         }
         else if (buildingSelected.tag == "GoldMine")
         {
@@ -194,7 +194,7 @@ public class UiTrigger : MonoBehaviour
         }
         else if (buildingSelected.tag == "LumberMill")
         {
-            buildingSelected.GetComponent<BuildingBehaviour>().state = BuildingBehaviour.BuildingState.closed;
+            buildingSelected.GetComponent<LumberMillBehaviour>().state = LumberMillBehaviour.BuildingState.closed;
         }
         else if (buildingSelected.tag == "GoldMine")
         {

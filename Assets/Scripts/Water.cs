@@ -8,7 +8,7 @@ using System.Collections;
     float[] randomTimes;
     Mesh mesh;
 
-    void Start()
+    public void MyStart()
     {
         mesh = GetComponent<MeshFilter>().mesh;
         int i = 0;
@@ -21,7 +21,7 @@ using System.Collections;
         }
     }
 
-    void Update()
+    public void MyUpdate()
     {
         mesh = GetComponent<MeshFilter>().mesh;
         Vector3[] vertices = mesh.vertices;

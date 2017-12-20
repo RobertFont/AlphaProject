@@ -49,7 +49,7 @@ public class EventBehaviour : MonoBehaviour {
     public int dustChance;
 
     // Use this for initialization
-    void Start()
+    public void MyStart()
     {
         state = EventSelection.Idle;
         eventChance = 1000;
@@ -62,7 +62,7 @@ public class EventBehaviour : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update()
+    public void MyUpdate()
     {
         UpdateHousesList();
         if (maxFarms > 5) bugsChance = 20;

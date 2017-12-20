@@ -9,8 +9,8 @@ public class EventIconsBehaviour : MonoBehaviour
     public Sprite bugsTexture;
     public int timer = 0;
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    public void MyStart ()
     {
 		fireTexture = Resources.Load<Sprite>("Fire") as Sprite;
 		bugsTexture = Resources.Load<Sprite>("Bug") as Sprite;

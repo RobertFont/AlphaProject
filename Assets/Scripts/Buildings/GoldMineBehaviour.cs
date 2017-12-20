@@ -23,7 +23,7 @@ public class GoldMineBehaviour : MonoBehaviour
 
     // Use this for initialization
    
-    void MyStart()
+    public void MyStart()
     {
         state = BuildingState.open;
         info = GameObject.Find("InformationButton").GetComponent<UiTrigger>();
@@ -36,9 +36,9 @@ public class GoldMineBehaviour : MonoBehaviour
         destroy = false;
         started = false;
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+    // Update is called once per frame
+    public void Update ()
     {
         
         switch (state)
@@ -46,7 +46,6 @@ public class GoldMineBehaviour : MonoBehaviour
             case BuildingState.open:
                 Debug.Log("open");
                 if(started) MyStart();
-                
 
                 if (GameObject.FindGameObjectWithTag("Unemployed") != null)
                 {

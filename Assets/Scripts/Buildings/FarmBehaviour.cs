@@ -24,27 +24,28 @@ public class FarmBehaviour : MonoBehaviour
     [SerializeField] List<GameObject> peasants = new List<GameObject>();
     [SerializeField] private bool started = true;
 
-    // Use this for initialization
-    void Start()
-    {
-        weatherEvent = GameObject.Find("EventSolver").GetComponent<EventBehaviour>();
-        state = BuildingState.closed;
-        started = true;
-        destroy = false;
-        scaleWheat = new Vector3(1, 0, 1);
-        scaleWheatBack = this.transform.GetChild(7).localScale;
-        scaleWheatFront = this.transform.GetChild(6).localScale;
-    }
+    /* // Use this for initialization
+     void Start()
+     {
+         weatherEvent = GameObject.Find("EventSolver").GetComponent<EventBehaviour>();
+         state = BuildingState.closed;
+         started = true;
+         destroy = false;
+         scaleWheat = new Vector3(1, 0, 1);
+         scaleWheatBack = this.transform.GetChild(7).localScale;
+         scaleWheatFront = this.transform.GetChild(6).localScale;
+     }*/
 
     void MyStart()
     {
+        weatherEvent = GameObject.Find("EventSolver").GetComponent<EventBehaviour>();
         info = GameObject.Find("InformationButton").GetComponent<UiTrigger>();
         Debug.Log("funcion MYstart");
-        started = false;
         destroy = false;
         scaleWheat = new Vector3(1, 0, 1);
         scaleWheatBack = this.transform.GetChild(7).localScale;
         scaleWheatFront = this.transform.GetChild(6).localScale;
+        started = false;
     }
 
     private void FixedUpdate()
@@ -52,9 +53,8 @@ public class FarmBehaviour : MonoBehaviour
         this.transform.GetChild(8).Rotate(rotateBlades);
     }
     // Update is called once per frame
-    void Update()
+    public void MyUpdate()
     {
-        
         switch (state)
         {
             case BuildingState.open:

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-public class BuildingBehaviour : MonoBehaviour
+public class LumberMillBehaviour : MonoBehaviour
 {
     public enum BuildingState { open, closed }
     public BuildingState state;
@@ -20,10 +20,9 @@ public class BuildingBehaviour : MonoBehaviour
     [SerializeField] int numFor;
 
     public GameObject[] trees;
-  
-    void MyStart()
-    {
-        
+
+    public void MyStart()
+    {   
         trees = GameObject.FindGameObjectsWithTag("Tree");
         finderTree = GetClosestTree(trees).gameObject;
         info = GameObject.Find("InformationButton").GetComponent<UiTrigger>();
@@ -32,10 +31,10 @@ public class BuildingBehaviour : MonoBehaviour
         started = false;
         destroy = false;
     }
-	
-    
-	// Update is called once per frame
-	void Update ()
+
+
+    // Update is called once per frame
+    public void Update ()
     {
         
         switch (state)

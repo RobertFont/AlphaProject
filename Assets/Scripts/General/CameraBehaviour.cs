@@ -17,7 +17,7 @@ public class CameraBehaviour : MonoBehaviour {
     public Vector3 cameraPos;
     public Vector3 cameraRotation;
 
-    void Start ()
+    public void MyStart ()
     {
         cameraPos = cameraTransform.position;
     }

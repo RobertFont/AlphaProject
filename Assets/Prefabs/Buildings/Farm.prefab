@@ -871,5 +871,6 @@ MonoBehaviour:
   scaleWheat: {x: 0, y: 0, z: 0}
   scaleWheatBack: {x: 0, y: 0, z: 0}
   scaleWheatFront: {x: 0, y: 0, z: 0}
+  info: {fileID: 0}
   peasants: []
   started: 1

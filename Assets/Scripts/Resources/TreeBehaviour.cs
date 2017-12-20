@@ -15,7 +15,7 @@ public class TreeBehaviour : MonoBehaviour {
 
 
     // Use this for initialization
-    void Start ()
+    public void MyStart ()
     {
         peasantWorking = true;
         currentWorkers = 0;
@@ -32,7 +32,7 @@ public class TreeBehaviour : MonoBehaviour {
         
     }
 
-    private void Update()
+    public void MyUpdate()
     {
         if (currentWorkers == maxWorkers) peasantWorking = false;
         else peasantWorking = true;

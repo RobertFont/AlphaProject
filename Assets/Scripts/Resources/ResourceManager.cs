@@ -56,13 +56,11 @@ public class ResourceManager : MonoBehaviour
     public GameObject canvas;
     public GameObject endingBackground;
 
-    private void Start()
-    {
-        if(level != null) level = GameObject.Find("LevelManager").GetComponent<LevelLogic>();
-    }
     // Update is called once per frame
-    public void Update ()
+    public void MyUpdate ()
     {
+        if (GameObject.Find("LevelManager") != null) level = GameObject.Find("LevelManager").GetComponent<LevelLogic>();
+
         UpdateUI();
         AddCurrentPopFromTime();
         EatingFood();

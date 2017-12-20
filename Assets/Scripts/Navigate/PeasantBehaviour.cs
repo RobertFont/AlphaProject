@@ -46,7 +46,7 @@ public class PeasantBehaviour : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         if (started) MyStart();
         if (points.Count > 2) points.Remove(points[2]);

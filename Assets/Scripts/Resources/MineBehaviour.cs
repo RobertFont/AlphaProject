@@ -9,7 +9,7 @@ public class MineBehaviour : MonoBehaviour {
     public int maxWorkers;
 
     // Use this for initialization
-    void Start ()
+    public void MyStart ()
     {
         peasantWorking = true;
         currentWorkers = 0;
@@ -17,7 +17,7 @@ public class MineBehaviour : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update ()
+	public void MyUpdate ()
     {
         if (currentWorkers == maxWorkers) peasantWorking = false;
         else peasantWorking = true;

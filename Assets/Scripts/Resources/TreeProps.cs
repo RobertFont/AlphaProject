@@ -8,7 +8,7 @@ public class TreeProps : MonoBehaviour {
     private float random;
     public Transform tree;
     // Use this for initialization
-    void Start ()
+    public void MyStart ()
     {
         tree = this.transform;
         random = Random.Range(0.7f, 1.2f);
