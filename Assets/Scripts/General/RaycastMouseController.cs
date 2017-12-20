@@ -20,26 +20,29 @@ public class RaycastMouseController : MonoBehaviour
     void Start()
     {
         build = this.GetComponent<BuilderScript>();
+        layerMask = 1 << 10;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (build.canCreateBuild) layerMask = 1 << 10;
-        else layerMask = 1 << 9;
-
-
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-        if (Physics.Raycast(ray, out hit, maxDistance, layerMask, QueryTriggerInteraction.Ignore))
+        if(build.canCreateBuild)
         {
-            Debug.DrawLine(ray.origin, hit.point, Color.red, 1);
-            Debug.Log(hit.transform.name);
-            SelectBuildings();
-            build.RaycastHitPointBuilder(hit.point);
-        }
-        //En el else hay que poner que no pille el mar como terrain;
-        else return;
+
+
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            if(Physics.Raycast(ray, out hit, maxDistance, layerMask, QueryTriggerInteraction.Ignore))
+            {
+                Debug.DrawLine(ray.origin, hit.point, Color.red, 1);
+                Debug.Log(hit.transform.name);
+                SelectBuildings();
+                build.RaycastHitPointBuilder(hit.point);
+            }
+            //En el else hay que poner que no pille el mar como terrain;
+            else return;
+        } 
+
     }
 
 
@@ -103,4 +106,7 @@ public class RaycastMouseController : MonoBehaviour
         }
         Debug.Log("edificio seleccionado");
     }
+    
+
+    
 }

@@ -1133,6 +1133,22 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 4d34ca56ae0e85848bad13e414aca897, type: 3}
   m_PrefabInternal: {fileID: 248935119}
+--- !u!1 &250053465 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1097571482297314, guid: 5d91526741e994948b095498ccbd9341,
+    type: 2}
+  m_PrefabInternal: {fileID: 1456679494}
+--- !u!114 &250053466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 250053465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37bd04f5e0aa07944be16051159ff032, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &253502657
 GameObject:
   m_ObjectHideFlags: 0
@@ -1567,6 +1583,7 @@ MonoBehaviour:
   scaleWheat: {x: 0, y: 0, z: 0}
   scaleWheatBack: {x: 0, y: 0, z: 0}
   scaleWheatFront: {x: 0, y: 0, z: 0}
+  info: {fileID: 0}
   peasants: []
   started: 1
 --- !u!23 &329407841
@@ -1907,6 +1924,22 @@ Camera:
   m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!1 &427442210 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1398809963280560, guid: 5d91526741e994948b095498ccbd9341,
+    type: 2}
+  m_PrefabInternal: {fileID: 1456679494}
+--- !u!114 &427442211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 427442210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37bd04f5e0aa07944be16051159ff032, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &429292911 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114629237461379734, guid: 49c06ed624cd55a4ba989c865ccdeb35,
@@ -5565,6 +5598,22 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 4d34ca56ae0e85848bad13e414aca897, type: 3}
   m_PrefabInternal: {fileID: 499393997}
+--- !u!1 &502936859 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1620990524204524, guid: 5d91526741e994948b095498ccbd9341,
+    type: 2}
+  m_PrefabInternal: {fileID: 1456679494}
+--- !u!114 &502936860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 502936859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37bd04f5e0aa07944be16051159ff032, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &503900790
 Prefab:
   m_ObjectHideFlags: 0
@@ -6382,6 +6431,7 @@ MonoBehaviour:
   currentWorkers: 0
   finder: {fileID: 0}
   finderMine: {fileID: 0}
+  info: {fileID: 0}
   peasants: []
   started: 1
   numFor: 0
@@ -7341,6 +7391,7 @@ MonoBehaviour:
   maxWorkers: 4
   currentWorkers: 0
   destroy: 0
+  info: {fileID: 0}
   peasants: []
   started: 1
   numFor: 0
@@ -8850,6 +8901,10 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1097571482297314, guid: 5d91526741e994948b095498ccbd9341, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5d91526741e994948b095498ccbd9341, type: 2}
   m_IsPrefabParent: 0
@@ -9525,7 +9580,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1595917523}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 560, y: -595.97943, z: 0}
+  m_LocalPosition: {x: 560, y: -302.51062, z: 0}
   m_LocalScale: {x: 1.6, y: 1.6, z: 1.6}
   m_Children: []
   m_Father: {fileID: 246944196}
@@ -10100,12 +10155,12 @@ Prefab:
     - target: {fileID: 224721848121280062, guid: 49c06ed624cd55a4ba989c865ccdeb35,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 310
+      value: 404.5
       objectReference: {fileID: 0}
     - target: {fileID: 224721848121280062, guid: 49c06ed624cd55a4ba989c865ccdeb35,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 263.74997
+      value: 189.58331
       objectReference: {fileID: 0}
     - target: {fileID: 224785398942104534, guid: 49c06ed624cd55a4ba989c865ccdeb35,
         type: 2}
@@ -11368,6 +11423,22 @@ Transform:
   m_PrefabParentObject: {fileID: 4539599138757732, guid: 5d91526741e994948b095498ccbd9341,
     type: 2}
   m_PrefabInternal: {fileID: 1456679494}
+--- !u!1 &1978091451 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1573346802196354, guid: 5d91526741e994948b095498ccbd9341,
+    type: 2}
+  m_PrefabInternal: {fileID: 1456679494}
+--- !u!114 &1978091452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1978091451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37bd04f5e0aa07944be16051159ff032, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1990813134 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1339496668103288, guid: 49c06ed624cd55a4ba989c865ccdeb35,
@@ -11585,21 +11656,6 @@ MonoBehaviour:
   warehouseMaterial: {fileID: 2100000, guid: 7bd1aecc616d6b84a89c0582e645dc6f, type: 2}
   castle: {fileID: 1942017273}
   castleMaterial: {fileID: 2100000, guid: 89a0001856e9b7945b1119dc7e6b2f0e, type: 2}
-  navMeshSelected: {fileID: 0}
-  townHallNavMesh: {fileID: 1023047606478438, guid: 3630bb108e27bf342bcd4282401102d8,
-    type: 2}
-  houseNavMesh: {fileID: 1608612291806836, guid: 5977ad6444ca5fa47b5c4334273ae7a4,
-    type: 2}
-  farmNavMesh: {fileID: 1053437429607928, guid: 4f09265c626c01e43a5927f880f7bc43,
-    type: 2}
-  lumberMillNavMesh: {fileID: 1067668670068816, guid: a0ee87fde9d52bf4a975fb0b68cee2d2,
-    type: 2}
-  goldMineNavMesh: {fileID: 1546662838056048, guid: 1414c5ef09fe038489adaee62d0f510f,
-    type: 2}
-  warehouseNavMesh: {fileID: 1051475341577754, guid: a05e9dc350a951c4ea55d2ac795eadb4,
-    type: 2}
-  castleNavMesh: {fileID: 1586955796480040, guid: 997a1493c8fb60b438d58bd885d02195,
-    type: 2}
   buildingSelected: {fileID: 0}
   townHallPrefab: {fileID: 1583060714063460, guid: 430491ea947ef0547959353c1188aad8,
     type: 2}

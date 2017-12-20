@@ -18,6 +18,8 @@ public class FarmBehaviour : MonoBehaviour
     public Vector3 scaleWheat;
     public Vector3 scaleWheatBack;
     public Vector3 scaleWheatFront;
+    public UiTrigger info;
+
 
     [SerializeField] List<GameObject> peasants = new List<GameObject>();
     [SerializeField] private bool started = true;
@@ -36,6 +38,7 @@ public class FarmBehaviour : MonoBehaviour
 
     void MyStart()
     {
+        info = GameObject.Find("InformationButton").GetComponent<UiTrigger>();
         Debug.Log("funcion MYstart");
         started = false;
         destroy = false;
@@ -195,5 +198,12 @@ public class FarmBehaviour : MonoBehaviour
         this.transform.GetChild(6).localScale = scaleWheatFront;
         this.transform.GetChild(7).localScale = scaleWheatBack;
     }
-    
+
+    public void OnMouseUpAsButton()
+    {
+        Debug.Log("funciona");
+        if(started) MyStart();
+        info.buildingSelected = this.gameObject;
+    }
+
 }

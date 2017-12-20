@@ -12,6 +12,8 @@ public class BuildingBehaviour : MonoBehaviour
     GameObject finder;
     GameObject finderTree;
     public bool destroy = false;
+    public UiTrigger info;
+
 
     [SerializeField]List<GameObject> peasants = new List<GameObject>();
     [SerializeField] private bool started = true;
@@ -19,24 +21,12 @@ public class BuildingBehaviour : MonoBehaviour
 
     public GameObject[] trees;
   
-
-
-    // Use this for initialization
-    void Start ()
-    {
-        state = BuildingState.closed;
-        started = true;
-
-        finder = null;
-        finderTree = null;
-    }
-
     void MyStart()
     {
         
         trees = GameObject.FindGameObjectsWithTag("Tree");
         finderTree = GetClosestTree(trees).gameObject;
-
+        info = GameObject.Find("InformationButton").GetComponent<UiTrigger>();
         finderTree.transform.position = finderTree.transform.position + new Vector3(0, 0, 0.5f);
         Debug.Log("funcion MYstart");
         started = false;
@@ -183,6 +173,10 @@ public class BuildingBehaviour : MonoBehaviour
         Debug.Log("destroy activo");
     }
 
-
-
+    public void OnMouseUpAsButton()
+    {
+        Debug.Log("funciona");
+        if(started) MyStart();
+        info.buildingSelected = this.gameObject;
+    }
 }

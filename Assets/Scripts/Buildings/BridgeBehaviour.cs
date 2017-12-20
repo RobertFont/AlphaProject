@@ -4,22 +4,17 @@ using UnityEngine;
 
 public class BridgeBehaviour : MonoBehaviour {
 
-    GameObject bridgeBroken;
-    public ResourceManager resource;
+    UiTrigger info;
     
     // Use this for initialization
     void Start()
     {
-        bridgeBroken = this.gameObject;
+        info = GameObject.Find("InformationButton").GetComponent<UiTrigger>();
     }
-    public void DestroyBuilding()
-    {
-        //if(!bridgeBroken.activeSelf) return;
-        if(resource.wood > 100 * resource.bridgeCost)
-        {
-            resource.bridgeCost++;
-            bridgeBroken.SetActive(false);
-        }
 
+    public void OnMouseUpAsButton()
+    {
+        Debug.Log("funciona");
+        info.buildingSelected = this.gameObject;
     }
 }

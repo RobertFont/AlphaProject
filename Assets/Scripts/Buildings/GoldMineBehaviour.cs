@@ -11,6 +11,7 @@ public class GoldMineBehaviour : MonoBehaviour
     public int currentWorkers = 0;
     public GameObject finder;
     public GameObject finderMine;
+    public UiTrigger info;
 
     [SerializeField]List<GameObject> peasants = new List<GameObject>();
     [SerializeField] private bool started = true;
@@ -21,14 +22,11 @@ public class GoldMineBehaviour : MonoBehaviour
 
 
     // Use this for initialization
-    void Start ()
-    {
-        state = BuildingState.closed;
-        started = true;
-	}
-
+   
     void MyStart()
     {
+        state = BuildingState.open;
+        info = GameObject.Find("InformationButton").GetComponent<UiTrigger>();
         Debug.Log("funcion MYstart");
         mines = GameObject.FindGameObjectsWithTag("Mine");
         Debug.Log("encontro las minas");
@@ -47,7 +45,8 @@ public class GoldMineBehaviour : MonoBehaviour
         {
             case BuildingState.open:
                 Debug.Log("open");
-                if (started) MyStart();
+                if(started) MyStart();
+                
 
                 if (GameObject.FindGameObjectWithTag("Unemployed") != null)
                 {
@@ -183,6 +182,10 @@ public class GoldMineBehaviour : MonoBehaviour
         
     }
 
-
-
+    public void OnMouseUpAsButton()
+    {
+        Debug.Log("funciona");
+        if(started) MyStart();
+        info.buildingSelected = this.gameObject;
+    }
 }
