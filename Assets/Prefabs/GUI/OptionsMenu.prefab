@@ -4996,10 +4996,15 @@ MonoBehaviour:
   lenguageDD: {fileID: 114163607188756266}
   hUDInfoDD: {fileID: 114912626804186362}
   resolutionDD: {fileID: 114302379690186300}
+  fullScreenToggle: {fileID: 114235388395941610}
+  vSyncToggle: {fileID: 114794125394981398}
+  activeShadowsToggle: {fileID: 114989624103610656}
   shadowResDD: {fileID: 114088817231056970}
   QualityLevelDD: {fileID: 114432920746741862}
   antiAliasingDD: {fileID: 114791210137157150}
-  sliderVolume: 0
+  sliderMaterVolume: 0
+  sliderFXVolume: 0
+  sliderMusicVolume: 0
   generalMenu: {fileID: 1907005601314370}
   graphicsMenu: {fileID: 1203762352014868}
   soundsMenu: {fileID: 1129045735680582}

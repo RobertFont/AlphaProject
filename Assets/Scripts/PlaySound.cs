@@ -11,6 +11,7 @@ public class PlaySound : MonoBehaviour
 
     public float musicVolume = 0.5f;
     public float fXVolume = 0.5f;
+    public float masterVolume = 1f;
 
     public void PlayMusic(int index, bool loop)
     {

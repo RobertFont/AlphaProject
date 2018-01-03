@@ -26,6 +26,8 @@ public class LevelLogic : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
+        //GameObject.Find("Options").GetComponent<OptionsBehaviour>().ResetSettingOption();
+
         blackScreen.color = Color.black;
         if(SceneManager.sceneCount >= 2) SceneManager.SetActiveScene(SceneManager.GetSceneAt(1));
 
@@ -63,7 +65,7 @@ public class LevelLogic : MonoBehaviour {
 
     public void StartLoad(int index)
     {
-        if(loading)
+        if (loading)
         {
             Debug.LogError("Already loading");
             return;
@@ -108,7 +110,9 @@ public class LevelLogic : MonoBehaviour {
 
     public void SetOptionsScene()
     {
+        
         StartLoad(3);
+        GameObject.Find("Options").GetComponent<OptionsBehaviour>().SetSavedOptions();
     }
 
     public void SetGameplayScene()
