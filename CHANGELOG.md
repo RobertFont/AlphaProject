@@ -13,7 +13,7 @@
 - [x] 1 Options screen.
 ___
 ## ALPHA
-- [ ] Extended Game Design Document
+- [X] Extended Game Design Document
 - [X] Level Design Map
 - [x] Concept Art buildings and environment
 - [x] Buildings Thumbnails
@@ -21,27 +21,27 @@ ___
 - [x] Buildings Size Chart
 - [x] Level Props Size Chart
 - [x] Level Flow Map
-- [ ] Upgrade Screen Mockups
+- [X] Upgrade Screen Mockups
 
 ### General
 - [x] Scene Transition Animation
 - [X] God Mode (F10)
 - [x] Victory/Defeat Conditions
 
-### Screen Logo
+### Screen: Logo
 - [X] Enter Animation
 
-### Screen Title
+### Screen: Title
 - [X] Title Final Art Implemented
 - [X] Title Entrance Animation
 - [x] Basic Menu Buttons (Start - Options - Exit)
 
-### Screen Options
+### Screen: Options
 - Basic Settings
   - [x] Resolution (720 Default - 1200 - 1080)
   - [x] Quality (Fast - Good - Fantastic - Ultra)
   
-### Screen Gameplay
+### Screen: Gameplay
 - [X] Basic Mecanics (Functionals & Testables)
 - [X] Temporal Models(Placeholders)
 - [X] 8 Final Props
@@ -52,6 +52,49 @@ ___
 - [x] 5 Particle Sytems
 - [x] 5 Sound FX
 
-### Screen Ending
-- [X] Custom Background & Message for Victory/Defeat
+### Screen: Ending
+- [X] Custom Background & Message For Victory/Defeat
 ___
+## ALPHA
+### General
+- [ ] Disable Unity Launche, Create Custom Game Icon And Mouse Icon
+
+### Screen: Logo
+- [ ] Logo Sound FX
+
+### Screen: Title
+- [ ] Reimplement Title Final Art (Title, Background, Buttons)
+- [ ] Title Elements Animations (Title, Background, Buttons)
+- [ ] Title Animacion Sound FX 
+- [ ] Custom Font
+- [ ] Sounds Fx (Buttons And Animations)
+- [ ] Specific Audio Track For Title Screen
+
+### Screen: Options
+- Basic Settings
+  - [ ] Gamma Correction (Brightness)
+  - [ ] Audio Volumen (Sound, Music Independientes)
+- [ ]  Animated Elements And Custom Art (Buttons, Selection)
+- [ ] Sound FX (Buttons, Animations...)
+- [ ] Custom Font
+- [ ] Lenguage Selection (Spanish, English)
+
+### Screen: Gameplay
+- [ ] Chesck: Basic Mecanics
+- [ ] Chesck: Final Models + texturized
+- [ ] 8 Final Props more (Total: 16 Props)
+- [ ] Final Building With Final Texture + Basic Animations (3 Building)
+- Pause Menu
+  - [ ] Final Art With Animations
+  - [ ] Custom Font
+- [ ] GUI Final Art With Animations
+- [ ] Custom Font
+- [ ] Control Support for Controller
+- [ ] 5 Particle Sytems More (Total: 10)
+- [ ] 5 Sound FX More (Total: 10)
+- [ ] Specific Audio Track For Gameplay Screen
+
+### Screen: Ending
+- [ ] Final Art, Enter Animation (Victory/Defeat)
+- [ ] Sounds Fx (Messages, Animations)
+- [ ] Custom Fonts
