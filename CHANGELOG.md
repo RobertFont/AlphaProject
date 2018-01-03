@@ -55,9 +55,10 @@ ___
 ### Screen: Ending
 - [X] Custom Background & Message For Victory/Defeat
 ___
-## ALPHA
+## BETA
 ### General
-- [ ] Disable Unity Launche, Create Custom Game Icon And Mouse Icon
+- [ ] Disable Unity Launche
+- [ ] Create Custom Game Icon And Mouse Icon
 
 ### Screen: Logo
 - [ ] Logo Sound FX
@@ -65,7 +66,7 @@ ___
 ### Screen: Title
 - [ ] Reimplement Title Final Art (Title, Background, Buttons)
 - [ ] Title Elements Animations (Title, Background, Buttons)
-- [ ] Title Animacion Sound FX 
+- [ ] Title Animacion And Sound FX 
 - [ ] Custom Font
 - [ ] Sounds Fx (Buttons And Animations)
 - [ ] Specific Audio Track For Title Screen
@@ -73,7 +74,7 @@ ___
 ### Screen: Options
 - Basic Settings
   - [ ] Gamma Correction (Brightness)
-  - [ ] Audio Volumen (Sound, Music Independientes)
+  - [ ] Audio Volumen (Sound And Music Independientes)
 - [ ]  Animated Elements And Custom Art (Buttons, Selection)
 - [ ] Sound FX (Buttons, Animations...)
 - [ ] Custom Font
@@ -81,8 +82,8 @@ ___
 
 ### Screen: Gameplay
 - [ ] Chesck: Basic Mecanics
-- [ ] Chesck: Final Models + texturized
-- [ ] 8 Final Props more (Total: 16 Props)
+- [ ] Chesck: Final Models + textures
+- [ ] 8 Final Props More (Total: 16 Props)
 - [ ] Final Building With Final Texture + Basic Animations (3 Building)
 - Pause Menu
   - [ ] Final Art With Animations
@@ -95,6 +96,6 @@ ___
 - [ ] Specific Audio Track For Gameplay Screen
 
 ### Screen: Ending
-- [ ] Final Art, Enter Animation (Victory/Defeat)
+- [ ] Final Art, Enter Animation For Victory/Defeat Messages
 - [ ] Sounds Fx (Messages, Animations)
 - [ ] Custom Fonts
