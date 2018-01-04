@@ -30,9 +30,9 @@ public class OptionsBehaviour : MonoBehaviour
     public Dropdown QualityLevelDD;
     int antiAliasing = 0;
     public Dropdown antiAliasingDD;
-    Color gammaLevel;
-    float gammaLevelFloat;
+    float gammaLevel;
     public Slider gammaLevelSlider;
+    public RectTransform gammaLevelRectT;
 
     [Header("Sound")]
     public float sliderMaterVolume;
@@ -53,7 +53,7 @@ public class OptionsBehaviour : MonoBehaviour
         SetGeneralMenu();
         level = GameObject.Find("LevelManager").GetComponent<LevelLogic>();
         sounds = GameObject.Find("LevelManager").GetComponent<PlaySound>();
-        gammaLevel = RenderSettings.ambientLight.gamma;
+        //gammaLevel = RenderSettings.ambientLight.gamma;
         SetSavedOptions();
 
     }
@@ -171,16 +171,18 @@ public class OptionsBehaviour : MonoBehaviour
         sSAO = value;
     }*/
 
+   /*void OnGUI()
+    {
+        gammaLevel = GUI.HorizontalSlider(gammaLevelRectT.rect, gammaLevel, 0f, 255.0f);
+        Debug.Log(gammaLevel);
+
+    }*/
+
     public void SetGamma()
     {
-        /*
-        gammaLevel = Color.Lerp(gammaLevel, gammaLevel gammaLevelSlider.Value);
-        
-        Color gammaLevel;
-        float gammaLevelFloat;
-        public Slider gammaLevelSlider;
-        */
-        
+        gammaLevel = gammaLevelSlider.value * 255;
+        RenderSettings.ambientLight = new Color(gammaLevel, gammaLevel, 1);
+        Debug.Log(RenderSettings.ambientLight);
     }
 
     public void AciveShadow(int value)
@@ -268,6 +270,8 @@ public class OptionsBehaviour : MonoBehaviour
 
         activeShadowsToggle.enabled = activeShadows;
 
+        gammaLevelSlider.value = gammaLevel;
+
         //Sounds
         sliderMaterVolume = sounds.masterVolume;
         sliderFXVolume = sounds.fXVolume;
@@ -303,6 +307,10 @@ public class OptionsBehaviour : MonoBehaviour
         activeShadows = true;
         QualitySettings.shadows = ShadowQuality.All;
         activeShadowsToggle.enabled = activeShadows;
+
+        gammaLevel = 0.5f;
+        gammaLevelSlider.value = gammaLevel;
+        RenderSettings.ambientLight = new Color(gammaLevel, gammaLevel, 1);
 
         //Sounds
         if (sounds != null)
