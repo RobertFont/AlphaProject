@@ -140,7 +140,9 @@ public class OptionsBehaviour : MonoBehaviour
 
     public void SetShadowResolution()
     {
-        switch (lenguageDD.value)
+		shadowResValue = lenguageDD.value;
+
+		switch (shadowResValue)
         {
             case 0:
                 shadowRes = ShadowResolution.Low;
@@ -155,8 +157,7 @@ public class OptionsBehaviour : MonoBehaviour
                 shadowRes = ShadowResolution.VeryHigh;
                 break;
         }
-
-        shadowResValue = lenguageDD.value;
+		
         QualitySettings.shadowResolution = shadowRes;
     }
 
@@ -256,6 +257,7 @@ public class OptionsBehaviour : MonoBehaviour
     #region ExtraOptions
     public void SetSavedOptions()
     {
+		Debug.Log("Set");
         resolutionDD.value = resolution;
 
         fullScreenToggle.enabled = fullScreen;
@@ -264,13 +266,13 @@ public class OptionsBehaviour : MonoBehaviour
 
         QualityLevelDD.value = QualityLevel;
 
-        shadowResDD.value = shadowResValue;
+		lenguageDD.value = shadowResValue;
 
         antiAliasingDD.value = antiAliasing;
 
         activeShadowsToggle.enabled = activeShadows;
 
-        gammaLevelSlider.value = gammaLevel;
+        //gammaLevelSlider.value = gammaLevel;
 
         //Sounds
         sliderMaterVolume = sounds.masterVolume;

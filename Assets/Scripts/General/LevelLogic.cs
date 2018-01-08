@@ -23,15 +23,16 @@ public class LevelLogic : MonoBehaviour {
     public Image loadingBar;
     private float fadeTime = 0.25f;
 
-    // Use this for initialization
     void Start ()
     {
-        //GameObject.Find("Options").GetComponent<OptionsBehaviour>().ResetSettingOption();
-
         blackScreen.color = Color.black;
         if(SceneManager.sceneCount >= 2) SceneManager.SetActiveScene(SceneManager.GetSceneAt(1));
 
         UpdateSceneState();
+
+		//asynLoad = SceneManager.LoadSceneAsync(3, LoadSceneMode.Additive);
+
+		//GameObject.Find("Options").GetComponent<OptionsBehaviour>().ResetSettingOption();
 
         if (currentScene == managerScene) StartLoad(nextScene);
 	}
@@ -71,6 +72,8 @@ public class LevelLogic : MonoBehaviour {
             return;
         }
 
+		if (index == 3 && optionsSceneLoad != true) optionsSceneLoad = true;
+
         loading = true;
         sceneToLoad = index;
         FadeOut();
@@ -80,8 +83,8 @@ public class LevelLogic : MonoBehaviour {
 
     void Load()
     {
-        if (currentScene != managerScene) asynUnLoad = SceneManager.UnloadSceneAsync(currentScene);
-        asynLoad = SceneManager.LoadSceneAsync(sceneToLoad, LoadSceneMode.Additive);
+		if (currentScene != managerScene) asynUnLoad = SceneManager.UnloadSceneAsync(currentScene);
+		asynLoad = SceneManager.LoadSceneAsync(sceneToLoad, LoadSceneMode.Additive);
         StartCoroutine(Loading());
         FadeIn();
     }
@@ -112,7 +115,6 @@ public class LevelLogic : MonoBehaviour {
     {
         
         StartLoad(3);
-        GameObject.Find("Options").GetComponent<OptionsBehaviour>().SetSavedOptions();
     }
 
     public void SetGameplayScene()
