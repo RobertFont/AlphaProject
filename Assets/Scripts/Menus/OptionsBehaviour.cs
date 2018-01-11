@@ -15,7 +15,7 @@ public class OptionsBehaviour : MonoBehaviour
     [Header("Graphics")]
     int resolution = 1;
     public Dropdown resolutionDD;
-    bool fullScreen = false;
+    bool fullScreen = true;
     public Toggle fullScreenToggle;
     bool vSync = false;
     public Toggle vSyncToggle;
@@ -121,13 +121,13 @@ public class OptionsBehaviour : MonoBehaviour
 
     public void FullScreenMode()
     {
-        fullScreen = !fullScreen;
-        Screen.fullScreen = fullScreen;
+		fullScreen = fullScreenToggle.enable;
+		Screen.fullScreen = fullScreen;
     }
 
     public void VSync()
     {
-        vSync = !vSync;
+		vSync = vSyncToggle.enabled;
         if (vSync) QualitySettings.vSyncCount = 1;
         else QualitySettings.vSyncCount = 0;
     }
@@ -186,9 +186,9 @@ public class OptionsBehaviour : MonoBehaviour
         Debug.Log(RenderSettings.ambientLight);
     }
 
-    public void AciveShadow(int value)
+    public void AciveShadow()
     {
-        activeShadows = !activeShadows;
+		activeShadows = activeShadowsToggle.enabled;
 
         if (!activeShadows) QualitySettings.shadows= ShadowQuality.Disable;
         if (activeShadows) QualitySettings.shadows= ShadowQuality.All;
@@ -272,7 +272,7 @@ public class OptionsBehaviour : MonoBehaviour
 
         activeShadowsToggle.enabled = activeShadows;
 
-        //gammaLevelSlider.value = gammaLevel;
+        gammaLevelSlider.value = gammaLevel / 255;
 
         //Sounds
         sliderMaterVolume = sounds.masterVolume;
