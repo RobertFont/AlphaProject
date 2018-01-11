@@ -54,7 +54,7 @@ public class OptionsBehaviour : MonoBehaviour
         level = GameObject.Find("LevelManager").GetComponent<LevelLogic>();
         sounds = GameObject.Find("LevelManager").GetComponent<PlaySound>();
         //gammaLevel = RenderSettings.ambientLight.gamma;
-        SetSavedOptions();
+		SetSavedOptionsValue();
 
     }
 
@@ -278,6 +278,8 @@ public class OptionsBehaviour : MonoBehaviour
         sliderMaterVolume = sounds.masterVolume;
         sliderFXVolume = sounds.fXVolume;
         sliderMusicVolume = sounds.musicVolume;
+
+		level.SaveOptionsValue (resolution, fullScreen, vSync, sSAO, activeShadows, shadowResValue, QualityLevel, antiAliasing, gammaLevel);
     }
 
     public void ResetSettingOption()
@@ -324,6 +326,20 @@ public class OptionsBehaviour : MonoBehaviour
         }
 
     }
+
+	public void SetSavedOptionsValue()
+	{
+		resolution = level.resolution;
+		fullScreen = level.fullScreen;
+		vSync = level.vSync;
+		sSAO = level.sSAO;
+		activeShadows = level.activeShadows;
+		shadowResValue = level.shadowResValue;
+		QualityLevel = level.QualityLevel;
+		antiAliasing = level.antiAliasing;
+		gammaLevel = level.gammaLevel;
+		SetSavedOptions();
+	}
 
     public void BackToTitle()
     {

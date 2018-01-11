@@ -22,6 +22,18 @@ public class LevelLogic : MonoBehaviour {
     public Image blackScreen;
     public Image loadingBar;
     private float fadeTime = 0.25f;
+	bool optionsSceneLoad = false;
+
+	[Header("Options")]
+	public int resolution = 1;
+	public bool fullScreen = false;
+	public bool vSync = false;
+	public bool sSAO = false;
+	public bool activeShadows = true;
+	public int shadowResValue;
+	public int QualityLevel = 1;
+	public int antiAliasing = 0;
+	public float gammaLevel;
 
     void Start ()
     {
@@ -129,6 +141,21 @@ public class LevelLogic : MonoBehaviour {
         StartLoad(5);
         if (sounds != null) sounds.StopMusic();
     }
+
+	public void SaveOptionsValue(int newresolution, bool newFullScreen, bool newVSync, bool newSSAO, bool newActiveShadows, int newShadowResValue, int newQualityLevel, int newAntiAliasing, float newGammaLevel)
+	{
+		resolution = newresolution;
+		fullScreen = newFullScreen;
+		vSync = newVSync;
+		sSAO = newSSAO;
+		activeShadows = newActiveShadows;
+		shadowResValue = newShadowResValue;
+		QualityLevel = newQualityLevel;
+		antiAliasing = newAntiAliasing;
+		gammaLevel = newGammaLevel;
+	}
+
+
 
     IEnumerator Loading()
     {
