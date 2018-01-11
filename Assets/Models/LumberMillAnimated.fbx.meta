@@ -1,0 +1,140 @@
+fileFormatVersion: 2
+guid: e31ace9f082e37642ab01c95ea8027a9
+timeCreated: 1515690502
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Grua_brazo
+    100002: Grua_cable_animado
+    100004: Grua_cable_falso
+    100006: Grua_engranaje
+    100008: Grua_gancho
+    100010: Grua_Madera
+    100012: Grua_madera
+    100014: //RootNode
+    100016: Madera
+    100018: Sierra
+    400000: Grua_brazo
+    400002: Grua_cable_animado
+    400004: Grua_cable_falso
+    400006: Grua_engranaje
+    400008: Grua_gancho
+    400010: Grua_Madera
+    400012: Grua_madera
+    400014: //RootNode
+    400016: Madera
+    400018: Sierra
+    2300000: Grua_brazo
+    2300002: Grua_cable_animado
+    2300004: Grua_cable_falso
+    2300006: Grua_engranaje
+    2300008: Grua_gancho
+    2300010: Grua_Madera
+    2300012: Grua_madera
+    2300014: //RootNode
+    2300016: Madera
+    2300018: Sierra
+    3300000: Grua_brazo
+    3300002: Grua_cable_animado
+    3300004: Grua_cable_falso
+    3300006: Grua_engranaje
+    3300008: Grua_gancho
+    3300010: Grua_Madera
+    3300012: Grua_madera
+    3300014: //RootNode
+    3300016: Madera
+    3300018: Sierra
+    4300000: LumberMill
+    4300002: Sierra
+    4300004: Madera
+    4300006: Grua_engranaje
+    4300008: Grua_Madera
+    4300010: Grua_brazo
+    4300012: Grua_cable_falso
+    4300014: Grua_cable_animado
+    4300016: Grua_gancho
+    4300018: Grua_madera
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: UltimateTexture03
+    second: {fileID: 2100000, guid: f2808966685c7a647a0d38b47dfd7ed6, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
