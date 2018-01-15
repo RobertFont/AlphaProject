@@ -67,17 +67,17 @@ ___
 - [ ] Reimplement Title Final Art (Title, Background, Buttons)
 - [ ] Title Elements Animations (Title, Background, Buttons)
 - [ ] Title Animacion And Sound FX 
-- [ ] Custom Font
+- [X] Custom Font
 - [ ] Sounds Fx (Buttons And Animations)
 - [ ] Specific Audio Track For Title Screen
 
 ### Screen: Options
 - Basic Settings
   - [ ] Gamma Correction (Brightness)
-  - [ ] Audio Volumen (Sound And Music Independientes)
+  - [X] Audio Volumen (Sound And Music Independientes)
 - [ ]  Animated Elements And Custom Art (Buttons, Selection)
 - [ ] Sound FX (Buttons, Animations...)
-- [ ] Custom Font
+- [X] Custom Font
 - [ ] Lenguage Selection (Spanish, English)
 
 ### Screen: Gameplay
