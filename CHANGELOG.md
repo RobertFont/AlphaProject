@@ -98,4 +98,4 @@ ___
 ### Screen: Ending
 - [ ] Final Art, Enter Animation For Victory/Defeat Messages
 - [ ] Sounds Fx (Messages, Animations)
-- [ ] Custom Fonts
+- [X] Custom Fonts
