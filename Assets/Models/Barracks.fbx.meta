@@ -198,8 +198,11 @@ ModelImporter:
     400188: transform320
     400190: transform321
     2300000: polySurface637
+    2300002: //RootNode
     3300000: polySurface637
+    3300002: //RootNode
     4300000: polySurface637
+    4300002: Barracks
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -211,6 +214,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: lambert1
     second: {fileID: 2100000, guid: 269123292ec4b6145bc3fd86cc99ce32, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert2
+    second: {fileID: 2100000, guid: 4d55dbe1a56535d44a459f0ed389afc2, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
