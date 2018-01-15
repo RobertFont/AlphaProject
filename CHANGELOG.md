@@ -57,7 +57,7 @@ ___
 ___
 ## BETA
 ### General
-- [ ] Disable Unity Launche
+- [X] Disable Unity Launche
 - [ ] Create Custom Game Icon And Mouse Icon
 
 ### Screen: Logo
