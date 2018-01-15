@@ -121,7 +121,7 @@ public class OptionsBehaviour : MonoBehaviour
 
     public void FullScreenMode()
     {
-		fullScreen = fullScreenToggle.enable;
+		//fullScreen = fullScreenToggle.enable;
 		Screen.fullScreen = fullScreen;
     }
 
