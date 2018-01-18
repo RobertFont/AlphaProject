@@ -32,6 +32,10 @@ public class LumberMillBehaviour : MonoBehaviour
         destroy = false;
     }
 
+    private void FixedUpdate()
+    {
+        this.transform.GetChild(2).Rotate(0,0,-10);
+    }
 
     // Update is called once per frame
     public void Update ()
