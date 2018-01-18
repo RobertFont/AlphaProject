@@ -12,8 +12,8 @@ public class LogoEvent : MonoBehaviour
     public void Start()
     {
         anim = GetComponent<Animation>();
-        music = GameObject.Find("LevelManager").GetComponent<PlaySound>();
-        level = GameObject.Find("LevelManager").GetComponent<LevelLogic>();
+        if (music != null) music = GameObject.Find("LevelManager").GetComponent<PlaySound>();
+        if (level != null) level = GameObject.Find("LevelManager").GetComponent<LevelLogic>();
     }
 
     public void Update()
