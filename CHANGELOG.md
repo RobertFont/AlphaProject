@@ -61,7 +61,7 @@ ___
 - [ ] Create Custom Game Icon And Mouse Icon
 
 ### Screen: Logo
-- [ ] Logo Sound FX
+- [x] Logo Sound FX
 
 ### Screen: Title
 - [ ] Reimplement Title Final Art (Title, Background, Buttons)
