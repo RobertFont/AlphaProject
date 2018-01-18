@@ -51,10 +51,10 @@ public class OptionsBehaviour : MonoBehaviour
     private void Start()
     {
         SetGeneralMenu();
-        level = GameObject.Find("LevelManager").GetComponent<LevelLogic>();
-        sounds = GameObject.Find("LevelManager").GetComponent<PlaySound>();
+        if (level != null) level = GameObject.Find("LevelManager").GetComponent<LevelLogic>();
+        if (sounds != null) sounds = GameObject.Find("LevelManager").GetComponent<PlaySound>();
         //gammaLevel = RenderSettings.ambientLight.gamma;
-		SetSavedOptionsValue();
+        if (level != null) SetSavedOptionsValue();
 
     }
 
