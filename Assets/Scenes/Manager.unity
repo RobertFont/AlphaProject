@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -329,9 +329,6 @@ MonoBehaviour:
   musix:
   - {fileID: 8300000, guid: e03878c89c97e9d4eac9b083e0e2b5d1, type: 3}
   - {fileID: 8300000, guid: 9f06805ed452e4c4d9eb1bea0184bbfc, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   fX:
   - {fileID: 8300000, guid: 3e80feb72939bcb42b64624bde96cb1f, type: 3}
   - {fileID: 8300000, guid: 6880014ee2abb1042a4779c556b383bb, type: 3}

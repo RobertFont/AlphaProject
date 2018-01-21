@@ -15,7 +15,7 @@ public class TitleBehaviour : MonoBehaviour
 
     void Start()
     {
-        if (level != null) level = GameObject.Find("LevelManager").GetComponent<LevelLogic>();
+        level = GameObject.Find("LevelManager").GetComponent<LevelLogic>();
     }
 
     public void Continue()

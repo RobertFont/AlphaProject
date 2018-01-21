@@ -28,6 +28,9 @@ public class InputManager : MonoBehaviour {
 
     public bool godMode = false;
 
+    public GameObject pauseEnterA;
+    public GameObject pauseExitA;
+
     public void MyUpdate ()
     {
         if (GameObject.Find("LevelManager") != null) level = GameObject.Find("LevelManager").GetComponent<LevelLogic>();
@@ -138,17 +141,28 @@ public class InputManager : MonoBehaviour {
     {
         if(!paused)
         {
-            pauseSystem.SetActive(true);
-            construcionUI.SetActive(false);
-            Time.timeScale = 0.0f;
             paused = true;
+            pauseSystem.SetActive(true);
+            pauseEnterA.SetActive(true);
+            construcionUI.SetActive(false);
         }
         else if(paused)
         {
-            pauseSystem.SetActive(false);
-            construcionUI.SetActive(true);
             Time.timeScale = 1.0f;
-            paused = false;
+            pauseExitA.SetActive(true);
+            construcionUI.SetActive(true);
+            Debug.Log("Here");
         }
+    }
+
+    public void StopTime()
+    {
+        Time.timeScale = 0.0f;
+    }
+
+    public void DesactivePause()
+    {
+        paused = false;
+        pauseSystem.SetActive(false);
     }
 }

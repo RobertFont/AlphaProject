@@ -42,26 +42,8 @@ public class LevelLogic : MonoBehaviour {
 
         UpdateSceneState();
 
-		//asynLoad = SceneManager.LoadSceneAsync(3, LoadSceneMode.Additive);
-
-		//GameObject.Find("Options").GetComponent<OptionsBehaviour>().ResetSettingOption();
-
         if (currentScene == managerScene) StartLoad(nextScene);
 	}
-	
-	// Update is called once per frame
-	/*void Update ()
-    {
-        Debug.Log("Update");
-        // Input manager
-        if (Input.GetKey(KeyCode.AltGr))
-        {
-            if(Input.GetKeyDown(KeyCode.N)) StartLoad(nextScene);
-            if(Input.GetKeyDown(KeyCode.B)) StartLoad(backScene);
-            if(Input.GetKeyDown(KeyCode.R)) StartLoad(currentScene);
-            if(Input.GetKeyDown(KeyCode.C)) StartLoad(menuScene);
-        }
-	}*/
 
     void UpdateSceneState()
     {
@@ -131,7 +113,7 @@ public class LevelLogic : MonoBehaviour {
 
     public void SetGameplayScene()
     {
-        StartLoad(4);
+        StartLoad(3);
         if (sounds != null) sounds.StopMusic();
         if (sounds != null) sounds.PlayMusic(1, true);
     }
@@ -154,8 +136,6 @@ public class LevelLogic : MonoBehaviour {
 		antiAliasing = newAntiAliasing;
 		gammaLevel = newGammaLevel;
 	}
-
-
 
     IEnumerator Loading()
     {

@@ -105,10 +105,10 @@ InputManager:
     m_Name: Pause
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
+    negativeButton: space
     positiveButton: space
     altNegativeButton: joystick button 7
-    altPositiveButton: p
+    altPositiveButton: joystick button 7
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
