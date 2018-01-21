@@ -65,17 +65,17 @@ ___
 
 ### Screen: Title
 - [ ] Reimplement Title Final Art (Title, Background, Buttons)
-- [ ] Title Elements Animations (Title, Background, Buttons)
+- [X] Title Elements Animations (Title, Background, Buttons)
 - [ ] Title Animacion And Sound FX 
 - [X] Custom Font
 - [ ] Sounds Fx (Buttons And Animations)
-- [ ] Specific Audio Track For Title Screen
+- [X] Specific Audio Track For Title Screen
 
 ### Screen: Options
 - Basic Settings
   - [ ] Gamma Correction (Brightness)
   - [X] Audio Volumen (Sound And Music Independientes)
-- [ ]  Animated Elements And Custom Art (Buttons, Selection)
+- [X]  Animated Elements And Custom Art (Buttons, Selection)
 - [ ] Sound FX (Buttons, Animations...)
 - [X] Custom Font
 - [ ] Lenguage Selection (Spanish, English)
