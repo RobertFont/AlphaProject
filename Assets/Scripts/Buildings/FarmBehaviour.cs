@@ -20,8 +20,6 @@ public class FarmBehaviour : MonoBehaviour
     public Vector3 scaleWheatFront;
     public UiTrigger info;
 
-
-    [SerializeField] List<GameObject> peasants = new List<GameObject>();
     [SerializeField] private bool started = true;
 
     /* // Use this for initialization
@@ -60,28 +58,10 @@ public class FarmBehaviour : MonoBehaviour
             case BuildingState.open:
                 if (started) MyStart();
 
-                if (currentWorkers < maxWorkers)
-                {
-                    if (GameObject.FindGameObjectWithTag("Unemployed"))
-                    {
-                        Debug.Log("Trabajador encontrado");
-                        finder = GameObject.FindGameObjectWithTag("Unemployed");
-                        finder.tag = "Farmer";
-                        peasants.Add(finder);
-                        currentWorkers = peasants.Count;
-                        peasants[0].GetComponent<PeasantBehaviour>().points[0] = this.transform.GetChild(0);
-                        peasants[0].GetComponent<PeasantBehaviour>().points.Add(this.transform.GetChild(0));
-
-                        peasants[1].GetComponent<PeasantBehaviour>().points[0] = this.transform.GetChild(1);
-                        peasants[1].GetComponent<PeasantBehaviour>().points.Add(this.transform.GetChild(1));
-                    }
-                }
-
                 if (currentWorkers == maxWorkers)
                 {
-                    
-                    peasants[0].GetComponent<PeasantBehaviour>().gatheredResoruce = true;
-                    peasants[1].GetComponent<PeasantBehaviour>().gatheredResoruce = true;
+                    //peasants[0].GetComponent<PeasantBehaviour>().gatheredResoruce = true;
+                    //peasants[1].GetComponent<PeasantBehaviour>().gatheredResoruce = true;
 
                     if(weatherEvent.rainStarted)
                     {
@@ -112,8 +92,9 @@ public class FarmBehaviour : MonoBehaviour
                     if (scaleWheat.y > 1) scaleWheat.y = 1;
                     if (counter > gatherCounter/Time.timeScale)
                     {
-                        peasants[0].GetComponent<PeasantBehaviour>().GatherResources();
-                        peasants[1].GetComponent<PeasantBehaviour>().GatherResources();
+                        // TODO: Crear un nuevo GatherResources() que no dependa de los peasants
+                        //peasants[0].GetComponent<PeasantBehaviour>().GatherResources();
+                        //peasants[1].GetComponent<PeasantBehaviour>().GatherResources();
 
                         scaleWheat.y = 0.1f;
                         counter = 0;
@@ -130,13 +111,6 @@ public class FarmBehaviour : MonoBehaviour
 
                 break;
             case BuildingState.closed:
-                if (currentWorkers > 0)
-                {
-                    peasants[0].tag = "Unemployed";
-                    peasants[1].tag = "Unemployed";
-                    peasants.Clear();
-                }
-                currentWorkers = 0;
                 started = true;
                 if (destroy)
                 {
@@ -148,33 +122,6 @@ public class FarmBehaviour : MonoBehaviour
             default:
                 break;
         }
-    }
-
-    void SetWorkers()
-    {
-        Debug.Log(this.transform.GetChildCount() + "farms");
-        if (peasants[0].GetComponent<PeasantBehaviour>().points.Count < 2 || (peasants[0].GetComponent<PeasantBehaviour>().points[0] == null))
-        {
-            Debug.Log("firstWorker");
-            
-            peasants[1].GetComponent<PeasantBehaviour>().points.Add(this.transform.GetChild(0));
-            peasants[0].GetComponent<PeasantBehaviour>().points[0] = this.transform.GetChild(0);
-            peasants[0].GetComponent<PeasantBehaviour>().points[1] = this.transform.GetChild(1);
-
-
-        }
-        if (peasants[1].GetComponent<PeasantBehaviour>().points.Count < 2 || (peasants[1].GetComponent<PeasantBehaviour>().points[0] == null))
-        {
-            Debug.Log("secondWorker");
-
-            peasants[1].GetComponent<PeasantBehaviour>().points.Add(this.transform.GetChild(1));
-            peasants[1].GetComponent<PeasantBehaviour>().points[0] = this.transform.GetChild(1);
-            peasants[1].GetComponent<PeasantBehaviour>().points[1] = this.transform.GetChild(0);
-
-
-        }
-       
-
     }
 
     public void DestroyBuilding()

@@ -9,9 +9,9 @@ public class RaycastMouseController : MonoBehaviour
     public LayerMask layerMask;
     private BuilderScript build;
     RaycastHit hit = new RaycastHit();
-    LumberMillBehaviour lumberMillSelelcted;
-    FarmBehaviour farmSelected;
-    GoldMineBehaviour mineSelected;
+    //LumberMillBehaviour lumberMillSelelcted;
+    //FarmBehaviour farmSelected;
+    //GoldMineBehaviour mineSelected;
     public UiTrigger uiTrigger; 
 
     // Use this for initialization
@@ -32,7 +32,6 @@ public class RaycastMouseController : MonoBehaviour
             {
                 Debug.DrawLine(ray.origin, hit.point, Color.red, 1);
                 Debug.Log(hit.transform.name);
-                SelectBuildings();
                 build.RaycastHitPointBuilder(hit.point);
             }
             //En el else hay que poner que no pille el mar como terrain;
@@ -40,7 +39,7 @@ public class RaycastMouseController : MonoBehaviour
         } 
     }
 
-    public void SelectBuildings()
+    /*public void SelectBuildings()
     {
         if (EventSystem.current.IsPointerOverGameObject()) return;
 
@@ -49,8 +48,8 @@ public class RaycastMouseController : MonoBehaviour
         if(hit.transform.tag == "GoldMine") SelectMine();
         SelectBuildingInformation();
         
-    }
-    public void SelectBuilding()
+    }*/
+    /*public void SelectBuilding()
     {
         if(Input.GetButtonUp("Fire1"))
         {
@@ -60,9 +59,9 @@ public class RaycastMouseController : MonoBehaviour
         {
                 lumberMillSelelcted = hit.transform.gameObject.GetComponent<LumberMillBehaviour>();
         }
-    }
+    }*/
 
-    public void SelectFarm()
+    /*public void SelectFarm()
     {
         if (Input.GetButtonUp("Fire1"))
         {
@@ -100,8 +99,5 @@ public class RaycastMouseController : MonoBehaviour
             else uiTrigger.DeselectBuilding();
         }
         Debug.Log("edificio seleccionado");
-    }
-    
-
-    
+    }*/
 }
