@@ -6,8 +6,6 @@ using UnityEngine;
 public class UpdatesList
 {
     public List<BridgeBehaviour> bridge;
-    public List<MineBehaviour> mine;
-    public List<TreeBehaviour> treeB;
     public List<TreeProps> treeP;
 }
 
@@ -26,8 +24,6 @@ public class UpdateManager : MonoBehaviour
     FarmBehaviour farm;
     GoldMineBehaviour goldMine;
     //PeasantsBehaviour peasants;*/
-    public List<MineBehaviour> mine = new List<MineBehaviour>();
-    public List<TreeBehaviour> treeB = new List<TreeBehaviour>();
     public List<TreeProps> treeP = new List<TreeProps>();
   
     public Water water;
@@ -40,16 +36,6 @@ public class UpdateManager : MonoBehaviour
         builder.MyStart();
         events.MyStart();
         eventsIcon.MyStart();
-
-        for (int i = 0; i < mine.Count; i++)
-        {
-            mine[i].MyStart();
-        }
-
-        for (int i = 0; i < treeB.Count; i++)
-        {
-            treeB[i].MyStart();
-        }
 
         for (int i = 0; i < treeP.Count; i++)
         {
@@ -70,15 +56,5 @@ public class UpdateManager : MonoBehaviour
         eventsIcon.MyStart();
 
         water.MyStart();
-
-        for (int i = 0; i < mine.Count; i++)
-        {
-            mine[i].MyUpdate();
-        }
-
-        for (int i = 0; i < treeB.Count; i++)
-        {
-            treeB[i].MyUpdate();
-        }
     }
 }

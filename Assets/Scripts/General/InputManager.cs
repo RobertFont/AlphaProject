@@ -73,8 +73,6 @@ public class InputManager : MonoBehaviour {
         if (Input.GetButtonDown("Speed3") || Input.GetAxis("Speed1 and 3 Controller") > 0.05f) Time.timeScale = 2.0f;
         #endregion
 
-        Debug.Log(Time.timeScale);
-
         #region Rotate
         /*if (Input.GetKey(KeyCode.Q)) rotate = 1;
         else if (Input.GetKey(KeyCode.E)) rotate = -1;*/

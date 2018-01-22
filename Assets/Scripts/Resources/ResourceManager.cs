@@ -44,7 +44,6 @@ public class ResourceManager : MonoBehaviour
     public int timer = 0;
     public int bridgeCost = 1;
     public float mealTime = 0;
-    public PeasantSpawn peasant;
     public InputManager input;
     public bool victory = false;
     public bool gameEnded = false;
@@ -169,7 +168,6 @@ public class ResourceManager : MonoBehaviour
             if (timer > 120/Time.timeScale)
             {
                 currentPop++;
-                peasant.Spawner();
                 timer = 0;
             }
         }
@@ -327,7 +325,4 @@ public class ResourceManager : MonoBehaviour
         canvas.transform.GetChild(4).gameObject.SetActive(true);
         canvas.transform.GetChild(5).gameObject.SetActive(true);
     }
-
-
-    
 } 

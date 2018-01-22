@@ -205,7 +205,6 @@ public class BuilderScript : MonoBehaviour {
 
         if (canPosisitioningBuild)
         {
-            
             ChangeMaterialClone();
             originalHouseName = build.name;
             ChangeBuildName();

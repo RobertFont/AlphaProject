@@ -40,7 +40,6 @@ GameObject:
   - component: {fileID: 33559079859349874}
   - component: {fileID: 23435370991335146}
   - component: {fileID: 65067065166456108}
-  - component: {fileID: 114484874578223996}
   m_Layer: 9
   m_Name: GoldMine01
   m_TagString: Mine
@@ -176,20 +175,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114484874578223996
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1625546941808912}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce2f70c5c8e1b75409627d2f930c9efb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  peasantWorking: 0
-  currentWorkers: 0
-  maxWorkers: 0
 --- !u!114 &114505980863816576
 MonoBehaviour:
   m_ObjectHideFlags: 1

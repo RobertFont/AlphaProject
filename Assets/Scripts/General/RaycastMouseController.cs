@@ -26,8 +26,6 @@ public class RaycastMouseController : MonoBehaviour
     {
         if(build.canCreateBuild)
         {
-
-
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
             if(Physics.Raycast(ray, out hit, maxDistance, layerMask, QueryTriggerInteraction.Ignore))
@@ -40,9 +38,7 @@ public class RaycastMouseController : MonoBehaviour
             //En el else hay que poner que no pille el mar como terrain;
             else return;
         } 
-
     }
-
 
     public void SelectBuildings()
     {
@@ -99,7 +95,8 @@ public class RaycastMouseController : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            if (hit.transform.tag == "Farm" || hit.transform.tag == "LumberMill" || hit.transform.tag == "GoldMine" || hit.transform.tag == "House" || hit.transform.tag == "Warehouse" || hit.transform.tag == "Bridge") uiTrigger.SelectBuilding(hit.transform.gameObject);
+            if (hit.transform.tag == "Farm" || hit.transform.tag == "LumberMill" || hit.transform.tag == "GoldMine" || hit.transform.tag == "House" || 
+                hit.transform.tag == "Warehouse" || hit.transform.tag == "Bridge") uiTrigger.SelectBuilding(hit.transform.gameObject);
             else uiTrigger.DeselectBuilding();
         }
         Debug.Log("edificio seleccionado");
