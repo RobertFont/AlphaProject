@@ -66,9 +66,9 @@ ___
 ### Screen: Title
 - [ ] Reimplement Title Final Art (Title, Background, Buttons)
 - [X] Title Elements Animations (Title, Background, Buttons)
-- [ ] Title Animacion And Sound FX 
+- [X] Title Animacion And Sound FX 
 - [X] Custom Font
-- [ ] Sounds Fx (Buttons And Animations)
+- [X] Sounds Fx (Buttons And Animations)
 - [X] Specific Audio Track For Title Screen
 
 ### Screen: Options
