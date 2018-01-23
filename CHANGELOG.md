@@ -76,7 +76,7 @@ ___
   - [ ] Gamma Correction (Brightness)
   - [X] Audio Volumen (Sound And Music Independientes)
 - [X]  Animated Elements And Custom Art (Buttons, Selection)
-- [ ] Sound FX (Buttons, Animations...)
+- [X] Sound FX (Buttons, Animations...)
 - [X] Custom Font
 - [ ] Lenguage Selection (Spanish, English)
 
