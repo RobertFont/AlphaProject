@@ -130,8 +130,14 @@ public class InputManager : MonoBehaviour {
 
     public void CanPlace()
     {
+        Debug.Log("Entre en CanPlace");
+
         if (EventSystem.current.IsPointerOverGameObject()) return;
-        else if (Input.GetButtonDown("Fire1")) builder.CreateBuild();
+        else if (Input.GetButtonDown("Fire1"))
+        {
+            Debug.Log("justo antes de construir");
+            builder.CreateBuild();
+        }
         else builder.canPosisitioningBuild = false;
     }
 
