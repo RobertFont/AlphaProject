@@ -28,7 +28,9 @@ ModelImporter:
     400018: //RootNode
     400020: tronco
     2300000: copa
+    2300002: //RootNode
     3300000: copa
+    3300002: //RootNode
     4300000: copa
   externalObjects:
   - first:
@@ -36,6 +38,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Tronco
     second: {fileID: 2100000, guid: 57f21836ba2911348928985363351c4e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: UltimateTexture02
+    second: {fileID: 2100000, guid: 6f3895a69b13ece4d9418ebe33c17575, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule

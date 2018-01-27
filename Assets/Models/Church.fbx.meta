@@ -197,6 +197,7 @@ ModelImporter:
     100378: transform583
     100380: transform584
     100382: transform585
+    100384: Bell
     400000: //RootNode
     400002: pCylinder187
     400004: polySurface1052
@@ -389,12 +390,19 @@ ModelImporter:
     400378: transform583
     400380: transform584
     400382: transform585
+    400384: Bell
     2300000: polySurface1202
     2300002: polySurface1217
+    2300004: Bell
+    2300006: //RootNode
     3300000: polySurface1202
     3300002: polySurface1217
+    3300004: Bell
+    3300006: //RootNode
     4300000: polySurface1217
     4300002: polySurface1202
+    4300004: Church
+    4300006: Bell
   externalObjects:
   - first:
       type: UnityEngine:Material
