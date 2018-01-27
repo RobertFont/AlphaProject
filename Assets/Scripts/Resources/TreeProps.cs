@@ -6,7 +6,7 @@ public class TreeProps : MonoBehaviour {
     private Vector3 treeSize;
     private Vector3 treeRotation;
     private float random;
-    public Transform tree;
+    Transform tree;
     // Use this for initialization
     public void MyStart ()
     {

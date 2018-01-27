@@ -7,8 +7,9 @@ public class InputManager : MonoBehaviour {
 
     public Vector2 axis;
     public Vector2 inputMouse;
-    public Vector2 mousePosition;
-    public CameraBehaviour camera;
+    public Vector2 inputMouseJostick;
+    public Vector2 realMousePosition;
+    CameraBehaviour camera;
     public Camera mainCamera;
     public BuilderScript builder;
     public UiTrigger uiTrigger;
@@ -19,6 +20,7 @@ public class InputManager : MonoBehaviour {
     LevelLogic level;
 
     public float rotate = 0;
+    public float isRotating = 0;
     public float zoomSpeed = 15f;
     public Vector3 zoom;
     public float rotatateSpeed;
@@ -31,7 +33,12 @@ public class InputManager : MonoBehaviour {
     public GameObject pauseEnterA;
     public GameObject pauseExitA;
 
-    public void Update ()
+    public void Start()
+    {
+        realMousePosition = Input.mousePosition;
+    }
+
+    public void Update()
     {
         if (GameObject.Find("LevelManager") != null) level = GameObject.Find("LevelManager").GetComponent<LevelLogic>();
         if (camera == null) camera = GetComponent<CameraBehaviour>();
@@ -51,22 +58,19 @@ public class InputManager : MonoBehaviour {
         inputMouse.x = Input.GetAxis("Mouse X");
         inputMouse.y = Input.GetAxis("Mouse Y");
 
-        inputMouse.x = Input.GetAxis("Right Joystick X");
-        inputMouse.y = Input.GetAxis("Right Joystick Y");
+        inputMouseJostick.x = Input.GetAxis("Right Joystick X");
+        inputMouseJostick.y = Input.GetAxis("Right Joystick Y");
 
-        mousePosition.x += inputMouse.x;
-        mousePosition.y += inputMouse.y;
-
-        mousePosition.x = Input.mousePosition.x;
-        mousePosition.y = Input.mousePosition.y;
+        realMousePosition = inputMouse;
+        //realMousePosition = inputMouseJostick;
 
         #endregion
 
-        if (builder.canCreateBuild && Input.GetKeyDown(KeyCode.Escape) )         
+        if (builder.canCreateBuild && Input.GetKeyDown(KeyCode.Escape))
         {
             builder.CantBuild(false);
         }
-        
+
         #region Speed
         if (Input.GetButtonDown("Speed1") || Input.GetAxis("Speed1 and 3 Controller") < -0.05f) Time.timeScale = 1.0f;
         if (Input.GetButtonDown("Speed2") || Input.GetAxis("Speed2 Controller") > 0.05f) Time.timeScale = 1.5f;
@@ -74,14 +78,13 @@ public class InputManager : MonoBehaviour {
         #endregion
 
         #region Rotate
-        /*if (Input.GetKey(KeyCode.Q)) rotate = 1;
-        else if (Input.GetKey(KeyCode.E)) rotate = -1;*/
-        if (Input.GetButtonDown("Rotate+")) rotate = 1;
-        else if (Input.GetButtonDown("Rotate-")) rotate = -1;
+        isRotating = Input.GetAxis("Rotate")*2;
 
-        if (rotate >= -0.015 && rotate <= 0.015f) rotate = 0;
-        else if (rotate < -0.01f) rotate += Time.deltaTime;
-        else if (rotate > 0.01f) rotate -= Time.deltaTime;
+        if (isRotating >= 2) isRotating = 2;
+        else if (isRotating <= -2) isRotating = -2;
+
+        rotate = isRotating;
+
         #endregion
         #region Camera Zoom
         if (Input.GetAxis("Mouse ScrollWheel") != 0)
