@@ -47,7 +47,6 @@ public class UpdateManager : MonoBehaviour
 	
 	void Update ()
     {
-        input.MyUpdate();
         resource.MyUpdate();
         uIT.MyUpdate();
 

@@ -31,7 +31,7 @@ public class InputManager : MonoBehaviour {
     public GameObject pauseEnterA;
     public GameObject pauseExitA;
 
-    public void MyUpdate ()
+    public void Update ()
     {
         if (GameObject.Find("LevelManager") != null) level = GameObject.Find("LevelManager").GetComponent<LevelLogic>();
         if (camera == null) camera = GetComponent<CameraBehaviour>();
@@ -94,8 +94,8 @@ public class InputManager : MonoBehaviour {
         }
 
 
-        if (mainCamera.fieldOfView >= 60) mainCamera.fieldOfView = 60;
-        else if (mainCamera.fieldOfView <= 30) mainCamera.fieldOfView = 30;
+        if (mainCamera.fieldOfView >= 90) mainCamera.fieldOfView = 90;
+        else if (mainCamera.fieldOfView <= 25) mainCamera.fieldOfView = 25;
 
         #region Zoom Camera Example
         /*if (Input.GetAxis("Mouse ScrollWheel") > 0)   this fuking Works
