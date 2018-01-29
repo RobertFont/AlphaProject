@@ -315,6 +315,12 @@ MonoBehaviour:
   QualityLevel: 1
   antiAliasing: 0
   gammaLevel: 0
+  textIdsList:
+  - continuar
+  - nuevo juego
+  textComponente:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &1619233292
 MonoBehaviour:
   m_ObjectHideFlags: 0
