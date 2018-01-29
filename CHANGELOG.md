@@ -81,8 +81,8 @@ ___
 - [ ] Lenguage Selection (Spanish, English)
 
 ### Screen: Gameplay
-- [ ] Chesck: Basic Mecanics
-- [ ] Chesck: Final Models + textures
+- [ ] Check: Basic Mecanics
+- [ ] Check: Final Models + textures
 - [ ] 8 Final Props More (Total: 16 Props)
 - [ ] Final Building With Final Texture + Basic Animations (3 Building)
 - Pause Menu
