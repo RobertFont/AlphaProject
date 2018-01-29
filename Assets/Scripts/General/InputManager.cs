@@ -22,6 +22,7 @@ public class InputManager : MonoBehaviour {
     public float rotate = 0;
     public float isRotating = 0;
     public float zoomSpeed = 15f;
+    public float moveSpeed = 5f;
     public Vector3 zoom;
     public float rotatateSpeed;
 
@@ -55,8 +56,8 @@ public class InputManager : MonoBehaviour {
         axis.x = Input.GetAxis("Horizontal");
         axis.y = Input.GetAxis("Vertical");
 
-        inputMouse.x = Input.GetAxis("Mouse X");
-        inputMouse.y = Input.GetAxis("Mouse Y");
+        inputMouse.x = Input.GetAxis("Mouse X") * moveSpeed;
+        inputMouse.y = Input.GetAxis("Mouse Y") * moveSpeed;
 
         inputMouseJostick.x = Input.GetAxis("Right Joystick X");
         inputMouseJostick.y = Input.GetAxis("Right Joystick Y");
@@ -89,16 +90,16 @@ public class InputManager : MonoBehaviour {
         #region Camera Zoom
         if (Input.GetAxis("Mouse ScrollWheel") != 0)
         {
-            mainCamera.fieldOfView -= Input.GetAxis("Mouse ScrollWheel") * zoomSpeed; //Change values according to your requirements
+            mainCamera.transform.localPosition +=  new Vector3(0,0,Input.GetAxis("Mouse ScrollWheel")*zoomSpeed); //Change values according to your requirements
         }
         if (Input.GetAxis("Mouse ScrollWheel Controller") != 0)
         {
-            mainCamera.fieldOfView -= Input.GetAxis("Mouse ScrollWheel Controller") * zoomSpeed; //Change controller values according to your requirements
+            mainCamera.transform.localPosition += new Vector3(0, 0, Input.GetAxis("Mouse ScrollWheel")*zoomSpeed); //Change values according to your requirements
         }
 
 
-        if (mainCamera.fieldOfView >= 90) mainCamera.fieldOfView = 90;
-        else if (mainCamera.fieldOfView <= 25) mainCamera.fieldOfView = 25;
+        if (mainCamera.transform.localPosition.z >= -10) mainCamera.transform.localPosition = new Vector3(mainCamera.transform.localPosition.x, mainCamera.transform.localPosition.y, -10);
+        else if (mainCamera.transform.localPosition.z <= -50) mainCamera.transform.localPosition = new Vector3(mainCamera.transform.localPosition.x, mainCamera.transform.localPosition.y, -50);
 
         #region Zoom Camera Example
         /*if (Input.GetAxis("Mouse ScrollWheel") > 0)   this fuking Works
