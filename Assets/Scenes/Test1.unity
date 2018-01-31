@@ -141,7 +141,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 24803064}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 635.00006, y: 354.93164, z: 0}
+  m_LocalPosition: {x: 635, y: 354.8722, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1797126542}
@@ -1201,8 +1201,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 246944195}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 292.5, y: 137.08331, z: 0}
-  m_LocalScale: {x: 0.45703122, y: 0.38085932, z: 0.45703122}
+  m_LocalPosition: {x: 469.5, y: 219.99998, z: 0}
+  m_LocalScale: {x: 0.73359376, y: 0.61132807, z: 0.73359376}
   m_Children:
   - {fileID: 1012672672}
   - {fileID: 1362044915}
@@ -1692,12 +1692,12 @@ GameObject:
   - component: {fileID: 346670444}
   - component: {fileID: 346670443}
   m_Layer: 0
-  m_Name: EnemySpawner
+  m_Name: GoblinSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &346670443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1720,7 +1720,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 346670442}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 54.3, y: 5.3, z: 96.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -9475,7 +9475,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1160487590}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -100, y: -359.93164, z: 0}
+  m_LocalPosition: {x: -100, y: -359.8722, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 45741801}
@@ -10465,7 +10465,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1362044914}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -635.00006, y: 396.7517, z: 0}
+  m_LocalPosition: {x: -635, y: 396.69226, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2019223755}
@@ -16980,6 +16980,7 @@ MonoBehaviour:
   houseSelected: {fileID: 0}
   farmSelected: {fileID: 0}
   bugParticle: {fileID: 1213422629}
+  goblinSpawner: {fileID: 346670442}
   rain: {fileID: 1012672671}
   housesArray: []
   farmsArray: []
@@ -17000,17 +17001,21 @@ MonoBehaviour:
   bugStarted: 0
   rainStarted: 0
   dustStarted: 0
+  goblinsStarted: 0
   randomTimer: 0
   eventTimerFire: 0
   eventTimerBugs: 0
   eventTimerRain: 0
   eventTimerDust: 0
+  eventTimerGoblins: 0
   eventChance: 0
+  enemyChance: 0
   weatherChance: 0
   fireChance: 0
   bugsChance: 0
   rainChance: 0
   dustChance: 0
+  goblinsChance: 0
 --- !u!1 &1591027016
 GameObject:
   m_ObjectHideFlags: 0
@@ -17153,7 +17158,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1650871393}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -640.00006, y: -359.93164, z: 0}
+  m_LocalPosition: {x: -640, y: -359.8722, z: 0}
   m_LocalScale: {x: 1.073, y: 0.97, z: 1}
   m_Children:
   - {fileID: 1152763674}
@@ -17333,7 +17338,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1771009911}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 560.00006, y: -302.4917, z: 0}
+  m_LocalPosition: {x: 560, y: -302.43225, z: 0}
   m_LocalScale: {x: 1.6, y: 1.6, z: 1.6}
   m_Children: []
   m_Father: {fileID: 246944196}

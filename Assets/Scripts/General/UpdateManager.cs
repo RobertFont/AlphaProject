@@ -51,9 +51,8 @@ public class UpdateManager : MonoBehaviour
         uIT.MyUpdate();
 
         builder.MyUpdate();
-        events.MyStart();
-        eventsIcon.MyStart();
+        events.MyUpdate();
 
-        water.MyStart();
+        water.MyUpdate();
     }
 }

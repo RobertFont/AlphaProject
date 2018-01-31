@@ -345,6 +345,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 832ac8081fbbd2d48984944dc75b89c4, type: 3}
   - {fileID: 8300000, guid: 47fe5e11523359b44aef74101d39c54e, type: 3}
   - {fileID: 8300000, guid: 17be39820bc529a408671caf6904b292, type: 3}
+  - {fileID: 8300000, guid: 1a1ab7ae22afc024ba21312675490ae3, type: 3}
   audioSourceMusic: {fileID: 0}
   audioSourceFX: {fileID: 0}
   musicVolume: 0.5

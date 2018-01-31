@@ -13,6 +13,7 @@ public class EventBehaviour : MonoBehaviour {
     public GameObject houseSelected;
     public GameObject farmSelected;
     public GameObject bugParticle;
+    public GameObject goblinSpawner;
     public GameObject rain;
     public GameObject[] housesArray;
     public GameObject[] farmsArray;
@@ -36,17 +37,21 @@ public class EventBehaviour : MonoBehaviour {
     public bool bugStarted = false;
     public bool rainStarted = false;
     public bool dustStarted = false;
+    public bool goblinsStarted = false;
     public float randomTimer;
     public float eventTimerFire;
     public float eventTimerBugs;
     public float eventTimerRain;
     public float eventTimerDust;
+    public float eventTimerGoblins;
     public int eventChance;
+    public int enemyChance;
     public int weatherChance;
     public int fireChance;
     public int bugsChance;
     public int rainChance;
     public int dustChance;
+    public int goblinsChance;
 
     // Use this for initialization
     public void MyStart()
@@ -54,10 +59,12 @@ public class EventBehaviour : MonoBehaviour {
         state = EventSelection.Idle;
         eventChance = 1000;
         weatherChance = 1000;
+        enemyChance = 1000;
         fireChance = 5;
         bugsChance = 10;
         rainChance = 20;
         dustChance = 10;
+        goblinsChance = 50;
         if (soundFX != null) soundFX = GameObject.Find("LevelManager").GetComponent<PlaySound>();
     }
 
@@ -71,15 +78,18 @@ public class EventBehaviour : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.G)) StartEventBugs();
         if (Input.GetKeyDown(KeyCode.R)) StartEventRain();
         if (Input.GetKeyDown(KeyCode.T)) StartEventDust();
+        if (Input.GetKeyDown(KeyCode.H)) StartEventGoblins();
 
         randomTimer += Time.deltaTime;
         if (randomTimer >= 20 / Time.timeScale)
         {
-            randomTimer = 0;
             eventChance = Random.Range(0, 100);
             weatherChance = Random.Range(0, 100);
+            enemyChance = Random.Range(0, 100);
 
             SelectEvent();
+
+            randomTimer = 0;
         }
 
         if (fireStarted) eventTimerFire += Time.deltaTime;
@@ -96,6 +106,7 @@ public class EventBehaviour : MonoBehaviour {
         {
             eventTimerDust += Time.deltaTime;
         }
+        if(goblinsStarted) eventTimerGoblins += Time.deltaTime;
 
         if (eventTimerFire > 10 /Time.timeScale)
         {
@@ -118,6 +129,7 @@ public class EventBehaviour : MonoBehaviour {
             EndBugs();
 
         }
+        if(eventTimerGoblins > 30 / Time.timeScale) EndGoblins();
         
         switch (state)
         {
@@ -191,6 +203,15 @@ public class EventBehaviour : MonoBehaviour {
         dustStarted = true;
     }
 
+    public void StartEventGoblins()
+    {
+        if(goblinsStarted) return;
+        goblinSpawner.SetActive(true);
+        if(soundFX != null) soundFX.PlayFX(9, 1, false);
+
+        goblinsStarted = true;
+    }
+
     public void SelectEvent()
     {
         if ((eventChance < fireChance) && (resource.house > 0) && !fireStarted)
@@ -212,8 +233,8 @@ public class EventBehaviour : MonoBehaviour {
         {
             StartEventRain();
         }
-        
-        
+
+        if(enemyChance < goblinsChance) StartEventGoblins();
     }
 
     public void EndFire()
@@ -259,6 +280,14 @@ public class EventBehaviour : MonoBehaviour {
         if (soundFX != null) soundFX.StopFX();
         dustStarted = false;
         eventTimerDust = 0;
+    }
+
+    public void EndGoblins()
+    {
+        goblinSpawner.SetActive(false);
+        if(soundFX != null) soundFX.StopFX();
+        goblinsStarted = false;
+        eventTimerGoblins = 0;
     }
 
     public void UpdateHousesList()
