@@ -1,0 +1,27 @@
+﻿id	spanish	english
+continue	Continuar	Continue
+newGame	Nueva Partida	New Game
+loadGame	Cargar Partida	Load Game
+options	Opciones	Options
+exit	Salir	Exit
+general	General	General
+graphics	Graficos	Graphics
+sound	Sonido	Sounds
+controls	Controles	Controls
+defaultSettings	Configuración de Serie	Reset Settings
+saveSettings	Guardar Configuración	Save Settings
+back	Volver	Back
+language	Lenguaje	Language
+extraInformation	Informació extra	Extra Information
+hudSize	Tamaño del HUD	HUD Size
+resolution	Resolucion	Resolution
+fullScreen	Pantalla completa	FullScreen
+quality	Calidad	Quality
+vSync	VSync	VSync
+textureQyality	Calidad de texturas	Texture Qyality
+antiAlising	AntiAlising	AntiAlising
+shadows	Sombras	Shadows
+gamma	Gama	Gamma
+masterSound	Maestro	Master
+fxSound	FX	FX
+musicSound	Musica	Music

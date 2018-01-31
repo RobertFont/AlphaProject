@@ -35,16 +35,8 @@ public class LevelLogic : MonoBehaviour
 	public int antiAliasing = 0;
 	public float gammaLevel;
 
-    public List<string> textIdsList = new List<string>();
-    public List<Text> textComponente = new List<Text>();
-
-    AddTextComponentToLevelLogic textComponentTitle;
-
     void Start ()
     {
-        if (GameObject.Find("LevelManager").GetComponent<LevelLogic>() != null) textComponentTitle = GameObject.Find("TitleMenu").GetComponent<AddTextComponentToLevelLogic>();
-        LoadLanguageList();
-
         blackScreen.color = Color.black;
         if(SceneManager.sceneCount >= 2) SceneManager.SetActiveScene(SceneManager.GetSceneAt(1));
 
@@ -144,11 +136,6 @@ public class LevelLogic : MonoBehaviour
 		antiAliasing = newAntiAliasing;
 		gammaLevel = newGammaLevel;
 	}
-
-    void LoadLanguageList()
-    {
-        //textIdsList.Add(textComponentTitle.GetTextList());
-    }
 
     IEnumerator Loading()
     {
