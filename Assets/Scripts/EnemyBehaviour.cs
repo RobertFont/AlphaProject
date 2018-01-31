@@ -9,16 +9,19 @@ public class EnemyBehaviour : MonoBehaviour
     public float velocity;
     public Vector3 target;
     public Vector3 destination;
-    public bool canAttack;
+    public bool canAttackX;
+    public bool canAttackZ;
     public float counter;
 
 	// Use this for initialization
 	void Start ()
     {
         transform = GetComponent<Transform>();
+        resource = GameObject.FindGameObjectWithTag("Player").GetComponent<ResourceManager>();
         destination = new Vector3(0, this.transform.position.y, 0);
-        canAttack = false;
-	}
+        canAttackX = false;
+        canAttackZ = false;
+    }
 
     // Update is called once per frame
     void Update()
@@ -30,41 +33,33 @@ public class EnemyBehaviour : MonoBehaviour
 
         target = GameObject.FindGameObjectWithTag("TownHall").GetComponent<Transform>().position;
 
-        if (!canAttack)
+        if(transform.position.x <= target.x - 1)
         {
-
-            if (transform.position.x <= target.x)
-            {
-                destination.x += Time.deltaTime * velocity / Time.timeScale;
-            }
-            else if (transform.position.x >= target.x)
-            {
-                destination.x -= Time.deltaTime * velocity / Time.timeScale;
-            }
-            if (transform.position.z <= target.z)
-            {
-                destination.z += Time.deltaTime * velocity / Time.timeScale;
-            }
-            else if (transform.position.z >= target.z)
-            {
-                destination.z -= Time.deltaTime * velocity / Time.timeScale;
-            }
-
-            transform.position = destination;
+            destination.x += Time.deltaTime * velocity / Time.timeScale;
         }
-        else
+        else if(transform.position.x >= target.x + 1)
+        {
+            destination.x -= Time.deltaTime * velocity / Time.timeScale;
+        }
+        else canAttackX = true;
+
+        if(transform.position.z <= target.z - 1)
+        {
+            destination.z += Time.deltaTime * velocity / Time.timeScale;
+        }
+        else if(transform.position.z >= target.z + 1)
+        {
+            destination.z -= Time.deltaTime * velocity / Time.timeScale;
+        }
+        else canAttackZ = true;
+
+        transform.position = destination;
+        
+        if(canAttackX && canAttackZ)
         {
             counter += Time.deltaTime;
-
-            if (counter >= 2) Destroy(this.gameObject);
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.tag == "Townhall")
-        {
-            canAttack = true;
+            
+            if (counter >= 1) Destroy(this.gameObject);
         }
     }
 }
