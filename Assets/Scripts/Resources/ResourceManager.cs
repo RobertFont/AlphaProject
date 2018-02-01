@@ -41,7 +41,7 @@ public class ResourceManager : MonoBehaviour
     public Text happinessUi;
     public Text populationUi;
     [Header("Utilities")]
-    public int timer = 0;
+    public float timer = 0;
     public int bridgeCost = 1;
     public float mealTime = 0;
     public InputManager input;
@@ -61,7 +61,7 @@ public class ResourceManager : MonoBehaviour
         if (GameObject.Find("LevelManager") != null) level = GameObject.Find("LevelManager").GetComponent<LevelLogic>();
 
         UpdateUI();
-        AddCurrentPopFromTime();
+        //AddCurrentPopFromTime();
         EatingFood();
         if(!gameEnded)
         {
@@ -108,8 +108,8 @@ public class ResourceManager : MonoBehaviour
         if (food < 0) food = 0;
         if (gold < 0) gold = 0;
         if (wood < 0) wood = 0;
-        if (currentPop < 0) currentPop = 0;
-        if (maxPop < 0) maxPop = 0;
+        //if (currentPop < 0) currentPop = 0;
+        //if (maxPop < 0) maxPop = 0;
     }
 
     #region Add and Remove resources
@@ -148,6 +148,11 @@ public class ResourceManager : MonoBehaviour
         maxPop += value;
     }
 
+    public void AddCurrentPop(int value)
+    {
+        currentPop += value;
+    }
+
     public void RemoveMaxPop(int value)
     {
         maxPop -= value;
@@ -163,7 +168,7 @@ public class ResourceManager : MonoBehaviour
     {
         if (currentPop < maxPop)
         {
-            timer++;
+            timer+= Time.deltaTime;
 
             if (timer > 120/Time.timeScale)
             {

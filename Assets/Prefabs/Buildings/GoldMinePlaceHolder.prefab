@@ -145,7 +145,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1584427618942764}
-  m_Mesh: {fileID: 4300004, guid: 99f551876061ab74cb9b589d10dfa1aa, type: 3}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &33796516854990228
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -212,12 +212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
-  maxWorkers: 4
-  currentWorkers: 0
-  finder: {fileID: 0}
-  finderMine: {fileID: 0}
   info: {fileID: 0}
-  peasants: []
   started: 1
   numFor: 0
   destroy: 0

@@ -39,14 +39,18 @@ public class BuilderScript : MonoBehaviour {
 
     [Header("Costs")]
     public int lumbMillCostWood = 100;
+    public int lumbMillCostPop = 4;
     public int farmCostWood = 100;
+    public int farmCostPop = 2;
     public int mineCostWood = 100;
+    public int mineCostPop = 4;
     public int houseCostWood = 100;
     public int houseCostGold = 100;
     public int townHallCostWood = 150;
     public int townHallCostGold = 150;
     public int warehouseCostWood = 300;
     public int warehouseCostGold = 200;
+    public int warehouseCostPop = 8;
     public int castleCostWood = 750;
     public int castleCostGold = 750;
 
@@ -317,28 +321,33 @@ public class BuilderScript : MonoBehaviour {
             resource.RemoveWood(houseCostWood);
             resource.RemoveGold(houseCostGold);
             resource.AddMaxPop(4);
+            resource.AddCurrentPop(4);
             resource.AddHouse();
         }
         else if(build.tag == "Farm")
         {
             resource.RemoveWood(farmCostWood);
             resource.AddFarm();
+            resource.RemoveCurrentPop(2);
         }
         else if(build.tag == "LumberMill")
         {
             resource.RemoveWood(lumbMillCostWood);
             resource.AddLumberMill();
+            resource.RemoveCurrentPop(4);
         }
         else if (build.tag == "GoldMine")
         {
             resource.RemoveWood(mineCostWood);
             resource.AddGoldMine();
+            resource.RemoveCurrentPop(4);
         }
         else if (build.tag == "Warehouse")
         {
             resource.RemoveWood(warehouseCostWood);
             resource.RemoveGold(warehouseCostWood);
             resource.AddWareHouse();
+            resource.RemoveCurrentPop(8);
 
             warehouseCostGold += 100;
             warehouseCostWood += 150;
@@ -363,7 +372,7 @@ public class BuilderScript : MonoBehaviour {
         }
         else if (build.tag == "Farm")
         {
-            if (resource.wood < farmCostWood) return false;
+            if (resource.wood < farmCostWood || resource.currentPop < farmCostPop) return false;
             else return true;
         }
         else if (build.tag == "LumberMill")
