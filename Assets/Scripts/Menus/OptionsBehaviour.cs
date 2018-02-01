@@ -9,7 +9,8 @@ public class OptionsBehaviour : MonoBehaviour
     PlaySound sounds;
 
     [Header("General")]
-    public Dropdown lenguageDD;
+    public List<string> languageNames = new List<string>();
+    public Dropdown languageDD;
     public Dropdown hUDInfoDD;
 
     [Header("Graphics")]
@@ -61,26 +62,33 @@ public class OptionsBehaviour : MonoBehaviour
     #region General
     public void SetLenguage()
     {
-        switch (lenguageDD.value)
+        if(languageDD.value != null)
         {
-            case 0:
-
-                break;
-            case 1:
-
-                break;
-            case 2:
-
-                break;
-            case 3:
-
-                break;
+            switch(languageDD.value)
+            {
+                case 0:
+                    Language.SetLanguage(Language.Lang.esES);
+                    break;
+                case 1:
+                    Language.SetLanguage(Language.Lang.enUS);
+                    break;
+                case 2:
+                    Language.SetLanguage(Language.Lang.caCa);
+                    break;
+            }
         }
+        Debug.Log("HERE");
+        languageDD.ClearOptions();
+        //List<string> languageNames = new List<string>();
+        languageNames[0] = TextData.GetText("spanish"); 
+        languageNames[1] = TextData.GetText("english"); 
+        languageNames[2] = TextData.GetText("catala");
+        languageDD.AddOptions(languageNames);
     }
 
     public void ShowExtraInformation()
     {
-        switch (lenguageDD.value)
+        switch (languageDD.value)
         {
             case 0:
 
@@ -140,7 +148,7 @@ public class OptionsBehaviour : MonoBehaviour
 
     public void SetShadowResolution()
     {
-		shadowResValue = lenguageDD.value;
+		shadowResValue = languageDD.value;
 
 		switch (shadowResValue)
         {
@@ -257,7 +265,8 @@ public class OptionsBehaviour : MonoBehaviour
     #region ExtraOptions
     public void SetSavedOptions()
     {
-		Debug.Log("Set");
+        SetLenguage();
+
         resolutionDD.value = resolution;
 
         fullScreenToggle.enabled = fullScreen;
@@ -266,7 +275,7 @@ public class OptionsBehaviour : MonoBehaviour
 
         QualityLevelDD.value = QualityLevel;
 
-		lenguageDD.value = shadowResValue;
+		languageDD.value = shadowResValue;
 
         antiAliasingDD.value = antiAliasing;
 

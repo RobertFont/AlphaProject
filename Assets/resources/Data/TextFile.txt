@@ -1,4 +1,7 @@
 id	spanish	english	catalan
+spanish	Castellano	Spanish	Castellá
+english	Ingles	English	Anglés
+catala	Catalan	Catalan	Catalá
 continue	Continuar	Continue	continuar
 newGame	Nueva Partida	New Game	Nova Partida
 loadGame	Cargar Partida	Load Game	Carregar Partida
@@ -25,7 +28,7 @@ shadows	Sombras	Shadows	Ombres
 gamma	Gama	Gamma	Gamma
 masterSound	Maestro	Master	Mestre
 fxSound	FX	FX	FX
-music	Música	Music	Música
+musicSound	Música	Music	Música
 open	Abrir	Open	Obrir
 close	Cerrar	Close	Tanca
 buildings	Edificios	Buildings	Edificis

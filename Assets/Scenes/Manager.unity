@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -267,6 +267,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1619233290}
   - component: {fileID: 1619233291}
+  - component: {fileID: 1619233293}
   - component: {fileID: 1619233292}
   m_Layer: 0
   m_Name: LevelManager
@@ -315,12 +316,6 @@ MonoBehaviour:
   QualityLevel: 1
   antiAliasing: 0
   gammaLevel: 0
-  textIdsList:
-  - continuar
-  - nuevo juego
-  textComponente:
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!114 &1619233292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -351,6 +346,23 @@ MonoBehaviour:
   musicVolume: 0.5
   fXVolume: 0.5
   masterVolume: 1
+--- !u!114 &1619233293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1619233289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f03eeb81fe8547469372bc9c3fd09cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slot: 0
+  state:
+    playerPosition: 0
+    hasKey: 0
+    score: 0
+    playerName: 
 --- !u!1 &1853417648
 GameObject:
   m_ObjectHideFlags: 0

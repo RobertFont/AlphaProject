@@ -199,10 +199,6 @@ public static class Language
             {
                 language = Lang.esES;
             }
-            else if(Application.systemLanguage == SystemLanguage.Catalan)
-            {
-                language = Lang.caCa;
-            }
             else language = Lang.enUS;
         }
         UpdateTextLagunage();

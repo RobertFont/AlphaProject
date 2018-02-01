@@ -27,6 +27,10 @@ public class DataLogic : MonoBehaviour
         {
             Language.SetLanguage(Language.Lang.enUS);
         }
+        if(Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            Language.SetLanguage(Language.Lang.caCa);
+        }
 
         if(Input.GetKeyDown(KeyCode.S))
         {
