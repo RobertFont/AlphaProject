@@ -129,7 +129,8 @@ public static class TextData
             string[] colText = allLines[line].Split('\t');            
 
             if(Language.language == Language.Lang.esES) textData.Add(colText[0], colText[1]);
-            else textData.Add(colText[0], colText[2]);
+            else if(Language.language == Language.Lang.enUS) textData.Add(colText[0], colText[2]);
+            else if(Language.language == Language.Lang.caCa) textData.Add(colText[0], colText[3]);
             //Si hay mas idiomas, añadir aquí un if por cada uno de ellos.
         }
 
@@ -183,7 +184,7 @@ public static class TextData
 
 public static class Language
 {
-    public enum Lang { none, esES, enUS};
+    public enum Lang { none, esES, enUS, caCa};
     public static Lang language;
 
     public static void Initialize()
@@ -197,6 +198,10 @@ public static class Language
             else if(Application.systemLanguage == SystemLanguage.Spanish)
             {
                 language = Lang.esES;
+            }
+            else if(Application.systemLanguage == SystemLanguage.Catalan)
+            {
+                language = Lang.caCa;
             }
             else language = Lang.enUS;
         }

@@ -1,27 +1,44 @@
-﻿id	spanish	english
-continue	Continuar	Continue
-newGame	Nueva Partida	New Game
-loadGame	Cargar Partida	Load Game
-options	Opciones	Options
-exit	Salir	Exit
-general	General	General
-graphics	Graficos	Graphics
-sound	Sonido	Sounds
-controls	Controles	Controls
-defaultSettings	Configuración de Serie	Reset Settings
-saveSettings	Guardar Configuración	Save Settings
-back	Volver	Back
-language	Lenguaje	Language
-extraInformation	Informació extra	Extra Information
-hudSize	Tamaño del HUD	HUD Size
-resolution	Resolucion	Resolution
-fullScreen	Pantalla completa	FullScreen
-quality	Calidad	Quality
-vSync	VSync	VSync
-textureQyality	Calidad de texturas	Texture Qyality
-antiAlising	AntiAlising	AntiAlising
-shadows	Sombras	Shadows
-gamma	Gama	Gamma
-masterSound	Maestro	Master
-fxSound	FX	FX
-musicSound	Musica	Music
+id	spanish	english	catalan
+continue	Continuar	Continue	continuar
+newGame	Nueva Partida	New Game	Nova Partida
+loadGame	Cargar Partida	Load Game	Carregar Partida
+options	Opciones	Options	Opcions
+exit	Salir	Exit	Sortir
+general	General	General	General
+graphics	Graficos	Graphics	Gràfics
+sound	Sonido	Sounds	Sons
+controls	Controles	Controls	Controls
+pause	Pausa	Paues	Pausa
+defaultSettings	Configuración de Serie	Reset Settings	Restablir configuració
+saveSettings	Guardar Configuración	Save Settings	Desa configuració
+back	Volver	Back	Tornar
+language	Lenguaje	Language	Llenguatge
+extraInformation	Informació extra	Extra Information	Informació addicional
+hudSize	Tamaño del HUD	HUD Size	Mida del HUD
+resolution	Resolucion	Resolution	Resolució
+fullScreen	Pantalla completa	FullScreen	Pantalla completa
+quality	Calidad	Quality	Qualitat
+vSync	VSync	VSync	VSync
+textureQyality	Calidad de texturas	Texture Quality	Qualitat de la textura
+antiAlising	Anti-Alising	Anti-Alising	Anti-Alising
+shadows	Sombras	Shadows	Ombres
+gamma	Gama	Gamma	Gamma
+masterSound	Maestro	Master	Mestre
+fxSound	FX	FX	FX
+music	Música	Music	Música
+open	Abrir	Open	Obrir
+close	Cerrar	Close	Tanca
+buildings	Edificios	Buildings	Edificis
+townHall	Ayuntamiento	Town Hall	Ajuntament
+house	Casa	House	Casa
+goldenMine	Mina	Golden Mine	Mina d'or
+farm	Granja	Farm	Granja
+lumberMill	Aserradero	Lumber Mill	Serradora
+warehouse	Almacen	Warehouse	Magatzem
+bridge	Puente	Bridge	Pont
+barracks	Cuartel	Barracks	Barraques
+castle	Catillo	Castle	Castell
+kingsHall	Salon de Reyes	Kings Hall	Saló dels reis
+church	Iglesia	Church	Església
+fireStation	Estación de bomberos	Fire Station	Estació de bombers
+huntingCamp	Campamento de caza	Hunting Camp	Campament de caça
