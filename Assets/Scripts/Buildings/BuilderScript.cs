@@ -377,17 +377,17 @@ public class BuilderScript : MonoBehaviour {
         }
         else if (build.tag == "LumberMill")
         {
-            if (resource.wood < lumbMillCostWood) return false;
+            if (resource.wood < lumbMillCostWood || resource.currentPop < lumbMillCostPop) return false;
             else return true;
         }
         else if (build.tag == "GoldMine")
         {
-            if (resource.wood < mineCostWood) return false;
+            if (resource.wood < mineCostWood || resource.currentPop < mineCostPop) return false;
             else return true;
         }
         else if (build.tag == "Warehouse")
         {
-            if (resource.wood < warehouseCostWood || resource.gold < warehouseCostGold) return false;
+            if (resource.wood < warehouseCostWood || resource.gold < warehouseCostGold || resource.currentPop < warehouseCostPop) return false;
             else return true;
         }
         else if(build.tag == "Castle")
