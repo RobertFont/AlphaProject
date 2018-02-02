@@ -78,7 +78,7 @@ ___
 - [X]  Animated Elements And Custom Art (Buttons, Selection)
 - [X] Sound FX (Buttons, Animations...)
 - [X] Custom Font
-- [ ] Language Selection (Spanish, English)
+- [X] Language Selection (Spanish, English)
 
 ### Screen: Gameplay
 - [ ] Check: Basic Mecanics
