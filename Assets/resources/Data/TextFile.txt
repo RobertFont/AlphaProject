@@ -1,14 +1,14 @@
 id	spanish	english	catalan
-spanish	Castellano	Spanish	Castellá
+spanish	Castellano	Spanish	Castellà
 english	Ingles	English	Anglés
-catala	Catalan	Catalan	Catalá
+catala	Catalan	Catalan	Català
 continue	Continuar	Continue	continuar
 newGame	Nueva Partida	New Game	Nova Partida
 loadGame	Cargar Partida	Load Game	Carregar Partida
 options	Opciones	Options	Opcions
 exit	Salir	Exit	Sortir
 general	General	General	General
-graphics	Graficos	Graphics	Gràfics
+graphics	Graficos	Graphics	Gráfics
 sound	Sonido	Sounds	Sons
 controls	Controles	Controls	Controls
 pause	Pausa	Paues	Pausa
@@ -26,22 +26,22 @@ textureQyality	Calidad de texturas	Texture Quality	Qualitat de la textura
 antiAlising	Anti-Alising	Anti-Alising	Anti-Alising
 shadows	Sombras	Shadows	Ombres
 gamma	Gama	Gamma	Gamma
-masterSound	Maestro	Master	Mestre
-fxSound	FX	FX	FX
-musicSound	Música	Music	Música
+masterSound	Volumen Maestro	Master Volume	Volum mestre
+fxSound	Volúmen de FX	FX Valume	Volums de FX
+musicSound	Volumen de música	Music Volume	Volum de música
 open	Abrir	Open	Obrir
 close	Cerrar	Close	Tanca
 buildings	Edificios	Buildings	Edificis
 townHall	Ayuntamiento	Town Hall	Ajuntament
 house	Casa	House	Casa
-goldenMine	Mina	Golden Mine	Mina d'or
+goldenMine	Mina	Golden Mine	Mina
 farm	Granja	Farm	Granja
 lumberMill	Aserradero	Lumber Mill	Serradora
 warehouse	Almacen	Warehouse	Magatzem
 bridge	Puente	Bridge	Pont
 barracks	Cuartel	Barracks	Barraques
-castle	Catillo	Castle	Castell
-kingsHall	Salon de Reyes	Kings Hall	Saló dels reis
+castle	Castillo	Castle	Castell
+kingsHall	Salón de Reyes	Kings Hall	Saló dels reis
 church	Iglesia	Church	Església
 fireStation	Estación de bomberos	Fire Station	Estació de bombers
 huntingCamp	Campamento de caza	Hunting Camp	Campament de caça
