@@ -64,7 +64,7 @@ ___
 - [x] Logo Sound FX
 
 ### Screen: Title
-- [ ] Reimplement Title Final Art (Title, Background, Buttons)
+- [X] Reimplement Title Final Art (Title, Background, Buttons)
 - [X] Title Elements Animations (Title, Background, Buttons)
 - [X] Title Animacion And Sound FX 
 - [X] Custom Font
@@ -86,10 +86,10 @@ ___
 - [ ] 8 Final Props More (Total: 16 Props)
 - [ ] Final Building With Final Texture + Basic Animations (3 Building)
 - Pause Menu
-  - [ ] Final Art With Animations
-  - [ ] Custom Font
+  - [X] Final Art With Animations
+  - [X] Custom Font
 - [ ] GUI Final Art With Animations
-- [ ] Custom Font
+- [X] Custom Font
 - [ ] Control Support for Controller
 - [ ] 5 Particle Sytems More (Total: 10)
 - [ ] 5 Sound FX More (Total: 10)
