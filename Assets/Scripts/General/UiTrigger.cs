@@ -49,7 +49,7 @@ public class UiTrigger : MonoBehaviour
 
     public void DestroyBuilding() 
     {
-        peasantUnemployed = GameObject.FindGameObjectsWithTag("Unemployed");
+        /*peasantUnemployed = GameObject.FindGameObjectsWithTag("Unemployed");
         peasantLumberJack = GameObject.FindGameObjectsWithTag("Lumberjack");
         peasantFarmer = GameObject.FindGameObjectsWithTag("Farmer");
         peasantGoldMiner = GameObject.FindGameObjectsWithTag("MineWorker");
@@ -60,6 +60,7 @@ public class UiTrigger : MonoBehaviour
         peasants.AddRange(peasantGoldMiner.ToList<GameObject>());
 
         sumOfPeasants = peasantFarmer.Length + peasantGoldMiner.Length + peasantLumberJack.Length + peasantUnemployed.Length;
+        */
 
         if (buildingSelected.tag == "House")
         {
