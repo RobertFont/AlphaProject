@@ -10,6 +10,11 @@ public class OptionsBehaviour : MonoBehaviour
 
     [Header("General")]
     public List<string> languageNames = new List<string>();
+    public List<string> extraInfoNames = new List<string>();
+    public List<string> qualityNames = new List<string>();
+    public List<string> shadowsQualityNames = new List<string>();
+    public List<string> antiAliasingNames = new List<string>();
+    
     public Dropdown languageDD;
     public Dropdown hUDInfoDD;
 
@@ -55,14 +60,14 @@ public class OptionsBehaviour : MonoBehaviour
         if (level != null) level = GameObject.Find("LevelManager").GetComponent<LevelLogic>();
         if (sounds != null) sounds = GameObject.Find("LevelManager").GetComponent<PlaySound>();
         //gammaLevel = RenderSettings.ambientLight.gamma;
-        if (level != null) SetSavedOptionsValue();
+        SetSavedOptionsValue();
 
     }
 
     #region General
     public void SetLenguage()
     {
-        if(languageDD.value != null)
+        if(languageDD != null)
         {
             switch(languageDD.value)
             {
@@ -77,13 +82,40 @@ public class OptionsBehaviour : MonoBehaviour
                     break;
             }
         }
-        Debug.Log("HERE");
-        languageDD.ClearOptions();
-        //List<string> languageNames = new List<string>();
         languageNames[0] = TextData.GetText("spanish"); 
         languageNames[1] = TextData.GetText("english"); 
         languageNames[2] = TextData.GetText("catala");
+
+        languageDD.ClearOptions();
         languageDD.AddOptions(languageNames);
+
+        ChangeNamesDD();
+    }
+
+    public void ChangeNamesDD()
+    {
+        extraInfoNames[0] = TextData.GetText("hold");
+        extraInfoNames[1] = TextData.GetText("press");
+        hUDInfoDD.ClearOptions();
+        hUDInfoDD.AddOptions(extraInfoNames);
+
+        qualityNames[0] = TextData.GetText("fast");
+        qualityNames[1] = TextData.GetText("good");
+        qualityNames[2] = TextData.GetText("fantastic");
+        qualityNames[3] = TextData.GetText("ultra");
+        QualityLevelDD.ClearOptions();
+        QualityLevelDD.AddOptions(qualityNames);
+
+        shadowsQualityNames[0] = TextData.GetText("low");
+        shadowsQualityNames[1] = TextData.GetText("medium");
+        shadowsQualityNames[2] = TextData.GetText("high");
+        shadowsQualityNames[3] = TextData.GetText("ultra");
+        shadowResDD.ClearOptions();
+        shadowResDD.AddOptions(shadowsQualityNames);
+
+        antiAliasingNames[0] = TextData.GetText("disabled"); ;
+        antiAliasingDD.ClearOptions();
+        antiAliasingDD.AddOptions(antiAliasingNames); 
     }
 
     public void ShowExtraInformation()
@@ -142,8 +174,8 @@ public class OptionsBehaviour : MonoBehaviour
 
     public void SetQuality()
     {
-       QualityLevel = QualityLevelDD.value;
-       QualitySettings.SetQualityLevel(QualityLevel);
+        QualityLevel = QualityLevelDD.value;
+        QualitySettings.SetQualityLevel(QualityLevel);
     }
 
     public void SetShadowResolution()
@@ -174,18 +206,6 @@ public class OptionsBehaviour : MonoBehaviour
         antiAliasing = antiAliasingDD.value;
         QualitySettings.antiAliasing = antiAliasing;
     }
-
-    /*public void SSAO(bool value)
-    {
-        sSAO = value;
-    }*/
-
-   /*void OnGUI()
-    {
-        gammaLevel = GUI.HorizontalSlider(gammaLevelRectT.rect, gammaLevel, 0f, 255.0f);
-        Debug.Log(gammaLevel);
-
-    }*/
 
     public void SetGamma()
     {
@@ -265,8 +285,6 @@ public class OptionsBehaviour : MonoBehaviour
     #region ExtraOptions
     public void SetSavedOptions()
     {
-        SetLenguage();
-
         resolutionDD.value = resolution;
 
         fullScreenToggle.enabled = fullScreen;
@@ -338,7 +356,11 @@ public class OptionsBehaviour : MonoBehaviour
 
 	public void SetSavedOptionsValue()
 	{
-		resolution = level.resolution;
+        SetLenguage();
+
+        if(level == null) return;
+
+        resolution = level.resolution;
 		fullScreen = level.fullScreen;
 		vSync = level.vSync;
 		sSAO = level.sSAO;

@@ -61,7 +61,7 @@ public static class GameData
     [Serializable]
     public struct GameState
     {
-        public float playerPosition;
+        public float hUBSize;
         public bool hasKey;
         public int score;
         public string playerName;
@@ -79,7 +79,7 @@ public static class GameData
         gameState = new GameState();
         Debug.Log("New game");
 
-        gameState.playerPosition = 0;
+        gameState.hUBSize = 0;
         gameState.hasKey = false;
         gameState.score = 0;
         gameState.playerName = "NoName";
@@ -120,7 +120,7 @@ public static class TextData
     {
         textData = new Dictionary<string, string>();
         //Leyendo el texto entero
-        string textFromFile = Data.LoadTextFromResources("Data/TextFile");
+        string textFromFile = Data.LoadTextFromResources("Data/LanguagesFile");
         //Separando el texto en lineas
         List<string> allLines = Data.ReadAllLinesFromString(textFromFile);
         //Separando las columnas de cada linea
