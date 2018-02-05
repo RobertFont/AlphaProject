@@ -21,9 +21,9 @@ GameObject:
   - component: {fileID: 4445491820672004}
   - component: {fileID: 33901221395197938}
   - component: {fileID: 23368154801548260}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: WareHouseV2
-  m_TagString: Untagged
+  m_TagString: Warehouse
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
