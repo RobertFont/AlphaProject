@@ -64,7 +64,7 @@ public class EventBehaviour : MonoBehaviour {
         bugsChance = 10;
         rainChance = 20;
         dustChance = 10;
-        goblinsChance = 50;
+        goblinsChance = 5;
         if (soundFX != null) soundFX = GameObject.Find("LevelManager").GetComponent<PlaySound>();
     }
 

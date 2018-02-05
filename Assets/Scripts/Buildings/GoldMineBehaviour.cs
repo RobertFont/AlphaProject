@@ -7,11 +7,12 @@ public class GoldMineBehaviour : MonoBehaviour
 {
     public enum BuildingState { open, closed }
     public BuildingState state;
+	public ResourceManager resource;
     public UiTrigger info;
+	public float counter = 0;
 
     [SerializeField] private bool started = true;
     [SerializeField] int numFor;
-    public bool destroy = false;
     
     public GameObject[] mines;
 
@@ -22,20 +23,26 @@ public class GoldMineBehaviour : MonoBehaviour
     {
         state = BuildingState.open;
         info = GameObject.Find("InformationButton").GetComponent<UiTrigger>();
-        Debug.Log("funcion MYstart");
-        destroy = false;
+		resource = GameObject.FindGameObjectWithTag("Player").GetComponent<ResourceManager>();
         started = false;
     }
 
     // Update is called once per frame
     public void Update ()
     {
-        
         switch (state)
         {
             case BuildingState.open:
-                Debug.Log("open");
                 if(started) MyStart();
+
+				counter += Time.deltaTime * Time.timeScale;
+
+				if (counter > 12/Time.timeScale)
+				{
+					GatherResources();
+
+					counter = 0;
+				}
 
                 started = true;
 
@@ -68,15 +75,17 @@ public class GoldMineBehaviour : MonoBehaviour
 
     public void DestroyBuilding()
     {
-        Debug.Log("destroy activo");
-        state = BuildingState.closed;
+		resource.AddCurrentPop(4);
         Destroy(this.gameObject);
-        
     }
+
+	public void GatherResources()
+	{
+		resource.AddGold(10);
+	}
 
     public void OnMouseUpAsButton()
     {
-        Debug.Log("funciona");
         if(started) MyStart();
         info.buildingSelected = this.gameObject;
     }

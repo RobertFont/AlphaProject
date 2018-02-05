@@ -141,7 +141,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 24803064}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 635, y: 485.46005, z: 0}
+  m_LocalPosition: {x: 635, y: 355.4938, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1797126542}
@@ -676,7 +676,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1551,8 +1551,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 246944195}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 413, y: 263.74997, z: 0}
-  m_LocalScale: {x: 0.6453125, y: 0.5377604, z: 0.6453125}
+  m_LocalPosition: {x: 324, y: 152.08331, z: 0}
+  m_LocalScale: {x: 0.50625, y: 0.42187497, z: 0.50625}
   m_Children:
   - {fileID: 1012672672}
   - {fileID: 1362044915}
@@ -1984,11 +1984,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
-  maxWorkers: 2
-  currentWorkers: 0
-  finder: {fileID: 0}
   counter: 0
-  destroy: 0
   gatherCounter: 12
   weatherEvent: {fileID: 1560808819}
   rotateBlades: {x: 0, y: 0, z: 0}
@@ -1996,6 +1992,7 @@ MonoBehaviour:
   scaleWheatBack: {x: 0, y: 0, z: 0}
   scaleWheatFront: {x: 0, y: 0, z: 0}
   info: {fileID: 0}
+  resource: {fileID: 0}
   started: 1
 --- !u!23 &329407841
 MeshRenderer:
@@ -7522,10 +7519,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
+  resource: {fileID: 0}
   info: {fileID: 0}
+  counter: 0
   started: 1
   numFor: 0
-  destroy: 0
   mines: []
 --- !u!23 &664924475
 MeshRenderer:
@@ -7928,7 +7926,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: b9d8b0ace88a7c544ad9a81c8146dceb,
+    m_HighlightedSprite: {fileID: 21300000, guid: 832320a2461edd145af8ad2490598c56,
       type: 3}
     m_PressedSprite: {fileID: 21300000, guid: 6952b4479efb24d45a81026b6cc28fc8, type: 3}
     m_DisabledSprite: {fileID: 0}
@@ -7943,7 +7941,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 775525200}
-        m_MethodName: ChangeBuildingStateOpen
+        m_MethodName: ChangeBuildingStateClose
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8007,14 +8005,7 @@ MonoBehaviour:
   SelectedParticles: {fileID: 497839884}
   input: {fileID: 596363846}
   buildingSelected: {fileID: 0}
-  peasantUnemployed: []
-  peasantLumberJack: []
-  peasantFarmer: []
-  peasantGoldMiner: []
   stateText: {fileID: 0}
-  peasants: []
-  randomPeasant: 0
-  sumOfPeasants: 0
 --- !u!1 &855287778
 GameObject:
   m_ObjectHideFlags: 0
@@ -9590,7 +9581,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
-  destroy: 0
+  resource: {fileID: 0}
+  counter: 0
   info: {fileID: 0}
   started: 1
   numFor: 0
@@ -10096,7 +10088,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -10349,7 +10341,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1160487590}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -100, y: -490.46005, z: 0}
+  m_LocalPosition: {x: -100, y: -360.4938, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 45741801}
@@ -11237,7 +11229,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1362044914}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -635, y: 527.28, z: 0}
+  m_LocalPosition: {x: -635, y: 397.3138, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2019223755}
@@ -17614,7 +17606,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: b9d8b0ace88a7c544ad9a81c8146dceb,
+    m_HighlightedSprite: {fileID: 21300000, guid: 832320a2461edd145af8ad2490598c56,
       type: 3}
     m_PressedSprite: {fileID: 21300000, guid: 6952b4479efb24d45a81026b6cc28fc8, type: 3}
     m_DisabledSprite: {fileID: 0}
@@ -17661,7 +17653,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 832320a2461edd145af8ad2490598c56, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b9d8b0ace88a7c544ad9a81c8146dceb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -18054,7 +18046,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1650871393}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -640, y: -490.46005, z: 0}
+  m_LocalPosition: {x: -640, y: -360.4938, z: 0}
   m_LocalScale: {x: 1.073, y: 0.97, z: 1}
   m_Children:
   - {fileID: 1152763674}
@@ -18239,7 +18231,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1771009911}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 560, y: -433.0201, z: 0}
+  m_LocalPosition: {x: 560, y: -303.05386, z: 0}
   m_LocalScale: {x: 1.6, y: 1.6, z: 1.6}
   m_Children: []
   m_Father: {fileID: 246944196}

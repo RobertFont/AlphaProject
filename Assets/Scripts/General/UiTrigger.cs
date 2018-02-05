@@ -11,14 +11,7 @@ public class UiTrigger : MonoBehaviour
     public ParticleSystem SelectedParticles;
     public InputManager input;
     public GameObject buildingSelected;
-    public GameObject[] peasantUnemployed; 
-    public GameObject[] peasantLumberJack; 
-    public GameObject[] peasantFarmer;
-    public GameObject[] peasantGoldMiner;
     public Text stateText;
-    public List<GameObject> peasants;
-    public int randomPeasant;
-    public int sumOfPeasants;
     
     int houseRestoreWood;
     int houseRestoreGold;
@@ -49,19 +42,6 @@ public class UiTrigger : MonoBehaviour
 
     public void DestroyBuilding() 
     {
-        /*peasantUnemployed = GameObject.FindGameObjectsWithTag("Unemployed");
-        peasantLumberJack = GameObject.FindGameObjectsWithTag("Lumberjack");
-        peasantFarmer = GameObject.FindGameObjectsWithTag("Farmer");
-        peasantGoldMiner = GameObject.FindGameObjectsWithTag("MineWorker");
-
-        peasants.AddRange(peasantUnemployed.ToList<GameObject>());
-        peasants.AddRange(peasantLumberJack.ToList<GameObject>());
-        peasants.AddRange(peasantFarmer.ToList<GameObject>());
-        peasants.AddRange(peasantGoldMiner.ToList<GameObject>());
-
-        sumOfPeasants = peasantFarmer.Length + peasantGoldMiner.Length + peasantLumberJack.Length + peasantUnemployed.Length;
-        */
-
         if (buildingSelected.tag == "House")
         {
             resource.AddWood(houseRestoreWood);
@@ -69,59 +49,6 @@ public class UiTrigger : MonoBehaviour
             resource.RemoveMaxPop(4); 
             resource.RemoveCurrentPop(4);
             resource.AddHouse(-1);
-
-            if (sumOfPeasants > 3)
-            {
-                randomPeasant = Random.Range(0, peasants.Count());
-                Destroy(peasants[randomPeasant]);
-                peasants.RemoveAt(randomPeasant);
-
-                randomPeasant = Random.Range(0, peasants.Count());
-                Destroy(peasants[randomPeasant]);
-                peasants.RemoveAt(randomPeasant);
-
-                randomPeasant = Random.Range(0, peasants.Count());
-                Destroy(peasants[randomPeasant]);
-                peasants.RemoveAt(randomPeasant);
-
-                randomPeasant = Random.Range(0, peasants.Count());
-                Destroy(peasants[randomPeasant]);
-                peasants.RemoveAt(randomPeasant);
-            }
-            else if (sumOfPeasants > 2)
-            {
-
-                randomPeasant = Random.Range(0, peasants.Count());
-                Destroy(peasants[randomPeasant]);
-                peasants.RemoveAt(randomPeasant);
-
-                randomPeasant = Random.Range(0, peasants.Count());
-                Destroy(peasants[randomPeasant]);
-                peasants.RemoveAt(randomPeasant);
-
-                randomPeasant = Random.Range(0, peasants.Count());
-                Destroy(peasants[randomPeasant]);
-                peasants.RemoveAt(randomPeasant);
-            }
-            else if (sumOfPeasants > 1)
-            {
-
-                randomPeasant = Random.Range(0, peasants.Count());
-                Destroy(peasants[randomPeasant]);
-                peasants.RemoveAt(randomPeasant);
-
-                randomPeasant = Random.Range(0, peasants.Count());
-                Destroy(peasants[randomPeasant]);
-                peasants.RemoveAt(randomPeasant);
-            }
-            else if (sumOfPeasants > 0)
-            {
-
-                randomPeasant = Random.Range(0, peasants.Count());
-                Destroy(peasants[randomPeasant]);
-                peasants.RemoveAt(randomPeasant);
-            }
-            else if (resource.currentPop == 0) Debug.Log("calculaste mal");
 
             Destroy(buildingSelected);
             buildingSelected = null;
@@ -152,6 +79,7 @@ public class UiTrigger : MonoBehaviour
         {
             resource.AddWood(goldMineRestoreWood);
             resource.AddWareHouse(-1);
+			resource.AddCurrentPop(8);
             Destroy(buildingSelected);
             buildingSelected = null;
         }
@@ -166,24 +94,33 @@ public class UiTrigger : MonoBehaviour
             }
         }
         else Debug.Log("Edificio" + buildingSelected + "no se puede destruir");
-
-        peasants.Clear();
-
     }
 
     public void ChangeBuildingStateOpen()
     {
         if (buildingSelected.tag == "Farm")
         {
-            buildingSelected.GetComponent<FarmBehaviour>().state = FarmBehaviour.BuildingState.open;
+			if (resource.currentPop > 2 && buildingSelected.GetComponent<FarmBehaviour> ().state != FarmBehaviour.BuildingState.open) 
+			{
+				buildingSelected.GetComponent<FarmBehaviour> ().state = FarmBehaviour.BuildingState.open;
+				resource.AddCurrentPop(-2);
+			}
         }
         else if (buildingSelected.tag == "LumberMill")
         {
-            buildingSelected.GetComponent<LumberMillBehaviour>().state = LumberMillBehaviour.BuildingState.open;
+			if (resource.currentPop > 4 && buildingSelected.GetComponent<LumberMillBehaviour> ().state != LumberMillBehaviour.BuildingState.open) 
+			{
+				buildingSelected.GetComponent<LumberMillBehaviour> ().state = LumberMillBehaviour.BuildingState.open;
+				resource.AddCurrentPop(-4);
+			}
         }
         else if (buildingSelected.tag == "GoldMine")
         {
-            buildingSelected.GetComponent<GoldMineBehaviour>().state = GoldMineBehaviour.BuildingState.open;
+			if (resource.currentPop > 4 && buildingSelected.GetComponent<GoldMineBehaviour> ().state != GoldMineBehaviour.BuildingState.open) 
+			{
+				buildingSelected.GetComponent<GoldMineBehaviour> ().state = GoldMineBehaviour.BuildingState.open;
+				resource.AddCurrentPop(-4);
+			}
         }
     }
 
@@ -191,15 +128,27 @@ public class UiTrigger : MonoBehaviour
     {
         if (buildingSelected.tag == "Farm")
         {
-            buildingSelected.GetComponent<FarmBehaviour>().state = FarmBehaviour.BuildingState.closed;
+			if (buildingSelected.GetComponent<FarmBehaviour> ().state != FarmBehaviour.BuildingState.closed) 
+			{
+				buildingSelected.GetComponent<FarmBehaviour> ().state = FarmBehaviour.BuildingState.closed;
+				resource.AddCurrentPop(2);
+			}
         }
         else if (buildingSelected.tag == "LumberMill")
         {
-            buildingSelected.GetComponent<LumberMillBehaviour>().state = LumberMillBehaviour.BuildingState.closed;
+			if (buildingSelected.GetComponent<LumberMillBehaviour>().state != LumberMillBehaviour.BuildingState.closed)
+			{
+	            buildingSelected.GetComponent<LumberMillBehaviour>().state = LumberMillBehaviour.BuildingState.closed;
+				resource.AddCurrentPop(4);
+			}
         }
         else if (buildingSelected.tag == "GoldMine")
         {
-            buildingSelected.GetComponent<GoldMineBehaviour>().state = GoldMineBehaviour.BuildingState.closed;
+			if (buildingSelected.GetComponent<GoldMineBehaviour>().state != GoldMineBehaviour.BuildingState.closed)
+			{
+	            buildingSelected.GetComponent<GoldMineBehaviour>().state = GoldMineBehaviour.BuildingState.closed;
+				resource.AddCurrentPop(4);
+			}
         }
     }
 

@@ -11,7 +11,6 @@ public class FarmBehaviour : MonoBehaviour
     //public int currentWorkers = 0;
     //public GameObject finder;
     public float counter;
-    public bool destroy = false;
     public int gatherCounter = 12;
     public EventBehaviour weatherEvent;
     public Vector3 rotateBlades;
@@ -40,8 +39,6 @@ public class FarmBehaviour : MonoBehaviour
         weatherEvent = GameObject.Find("EventSolver").GetComponent<EventBehaviour>();
         info = GameObject.Find("InformationButton").GetComponent<UiTrigger>();
         resource = GameObject.FindGameObjectWithTag("Player").GetComponent<ResourceManager>();
-        Debug.Log("funcion MYstart");
-        destroy = false;
         scaleWheat = new Vector3(1, 0, 1);
         scaleWheatBack = this.transform.GetChild(7).localScale;
         scaleWheatFront = this.transform.GetChild(6).localScale;
@@ -59,9 +56,6 @@ public class FarmBehaviour : MonoBehaviour
         {
             case BuildingState.open:
                 if (started) MyStart();
-
-                //peasants[0].GetComponent<PeasantBehaviour>().gatheredResoruce = true;
-                //peasants[1].GetComponent<PeasantBehaviour>().gatheredResoruce = true;
 
                 if(weatherEvent.rainStarted)
                 {
@@ -87,14 +81,11 @@ public class FarmBehaviour : MonoBehaviour
                     scaleWheat.y += Time.deltaTime * 0.083f * Time.timeScale;
                 }
 
-                counter += Time.deltaTime;
+				counter += Time.deltaTime*Time.timeScale;
 
                 if (scaleWheat.y > 1) scaleWheat.y = 1;
                 if (counter > gatherCounter/Time.timeScale)
                 {
-                    // TODO: Crear un nuevo GatherResources() que no dependa de los peasants
-                    //peasants[0].GetComponent<PeasantBehaviour>().GatherResources();
-                    //peasants[1].GetComponent<PeasantBehaviour>().GatherResources();
                     GatherResources();
 
                     scaleWheat.y = 0.1f;
@@ -102,23 +93,6 @@ public class FarmBehaviour : MonoBehaviour
                 }
 
                 ScaleWheat();
-
-                
-
-                destroy = false;
-
-
-                //SetWorkers();
-
-                break;
-            case BuildingState.closed:
-                started = true;
-                if (destroy)
-                {
-                    Debug.Log("destruyendo");
-                    Destroy(this.gameObject);
-                }
-               
                 break;
             default:
                 break;
@@ -127,9 +101,8 @@ public class FarmBehaviour : MonoBehaviour
 
     public void DestroyBuilding()
     {
-        Debug.Log("destroy activo");
-        destroy = true;
-        state = BuildingState.closed;
+		resource.AddCurrentPop(2);
+		Destroy(this.gameObject);
 
     }
 
@@ -154,7 +127,6 @@ public class FarmBehaviour : MonoBehaviour
 
     public void OnMouseUpAsButton()
     {
-        Debug.Log("granja seleccionada");
         if(started) MyStart();
         info.buildingSelected = this.gameObject;
     }

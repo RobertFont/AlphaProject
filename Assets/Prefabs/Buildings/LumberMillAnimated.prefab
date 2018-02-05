@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33500889639905814}
   - component: {fileID: 23393834025620606}
   - component: {fileID: 114145678043782260}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Grua_cable_falso
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 4418929051465582}
   - component: {fileID: 33891877690768076}
   - component: {fileID: 23722731005119054}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Grua_brazo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 4957087421337846}
   - component: {fileID: 33494928901289910}
   - component: {fileID: 23994900133795574}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Grua_Madera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 4058915842995610}
   - component: {fileID: 33101312916586044}
   - component: {fileID: 23705258579102510}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Madera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 4925576725775796}
   - component: {fileID: 33883087838753966}
   - component: {fileID: 23910792732943436}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Grua_gancho
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 33908018514278872}
   - component: {fileID: 23557397314920490}
   - component: {fileID: 114469723761292320}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Grua_engranaje
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 33071890402838212}
   - component: {fileID: 23561693100777556}
   - component: {fileID: 114208882749987248}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Grua_cable_animado
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146,9 +146,9 @@ GameObject:
   - component: {fileID: 65684862454920356}
   - component: {fileID: 65464650399670878}
   - component: {fileID: 114631490497385490}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LumberMillAnimated
-  m_TagString: Untagged
+  m_TagString: LumberMill
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -163,7 +163,7 @@ GameObject:
   - component: {fileID: 4136571016237442}
   - component: {fileID: 33358123936128404}
   - component: {fileID: 23813755122513740}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sierra
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: 4161475551493082}
   - component: {fileID: 33872091373461008}
   - component: {fileID: 23939808729219118}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Grua_madera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -853,7 +853,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
-  destroy: 0
+  resource: {fileID: 0}
+  counter: 0
   info: {fileID: 0}
   started: 1
   numFor: 0

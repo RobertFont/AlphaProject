@@ -7,7 +7,8 @@ public class LumberMillBehaviour : MonoBehaviour
 {
     public enum BuildingState { open, closed }
     public BuildingState state;
-    public bool destroy = false;
+	public ResourceManager resource;
+	public float counter = 0;
     public UiTrigger info;
 
     [SerializeField] private bool started = true;
@@ -18,33 +19,32 @@ public class LumberMillBehaviour : MonoBehaviour
     public void MyStart()
     {   
         info = GameObject.Find("InformationButton").GetComponent<UiTrigger>();
-        Debug.Log("funcion MYstart");
+		resource = GameObject.FindGameObjectWithTag("Player").GetComponent<ResourceManager>();
         started = false;
-        destroy = false;
     }
 
     private void FixedUpdate()
     {
-        this.transform.GetChild(2).Rotate(0,0,-10);
+		if(state == BuildingState.open) this.transform.GetChild(2).Rotate(0,0,-10);
     }
 
     // Update is called once per frame
     public void Update ()
-    {
-        
+	{
         switch (state)
         {
             case BuildingState.open:
                 if(started) MyStart();
 
-                destroy = false;
+				counter += Time.deltaTime * Time.timeScale;
+
+				if (counter > 12/Time.timeScale)
+				{
+					GatherResources();
+
+					counter = 0;
+				}
                 
-                break;
-            case BuildingState.closed:
-
-                started = true;
-
-                if (destroy) Destroy(this.gameObject);
                 break;
             default:
                 break;
@@ -74,11 +74,15 @@ public class LumberMillBehaviour : MonoBehaviour
 
     public void DestroyBuilding()
     {
-        state = BuildingState.closed;
-
-        destroy = true;
-        Debug.Log("destroy activo");
+		Debug.Log("destroy activo");
+		resource.AddCurrentPop(4);
+		Destroy(this.gameObject);
     }
+
+	public void GatherResources()
+	{
+		resource.AddWood(10);
+	}
 
     public void OnMouseUpAsButton()
     {
