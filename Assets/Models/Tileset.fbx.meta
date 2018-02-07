@@ -98,6 +98,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: UltimateTexture01
     second: {fileID: 2100000, guid: f2808966685c7a647a0d38b47dfd7ed6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: UltimateTexture06
+    second: {fileID: 2100000, guid: 6f3895a69b13ece4d9418ebe33c17575, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -146,8 +151,8 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
-    normalSmoothAngle: 60
-    normalImportMode: 0
+    normalSmoothAngle: 0
+    normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
   importAnimation: 1
