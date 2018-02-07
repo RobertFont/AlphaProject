@@ -578,6 +578,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 47fe5e11523359b44aef74101d39c54e, type: 3}
   - {fileID: 8300000, guid: 17be39820bc529a408671caf6904b292, type: 3}
   - {fileID: 8300000, guid: 1a1ab7ae22afc024ba21312675490ae3, type: 3}
+  - {fileID: 8300000, guid: a361565fb9f6538409c684c4c0c73506, type: 3}
+  - {fileID: 8300000, guid: 87a6ef387b7e79b4a96b7c1b824840c3, type: 3}
   audioSourceMusic: {fileID: 0}
   audioSourceFX: {fileID: 0}
   musicVolume: 0.5

@@ -15,7 +15,6 @@ public class Buildings
 public class ResourceManager : MonoBehaviour
 {
     LevelLogic level;
-
     [Header("Resources")]
     public int wood = 500;
     public int food = 500;
@@ -54,11 +53,17 @@ public class ResourceManager : MonoBehaviour
     public GameObject continueButton;
     public GameObject canvas;
     public GameObject endingBackground;
+    public GameObject endingEnterA;
+    public GameObject endingExitA;
+    public GameObject victoryFX;
+    public GameObject defeatFX;
 
     // Update is called once per frame
     public void MyUpdate ()
     {
-        if (GameObject.Find("LevelManager") != null) level = GameObject.Find("LevelManager").GetComponent<LevelLogic>();
+        if(GameObject.Find("LevelManager") != null) level = GameObject.Find("LevelManager").GetComponent<LevelLogic>();
+
+        if(Input.GetKeyDown(KeyCode.K)) ToggleEnding();
 
         UpdateUI();
         //AddCurrentPopFromTime();
@@ -69,17 +74,14 @@ public class ResourceManager : MonoBehaviour
             {
                 victory = true;
                 ToggleEnding();
-            }
-            
+            }   
         }
 
         if(happiness < 0)
         {
             victory = false;
             ToggleEnding();
-
         }
-
     }
 
     public void UpdateUI()
@@ -283,14 +285,17 @@ public class ResourceManager : MonoBehaviour
         canvas.transform.GetChild(5).gameObject.SetActive(false);
         GetComponent<BuilderScript>().CantBuild(false);
 
+        endingEnterA.SetActive(true);
+
         if(victory)
         {
             victoryImage.SetActive(true);
             continueButton.SetActive(true);
-            
+            victoryFX.SetActive(true);
         }
         else if(!victory)
         {
+            defeatFX.SetActive(true);
             defeatImage.SetActive(true);
         }
         endingBackground.gameObject.SetActive(true);
@@ -301,7 +306,8 @@ public class ResourceManager : MonoBehaviour
     public void EndGame()
     {
         //Time.timeScale = 1.0f;
-        DesactivateEndingScreen();
+        //DesactivateEndingScreen();
+        endingExitA.SetActive(true);
 
         if (level != null) level.SetTitleScene();
     }
@@ -309,11 +315,10 @@ public class ResourceManager : MonoBehaviour
     public void ContinueGame()
     {
         //Time.timeScale = 1.0f;
-        DesactivateEndingScreen();
+        //DesactivateEndingScreen();
         GetComponent<BuilderScript>().CantBuild(true);
-
+        endingExitA.SetActive(true);
         gameEnded = true;
-
     }
 
     public void DesactivateEndingScreen()
