@@ -10,6 +10,8 @@ public class BuilderScript : MonoBehaviour {
     ResourceManager resource;
     public InputManager input;
 
+    public Transform builtGroup;
+
     [Header("Buildings")]
     public GameObject townHall;
     public GameObject house;
@@ -64,6 +66,8 @@ public class BuilderScript : MonoBehaviour {
     public bool buildingColliding = false;
     public bool canPlace = true;
     public bool cantPlace = false;
+
+    int rotation;
 
     public string originalHouseName;
 
@@ -214,7 +218,19 @@ public class BuilderScript : MonoBehaviour {
             ChangeBuildName();
             SelectBuilding();
             build.layer = 9;
-            Instantiate(buildingSelected, buildingInMouse, new Quaternion(0, 12, 0, 0));
+            /*GameObject building;
+
+            building = buildingSelected;
+            building.transform.SetParent(builtGroup);
+            building.transform.position = buildingInMouse;
+            building.transform.localRotation = Quaternion.Euler(0, build.transform.localRotation.y, 0);*/
+
+            //Debug.Log("Build rotation: " + build.transform.localEulerAngles.y);
+            GameObject newBuild = Instantiate(buildingSelected, buildingInMouse, Quaternion.Euler(0, build.transform.localEulerAngles.y, 0));
+            newBuild.name = build.name;
+
+
+
             RemoveResources();
             build.layer = 8;
             build.name = originalHouseName;
@@ -401,6 +417,13 @@ public class BuilderScript : MonoBehaviour {
     public void RaycastHitPointBuilder(Vector3 pos)
     {
         buildingInMouse = pos;
+    }
+
+    public void AddRotation()
+    {
+        rotation += 90;
+        if(rotation >= 360) rotation = 0;
+        build.transform.localRotation = Quaternion.Euler(0,rotation,0);
     }
 
     /*public void CanPlaceLumberMill()
