@@ -88,7 +88,7 @@ ___
 - Pause Menu
   - [X] Final Art With Animations
   - [X] Custom Font
-- [ ] GUI Final Art With Animations
+- [X] GUI Final Art With Animations
 - [X] Custom Font
 - [ ] Control Support for Controller
 - [ ] 5 Particle Sytems More (Total: 10)
@@ -96,6 +96,6 @@ ___
 - [X] Specific Audio Track For Gameplay Screen
 
 ### Screen: Ending
-- [ ] Final Art, Enter Animation For Victory/Defeat Messages
+- [X] Final Art, Enter Animation For Victory/Defeat Messages
 - [ ] Sounds Fx (Messages, Animations)
 - [X] Custom Fonts
