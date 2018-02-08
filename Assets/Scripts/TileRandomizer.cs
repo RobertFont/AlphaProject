@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class TileRandomizer : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+    MeshFilter mesh;
+    public List<Mesh> randomMesh = new List<Mesh>();
+
+    // Use this for initialization
+    void Start ()
+    {
+        mesh = GetComponent<MeshFilter>();
+
+        int value = Random.Range(0, 3);
+        mesh.sharedMesh = randomMesh[value];
 	}
 }
