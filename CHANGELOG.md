@@ -83,7 +83,7 @@ ___
 ### Screen: Gameplay
 - [ ] Check: Basic Mecanics
 - [X] Check: Final Models + textures
-- [ ] 8 Final Props More (Total: 16 Props)
+- [X] 8 Final Props More (Total: 16 Props)
 - [X] Final Building With Final Texture + Basic Animations (3 Building)
 - Pause Menu
   - [X] Final Art With Animations
