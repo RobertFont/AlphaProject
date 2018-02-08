@@ -6,10 +6,29 @@ ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
+    100002: TileCentro02
+    100004: TileCentro03
+    100006: TileCentro05
+    100008: TileCentro06
     400000: //RootNode
+    400002: TileCentro02
+    400004: TileCentro03
+    400006: TileCentro05
+    400008: TileCentro06
     2300000: //RootNode
+    2300002: TileCentro02
+    2300004: TileCentro03
+    2300006: TileCentro05
+    2300008: TileCentro06
     3300000: //RootNode
+    3300002: TileCentro02
+    3300004: TileCentro03
+    3300006: TileCentro05
+    3300008: TileCentro06
     4300000: TileCentro02
+    4300002: TileCentro03
+    4300004: TileCentro05
+    4300006: TileCentro06
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -42,22 +61,22 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 1
+    isReadable: 0
   meshes:
     lODScreenPercentages: []
     globalScale: 1
-    meshCompression: 0
+    meshCompression: 3
     addColliders: 0
-    importVisibility: 1
+    importVisibility: 0
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
+    optimizeMeshForGPU: 0
     keepQuads: 0
-    weldVertices: 1
+    weldVertices: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
@@ -66,9 +85,9 @@ ModelImporter:
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
-    tangentImportMode: 3
+    tangentImportMode: 0
     normalCalculationMode: 4
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
