@@ -57,9 +57,13 @@ public class EnemyBehaviour : MonoBehaviour
         
         if(canAttackX && canAttackZ)
         {
-            counter += Time.deltaTime;
-            
-            if (counter >= 1) Destroy(this.gameObject);
+            counter += Time.deltaTime*Time.timeScale;
+
+            if (counter >= 10)
+            {
+                resource.happiness -= 10;
+                Destroy(this.gameObject);
+            }
         }
     }
 }
