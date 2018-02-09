@@ -58,7 +58,7 @@ ___
 ## BETA
 ### General
 - [X] Disable Unity Launche
-- [ ] Create Custom Game Icon And Mouse Icon
+- [X] Create Custom Game Icon And Mouse Icon
 
 ### Screen: Logo
 - [x] Logo Sound FX
@@ -82,9 +82,9 @@ ___
 
 ### Screen: Gameplay
 - [ ] Check: Basic Mecanics
-- [ ] Check: Final Models + textures
-- [ ] 8 Final Props More (Total: 16 Props)
-- [ ] Final Building With Final Texture + Basic Animations (3 Building)
+- [X] Check: Final Models + textures
+- [X] 8 Final Props More (Total: 16 Props)
+- [X] Final Building With Final Texture + Basic Animations (3 Building)
 - Pause Menu
   - [X] Final Art With Animations
   - [X] Custom Font
@@ -92,7 +92,7 @@ ___
 - [X] Custom Font
 - [ ] Control Support for Controller
 - [ ] 5 Particle Sytems More (Total: 10)
-- [ ] 5 Sound FX More (Total: 10)
+- [X] 5 Sound FX More (Total: 10)
 - [X] Specific Audio Track For Gameplay Screen
 
 ### Screen: Ending
