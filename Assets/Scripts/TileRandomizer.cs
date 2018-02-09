@@ -10,9 +10,12 @@ public class TileRandomizer : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        mesh = GetComponent<MeshFilter>();
+        if (randomMesh.Count > 0)
+        {
+            mesh = GetComponent<MeshFilter>();
 
-        int value = Random.Range(0, 3);
-        mesh.sharedMesh = randomMesh[value];
+            int value = Random.Range(0, 3);
+            mesh.sharedMesh = randomMesh[value];
+        }
 	}
 }
