@@ -79,24 +79,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1494136805554370
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4570852445224306}
-  - component: {fileID: 65516715774785756}
-  - component: {fileID: 114091943106938218}
-  - component: {fileID: 33174989768192330}
-  m_Layer: 9
-  m_Name: NavTag
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1621262504297850
 GameObject:
   m_ObjectHideFlags: 0
@@ -174,8 +156,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4094465567692888}
   - component: {fileID: 65997964594121676}
-  m_Layer: 9
-  m_Name: NavMeshFarm
+  m_Layer: 12
+  m_Name: Range
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -225,9 +207,8 @@ Transform:
   m_GameObject: {fileID: 1785831000195250}
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 7, y: 1, z: 7}
-  m_Children:
-  - {fileID: 4570852445224306}
+  m_LocalScale: {x: 7, y: 7, z: 7}
+  m_Children: []
   m_Father: {fileID: 4890696718141968}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -269,19 +250,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4890696718141968}
   m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4570852445224306
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1494136805554370}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.26, y: 1, z: 0.26}
-  m_Children: []
-  m_Father: {fileID: 4094465567692888}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4590647703549806
 Transform:
@@ -329,7 +297,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1986374075256540}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 47.011055, y: 32.935772, z: 8.046703}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4937216435312796}
@@ -738,13 +706,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1406022206604906}
   m_Mesh: {fileID: 4300002, guid: e1f103a98b1b3e641a0222526aeb822b, type: 3}
---- !u!33 &33174989768192330
-MeshFilter:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1494136805554370}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &33239261675501404
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -801,18 +762,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1678157719802374}
   m_Mesh: {fileID: 4300002, guid: e1f103a98b1b3e641a0222526aeb822b, type: 3}
---- !u!65 &65516715774785756
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1494136805554370}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65789126426831392
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -835,19 +784,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 2, y: 2, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114091943106938218
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1494136805554370}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09473d119d316304d987f31380190eaa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114929519274490942
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -860,11 +798,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
-  maxWorkers: 2
-  currentWorkers: 0
-  finder: {fileID: 0}
   counter: 0
-  destroy: 0
   gatherCounter: 12
   weatherEvent: {fileID: 0}
   rotateBlades: {x: 0, y: 0, z: 0}
@@ -872,4 +806,5 @@ MonoBehaviour:
   scaleWheatBack: {x: 0, y: 0, z: 0}
   scaleWheatFront: {x: 0, y: 0, z: 0}
   info: {fileID: 0}
+  resource: {fileID: 0}
   started: 1

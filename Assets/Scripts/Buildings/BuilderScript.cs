@@ -59,11 +59,13 @@ public class BuilderScript : MonoBehaviour {
     public Transform collisionChecker;
     public Vector3 colliderHalfSize;
     public LayerMask layerBuild;
+    public LayerMask layerRange;
     public float radiusSphere = 10.0f;
 
     public bool canCreateBuild = false;
     public bool canPosisitioningBuild = false;
     public bool buildingColliding = false;
+    public bool buildingInRange = true;
     public bool canPlace = true;
     public bool cantPlace = false;
 
@@ -104,6 +106,15 @@ public class BuilderScript : MonoBehaviour {
         Collider[] hitCollider = Physics.OverlapBox(collisionChecker.position, colliderHalfSize, Quaternion.identity, layerBuild);
         if (hitCollider.Length != 0) buildingColliding = true;
         else buildingColliding = false;
+
+        if (resource.townHall > 0)
+        {
+            Collider[] hitColliderRange = Physics.OverlapBox(collisionChecker.position, colliderHalfSize, Quaternion.identity, layerRange);
+            if (hitColliderRange.Length > 0) buildingInRange = true;
+            else buildingInRange = false;
+            if (!buildingInRange) buildingColliding = true;
+        }
+        else buildingInRange = true;
         //CanPlaceLumberMill();
     }
 
@@ -206,7 +217,7 @@ public class BuilderScript : MonoBehaviour {
             return;
         }
 
-        if ((canCreateBuild && buildingColliding == false))
+        if ((canCreateBuild && buildingColliding == false) && (buildingInRange == true))
         {
             canPosisitioningBuild = true;
         }
