@@ -73,7 +73,7 @@ ___
 
 ### Screen: Options
 - Basic Settings
-  - [ ] Gamma Correction (Brightness)
+  - [X] Gamma Correction (Brightness)
   - [X] Audio Volumen (Sound And Music Independientes)
 - [X]  Animated Elements And Custom Art (Buttons, Selection)
 - [X] Sound FX (Buttons, Animations...)
@@ -91,7 +91,7 @@ ___
 - [X] GUI Final Art With Animations
 - [X] Custom Font
 - [ ] Control Support for Controller
-- [ ] 5 Particle Sytems More (Total: 10)
+- [X] 5 Particle Sytems More (Total: 10)
 - [X] 5 Sound FX More (Total: 10)
 - [X] Specific Audio Track For Gameplay Screen
 
