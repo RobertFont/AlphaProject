@@ -82,6 +82,7 @@ public class InputManager : MonoBehaviour {
 
         #region Rotate
         isRotating = Input.GetAxis("Rotate")*2;
+        isRotating = Input.GetAxis("RotateController")*2;
 
         if (isRotating >= 2) isRotating = 2;
         else if (isRotating <= -2) isRotating = -2;

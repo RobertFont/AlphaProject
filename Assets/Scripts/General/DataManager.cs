@@ -90,13 +90,13 @@ public static class GameData
     public static void DeleteGame(int slot) { }
     public static GameState LoadGame(int slot)
     {
-        Debug.Log("LoadGame");
+        //  Debug.Log("LoadGame");
         gameState = new GameState();
 
         try
         {
             gameState = (GameState)Data.ReadBinaryPersistentPath<GameState>("SaveGame_" + slot + ".save");
-            Debug.Log("Game loaded");
+            //Debug.Log("Game loaded");
         }
         catch(Exception e)
         {

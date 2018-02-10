@@ -209,8 +209,8 @@ public class OptionsBehaviour : MonoBehaviour
 
     public void SetGamma()
     {
-        gammaLevel = gammaLevelSlider.value * 255;
-        RenderSettings.ambientLight = new Color(gammaLevel, gammaLevel, 1);
+        gammaLevel = gammaLevelSlider.value;
+        RenderSettings.ambientLight = new Color(gammaLevel, gammaLevel, gammaLevel);
         Debug.Log(RenderSettings.ambientLight);
     }
 
