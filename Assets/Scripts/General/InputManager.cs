@@ -16,6 +16,7 @@ public class InputManager : MonoBehaviour {
     public UiConstruction uiConstruction;
     public GameObject pauseSystem;
     public GameObject construcionUI;
+    public bool speedController=false;
 
     LevelLogic level;
 
@@ -59,8 +60,8 @@ public class InputManager : MonoBehaviour {
         inputMouse.x = Input.GetAxis("Mouse X") * moveSpeed;
         inputMouse.y = Input.GetAxis("Mouse Y") * moveSpeed;
 
-        inputMouseJostick.x = Input.GetAxis("Right Joystick X");
-        inputMouseJostick.y = Input.GetAxis("Right Joystick Y");
+        //inputMouseJostick.x = Input.GetAxis("Right Joystick X");
+        //inputMouseJostick.y = Input.GetAxis("Right Joystick Y");
 
         realMousePosition = inputMouse;
         //realMousePosition = inputMouseJostick;
@@ -75,14 +76,22 @@ public class InputManager : MonoBehaviour {
         if(Input.GetButtonDown("Fire2") || Input.GetButtonDown("RotateBuilding")) builder.AddRotation();
 
         #region Speed
-        if (Input.GetButtonDown("Speed1") /*|| Input.GetAxis("Speed1 and 3 Controller") < -0.05f*/) Time.timeScale = 1.0f;
-        if (Input.GetButtonDown("Speed2") /*|| Input.GetAxis("Speed2 Controller") > 0.05f*//*) Time.timeScale = 1.5f;
-        if (Input.GetButtonDown("Speed3") /*|| Input.GetAxis("Speed1 and 3 Controller") > 0.05f*/) Time.timeScale = 2.0f;
+        if (Input.GetButtonDown("Speed1") ) Time.timeScale = 1.0f;
+        if (Input.GetButtonDown("Speed2")) Time.timeScale = 1.5f;
+        if (Input.GetButtonDown("Speed3") ) Time.timeScale = 2.0f;
+        if (Input.GetButtonDown("ChangeSpeedController"))
+        {
+            speedController = !speedController;
+            if(!speedController) Time.timeScale = 1.0f;
+            if(speedController) Time.timeScale = 2.0f;
+            Debug.Log(Time.timeScale);
+        }
         #endregion
 
-        #region Rotate
-        if (Input.GetAxis("Rotate") !=0) isRotating = Input.GetAxis("Rotate")*2;
-        else if (Input.GetAxis("RotateController") != 0) isRotating = Input.GetAxis("RotateController")*2;
+            #region Rotate
+        if (Input.GetAxis("Rotate") > 0.01f  || Input.GetAxis("Rotate") < 0.01f) isRotating = Input.GetAxis("Rotate")*2;
+        else if (Input.GetAxis(" RotateController") > 0.01f || Input.GetAxis(" RotateController") < 0.01f) isRotating = Input.GetAxis("RotateController")*2;
+        else isRotating = 0;
 
         if (isRotating >= 2) isRotating = 2;
         else if (isRotating <= -2) isRotating = -2;

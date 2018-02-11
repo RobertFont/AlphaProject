@@ -58,8 +58,8 @@ public class DataLogic : MonoBehaviour
         }
         else if (GetPeripheralType())
         {
-            //Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = true;
             FollowCursor.enabled = true;
         }
     }
@@ -75,7 +75,7 @@ public class DataLogic : MonoBehaviour
                 return;
             }
         }
-        if (Input.GetAxis("Right Joystick X") > 0.01f || Input.GetAxis("Right Joystick X") < -0.01f  || Input.GetAxis("Right Joystick Y") > 0.01f || Input.GetAxis("Right Joystick Y") < -0.1f || Input.GetAxis("MovementControllerX") > 0.01f || Input.GetAxis("MovementControllerX") < -0.01f ||
+        if (/*Input.GetAxis("Right Joystick X") > 0.01f || Input.GetAxis("Right Joystick X") < -0.01f  || Input.GetAxis("Right Joystick Y") > 0.01f || Input.GetAxis("Right Joystick Y") < -0.1f ||*/ Input.GetAxis("MovementControllerX") > 0.01f || Input.GetAxis("MovementControllerX") < -0.01f ||
             Input.GetAxis("MovementControllerY") > 0.01f || Input.GetAxis("MovementControllerY") < -0.01f || Input.GetAxis("RotateController") != 0.0f || Input.GetAxis("Mouse ScrollWheel Controller") > 0.01f || Input.GetAxis("Mouse ScrollWheel Controller") < -0.01f)
         {
             peripheralType = PeripheralType.Controller;

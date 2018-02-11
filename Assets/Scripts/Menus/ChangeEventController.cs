@@ -19,4 +19,10 @@ public class ChangeEventController : MonoBehaviour
     {
             events.sendNavigationEvents = data.GetPeripheralType();
     }
+
+    public void SetSelectedObject(GameObject Selected)
+    {
+        events.SetSelectedGameObject(Selected);
+        Debug.Log(Selected.name);
+    }
 }

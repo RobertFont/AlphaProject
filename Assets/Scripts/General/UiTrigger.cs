@@ -12,7 +12,12 @@ public class UiTrigger : MonoBehaviour
     public InputManager input;
     public GameObject buildingSelected;
     public Text stateText;
-    
+
+    public ChangeEventController events;
+    public GameObject pressSelectedObject;
+    public GameObject hideSelectedObject;
+    bool selectObject;
+
     int houseRestoreWood;
     int houseRestoreGold;
     int farmRestoreWood;
@@ -30,13 +35,19 @@ public class UiTrigger : MonoBehaviour
         {
             this.transform.GetChild(0).gameObject.SetActive(false);
             SelectedParticles.gameObject.SetActive(false);
+            selectObject = false;
         }
         else
         {
+            if(!selectObject)
+            {
+                events.SetSelectedObject(pressSelectedObject);
+                selectObject = true;
+            }
+
             this.transform.GetChild(0).gameObject.SetActive(true);
             SelectedParticles.gameObject.SetActive(true);
             SelectedParticles.gameObject.transform.position = buildingSelected.transform.position;
-
         }
     }
 
@@ -155,5 +166,6 @@ public class UiTrigger : MonoBehaviour
     public void DeselectBuilding()
     {
         buildingSelected = null;
+        events.SetSelectedObject(hideSelectedObject);
     }
 }
