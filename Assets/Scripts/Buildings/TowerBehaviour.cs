@@ -5,7 +5,14 @@ using UnityEngine;
 public class TowerBehaviour : MonoBehaviour
 {
     public Transform target;
+
+    [Header("Attributes")]
     public float range = 15f;
+    public float fireRate = 1f;
+    private float fireCountDown = 0f;
+
+    public GameObject projectilePrefab;
+    public Transform firePoint;
 
     // Use this for initialization
     void Start ()
@@ -44,7 +51,23 @@ public class TowerBehaviour : MonoBehaviour
     void Update ()
     {
         if (target == null) return;
+
+        if (fireCountDown <= 0f)
+        {
+            Shoot();
+            fireCountDown = 1f / fireRate;
+        }
+
+        fireCountDown -= Time.deltaTime / Time.timeScale;
 	}
+
+    void Shoot()
+    {
+        GameObject projectileGO = (GameObject)Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+        ProjectileBehaviour projectile = projectileGO.GetComponent<ProjectileBehaviour>();
+
+        if (projectile != null) projectile.Seek(target);
+    }
 
     private void OnDrawGizmosSelected()
     {

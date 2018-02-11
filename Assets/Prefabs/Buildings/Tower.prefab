@@ -65,6 +65,34 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1953197887181090
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4277458265161670}
+  m_Layer: 0
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4277458265161670
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1953197887181090}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.481, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4456176789830632}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4456176789830632
 Transform:
   m_ObjectHideFlags: 1
@@ -76,6 +104,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4514649474888690}
+  - {fileID: 4277458265161670}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -267,13 +296,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 544d921178f063a40878b33994b3c82c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collisionChecker: {fileID: 4904942048151646, guid: 50f21b00e5eecac47b634aa473f42c77,
+  target: {fileID: 0}
+  range: 15
+  fireRate: 1
+  projectilePrefab: {fileID: 1727446686266400, guid: 39573579b314da545983f47532370252,
     type: 2}
-  colliderHalfSize: {x: 0.5, y: 0.5, z: 0.5}
-  layerRange:
-    serializedVersion: 2
-    m_Bits: 0
-  goblins: {fileID: 0}
+  firePoint: {fileID: 4277458265161670}
 --- !u!114 &114440685470064574
 MonoBehaviour:
   m_ObjectHideFlags: 1
