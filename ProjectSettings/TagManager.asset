@@ -19,6 +19,8 @@ TagManager:
   - Warehouse
   - Castle
   - Bridge
+  - Tower
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -33,7 +35,7 @@ TagManager:
   - Terrain
   - Peasant
   - CityRange
-  - 
+  - Enemy
   - 
   - 
   - 

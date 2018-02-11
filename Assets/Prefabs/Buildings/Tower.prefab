@@ -57,9 +57,10 @@ GameObject:
   - component: {fileID: 4456176789830632}
   - component: {fileID: 33930196024473744}
   - component: {fileID: 23825883188818198}
+  - component: {fileID: 114228935783476442}
   m_Layer: 9
   m_Name: Tower
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71,7 +72,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1885245073214770}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -25.676022, y: 0.053123146, z: 4.918804}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4514649474888690}
@@ -255,6 +256,24 @@ MonoBehaviour:
   minDelay: 0
   randomDelay: 0
   keepPositionX: 1
+--- !u!114 &114228935783476442
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1885245073214770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 544d921178f063a40878b33994b3c82c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionChecker: {fileID: 4904942048151646, guid: 50f21b00e5eecac47b634aa473f42c77,
+    type: 2}
+  colliderHalfSize: {x: 0.5, y: 0.5, z: 0.5}
+  layerRange:
+    serializedVersion: 2
+    m_Bits: 0
+  goblins: {fileID: 0}
 --- !u!114 &114440685470064574
 MonoBehaviour:
   m_ObjectHideFlags: 1

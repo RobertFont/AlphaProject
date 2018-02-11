@@ -11,16 +11,20 @@ public class EnemyBehaviour : MonoBehaviour
     public Vector3 destination;
     public bool canAttackX;
     public bool canAttackZ;
+    public bool towerDetection;
     public float counter;
+    public float life;
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start ()
     {
         transform = GetComponent<Transform>();
         resource = GameObject.FindGameObjectWithTag("Player").GetComponent<ResourceManager>();
         destination = new Vector3(0, this.transform.position.y, 0);
         canAttackX = false;
         canAttackZ = false;
+        towerDetection = false;
+        life = 100;
     }
 
     // Update is called once per frame
@@ -65,5 +69,12 @@ public class EnemyBehaviour : MonoBehaviour
                 Destroy(this.gameObject);
             }
         }
+        else if(life <= 0) Destroy(this.gameObject);
+    }
+
+    public void TakeDamage(int damage)
+    {
+        life -= damage;
+        if (life <= 0) life = 0;
     }
 }
