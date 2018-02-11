@@ -72,17 +72,17 @@ public class InputManager : MonoBehaviour {
             builder.CantBuild(false);
         }
 
-        if(Input.GetButtonDown("Fire2")) builder.AddRotation();
+        if(Input.GetButtonDown("Fire2") || Input.GetButtonDown("RotateBuilding")) builder.AddRotation();
 
         #region Speed
-        if (Input.GetButtonDown("Speed1") || Input.GetAxis("Speed1 and 3 Controller") < -0.05f) Time.timeScale = 1.0f;
-        if (Input.GetButtonDown("Speed2") || Input.GetAxis("Speed2 Controller") > 0.05f) Time.timeScale = 1.5f;
-        if (Input.GetButtonDown("Speed3") || Input.GetAxis("Speed1 and 3 Controller") > 0.05f) Time.timeScale = 2.0f;
+        if (Input.GetButtonDown("Speed1") /*|| Input.GetAxis("Speed1 and 3 Controller") < -0.05f*/) Time.timeScale = 1.0f;
+        if (Input.GetButtonDown("Speed2") /*|| Input.GetAxis("Speed2 Controller") > 0.05f*//*) Time.timeScale = 1.5f;
+        if (Input.GetButtonDown("Speed3") /*|| Input.GetAxis("Speed1 and 3 Controller") > 0.05f*/) Time.timeScale = 2.0f;
         #endregion
 
         #region Rotate
-        isRotating = Input.GetAxis("Rotate")*2;
-        isRotating = Input.GetAxis("RotateController")*2;
+        if (Input.GetAxis("Rotate") !=0) isRotating = Input.GetAxis("Rotate")*2;
+        else if (Input.GetAxis("RotateController") != 0) isRotating = Input.GetAxis("RotateController")*2;
 
         if (isRotating >= 2) isRotating = 2;
         else if (isRotating <= -2) isRotating = -2;
@@ -97,7 +97,7 @@ public class InputManager : MonoBehaviour {
         }
         if (Input.GetAxis("Mouse ScrollWheel Controller") != 0)
         {
-            mainCamera.transform.localPosition += new Vector3(0, 0, Input.GetAxis("Mouse ScrollWheel")*zoomSpeed); //Change values according to your requirements
+            mainCamera.transform.localPosition += new Vector3(0, 0, Input.GetAxis("Mouse ScrollWheel Controller") *zoomSpeed/2); //Change values according to your requirements
         }
 
 

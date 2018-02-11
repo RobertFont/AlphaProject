@@ -11,7 +11,7 @@ public class ChangeEventController : MonoBehaviour
     void Start ()
     {
         events = GetComponent<EventSystem>();
-        events.firstSelectedGameObject = events.firstSelectedGameObject;
+        //events.firstSelectedGameObject = events.firstSelectedGameObject;
         /*if(data != null)*/ data = GameObject.Find("LevelManager").GetComponent<DataLogic>();
     }
 	

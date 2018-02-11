@@ -134,7 +134,7 @@ InputManager:
     axis: 0
     joyNum: 1
   - serializedVersion: 3
-    m_Name: Speed1 and 3 Controller
+    m_Name: MovementControllerX
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
@@ -150,7 +150,7 @@ InputManager:
     axis: 5
     joyNum: 1
   - serializedVersion: 3
-    m_Name: Speed2 Controller
+    m_Name: MovementControllerY
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
@@ -361,6 +361,22 @@ InputManager:
     m_Name: Rotate
     descriptiveName: 
     descriptiveNegativeName: 
+    negativeButton: e
+    positiveButton: q
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 2
+    dead: 0.001
+    sensitivity: 3
+    snap: 1
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 0
+  - serializedVersion: 3
+    m_Name: RotateController
+    descriptiveName: 
+    descriptiveNegativeName: 
     negativeButton: 
     positiveButton: 
     altNegativeButton: joystick button 5
@@ -374,17 +390,33 @@ InputManager:
     axis: 0
     joyNum: 1
   - serializedVersion: 3
-    m_Name: RotateController
+    m_Name: AcceptController
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: 
-    altNegativeButton: joystick button 5
-    altPositiveButton: joystick button 4
+    positiveButton: joystick button 0
+    altNegativeButton: 
+    altPositiveButton: 
     gravity: 2
     dead: 0.001
     sensitivity: 3
     snap: 1
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: RotateBuilding
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: joystick button 2
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 2
+    dead: 0.001
+    sensitivity: 3
+    snap: 0
     invert: 0
     type: 0
     axis: 0
