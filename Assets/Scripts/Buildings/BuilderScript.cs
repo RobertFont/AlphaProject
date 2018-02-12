@@ -66,12 +66,14 @@ public class BuilderScript : MonoBehaviour {
     public Vector3 colliderHalfSize;
     public LayerMask layerBuild;
     public LayerMask layerRange;
+    public LayerMask treeRange;
     //public float radiusSphere = 10.0f;
 
     public bool canCreateBuild = false;
     public bool canPosisitioningBuild = false;
     public bool buildingColliding = false;
     public bool buildingInRange = true;
+    public bool treeInRange = true;
     public bool canPlace = true;
     public bool cantPlace = false;
 
@@ -125,6 +127,19 @@ public class BuilderScript : MonoBehaviour {
             }
         }
         else buildingInRange = true;
+
+        if (build == lumberMill)
+        {
+            if (canCreateBuild)
+            {
+                Collider[] hitColliderTree = Physics.OverlapBox(collisionChecker.position, colliderHalfSize, Quaternion.identity, treeRange);
+                if (hitColliderTree.Length > 0) treeInRange = true;
+                else treeInRange = false;
+                if (!treeInRange) buildingColliding = true;
+                Debug.Log(hitColliderTree);
+            }
+        }
+        else treeInRange = true;
         //CanPlaceLumberMill();
     }
 

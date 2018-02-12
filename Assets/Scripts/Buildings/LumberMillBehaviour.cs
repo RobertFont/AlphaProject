@@ -38,7 +38,7 @@ public class LumberMillBehaviour : MonoBehaviour
 
 				counter += Time.deltaTime * Time.timeScale;
 
-				if (counter > 12/Time.timeScale)
+				if (counter > 6/Time.timeScale)
 				{
 					GatherResources();
 
@@ -81,7 +81,7 @@ public class LumberMillBehaviour : MonoBehaviour
 
 	public void GatherResources()
 	{
-		resource.AddWood(10);
+		resource.AddWood(20);
 	}
 
     public void OnMouseUpAsButton()
