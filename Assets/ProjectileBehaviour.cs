@@ -34,7 +34,7 @@ public class ProjectileBehaviour : MonoBehaviour
 
     void HitTarget()
     {
-        GameObject effectIns = (GameObject)Instantiate(impactEffect, transform.position, transform.rotation);
+        GameObject effectIns = Instantiate(impactEffect, transform.position, transform.rotation);
         Destroy(effectIns, 2f);
 
         target.GetComponent<EnemyBehaviour>().TakeDamage(30);

@@ -18,11 +18,14 @@ public class UiTrigger : MonoBehaviour
     public GameObject hideSelectedObject;
     bool selectObject;
 
-    int houseRestoreWood;
-    int houseRestoreGold;
-    int farmRestoreWood;
-    int lumberMillRestoreWood; 
-    int goldMineRestoreWood;
+    int houseRestoreWood = 50;
+    int houseRestoreGold = 50;
+    int farmRestoreWood = 50;
+    int lumberMillRestoreWood = 75; 
+    int goldMineRestoreWood = 75;
+    int towerRestoreWood = 50;
+    int towerRestoreGold = 50;
+
 
     public void SelectBuilding(GameObject building)
     {
@@ -103,6 +106,16 @@ public class UiTrigger : MonoBehaviour
                 buildingSelected.SetActive(false);
                 buildingSelected = null;
             }
+        }
+        else if (buildingSelected.tag == "Tower")
+        {
+            resource.AddWood(towerRestoreWood);
+            resource.AddGold(towerRestoreGold);
+            resource.AddTower(-1);
+
+            buildingSelected.GetComponent<TowerBehaviour>().DestroyBuilding();
+
+            buildingSelected = null;
         }
         else Debug.Log("Edificio" + buildingSelected + "no se puede destruir");
     }

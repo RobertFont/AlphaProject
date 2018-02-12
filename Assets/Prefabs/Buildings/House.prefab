@@ -37,7 +37,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4437585560568552}
   - component: {fileID: 65177622130901126}
-  - component: {fileID: 114109831743459812}
   - component: {fileID: 33272947524583242}
   m_Layer: 12
   m_Name: Range
@@ -177,17 +176,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.6, y: 2, z: 2.3}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114109831743459812
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1673771112912052}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09473d119d316304d987f31380190eaa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!198 &198928371319345440
 ParticleSystem:
   m_ObjectHideFlags: 1

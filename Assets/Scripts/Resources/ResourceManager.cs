@@ -33,6 +33,7 @@ public class ResourceManager : MonoBehaviour
     public int goldMine = 0;
     public int warehouse = 0;
     public int castle = 0;
+    public int tower = 0;
     [Header("UI Resources")]
     public Text woodUi;
     public Text foodUi;
@@ -238,6 +239,15 @@ public class ResourceManager : MonoBehaviour
     public void AddCastle(int value)
     {
         castle += value;
+    }
+
+    public void AddTower()
+    {
+        tower += 1;
+    }
+    public void AddTower(int value)
+    {
+        tower += value;
     }
     #endregion
 

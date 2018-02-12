@@ -103,7 +103,6 @@ public class FarmBehaviour : MonoBehaviour
     {
 		resource.AddCurrentPop(2);
 		Destroy(this.gameObject);
-
     }
 
     public void ScaleWheat()

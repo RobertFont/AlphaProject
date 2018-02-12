@@ -18,7 +18,7 @@ public class SpawnEnemyBehaviour : MonoBehaviour
 
             if(counter >= 2)
             {
-                Instantiate(enemy, transform.localPosition, Quaternion.Euler(0, 0, 0));
+                Instantiate(enemy, transform.position, transform.rotation);
 
                 counter = 0;
             }

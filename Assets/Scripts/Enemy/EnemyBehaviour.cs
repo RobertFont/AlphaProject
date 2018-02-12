@@ -5,6 +5,7 @@ public class EnemyBehaviour : MonoBehaviour
 {
     public ResourceManager resource;
     [SerializeField] Transform transform;
+
     [Header("Enemy Variables")]
     public float velocity;
     public Vector3 target;
@@ -24,7 +25,7 @@ public class EnemyBehaviour : MonoBehaviour
     {
         transform = GetComponent<Transform>();
         resource = GameObject.FindGameObjectWithTag("Player").GetComponent<ResourceManager>();
-        destination = new Vector3(0, this.transform.position.y, 0);
+        destination = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
         canAttackX = false;
         canAttackZ = false;
         health = startHealth;
@@ -69,9 +70,7 @@ public class EnemyBehaviour : MonoBehaviour
             if (counter >= 1)
             {
                 resource.happiness -= 10;
-                Destroy(this.gameObject);
-                GameObject effectIns = (GameObject)Instantiate(deathEffect, transform.position, transform.rotation);
-                Destroy(effectIns, 2f);
+                Die();
                 counter = 0f;
             }
         }
@@ -88,7 +87,7 @@ public class EnemyBehaviour : MonoBehaviour
 
     public void Die()
     {
-        GameObject effectIns = (GameObject)Instantiate(deathEffect, transform.position, transform.rotation);
+        GameObject effectIns = Instantiate(deathEffect, transform.position, transform.rotation);
         Destroy(effectIns, 2f);
 
         Destroy(this.gameObject);

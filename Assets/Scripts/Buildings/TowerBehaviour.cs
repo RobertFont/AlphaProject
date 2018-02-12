@@ -5,6 +5,8 @@ using UnityEngine;
 public class TowerBehaviour : MonoBehaviour
 {
     public Transform target;
+    public ResourceManager resource;
+    public UiTrigger info;
 
     [Header("Attributes")]
     public float range = 15f;
@@ -18,6 +20,8 @@ public class TowerBehaviour : MonoBehaviour
     void Start ()
     {
         // Esto hace que UpdateTarget se ejecute 2 veces por segundo en vez de cada frame
+        resource = GameObject.FindGameObjectWithTag("Player").GetComponent<ResourceManager>();
+        info = GameObject.Find("InformationButton").GetComponent<UiTrigger>();
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
     }
     // Esta funcion busca los enemigos y coje el mas cercano
@@ -63,10 +67,21 @@ public class TowerBehaviour : MonoBehaviour
 
     void Shoot()
     {
-        GameObject projectileGO = (GameObject)Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+        GameObject projectileGO = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
         ProjectileBehaviour projectile = projectileGO.GetComponent<ProjectileBehaviour>();
 
         if (projectile != null) projectile.Seek(target);
+    }
+
+    public void OnMouseUpAsButton()
+    {
+        info.buildingSelected = this.gameObject;
+    }
+
+    public void DestroyBuilding()
+    {
+        resource.AddCurrentPop(2);
+        Destroy(gameObject);
     }
 
     private void OnDrawGizmosSelected()
