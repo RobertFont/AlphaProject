@@ -1,19 +1,23 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyBehaviour : MonoBehaviour 
 {
     public ResourceManager resource;
     [SerializeField] Transform transform;
+    [Header("Enemy Variables")]
     public float velocity;
     public Vector3 target;
     public Vector3 destination;
     public bool canAttackX;
     public bool canAttackZ;
-    public bool towerDetection;
-    public float counter;
-    public float life;
+    public float counter = 0f;
+    public float startHealth = 100f;
+    private float health;
+    public GameObject deathEffect;
+
+    [Header("Enemy lifeBar")]
+    public Image healthBar;
 
     // Use this for initialization
     void Start ()
@@ -23,8 +27,7 @@ public class EnemyBehaviour : MonoBehaviour
         destination = new Vector3(0, this.transform.position.y, 0);
         canAttackX = false;
         canAttackZ = false;
-        towerDetection = false;
-        life = 100;
+        health = startHealth;
     }
 
     // Update is called once per frame
@@ -63,18 +66,31 @@ public class EnemyBehaviour : MonoBehaviour
         {
             counter += Time.deltaTime*Time.timeScale;
 
-            if (counter >= 10)
+            if (counter >= 1)
             {
                 resource.happiness -= 10;
                 Destroy(this.gameObject);
+                GameObject effectIns = (GameObject)Instantiate(deathEffect, transform.position, transform.rotation);
+                Destroy(effectIns, 2f);
+                counter = 0f;
             }
         }
-        else if(life <= 0) Destroy(this.gameObject);
     }
 
     public void TakeDamage(int damage)
     {
-        life -= damage;
-        if (life <= 0) life = 0;
+        health -= damage;
+
+        healthBar.fillAmount = health/startHealth;
+
+        if (health <= 0) Die();
+    }
+
+    public void Die()
+    {
+        GameObject effectIns = (GameObject)Instantiate(deathEffect, transform.position, transform.rotation);
+        Destroy(effectIns, 2f);
+
+        Destroy(this.gameObject);
     }
 }

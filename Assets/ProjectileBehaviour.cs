@@ -3,7 +3,7 @@
 public class ProjectileBehaviour : MonoBehaviour
 {
     private Transform target;
-    public float speed = 70f;
+    private float speed = 30f;
     public GameObject impactEffect;
 
     public void Seek(Transform _target)
@@ -19,7 +19,7 @@ public class ProjectileBehaviour : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-        Vector3 dir = target.position = transform.position;
+        Vector3 dir = target.position - transform.position;
         float distanceThisFrame = speed * Time.deltaTime;
 
         if(dir.magnitude <= distanceThisFrame)
@@ -37,7 +37,7 @@ public class ProjectileBehaviour : MonoBehaviour
         GameObject effectIns = (GameObject)Instantiate(impactEffect, transform.position, transform.rotation);
         Destroy(effectIns, 2f);
 
-        Destroy(target.gameObject);
+        target.GetComponent<EnemyBehaviour>().TakeDamage(30);
         Destroy(gameObject);
     }
 }
