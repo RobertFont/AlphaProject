@@ -67,6 +67,7 @@ public class BuilderScript : MonoBehaviour {
     public LayerMask layerBuild;
     public LayerMask layerRange;
     public LayerMask treeRange;
+    public LayerMask goldRange;
     //public float radiusSphere = 10.0f;
 
     public bool canCreateBuild = false;
@@ -74,10 +75,11 @@ public class BuilderScript : MonoBehaviour {
     public bool buildingColliding = false;
     public bool buildingInRange = true;
     public bool treeInRange = true;
+    public bool mineInRange = true;
     public bool canPlace = true;
     public bool cantPlace = false;
     public bool goldMineFound = false;
-    Transform goldMineFoundObject;
+    GameObject goldMineFoundObject;
 
     int rotation;
 
@@ -120,7 +122,7 @@ public class BuilderScript : MonoBehaviour {
         else buildingColliding = false;
 
 
-        if (resource.townHall > 0 && build != goldMine)
+        if (resource.townHall > 0)
         {
             if (canCreateBuild)
             {
@@ -150,14 +152,16 @@ public class BuilderScript : MonoBehaviour {
         {
             if(canCreateBuild)
             {
-                Collider[] hitColliderRange = Physics.OverlapBox(collisionChecker.position, colliderHalfSize, Quaternion.identity, layerRange);
-                if(hitColliderRange.Length > 0) buildingInRange = true;
-               // else buildingInRange = false;
-                if(!buildingInRange) buildingColliding = true;
-                Debug.Log(hitColliderRange);
+                Debug.Log("Entra");
+
+                Collider[] hitColliderMineRange = Physics.OverlapBox(collisionChecker.position, colliderHalfSize, Quaternion.identity, goldRange);
+                if(hitColliderMineRange.Length > 0) mineInRange = true;
+                else mineInRange = false;
+                if(!mineInRange) buildingColliding = true;
             }
         }
-        else buildingInRange = true;
+        else if (build != goldMine && goldMineFound) buildingColliding = true;
+        else mineInRange = true;
         //CanPlaceLumberMill();
     }
 
@@ -301,9 +305,9 @@ public class BuilderScript : MonoBehaviour {
             if(goldMineFound && build == goldMine)
             {
                 Debug.Log("goldMineFound");
-                GameObject newBuild = Instantiate(buildingSelected, goldMineFoundObject.localPosition, Quaternion.Euler(0, build.transform.localEulerAngles.y, 0));
+                GameObject newBuild = Instantiate(buildingSelected, goldMineFoundObject.transform.localPosition, Quaternion.Euler(0, build.transform.localEulerAngles.y, 0));
                 newBuild.name = build.name;
-                goldMineFoundObject.GetComponent<MineBehaviour>().SetGoldMine();
+                newBuild.GetComponent<GoldMineBehaviour>().SetGoldOre(goldMineFoundObject);
             }
             else
             {
@@ -522,7 +526,7 @@ public class BuilderScript : MonoBehaviour {
         build.transform.localRotation = Quaternion.Euler(0,rotation,0);
     }
 
-    public void GoldMineHit(bool found, Transform Objectfound)
+    public void GoldMineHit(bool found, GameObject Objectfound)
     {
         goldMineFound = found;
         goldMineFoundObject = Objectfound;

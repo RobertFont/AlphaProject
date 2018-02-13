@@ -16,14 +16,14 @@ public class GoldMineBehaviour : MonoBehaviour
     
     public GameObject[] mines;
 
-
-    // Use this for initialization
+    GameObject goldOre;
    
     public void MyStart()
     {
         state = BuildingState.open;
         info = GameObject.Find("InformationButton").GetComponent<UiTrigger>();
 		resource = GameObject.FindGameObjectWithTag("Player").GetComponent<ResourceManager>();
+        goldOre.SetActive(false);
         started = false;
     }
 
@@ -76,6 +76,7 @@ public class GoldMineBehaviour : MonoBehaviour
     public void DestroyBuilding()
     {
 		resource.AddCurrentPop(4);
+        goldOre.SetActive(true);
         Destroy(this.gameObject);
     }
 
@@ -87,6 +88,12 @@ public class GoldMineBehaviour : MonoBehaviour
     public void OnMouseUpAsButton()
     {
         if(started) MyStart();
-        info.buildingSelected = this.gameObject;
+        //info.buildingSelected = this.gameObject;
     }
+
+    public void SetGoldOre(GameObject gameObject)
+    {
+        goldOre = gameObject;
+    }
+
 }

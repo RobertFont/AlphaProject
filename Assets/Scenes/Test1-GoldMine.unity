@@ -159,7 +159,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1625546941808912, guid: 66153d61ff4f7ee48b0d3a014bf0a46d, type: 2}
       propertyPath: m_Layer
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1234098863226734, guid: 66153d61ff4f7ee48b0d3a014bf0a46d, type: 2}
       propertyPath: m_Layer
@@ -18419,22 +18419,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1771009911}
---- !u!1 &1781719388 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1625546941808912, guid: 66153d61ff4f7ee48b0d3a014bf0a46d,
-    type: 2}
-  m_PrefabInternal: {fileID: 17294564}
---- !u!114 &1781719393
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1781719388}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f17750ac20ca90140af0a76315f724fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1784709156
 GameObject:
   m_ObjectHideFlags: 0
@@ -19696,11 +19680,15 @@ MonoBehaviour:
   treeRange:
     serializedVersion: 2
     m_Bits: 16384
+  goldRange:
+    serializedVersion: 2
+    m_Bits: 32768
   canCreateBuild: 0
   canPosisitioningBuild: 0
   buildingColliding: 0
   buildingInRange: 0
   treeInRange: 1
+  mineInRange: 1
   canPlace: 0
   cantPlace: 0
   goldMineFound: 0
@@ -19782,6 +19770,9 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 512
+  goldLayerMask:
+    serializedVersion: 2
+    m_Bits: 32768
   uiTrigger: {fileID: 775525200}
 --- !u!1 &2019223754
 GameObject:

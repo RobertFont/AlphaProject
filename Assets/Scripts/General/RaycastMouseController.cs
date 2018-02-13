@@ -7,28 +7,30 @@ public class RaycastMouseController : MonoBehaviour
 {
     public float maxDistance = Mathf.Infinity;
     public LayerMask layerMask;
+    public LayerMask goldLayerMask;
     private BuilderScript build;
     RaycastHit hit = new RaycastHit();
     //LumberMillBehaviour lumberMillSelelcted;
     //FarmBehaviour farmSelected;
     //GoldMineBehaviour mineSelected;
-    public UiTrigger uiTrigger; 
+    public UiTrigger uiTrigger;
 
     // Use this for initialization
    public void MyStart()
     {
         build = this.GetComponent<BuilderScript>();
         layerMask = 1 << 10;
+        goldLayerMask = 1 << 15;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+
         if(build.canCreateBuild)
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-            if(Physics.Raycast(ray, out hit, maxDistance, layerMask, QueryTriggerInteraction.Ignore))
+            if(Physics.Raycast(ray, out hit, maxDistance, goldLayerMask, QueryTriggerInteraction.Ignore))
             {
                 Debug.DrawLine(ray.origin, hit.point, Color.red, 1);
                 Debug.Log(hit.transform.name);
@@ -37,11 +39,29 @@ public class RaycastMouseController : MonoBehaviour
                 if(hit.transform.name == "GoldMine")
                 {
                     Debug.Log("GoldMine");
-                    build.GoldMineHit(true, hit.transform);
+                    build.GoldMineHit(true, hit.transform.gameObject);
                 }
-                else build.GoldMineHit(false, null);
+                
             }
-            else return;
+            else build.GoldMineHit(false, null);
+            if(Physics.Raycast(ray, out hit, maxDistance, layerMask, QueryTriggerInteraction.Ignore))
+            {
+                Debug.DrawLine(ray.origin, hit.point, Color.red, 1);
+                Debug.Log(hit.transform.name);
+                build.RaycastHitPointBuilder(hit.point);
+
+                /*if(hit.transform.name == "GoldMine")
+                {
+                    Debug.Log("GoldMine");
+                    build.GoldMineHit(true, hit.transform.gameObject);
+                }
+                else build.GoldMineHit(false, null);*/
+            }
+            else
+            {
+                build.GoldMineHit(false, null);
+                return;
+            }
             //En el else hay que poner que no pille el mar como terrain;
         } 
     }

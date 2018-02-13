@@ -22,13 +22,13 @@ GameObject:
   - component: {fileID: 65151849168936378}
   - component: {fileID: 114505980863816576}
   - component: {fileID: 33033560448983002}
-  m_Layer: 9
+  m_Layer: 15
   m_Name: NavMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1625546941808912
 GameObject:
   m_ObjectHideFlags: 0
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 33559079859349874}
   - component: {fileID: 23435370991335146}
   - component: {fileID: 65067065166456108}
-  m_Layer: 9
+  m_Layer: 15
   m_Name: GoldMine01
   m_TagString: Mine
   m_Icon: {fileID: 0}
@@ -55,13 +55,13 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4566458703183160}
-  m_Layer: 9
+  m_Layer: 15
   m_Name: Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4143362652438540
 Transform:
   m_ObjectHideFlags: 1
@@ -82,7 +82,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1625546941808912}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -17.42, y: 0, z: 23.07}
+  m_LocalPosition: {x: -8.08, y: 0.053123176, z: 5.38}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4143362652438540}
@@ -158,7 +158,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1625546941808912}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 5, y: 4, z: 5}
