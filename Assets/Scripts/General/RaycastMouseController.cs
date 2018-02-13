@@ -33,9 +33,16 @@ public class RaycastMouseController : MonoBehaviour
                 Debug.DrawLine(ray.origin, hit.point, Color.red, 1);
                 Debug.Log(hit.transform.name);
                 build.RaycastHitPointBuilder(hit.point);
+
+                if(hit.transform.name == "GoldMine")
+                {
+                    Debug.Log("GoldMine");
+                    build.GoldMineHit(true, hit.transform);
+                }
+                else build.GoldMineHit(false, null);
             }
-            //En el else hay que poner que no pille el mar como terrain;
             else return;
+            //En el else hay que poner que no pille el mar como terrain;
         } 
     }
 

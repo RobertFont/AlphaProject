@@ -76,6 +76,8 @@ public class BuilderScript : MonoBehaviour {
     public bool treeInRange = true;
     public bool canPlace = true;
     public bool cantPlace = false;
+    public bool goldMineFound = false;
+    Transform goldMineFoundObject;
 
     int rotation;
 
@@ -106,16 +108,19 @@ public class BuilderScript : MonoBehaviour {
         else
         {
             if (build != null) build.SetActive(false);
+
         }
     }
 
     private void FixedUpdate()
     {
+
         Collider[] hitCollider = Physics.OverlapBox(collisionChecker.position, colliderHalfSize, Quaternion.identity, layerBuild);
-        if (hitCollider.Length != 0) buildingColliding = true;
+        if(hitCollider.Length != 0) buildingColliding = true;
         else buildingColliding = false;
 
-        if (resource.townHall > 0)
+
+        if (resource.townHall > 0 && build != goldMine)
         {
             if (canCreateBuild)
             {
@@ -140,6 +145,19 @@ public class BuilderScript : MonoBehaviour {
             }
         }
         else treeInRange = true;
+
+        if(build == goldMine && goldMineFound)
+        {
+            if(canCreateBuild)
+            {
+                Collider[] hitColliderRange = Physics.OverlapBox(collisionChecker.position, colliderHalfSize, Quaternion.identity, layerRange);
+                if(hitColliderRange.Length > 0) buildingInRange = true;
+               // else buildingInRange = false;
+                if(!buildingInRange) buildingColliding = true;
+                Debug.Log(hitColliderRange);
+            }
+        }
+        else buildingInRange = true;
         //CanPlaceLumberMill();
     }
 
@@ -260,6 +278,11 @@ public class BuilderScript : MonoBehaviour {
             canPosisitioningBuild = true;
         }
 
+        if(build == goldMine && !goldMineFound)
+        {
+            canPosisitioningBuild = false;
+        }
+
         if (canPosisitioningBuild)
         {
             ChangeMaterialClone();
@@ -275,10 +298,18 @@ public class BuilderScript : MonoBehaviour {
             building.transform.localRotation = Quaternion.Euler(0, build.transform.localRotation.y, 0);*/
 
             //Debug.Log("Build rotation: " + build.transform.localEulerAngles.y);
-            GameObject newBuild = Instantiate(buildingSelected, buildingInMouse, Quaternion.Euler(0, build.transform.localEulerAngles.y, 0));
-            newBuild.name = build.name;
-
-
+            if(goldMineFound && build == goldMine)
+            {
+                Debug.Log("goldMineFound");
+                GameObject newBuild = Instantiate(buildingSelected, goldMineFoundObject.localPosition, Quaternion.Euler(0, build.transform.localEulerAngles.y, 0));
+                newBuild.name = build.name;
+                goldMineFoundObject.GetComponent<MineBehaviour>().SetGoldMine();
+            }
+            else
+            {
+                GameObject newBuild = Instantiate(buildingSelected, buildingInMouse, Quaternion.Euler(0, build.transform.localEulerAngles.y, 0));
+                newBuild.name = build.name;
+            }
 
             RemoveResources();
             build.layer = 8;
@@ -319,7 +350,7 @@ public class BuilderScript : MonoBehaviour {
 
     private void ChangeColorOnCollision()
     {
-        if (buildingColliding) collisionZone.color = Color.red;
+        if(buildingColliding) collisionZone.color = Color.red;
         else collisionZone.color = Color.white;
     }
 
@@ -489,6 +520,12 @@ public class BuilderScript : MonoBehaviour {
         rotation += 90;
         if(rotation >= 360) rotation = 0;
         build.transform.localRotation = Quaternion.Euler(0,rotation,0);
+    }
+
+    public void GoldMineHit(bool found, Transform Objectfound)
+    {
+        goldMineFound = found;
+        goldMineFoundObject = Objectfound;
     }
 
     /*public void CanPlaceLumberMill()
