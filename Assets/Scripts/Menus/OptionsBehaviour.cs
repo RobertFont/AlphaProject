@@ -161,13 +161,15 @@ public class OptionsBehaviour : MonoBehaviour
 
     public void FullScreenMode()
     {
-		//fullScreen = fullScreenToggle.enable;
+		fullScreen = fullScreenToggle.isOn;
 		Screen.fullScreen = fullScreen;
+        if(fullScreenToggle.isOn) Debug.Log("enable");
+        else if(!fullScreenToggle.isOn) Debug.Log("disable");
     }
 
     public void VSync()
     {
-		vSync = vSyncToggle.enabled;
+		vSync = vSyncToggle.isOn;
         if (vSync) QualitySettings.vSyncCount = 1;
         else QualitySettings.vSyncCount = 0;
     }
@@ -216,7 +218,7 @@ public class OptionsBehaviour : MonoBehaviour
 
     public void AciveShadow()
     {
-		activeShadows = activeShadowsToggle.enabled;
+		activeShadows = activeShadowsToggle.isOn;
 
         if (!activeShadows) QualitySettings.shadows= ShadowQuality.Disable;
         if (activeShadows) QualitySettings.shadows= ShadowQuality.All;

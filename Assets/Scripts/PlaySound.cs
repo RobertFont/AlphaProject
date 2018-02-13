@@ -26,7 +26,7 @@ public class PlaySound : MonoBehaviour
 
     public void StopMusic()
     {
-        audioSourceMusic.Stop();
+        if (audioSourceMusic != null) audioSourceMusic.Stop();
     }
 
     public void PlayFX(int index, float pitch, bool loop)

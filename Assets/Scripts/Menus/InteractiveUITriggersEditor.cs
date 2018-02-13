@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+/*using UnityEngine;
 using UnityEditor;
 using UnityEngine.UI;
 
@@ -36,4 +36,4 @@ public class InteractiveUITriggersEditor : Editor
             sliderValue = EditorGUILayout.Slider(new GUIContent("Slider"), sliderValue, 0.0f, 1.0f);
         
     }
-}
+}*/
