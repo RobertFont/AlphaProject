@@ -21,6 +21,7 @@ TagManager:
   - Bridge
   - Tower
   - Enemy
+  - PlayerCamera
   layers:
   - Default
   - TransparentFX

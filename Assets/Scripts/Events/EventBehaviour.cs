@@ -14,7 +14,7 @@ public class EventBehaviour : MonoBehaviour {
     public GameObject farmSelected;
     public GameObject bugParticle;
     public GameObject goblinSpawner;
-    public GameObject rain;
+    //public GameObject rain;
     public GameObject[] housesArray;
     public GameObject[] farmsArray;
     public Vector3 startFire;
@@ -185,7 +185,7 @@ public class EventBehaviour : MonoBehaviour {
         if (dustStarted) return;
         if (rainStarted) return;
         rainParticle.SetActive(true);
-        rain.SetActive(true);
+        //rain.SetActive(true);
         if (soundFX != null) soundFX.PlayFX(3, 1, true);
 
         rainStarted = true;
@@ -268,7 +268,7 @@ public class EventBehaviour : MonoBehaviour {
     public void EndRain()
     {
         rainParticle.SetActive(false);
-        rain.SetActive(false);
+        //rain.SetActive(false);
         if (soundFX != null) soundFX.StopFX();
         rainStarted = false;
         eventTimerRain = 0;

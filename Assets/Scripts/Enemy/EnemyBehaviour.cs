@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class EnemyBehaviour : MonoBehaviour 
 {
     public ResourceManager resource;
+    public InputManager input;
     [SerializeField] Transform transform;
 
     [Header("Enemy Variables")]
@@ -25,6 +26,7 @@ public class EnemyBehaviour : MonoBehaviour
     {
         transform = GetComponent<Transform>();
         resource = GameObject.FindGameObjectWithTag("Player").GetComponent<ResourceManager>();
+        input = GameObject.FindGameObjectWithTag("PlayerCamera").GetComponent<InputManager>();
         destination = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
         canAttackX = false;
         canAttackZ = false;
@@ -34,7 +36,8 @@ public class EnemyBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (resource.townHall < 1)
+        
+        if (resource.townHall < 1 || input.paused)
         {
             return;
         }

@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class TileRandomizer : MonoBehaviour {
 
-    MeshFilter mesh;
-    public List<Mesh> randomMesh = new List<Mesh>();
+    Material mat;
+    public List<Material> randomMaterial = new List<Material>();
 
     // Use this for initialization
     void Start ()
     {
-        if (randomMesh.Count > 0)
+        if (randomMaterial.Count > 0)
         {
-            mesh = GetComponent<MeshFilter>();
+            mat = GetComponent<Material>();
 
-            int value = Random.Range(0, 3);
-            mesh.sharedMesh = randomMesh[value];
+            int value = Random.Range(0, randomMaterial.Count);
+            mat = randomMaterial[value];
         }
 	}
 }
