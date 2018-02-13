@@ -152,16 +152,17 @@ public class BuilderScript : MonoBehaviour {
         {
             if(canCreateBuild)
             {
-                Debug.Log("Entra");
-
                 Collider[] hitColliderMineRange = Physics.OverlapBox(collisionChecker.position, colliderHalfSize, Quaternion.identity, goldRange);
                 if(hitColliderMineRange.Length > 0) mineInRange = true;
                 else mineInRange = false;
                 if(!mineInRange) buildingColliding = true;
             }
         }
-        else if (build != goldMine && goldMineFound) buildingColliding = true;
-        else mineInRange = true;
+        else if(build != goldMine && goldMineFound) buildingColliding = true;
+        else
+        {
+            mineInRange = true;
+        }
         //CanPlaceLumberMill();
     }
 

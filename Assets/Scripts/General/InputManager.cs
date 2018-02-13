@@ -74,7 +74,6 @@ public class InputManager : MonoBehaviour {
         }
 
         if(Input.GetButtonDown("Fire2") || Input.GetButtonDown("RotateBuilding")) builder.AddRotation();
-        Debug.Log(Time.timeScale);
         #region Speed
         if (Input.GetButtonDown("Speed1") ) Time.timeScale = 1.0f;
         if (Input.GetButtonDown("Speed2")) Time.timeScale = 1.5f;

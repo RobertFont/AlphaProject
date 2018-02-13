@@ -73,9 +73,19 @@ public class TowerBehaviour : MonoBehaviour
         if (projectile != null) projectile.Seek(target);
     }
 
-    public void OnMouseUpAsButton()
+   /* public void OnMouseUpAsButton()
     {
         info.buildingSelected = this.gameObject;
+    }*/
+
+    public void OnMouseOver()
+    {
+        if(Input.GetButtonDown("Fire1") || Input.GetButtonDown("PlaceBuildController")) OpenInfoBuilding();
+    }
+
+    public void OpenInfoBuilding()
+    {
+        if (info != null) info.buildingSelected = this.gameObject;
     }
 
     public void DestroyBuilding()

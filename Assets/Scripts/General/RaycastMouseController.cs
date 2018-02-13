@@ -33,18 +33,15 @@ public class RaycastMouseController : MonoBehaviour
             if(Physics.Raycast(ray, out hit, maxDistance, goldLayerMask, QueryTriggerInteraction.Ignore))
             {
                 Debug.DrawLine(ray.origin, hit.point, Color.red, 1);
-                Debug.Log(hit.transform.name);
                 build.RaycastHitPointBuilder(hit.point);
 
                 if(hit.transform.name == "GoldMine")
                 {
-                    Debug.Log("GoldMine");
                     build.GoldMineHit(true, hit.transform.gameObject);
                 }
-                
             }
             else build.GoldMineHit(false, null);
-            if(Physics.Raycast(ray, out hit, maxDistance, layerMask, QueryTriggerInteraction.Ignore))
+            if(Physics.Raycast(ray, out hit, maxDistance, layerMask, QueryTriggerInteraction.Ignore) && hit.transform.name != "GoldMine")
             {
                 Debug.DrawLine(ray.origin, hit.point, Color.red, 1);
                 Debug.Log(hit.transform.name);

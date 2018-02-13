@@ -84,9 +84,20 @@ public class LumberMillBehaviour : MonoBehaviour
 		resource.AddWood(20);
 	}
 
-    public void OnMouseUpAsButton()
+    /*public void OnMouseUpAsButton()
     {
         Debug.Log("funciona");
+        if(started) MyStart();
+        info.buildingSelected = this.gameObject;
+    }*/
+
+    public void OnMouseOver()
+    {
+        if(Input.GetButtonDown("Fire1") || Input.GetButtonDown("PlaceBuildController")) OpenInfoBuilding();
+    }
+
+    public void OpenInfoBuilding()
+    {
         if(started) MyStart();
         info.buildingSelected = this.gameObject;
     }

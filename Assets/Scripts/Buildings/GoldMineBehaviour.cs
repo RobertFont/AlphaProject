@@ -85,10 +85,22 @@ public class GoldMineBehaviour : MonoBehaviour
 		resource.AddGold(10);
 	}
 
-    public void OnMouseUpAsButton()
+
+    /*public void OnMouseUpAsButton()
     {
         if(started) MyStart();
-        //info.buildingSelected = this.gameObject;
+        info.buildingSelected = this.gameObject;
+    }*/
+
+    public void OnMouseOver()
+    {
+        if(Input.GetButtonDown("Fire1") || Input.GetButtonDown("PlaceBuildController")) OpenInfoBuilding();
+    }
+
+    public void OpenInfoBuilding()
+    {
+        if(started) MyStart();
+        if (info != null)info.buildingSelected = this.gameObject;
     }
 
     public void SetGoldOre(GameObject gameObject)

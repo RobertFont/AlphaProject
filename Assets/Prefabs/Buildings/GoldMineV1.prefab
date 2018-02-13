@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4902051635876940}
   - component: {fileID: 33445822612349656}
   - component: {fileID: 23229546671737778}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: polySurface1263
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4618538320735672}
   - component: {fileID: 114879327970864072}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 33962409786045618}
   - component: {fileID: 23942269207502612}
   - component: {fileID: 114818528195009722}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: polySurface1262
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 4675095327219304}
   - component: {fileID: 33000982049116908}
   - component: {fileID: 23716923846472494}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: polySurface1261
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,13 +89,16 @@ GameObject:
   - component: {fileID: 4106001832303500}
   - component: {fileID: 33773140189395382}
   - component: {fileID: 23015952329258492}
-  m_Layer: 0
+  - component: {fileID: 65119997213205466}
+  - component: {fileID: 65477501081296410}
+  - component: {fileID: 114837986756609728}
+  m_Layer: 9
   m_Name: GoldMineV1
-  m_TagString: Untagged
+  m_TagString: GoldMine
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1481479310394520
 GameObject:
   m_ObjectHideFlags: 1
@@ -107,7 +110,7 @@ GameObject:
   - component: {fileID: 33119169588400718}
   - component: {fileID: 23356912263303238}
   - component: {fileID: 114518436633958028}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: polySurface1260
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,7 +128,7 @@ GameObject:
   - component: {fileID: 33426572433076520}
   - component: {fileID: 64174383035639508}
   - component: {fileID: 23489114022155984}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Quad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -138,8 +141,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1443335818413872}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -39.32, y: 0, z: -21.03036}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4478816635055450}
@@ -489,6 +492,30 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &65119997213205466
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1443335818413872}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 1, z: 2}
+  m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!65 &65477501081296410
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1443335818413872}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4, y: 2, z: 4.5}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &114518436633958028
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -543,6 +570,24 @@ MonoBehaviour:
   minDelay: 0
   randomDelay: 0
   keepPositionX: 0
+--- !u!114 &114837986756609728
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1443335818413872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b01590586c284214eab2389c1adade03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 0
+  resource: {fileID: 0}
+  info: {fileID: 0}
+  counter: 0
+  started: 0
+  numFor: 0
+  mines: []
 --- !u!114 &114879327970864072
 MonoBehaviour:
   m_ObjectHideFlags: 1

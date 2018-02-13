@@ -71,7 +71,7 @@ public class DataLogic : MonoBehaviour
             if(Input.GetKeyDown("joystick 1 button " + i))
             {
                 peripheralType = PeripheralType.Controller;
-                Debug.Log("Mando");
+                //Debug.Log("Mando");
                 return;
             }
         }
@@ -79,17 +79,17 @@ public class DataLogic : MonoBehaviour
             Input.GetAxis("MovementControllerY") > 0.01f || Input.GetAxis("MovementControllerY") < -0.01f || Input.GetAxis("RotateController") != 0.0f || Input.GetAxis("Mouse ScrollWheel Controller") > 0.01f || Input.GetAxis("Mouse ScrollWheel Controller") < -0.01f)
         {
             peripheralType = PeripheralType.Controller;
-            Debug.Log("MandoX");
+            //Debug.Log("MandoX");
         }
         else if(Input.anyKeyDown)
         {
             peripheralType = PeripheralType.MouseKeyboard;
-            Debug.Log("Teclado");
+            //Debug.Log("Teclado");
         }
         else if(Input.GetAxis("Mouse X") != 0.0f || Input.GetAxis("Mouse Y") != 0.0f || Input.mousePosition != lastMousePositon)
         {
             peripheralType = PeripheralType.MouseKeyboard;
-            Debug.Log("Raton");
+            //Debug.Log("Raton");
         }
         lastMousePositon = Input.mousePosition;
     }

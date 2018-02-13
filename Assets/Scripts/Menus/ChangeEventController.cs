@@ -23,6 +23,5 @@ public class ChangeEventController : MonoBehaviour
     public void SetSelectedObject(GameObject Selected)
     {
         events.SetSelectedGameObject(Selected);
-        Debug.Log(Selected.name);
     }
 }
