@@ -173,6 +173,11 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 65067065166456108, guid: 66153d61ff4f7ee48b0d3a014bf0a46d,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 66153d61ff4f7ee48b0d3a014bf0a46d, type: 2}
   m_IsPrefabParent: 0
@@ -7789,7 +7794,7 @@ MonoBehaviour:
   resource: {fileID: 0}
   info: {fileID: 0}
   counter: 0
-  started: 1
+  started: 0
   numFor: 0
   mines: []
 --- !u!23 &664924475
@@ -18414,6 +18419,22 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1771009911}
+--- !u!1 &1781719388 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1625546941808912, guid: 66153d61ff4f7ee48b0d3a014bf0a46d,
+    type: 2}
+  m_PrefabInternal: {fileID: 17294564}
+--- !u!114 &1781719393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1781719388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f17750ac20ca90140af0a76315f724fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1784709156
 GameObject:
   m_ObjectHideFlags: 0
@@ -19682,6 +19703,7 @@ MonoBehaviour:
   treeInRange: 1
   canPlace: 0
   cantPlace: 0
+  goldMineFound: 0
   originalHouseName: 
 --- !u!4 &2013881663
 Transform:
