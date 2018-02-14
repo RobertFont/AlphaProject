@@ -88,6 +88,7 @@ public class BuilderScript : MonoBehaviour {
 
     public void MyStart()
     {
+        build = null;
         buildingInMouse = new Vector3(0, 0, 0);
         DesactiveOriginalBuilding();
         resource = this.GetComponent<ResourceManager>();
@@ -472,7 +473,7 @@ public class BuilderScript : MonoBehaviour {
 
     private bool CompareResources()
     {
-        if (input.godMode)
+        if (input.godMode || build == null)
         { 
             return true;
         }

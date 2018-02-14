@@ -64,8 +64,16 @@ public class ResourceManager : MonoBehaviour
     {
         if(GameObject.Find("LevelManager") != null) level = GameObject.Find("LevelManager").GetComponent<LevelLogic>();
 
-        if(Input.GetKeyDown(KeyCode.K)) ToggleEnding();
-
+        if(Input.GetKeyDown(KeyCode.K))
+        {
+            victory = false;
+            ToggleEnding();
+        }
+        else if(Input.GetKeyDown(KeyCode.L))
+        {
+            victory = true;
+            ToggleEnding();
+        }
         UpdateUI();
         //AddCurrentPopFromTime();
         EatingFood();
@@ -78,7 +86,7 @@ public class ResourceManager : MonoBehaviour
             }   
         }
 
-        if(happiness < 0)
+        if(happiness <= 0)
         {
             victory = false;
             ToggleEnding();
