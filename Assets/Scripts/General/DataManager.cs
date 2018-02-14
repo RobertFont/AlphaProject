@@ -100,7 +100,7 @@ public static class GameData
         }
         catch(Exception e)
         {
-            Debug.LogError("Loading error: " + e);
+            Debug.Log("Loading error: " + e);
             NewGame(slot);
         }
 
