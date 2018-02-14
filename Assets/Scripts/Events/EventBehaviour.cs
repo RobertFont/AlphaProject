@@ -65,7 +65,7 @@ public class EventBehaviour : MonoBehaviour {
         rainChance = 20;
         dustChance = 10;
         goblinsChance = 5;
-        if (soundFX != null) soundFX = GameObject.Find("LevelManager").GetComponent<PlaySound>();
+        soundFX = GameObject.Find("LevelManager").GetComponent<PlaySound>();
     }
 
     // Update is called once per frame
@@ -148,7 +148,7 @@ public class EventBehaviour : MonoBehaviour {
     {
         if (fireStarted) return;
         if (rainStarted) return;
-        if (soundFX != null) soundFX.PlayFX(2, 1, false);
+        if (soundFX != null) soundFX.PlayFX(2, 1f, false);
         resource.happiness -= 10;
         selectHouse = Random.Range(0, maxHouses);
         houseSelected = housesArray[selectHouse];
@@ -165,7 +165,7 @@ public class EventBehaviour : MonoBehaviour {
     public void StartEventBugs()
     {
         if (bugStarted) return;
-        if (soundFX != null) soundFX.PlayFX(1, 1, false);
+        if (soundFX != null) soundFX.PlayFX(1, 1f, false);
         selectFarm = Random.Range(0, maxFarms);
         farmSelected = farmsArray[selectFarm];
 
@@ -186,7 +186,7 @@ public class EventBehaviour : MonoBehaviour {
         if (rainStarted) return;
         rainParticle.SetActive(true);
         //rain.SetActive(true);
-        if (soundFX != null) soundFX.PlayFX(3, 1, true);
+        if (soundFX != null) soundFX.PlayFX(3, 1f, true);
 
         rainStarted = true;
 
@@ -198,7 +198,7 @@ public class EventBehaviour : MonoBehaviour {
         if (rainStarted) return;
         if (dustStarted) return;
         dustParticle.SetActive(true);
-        if (soundFX != null) soundFX.PlayFX(4, 1, true);
+        if (soundFX != null) soundFX.PlayFX(4, 1f, true);
 
         dustStarted = true;
     }
@@ -207,7 +207,7 @@ public class EventBehaviour : MonoBehaviour {
     {
         if(goblinsStarted) return;
         goblinSpawner.SetActive(true);
-        if(soundFX != null) soundFX.PlayFX(9, 1, false);
+        if(soundFX != null) soundFX.PlayFX(9, 1f, false);
 
         goblinsStarted = true;
     }

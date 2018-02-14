@@ -21,7 +21,7 @@ public class LumberMillBehaviour : MonoBehaviour
     {   
         info = GameObject.Find("InformationButton").GetComponent<UiTrigger>();
 		resource = GameObject.FindGameObjectWithTag("Player").GetComponent<ResourceManager>();
-		if (soundFX != null) soundFX = GameObject.Find("LevelManager").GetComponent<PlaySound>();
+		soundFX = GameObject.Find("LevelManager").GetComponent<PlaySound>();
         started = false;
     }
 
@@ -98,7 +98,7 @@ public class LumberMillBehaviour : MonoBehaviour
 		if (Input.GetButtonDown ("Fire1") || Input.GetButtonDown ("PlaceBuildController")) 
 		{
 			OpenInfoBuilding ();
-			soundFX.PlayFX (14, 1, false);
+			soundFX.PlayFX (14, 1f, false);
 		}
     }
 

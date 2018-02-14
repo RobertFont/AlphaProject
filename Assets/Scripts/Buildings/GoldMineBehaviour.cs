@@ -24,7 +24,7 @@ public class GoldMineBehaviour : MonoBehaviour
         state = BuildingState.open;
         info = GameObject.Find("InformationButton").GetComponent<UiTrigger>();
 		resource = GameObject.FindGameObjectWithTag("Player").GetComponent<ResourceManager>();
-		if (soundFX != null) soundFX = GameObject.Find("LevelManager").GetComponent<PlaySound>();
+		soundFX = GameObject.Find("LevelManager").GetComponent<PlaySound>();
         goldOre.SetActive(false);
         started = false;
     }
@@ -99,7 +99,7 @@ public class GoldMineBehaviour : MonoBehaviour
 		if (Input.GetButtonDown ("Fire1") || Input.GetButtonDown ("PlaceBuildController")) 
 		{
 			OpenInfoBuilding ();
-			soundFX.PlayFX(15, 1, false);
+			soundFX.PlayFX(15, 1f, false);
 		}
     }
 
