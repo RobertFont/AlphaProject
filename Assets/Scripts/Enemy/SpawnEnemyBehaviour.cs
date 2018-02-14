@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SpawnEnemyBehaviour : MonoBehaviour
 {
-    public Transform transform;
     public ResourceManager resources;
     public GameObject enemy;
     public float counter = 0;

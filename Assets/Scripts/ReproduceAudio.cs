@@ -5,7 +5,7 @@ using UnityEngine;
 public class ReproduceAudio : MonoBehaviour
 {
     PlaySound play;
-    public int audio;
+    public int newAudio;
     public float pitch;
     public bool randomPitch;
     public bool activeOnEnable;
@@ -26,7 +26,7 @@ public class ReproduceAudio : MonoBehaviour
     public void Activated()
     {
         if (randomPitch || pitch == 0) pitch = Random.Range(0.1f, 2.5f);
-        play.PlayFX(audio, pitch, false);
+        play.PlayFX(newAudio, pitch, false);
         if(disableAfterPlaySound) gameObject.SetActive(false);
     }
 }

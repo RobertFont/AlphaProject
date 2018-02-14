@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ChangeAnimation : MonoBehaviour
 {
-    public Animation animation;
+    public Animation myAnimation;
     public AnimationClip animationClip;
     public bool notDisable;
     void Start ()
@@ -14,10 +14,10 @@ public class ChangeAnimation : MonoBehaviour
 	
 	void OnEnable()
     {
-        animation.clip = animationClip;
-        animation.Stop();
-        animation.Play();
-        animation.Rewind();
+        myAnimation.clip = animationClip;
+        myAnimation.Stop();
+        myAnimation.Play();
+        myAnimation.Rewind();
         if (!notDisable) gameObject.SetActive(false);
     }
 }

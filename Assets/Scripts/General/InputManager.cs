@@ -9,7 +9,7 @@ public class InputManager : MonoBehaviour {
     public Vector2 inputMouse;
     public Vector2 inputMouseJostick;
     public Vector2 realMousePosition;
-    CameraBehaviour camera;
+    CameraBehaviour myCamera;
     public Camera mainCamera;
     public BuilderScript builder;
     public UiTrigger uiTrigger;
@@ -43,7 +43,7 @@ public class InputManager : MonoBehaviour {
     public void Update()
     {
         if (GameObject.Find("LevelManager") != null) level = GameObject.Find("LevelManager").GetComponent<LevelLogic>();
-        if (camera == null) camera = GetComponent<CameraBehaviour>();
+        if (myCamera == null) myCamera = GetComponent<CameraBehaviour>();
 
         if (Input.GetButtonDown("Pause")) TogglePause();
         if (paused) return;
@@ -136,8 +136,8 @@ public class InputManager : MonoBehaviour {
 
         Debug.Log("GodMode:" + godMode);
 
-        camera.GetAxis(axis.x, axis.y);
-        camera.GetRotate(rotate);
+        myCamera.GetAxis(axis.x, axis.y);
+        myCamera.GetRotate(rotate);
         CanPlace();
         //Builder.CreateBuild(Input.GetButtonDown("Fire1"));
         //UiTrigger.GetMousePosition(mousePosition);

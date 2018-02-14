@@ -5,7 +5,6 @@ public class EnemyBehaviour : MonoBehaviour
 {
     public ResourceManager resource;
     public InputManager input;
-    [SerializeField] Transform transform;
 
     [Header("Enemy Variables")]
     public float velocity;
@@ -24,7 +23,6 @@ public class EnemyBehaviour : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
-        transform = GetComponent<Transform>();
         resource = GameObject.FindGameObjectWithTag("Player").GetComponent<ResourceManager>();
         input = GameObject.FindGameObjectWithTag("PlayerCamera").GetComponent<InputManager>();
         destination = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);

@@ -28,7 +28,7 @@ public class OptionsBehaviour : MonoBehaviour
     bool sSAO = false;
     bool activeShadows = true;
     public Toggle activeShadowsToggle;
-    bool particles = false;
+    //bool particles = false;
     ShadowResolution shadowRes = ShadowResolution.Medium;
     int shadowResValue;
     public Dropdown shadowResDD;

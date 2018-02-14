@@ -12,7 +12,7 @@ public class UpdatesList
 public class UpdateManager : MonoBehaviour
 {
     public InputManager input;
-    public CameraBehaviour camera;
+    public CameraBehaviour myCamera;
     public ResourceManager resource;
     public RaycastMouseController ray;
     public UiTrigger uIT;
@@ -28,7 +28,7 @@ public class UpdateManager : MonoBehaviour
     void Start ()
     {
 		soundFX = GameObject.Find("LevelManager").GetComponent<PlaySound>();
-        camera.MyStart();
+        myCamera.MyStart();
         ray.MyStart();
 
         builder.MyStart();
