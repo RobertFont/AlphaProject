@@ -2,20 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TileRandomizer : MonoBehaviour {
+public class TileRandomizer : MonoBehaviour
+{
 
-    Material mat;
-    public List<Material> randomMaterial = new List<Material>();
+    MeshFilter mesh;
+    public List<Mesh> randomMesh = new List<Mesh>();
 
     // Use this for initialization
-    void Start ()
+    void Start()
     {
-        if (randomMaterial.Count > 0)
-        {
-            mat = GetComponent<Material>();
+        mesh = GetComponent<MeshFilter>();
 
-            int value = Random.Range(0, randomMaterial.Count);
-            mat = randomMaterial[value];
-        }
-	}
+        int value = Random.Range(0, 3);
+        mesh.sharedMesh = randomMesh[value];
+    }
 }
