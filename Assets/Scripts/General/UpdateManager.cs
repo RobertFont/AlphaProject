@@ -20,11 +20,7 @@ public class UpdateManager : MonoBehaviour
     public BuilderScript builder;
     public EventBehaviour events;
     public EventIconsBehaviour eventsIcon;
-    /*LumberMillBehaviour lumberMill;
-    FarmBehaviour farm;
-    GoldMineBehaviour goldMine;
-    //PeasantsBehaviour peasants;*/
-    public List<TreeProps> treeP = new List<TreeProps>();
+    public GameObject trees;
   
     public Water water;
 
@@ -37,9 +33,9 @@ public class UpdateManager : MonoBehaviour
         events.MyStart();
         eventsIcon.MyStart();
 
-        for (int i = 0; i < treeP.Count; i++)
+        for (int i = 0; i < trees.transform.childCount; i++)
         {
-            treeP[i].MyStart();
+            if (trees.transform.GetChild(i).GetComponent<TreeProps>() != null) trees.transform.GetChild(i).GetComponent<TreeProps>().MyStart();
         }
 
         water.MyStart();
