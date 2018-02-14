@@ -1,0 +1,2 @@
+Crear el minimapa de manera que solo se actualice al principio y cuando crees un edificio.
+El player tendria que ser un icono en movimiento.

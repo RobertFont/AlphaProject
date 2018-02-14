@@ -6,6 +6,8 @@ public class ReproduceAudio : MonoBehaviour
 {
     PlaySound play;
     public int audio;
+    public float pitch;
+    public bool randomPitch;
     public bool activeOnEnable;
     public bool disableAfterPlaySound;
 
@@ -16,14 +18,15 @@ public class ReproduceAudio : MonoBehaviour
 
     void OnEnable()
     {
-        if(play == null) play = GameObject.Find("LevelManager").GetComponent<PlaySound>();
+        if(play != null) play = GameObject.Find("LevelManager").GetComponent<PlaySound>();
         if(activeOnEnable)
             Activated();
     }
 
     public void Activated()
     {
-        play.PlayFX(audio, 1.0f, false);
+        if (randomPitch || pitch == 0) pitch = Random.Range(0.1f, 2.5f);
+        play.PlayFX(audio, pitch, false);
         if(disableAfterPlaySound) gameObject.SetActive(false);
     }
 }

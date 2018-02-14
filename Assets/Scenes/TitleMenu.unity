@@ -515,6 +515,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 215369910}
+        m_MethodName: Activated
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!222 &34598553
@@ -930,6 +941,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audio: 6
+  pitch: 0
+  randomPitch: 0
   activeOnEnable: 1
   disableAfterPlaySound: 0
 --- !u!82 &79114683
@@ -1992,6 +2005,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audio: 5
+  pitch: 0
+  randomPitch: 1
   activeOnEnable: 0
   disableAfterPlaySound: 0
 --- !u!1 &224185387
@@ -6186,6 +6201,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audio: 5
+  pitch: 1
+  randomPitch: 1
   activeOnEnable: 0
   disableAfterPlaySound: 0
 --- !u!1 &672409977
@@ -13747,7 +13764,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1638468008}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 640, y: 360, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1601181859}
@@ -16187,6 +16204,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audio: 7
+  pitch: 1
+  randomPitch: 0
   activeOnEnable: 0
   disableAfterPlaySound: 0
 --- !u!1 &1917628996
@@ -16368,6 +16387,17 @@ MonoBehaviour:
       - m_Target: {fileID: 1258014873}
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 215369910}
+        m_MethodName: Activated
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -17957,6 +17987,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 215369910}
+        m_MethodName: Activated
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!222 &2088519902
@@ -18313,6 +18354,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audio: 8
+  pitch: 1
+  randomPitch: 0
   activeOnEnable: 0
   disableAfterPlaySound: 0
 --- !u!1 &2129082329
