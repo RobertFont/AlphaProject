@@ -16,6 +16,7 @@ public class UpdateManager : MonoBehaviour
     public ResourceManager resource;
     public RaycastMouseController ray;
     public UiTrigger uIT;
+	PlaySound soundFX;
 
     public BuilderScript builder;
     public EventBehaviour events;
@@ -26,6 +27,7 @@ public class UpdateManager : MonoBehaviour
 
     void Start ()
     {
+		if (soundFX != null) soundFX = GameObject.Find("LevelManager").GetComponent<PlaySound>();
         camera.MyStart();
         ray.MyStart();
 
@@ -39,6 +41,7 @@ public class UpdateManager : MonoBehaviour
         }
 
         water.MyStart();
+		soundFX.PlayFX(0, 1, true);
     }
 	
 	void Update ()
