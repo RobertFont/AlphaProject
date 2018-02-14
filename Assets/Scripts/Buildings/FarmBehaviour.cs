@@ -19,6 +19,7 @@ public class FarmBehaviour : MonoBehaviour
     public Vector3 scaleWheatFront;
     public UiTrigger info;
     public ResourceManager resource;
+	PlaySound soundFX;
 
     [SerializeField] private bool started = true;
 
@@ -39,6 +40,7 @@ public class FarmBehaviour : MonoBehaviour
         weatherEvent = GameObject.Find("EventSolver").GetComponent<EventBehaviour>();
         info = GameObject.Find("InformationButton").GetComponent<UiTrigger>();
         resource = GameObject.FindGameObjectWithTag("Player").GetComponent<ResourceManager>();
+		if (soundFX != null) soundFX = GameObject.Find("LevelManager").GetComponent<PlaySound>();
         scaleWheat = new Vector3(1, 0, 1);
         scaleWheatBack = this.transform.GetChild(7).localScale;
         scaleWheatFront = this.transform.GetChild(6).localScale;
@@ -132,7 +134,11 @@ public class FarmBehaviour : MonoBehaviour
 
     public void OnMouseOver()
     {
-        if(Input.GetButtonDown("Fire1") || Input.GetButtonDown("PlaceBuildController")) OpenInfoBuilding();
+		if (Input.GetButtonDown ("Fire1") || Input.GetButtonDown ("PlaceBuildController")) 
+		{
+			OpenInfoBuilding();
+			soundFX.PlayFX (13, 1, false);
+		}
     }
 
     public void OpenInfoBuilding()

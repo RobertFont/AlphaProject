@@ -10,6 +10,7 @@ public class GoldMineBehaviour : MonoBehaviour
 	public ResourceManager resource;
     public UiTrigger info;
 	public float counter = 0;
+	PlaySound soundFX;
 
     [SerializeField] private bool started = true;
     [SerializeField] int numFor;
@@ -23,6 +24,7 @@ public class GoldMineBehaviour : MonoBehaviour
         state = BuildingState.open;
         info = GameObject.Find("InformationButton").GetComponent<UiTrigger>();
 		resource = GameObject.FindGameObjectWithTag("Player").GetComponent<ResourceManager>();
+		if (soundFX != null) soundFX = GameObject.Find("LevelManager").GetComponent<PlaySound>();
         goldOre.SetActive(false);
         started = false;
     }
@@ -94,7 +96,11 @@ public class GoldMineBehaviour : MonoBehaviour
 
     public void OnMouseOver()
     {
-        if(Input.GetButtonDown("Fire1") || Input.GetButtonDown("PlaceBuildController")) OpenInfoBuilding();
+		if (Input.GetButtonDown ("Fire1") || Input.GetButtonDown ("PlaceBuildController")) 
+		{
+			OpenInfoBuilding ();
+			soundFX.PlayFX(15, 1, false);
+		}
     }
 
     public void OpenInfoBuilding()

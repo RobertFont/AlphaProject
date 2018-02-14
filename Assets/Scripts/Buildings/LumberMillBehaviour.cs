@@ -10,6 +10,7 @@ public class LumberMillBehaviour : MonoBehaviour
 	public ResourceManager resource;
 	public float counter = 0;
     public UiTrigger info;
+	PlaySound soundFX;
 
     [SerializeField] private bool started = true;
     [SerializeField] int numFor;
@@ -20,6 +21,7 @@ public class LumberMillBehaviour : MonoBehaviour
     {   
         info = GameObject.Find("InformationButton").GetComponent<UiTrigger>();
 		resource = GameObject.FindGameObjectWithTag("Player").GetComponent<ResourceManager>();
+		if (soundFX != null) soundFX = GameObject.Find("LevelManager").GetComponent<PlaySound>();
         started = false;
     }
 
@@ -93,7 +95,11 @@ public class LumberMillBehaviour : MonoBehaviour
 
     public void OnMouseOver()
     {
-        if(Input.GetButtonDown("Fire1") || Input.GetButtonDown("PlaceBuildController")) OpenInfoBuilding();
+		if (Input.GetButtonDown ("Fire1") || Input.GetButtonDown ("PlaceBuildController")) 
+		{
+			OpenInfoBuilding ();
+			soundFX.PlayFX (14, 1, false);
+		}
     }
 
     public void OpenInfoBuilding()

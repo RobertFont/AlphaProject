@@ -9,6 +9,7 @@ public class BuilderScript : MonoBehaviour {
     public Vector3 buildingInMouse;
     ResourceManager resource;
     public InputManager input;
+	PlaySound soundFX;
 
     public Transform builtGroup;
 
@@ -90,6 +91,7 @@ public class BuilderScript : MonoBehaviour {
         buildingInMouse = new Vector3(0, 0, 0);
         DesactiveOriginalBuilding();
         resource = this.GetComponent<ResourceManager>();
+		if (soundFX != null) soundFX = GameObject.Find("LevelManager").GetComponent<PlaySound>();
         //colliderHalfSize = build.GetComponent<BoxCollider>().size/2;
     }
 
@@ -307,12 +309,14 @@ public class BuilderScript : MonoBehaviour {
             {
                 Debug.Log("goldMineFound");
                 GameObject newBuild = Instantiate(buildingSelected, goldMineFoundObject.transform.localPosition, Quaternion.Euler(0, build.transform.localEulerAngles.y, 0));
+				soundFX.PlayFX(12, 1, false);
                 newBuild.name = build.name;
                 newBuild.GetComponent<GoldMineBehaviour>().SetGoldOre(goldMineFoundObject);
             }
             else
             {
                 GameObject newBuild = Instantiate(buildingSelected, buildingInMouse, Quaternion.Euler(0, build.transform.localEulerAngles.y, 0));
+				soundFX.PlayFX(12, 1, false);
                 newBuild.name = build.name;
             }
 
