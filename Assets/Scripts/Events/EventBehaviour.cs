@@ -247,6 +247,7 @@ public class EventBehaviour : MonoBehaviour {
             resource.RemoveMaxPop(4);
             resource.AddHouse(-1);
         }
+		soundFX.StopFX();
         fireParticle.SetActive(false);
         icons.FireIconEnd();
         fireStarted = false;
@@ -285,7 +286,6 @@ public class EventBehaviour : MonoBehaviour {
     public void EndGoblins()
     {
         goblinSpawner.SetActive(false);
-        if(soundFX != null) soundFX.StopFX();
         goblinsStarted = false;
         eventTimerGoblins = 0;
     }
