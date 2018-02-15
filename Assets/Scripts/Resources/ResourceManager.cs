@@ -307,39 +307,39 @@ public class ResourceManager : MonoBehaviour
 
     public void ToggleEnding()
     {
-        canvas.transform.GetChild(1).gameObject.SetActive(false);
-        canvas.transform.GetChild(2).gameObject.SetActive(false);
-        canvas.transform.GetChild(3).gameObject.SetActive(false);
-        canvas.transform.GetChild(4).gameObject.SetActive(false);
-        canvas.transform.GetChild(5).gameObject.SetActive(false);
-        GetComponent<BuilderScript>().CantBuild(false);
+        if(!gameEndedAnimation)
+        {
+            canvas.transform.GetChild(1).gameObject.SetActive(false);
+            canvas.transform.GetChild(2).gameObject.SetActive(false);
+            canvas.transform.GetChild(3).gameObject.SetActive(false);
+            canvas.transform.GetChild(4).gameObject.SetActive(false);
+            canvas.transform.GetChild(5).gameObject.SetActive(false);
+            GetComponent<BuilderScript>().CantBuild(false);
         
-        if(victory)
-        {
-            victoryImage.SetActive(true);
-            continueButton.SetActive(true);
-            victoryFX.SetActive(true);
-            Debug.Log("Victory");
-        }
-        else if(!victory)
-        {
-            Debug.Log("Death");
+            if(victory)
+            {
+                victoryImage.SetActive(true);
+                continueButton.SetActive(true);
+                victoryFX.SetActive(true);
+                Debug.Log("Victory");
+            }
+            else if(!victory)
+            {
+                Debug.Log("Death");
 
-            defeatFX.SetActive(true);
-            defeatImage.SetActive(true);
-        }
-        endingBackground.gameObject.SetActive(true);
-        endingButton.SetActive(true);
+                defeatFX.SetActive(true);
+                defeatImage.SetActive(true);
+            }
+            endingBackground.gameObject.SetActive(true);
+            endingButton.SetActive(true);
 
-        if (!gameEndedAnimation)
-        {
-            endingEnterA.SetActive(true);
-            gameEndedAnimation = true;
+
+                endingEnterA.SetActive(true);
+                gameEndedAnimation = true;
         }
 
         //Time.timeScale = 0.0f;
         Debug.Log("Ends");
-
     }
 
     public void EndGame()
