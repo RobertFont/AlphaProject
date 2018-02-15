@@ -50,5 +50,6 @@ public class UpdateManager : MonoBehaviour
         events.MyUpdate();
 
         water.MyUpdate();
+        Debug.Log("nonIdlePop:" + resource.nonIdlePop);
     }
 }

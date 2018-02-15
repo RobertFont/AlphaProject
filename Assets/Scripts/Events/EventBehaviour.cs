@@ -208,6 +208,7 @@ public class EventBehaviour : MonoBehaviour {
         if(goblinsStarted) return;
         goblinSpawner.SetActive(true);
         if(soundFX != null) soundFX.PlayFX(9, 1f, false);
+        icons.GoblinsIconStart();
 
         goblinsStarted = true;
     }
@@ -287,6 +288,7 @@ public class EventBehaviour : MonoBehaviour {
     {
         goblinSpawner.SetActive(false);
         goblinsStarted = false;
+        icons.GoblinsIconEnd();
         eventTimerGoblins = 0;
     }
 

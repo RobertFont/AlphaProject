@@ -7,6 +7,7 @@ public class EventIconsBehaviour : MonoBehaviour
 {
     public Sprite fireTexture;
     public Sprite bugsTexture;
+    public Sprite goblinTexture;
     public int timer = 0;
 
     // Use this for initialization
@@ -14,6 +15,7 @@ public class EventIconsBehaviour : MonoBehaviour
     {
 		fireTexture = Resources.Load<Sprite>("Fire") as Sprite;
 		bugsTexture = Resources.Load<Sprite>("Bug") as Sprite;
+		goblinTexture = Resources.Load<Sprite>("Bug") as Sprite;
     }
 
     private void FixedUpdate()
@@ -25,6 +27,9 @@ public class EventIconsBehaviour : MonoBehaviour
 
         if ((timer / 30) % 2 == 0) this.transform.GetChild(2).GetComponent<Image>().color = Color.red;
         else this.transform.GetChild(2).GetComponent<Image>().color = Color.white;
+
+        if((timer / 30) % 2 == 0) this.transform.GetChild(3).GetComponent<Image>().color = Color.red;
+        else this.transform.GetChild(3).GetComponent<Image>().color = Color.white;
     }
 
     public void FireIconStart()
@@ -47,5 +52,16 @@ public class EventIconsBehaviour : MonoBehaviour
     {
         this.transform.GetChild(2).gameObject.SetActive(false);
         this.transform.GetChild(2).GetComponent<Image>().sprite = null;
+    }
+
+    public void GoblinsIconStart()
+    {
+        this.transform.GetChild(3).GetComponent<Image>().sprite = bugsTexture;
+        this.transform.GetChild(3).gameObject.SetActive(true);
+    }
+    public void GoblinsIconEnd()
+    {
+        this.transform.GetChild(3).gameObject.SetActive(false);
+        this.transform.GetChild(3).GetComponent<Image>().sprite = null;
     }
 }
