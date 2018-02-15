@@ -82,7 +82,7 @@ public class TowerBehaviour : MonoBehaviour
 
     public void OnMouseOver()
     {
-        if(Input.GetButtonDown("Fire1") || Input.GetButtonDown("PlaceBuildController")) OpenInfoBuilding();
+        if(Input.GetButtonDown("Fire1") || Input.GetButtonDown("SelectBuildController")) OpenInfoBuilding();
     }
 
     public void OpenInfoBuilding()

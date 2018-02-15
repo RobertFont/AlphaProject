@@ -61,7 +61,6 @@ public class ResourceManager : MonoBehaviour
     public GameObject victoryFX;
     public GameObject defeatFX;
 
-    // Update is called once per frame
     public void MyUpdate ()
     {
         if(GameObject.Find("LevelManager") != null) level = GameObject.Find("LevelManager").GetComponent<LevelLogic>();
@@ -87,9 +86,7 @@ public class ResourceManager : MonoBehaviour
             }   
         }
 
-        if (Input.GetKeyDown(KeyCode.C)) wood = 0;
-
-        if(wood <= 0)
+        if(happiness <= 0)
         {
             victory = false;
             ToggleEnding();
@@ -316,8 +313,7 @@ public class ResourceManager : MonoBehaviour
         canvas.transform.GetChild(4).gameObject.SetActive(false);
         canvas.transform.GetChild(5).gameObject.SetActive(false);
         GetComponent<BuilderScript>().CantBuild(false);
-
-
+        
         if(victory)
         {
             victoryImage.SetActive(true);
@@ -351,6 +347,7 @@ public class ResourceManager : MonoBehaviour
         //Time.timeScale = 1.0f;
         //DesactivateEndingScreen();
         endingExitA.SetActive(true);
+        gameEndedAnimation = false;
 
         if (level != null) level.SetTitleScene();
     }
@@ -362,6 +359,8 @@ public class ResourceManager : MonoBehaviour
         GetComponent<BuilderScript>().CantBuild(true);
         endingExitA.SetActive(true);
         gameEnded = true;
+        gameEndedAnimation = false;
+
     }
 
     public void DesactivateEndingScreen()

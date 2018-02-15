@@ -18,7 +18,7 @@ public class BridgeBehaviour : MonoBehaviour {
     public void OnMouseOver()
     {
         Debug.Log("Bridge");
-        if(Input.GetButtonDown("Fire1") || Input.GetButtonDown("PlaceBuildController")) OpenInfoBuilding();
+        if(Input.GetButtonDown("Fire1") || Input.GetButtonDown("SelectBuildController")) OpenInfoBuilding();
     }
 
     public void OpenInfoBuilding()

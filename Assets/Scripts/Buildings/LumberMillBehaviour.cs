@@ -96,7 +96,7 @@ public class LumberMillBehaviour : MonoBehaviour
 
     public void OnMouseOver()
     {
-		if (Input.GetButtonDown ("Fire1") || Input.GetButtonDown ("PlaceBuildController")) 
+		if (Input.GetButtonDown ("Fire1") || Input.GetButtonDown ("SelectBuildController")) 
 		{
 			OpenInfoBuilding ();
 			soundFX.PlayFX (14, 1f, false);
