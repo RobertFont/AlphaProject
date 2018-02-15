@@ -181,7 +181,7 @@ public class EventBehaviour : MonoBehaviour {
 
     public void StartEventRain()
     {
-        if (soundFX != null) soundFX.StopFX();
+        //if (soundFX != null) soundFX.StopFX();
         if (dustStarted) return;
         if (rainStarted) return;
         rainParticle.SetActive(true);

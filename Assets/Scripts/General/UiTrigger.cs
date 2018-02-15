@@ -103,8 +103,8 @@ public class UiTrigger : MonoBehaviour
             {
                 resource.wood -= 100 * resource.bridgeCost;
                 resource.bridgeCost++;
-                buildingSelected.SetActive(false);
-                buildingSelected = null;
+                //buildingSelected.SetActive(false);
+                buildingSelected.GetComponent<BridgeBehaviour>().RepareBridge();
             }
         }
         else if (buildingSelected.tag == "Tower")

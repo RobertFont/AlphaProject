@@ -6,6 +6,8 @@ public class BridgeBehaviour : MonoBehaviour {
 
     UiTrigger info;
 
+    public GameObject broken;
+    public GameObject repared;
     /*public void OnMouseUpAsButton()
     {
         if(info == null) info = GameObject.Find("InformationButton").GetComponent<UiTrigger>();
@@ -15,6 +17,7 @@ public class BridgeBehaviour : MonoBehaviour {
 
     public void OnMouseOver()
     {
+        Debug.Log("Bridge");
         if(Input.GetButtonDown("Fire1") || Input.GetButtonDown("PlaceBuildController")) OpenInfoBuilding();
     }
 
@@ -22,5 +25,11 @@ public class BridgeBehaviour : MonoBehaviour {
     {
         if(info == null) info = GameObject.Find("InformationButton").GetComponent<UiTrigger>();
         info.buildingSelected = this.gameObject;
+    }
+
+    public void  RepareBridge()
+    {
+        broken.SetActive(false);
+        repared.SetActive(true);
     }
 }
