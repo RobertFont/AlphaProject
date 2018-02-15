@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -3053,8 +3053,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 326513251}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 285, y: 160.5, z: 0}
-  m_LocalScale: {x: 0.4453125, y: 0.4453125, z: 0.4453125}
+  m_LocalPosition: {x: 320, y: 180, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 1460984244}
   - {fileID: 1886756028}
@@ -5912,7 +5912,6 @@ GameObject:
   - component: {fileID: 660291149}
   - component: {fileID: 660291148}
   - component: {fileID: 660291147}
-  - component: {fileID: 660291151}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -5982,17 +5981,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &660291151
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 660291146}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a8afd30e4a58094b83c0a09ee16fbd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &668079233
 GameObject:
   m_ObjectHideFlags: 0
@@ -8389,7 +8377,7 @@ GameObject:
   - component: {fileID: 965772054}
   - component: {fileID: 965772055}
   m_Layer: 5
-  m_Name: AlphaGames
+  m_Name: AlphaEntertainment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8469,13 +8457,15 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 199
-    m_Alignment: 2
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Alpha Games
+  m_Text: '       Alpha Entertainment
+
+'
 --- !u!222 &965772058
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13599,8 +13589,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1636942990}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 285, y: 160.5, z: 0}
-  m_LocalScale: {x: 0.4453125, y: 0.4453125, z: 0.4453125}
+  m_LocalPosition: {x: 320, y: 180, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 239634790}
   - {fileID: 2054955147}

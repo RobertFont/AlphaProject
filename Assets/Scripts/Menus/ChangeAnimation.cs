@@ -19,5 +19,6 @@ public class ChangeAnimation : MonoBehaviour
         myAnimation.Play();
         myAnimation.Rewind();
         if (!notDisable) gameObject.SetActive(false);
+        Debug.Log("Animation");
     }
 }

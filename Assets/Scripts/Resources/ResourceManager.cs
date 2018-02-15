@@ -48,6 +48,7 @@ public class ResourceManager : MonoBehaviour
     public InputManager input;
     public bool victory = false;
     public bool gameEnded = false;
+    public bool gameEndedAnimation = false;
 
     public GameObject victoryImage;
     public GameObject defeatImage;
@@ -75,7 +76,6 @@ public class ResourceManager : MonoBehaviour
             victory = true;
             ToggleEnding();
         }
-        UpdateUI();
         //AddCurrentPopFromTime();
         EatingFood();
         if(!gameEnded)
@@ -87,11 +87,15 @@ public class ResourceManager : MonoBehaviour
             }   
         }
 
-        if(happiness <= 0)
+        if (Input.GetKeyDown(KeyCode.C)) wood = 0;
+
+        if(wood <= 0)
         {
             victory = false;
             ToggleEnding();
         }
+        UpdateUI();
+
     }
 
     public void UpdateUI()
@@ -313,22 +317,33 @@ public class ResourceManager : MonoBehaviour
         canvas.transform.GetChild(5).gameObject.SetActive(false);
         GetComponent<BuilderScript>().CantBuild(false);
 
-        endingEnterA.SetActive(true);
 
         if(victory)
         {
             victoryImage.SetActive(true);
             continueButton.SetActive(true);
             victoryFX.SetActive(true);
+            Debug.Log("Victory");
         }
         else if(!victory)
         {
+            Debug.Log("Death");
+
             defeatFX.SetActive(true);
             defeatImage.SetActive(true);
         }
         endingBackground.gameObject.SetActive(true);
         endingButton.SetActive(true);
+
+        if (!gameEndedAnimation)
+        {
+            endingEnterA.SetActive(true);
+            gameEndedAnimation = true;
+        }
+
         //Time.timeScale = 0.0f;
+        Debug.Log("Ends");
+
     }
 
     public void EndGame()
