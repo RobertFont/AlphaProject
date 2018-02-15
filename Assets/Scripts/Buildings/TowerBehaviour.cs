@@ -7,6 +7,7 @@ public class TowerBehaviour : MonoBehaviour
     public Transform target;
     public ResourceManager resource;
     public UiTrigger info;
+    public InputManager input;
 
     [Header("Attributes")]
     public float range = 15f;
@@ -21,6 +22,7 @@ public class TowerBehaviour : MonoBehaviour
     {
         // Esto hace que UpdateTarget se ejecute 2 veces por segundo en vez de cada frame
         resource = GameObject.FindGameObjectWithTag("Player").GetComponent<ResourceManager>();
+        input = GameObject.FindGameObjectWithTag("PlayerCamera").GetComponent<InputManager>();
         info = GameObject.Find("InformationButton").GetComponent<UiTrigger>();
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
     }
@@ -54,7 +56,7 @@ public class TowerBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update ()
     {
-        if (target == null) return;
+        if (target == null || input.paused) return;
 
         if (fireCountDown <= 0f)
         {
