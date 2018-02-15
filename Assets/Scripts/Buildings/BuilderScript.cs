@@ -439,18 +439,21 @@ public class BuilderScript : MonoBehaviour {
             resource.RemoveWood(farmCostWood);
             resource.AddFarm();
             resource.RemoveCurrentPop(2);
+            resource.AddNonIdlePop(2);
         }
         else if(build.tag == "LumberMill")
         {
             resource.RemoveWood(lumbMillCostWood);
             resource.AddLumberMill();
             resource.RemoveCurrentPop(4);
+            resource.AddNonIdlePop(4);
         }
         else if (build.tag == "GoldMine")
         {
             resource.RemoveWood(mineCostWood);
             resource.AddGoldMine();
             resource.RemoveCurrentPop(4);
+            resource.AddNonIdlePop(4);
         }
         else if (build.tag == "Warehouse")
         {
@@ -458,6 +461,7 @@ public class BuilderScript : MonoBehaviour {
             resource.RemoveGold(warehouseCostWood);
             resource.AddWareHouse();
             resource.RemoveCurrentPop(8);
+            resource.AddNonIdlePop(8);
 
             warehouseCostGold += 100;
             warehouseCostWood += 150;
@@ -468,6 +472,7 @@ public class BuilderScript : MonoBehaviour {
             resource.RemoveGold(towerCostGold);
             resource.AddTower();
             resource.RemoveCurrentPop(2);
+            resource.AddNonIdlePop(2);
         }
     }
 

@@ -91,6 +91,7 @@ public class TowerBehaviour : MonoBehaviour
     public void DestroyBuilding()
     {
         resource.AddCurrentPop(2);
+        resource.AddNonIdlePop(-2);
         Destroy(gameObject);
     }
 

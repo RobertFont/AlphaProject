@@ -78,12 +78,13 @@ public class LumberMillBehaviour : MonoBehaviour
     {
 		Debug.Log("destroy activo");
 		resource.AddCurrentPop(4);
-		Destroy(this.gameObject);
+		resource.AddNonIdlePop(4);
+        Destroy(this.gameObject);
     }
 
 	public void GatherResources()
 	{
-		resource.AddWood(20);
+		resource.AddWood(25);
 	}
 
     /*public void OnMouseUpAsButton()

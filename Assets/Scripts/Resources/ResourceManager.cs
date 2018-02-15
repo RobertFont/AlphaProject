@@ -25,6 +25,7 @@ public class ResourceManager : MonoBehaviour
     public int happiness = 100;
     public int currentPop = 0;
     public int maxPop = 0;
+    public int nonIdlePop = 0;
     [Header("Buildings")]
     public int house = 0;
     public int lumberMill = 0;
@@ -173,7 +174,16 @@ public class ResourceManager : MonoBehaviour
     {
         currentPop -= value;
     }
-#endregion
+    public void AddNonIdlePop(int value)
+    {
+        nonIdlePop += value;
+    }
+
+    public void RemoveNonIdlePop(int value)
+    {
+        nonIdlePop -= value;
+    }
+    #endregion
 
     public void AddCurrentPopFromTime()
     {
@@ -261,9 +271,9 @@ public class ResourceManager : MonoBehaviour
 
     public void EatingFood()
     {
-        int necessaryFood = currentPop * 2;
+        int necessaryFood = (nonIdlePop + currentPop) * 2;
 
-        if (currentPop >= 1)
+        if ((nonIdlePop) >= 1 || (currentPop >= 1))
         {
             if (mealTime > 12/Time.timeScale)
             {

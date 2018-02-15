@@ -62,6 +62,7 @@ public class UiTrigger : MonoBehaviour
             resource.AddFood(houseRestoreGold);
             resource.RemoveMaxPop(4); 
             resource.RemoveCurrentPop(4);
+            resource.AddNonIdlePop(-4);
             resource.AddHouse(-1);
 
             Destroy(buildingSelected);
@@ -94,6 +95,7 @@ public class UiTrigger : MonoBehaviour
             resource.AddWood(goldMineRestoreWood);
             resource.AddWareHouse(-1);
 			resource.AddCurrentPop(8);
+            resource.AddNonIdlePop(-8);
             Destroy(buildingSelected);
             buildingSelected = null;
         }
@@ -128,7 +130,8 @@ public class UiTrigger : MonoBehaviour
 			{
 				buildingSelected.GetComponent<FarmBehaviour> ().state = FarmBehaviour.BuildingState.open;
 				resource.AddCurrentPop(-2);
-			}
+                resource.AddNonIdlePop(2);
+            }
         }
         else if (buildingSelected.tag == "LumberMill")
         {
@@ -136,7 +139,8 @@ public class UiTrigger : MonoBehaviour
 			{
 				buildingSelected.GetComponent<LumberMillBehaviour> ().state = LumberMillBehaviour.BuildingState.open;
 				resource.AddCurrentPop(-4);
-			}
+                resource.AddNonIdlePop(4);
+            }
         }
         else if (buildingSelected.tag == "GoldMine")
         {
@@ -144,7 +148,8 @@ public class UiTrigger : MonoBehaviour
 			{
 				buildingSelected.GetComponent<GoldMineBehaviour> ().state = GoldMineBehaviour.BuildingState.open;
 				resource.AddCurrentPop(-4);
-			}
+                resource.AddNonIdlePop(4);
+            }
         }
     }
 
@@ -156,7 +161,8 @@ public class UiTrigger : MonoBehaviour
 			{
 				buildingSelected.GetComponent<FarmBehaviour> ().state = FarmBehaviour.BuildingState.closed;
 				resource.AddCurrentPop(2);
-			}
+                resource.AddNonIdlePop(-2);
+            }
         }
         else if (buildingSelected.tag == "LumberMill")
         {
@@ -164,7 +170,8 @@ public class UiTrigger : MonoBehaviour
 			{
 	            buildingSelected.GetComponent<LumberMillBehaviour>().state = LumberMillBehaviour.BuildingState.closed;
 				resource.AddCurrentPop(4);
-			}
+                resource.AddNonIdlePop(-4);
+            }
         }
         else if (buildingSelected.tag == "GoldMine")
         {
@@ -172,7 +179,8 @@ public class UiTrigger : MonoBehaviour
 			{
 	            buildingSelected.GetComponent<GoldMineBehaviour>().state = GoldMineBehaviour.BuildingState.closed;
 				resource.AddCurrentPop(4);
-			}
+                resource.AddNonIdlePop(-4);
+            }
         }
     }
 

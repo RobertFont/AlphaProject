@@ -78,13 +78,14 @@ public class GoldMineBehaviour : MonoBehaviour
     public void DestroyBuilding()
     {
 		resource.AddCurrentPop(4);
+		resource.AddNonIdlePop(-4);
         goldOre.SetActive(true);
         Destroy(this.gameObject);
     }
 
 	public void GatherResources()
 	{
-		resource.AddGold(10);
+		resource.AddGold(25);
 	}
 
 

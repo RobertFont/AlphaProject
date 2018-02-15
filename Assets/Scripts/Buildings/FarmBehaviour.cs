@@ -104,7 +104,8 @@ public class FarmBehaviour : MonoBehaviour
     public void DestroyBuilding()
     {
 		resource.AddCurrentPop(2);
-		Destroy(this.gameObject);
+		resource.AddNonIdlePop(-2);
+        Destroy(this.gameObject);
     }
 
     public void ScaleWheat()
@@ -123,7 +124,7 @@ public class FarmBehaviour : MonoBehaviour
 
     public void GatherResources()
     {
-        resource.AddFood(10);
+        resource.AddFood(16);
     }
 
     /*public void OnMouseUpAsButton()
