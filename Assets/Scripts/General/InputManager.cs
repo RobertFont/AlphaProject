@@ -87,10 +87,16 @@ public class InputManager : MonoBehaviour {
         }
         #endregion
 
-            #region Rotate
-        if (Input.GetAxis("Rotate") > 0.01f  || Input.GetAxis("Rotate") < 0.01f) isRotating = Input.GetAxis("Rotate")*2;
-        else if (Input.GetAxis(" RotateController") > 0.01f || Input.GetAxis(" RotateController") < 0.01f) isRotating = Input.GetAxis("RotateController")*2;
+        #region Rotate
+        if (Input.GetAxis("Rotate") > 0.01f || Input.GetAxis("Rotate") < -0.01f) isRotating = Input.GetAxis("Rotate") * 2;
+        else if (Input.GetAxis("RotateController") > 0.01f || Input.GetAxis("RotateController") < -0.01f)
+        {
+            Debug.Log(Input.GetAxis("RotateController"));
+
+            isRotating = Input.GetAxis("RotateController") * 2;
+        }
         else isRotating = 0;
+
 
         if (isRotating >= 2) isRotating = 2;
         else if (isRotating <= -2) isRotating = -2;

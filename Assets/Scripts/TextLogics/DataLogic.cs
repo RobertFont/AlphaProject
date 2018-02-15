@@ -52,13 +52,13 @@ public class DataLogic : MonoBehaviour
 
         if (!GetPeripheralType())
         {
-            Cursor.lockState = CursorLockMode.None;
+            if (Cursor.lockState != CursorLockMode.None) Cursor.lockState = CursorLockMode.None;
             FollowCursor.enabled = false;
             Cursor.visible = true;
         }
         else if (GetPeripheralType())
         {
-            Cursor.lockState = CursorLockMode.Locked;
+            if (Cursor.lockState != CursorLockMode.Locked)  Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = true;
             FollowCursor.enabled = true;
         }
