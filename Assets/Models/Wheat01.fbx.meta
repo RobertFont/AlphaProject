@@ -11,6 +11,7 @@ ModelImporter:
     3300000: //RootNode
     4300000: polySurface342
     4300002: Wheat
+    4300004: Wheat2
   externalObjects:
   - first:
       type: UnityEngine:Material
