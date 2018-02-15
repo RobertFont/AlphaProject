@@ -1,11 +1,14 @@
 fileFormatVersion: 2
 guid: bef55155c78baca4ab95f5e214773682
-timeCreated: 1512907389
+timeCreated: 1518738678
 licenseType: Free
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - fireTexture: {fileID: 21300000, guid: b04917fe5a279bf479cba0f6e1ea273e, type: 3}
+  - bugsTexture: {fileID: 21300000, guid: 6ff57ffee6d282a47830c98dac90a3c6, type: 3}
+  - goblinTexture: {fileID: 21300000, guid: df350b775750b364d9a2e89305606cff, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

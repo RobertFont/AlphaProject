@@ -13,9 +13,9 @@ public class EventIconsBehaviour : MonoBehaviour
     // Use this for initialization
     public void MyStart ()
     {
-		fireTexture = Resources.Load<Sprite>("Fire") as Sprite;
-		bugsTexture = Resources.Load<Sprite>("Bug") as Sprite;
-		goblinTexture = Resources.Load<Sprite>("Bug") as Sprite;
+		fireTexture = Resources.Load<Sprite>("FireEvent") as Sprite;
+		bugsTexture = Resources.Load<Sprite>("BugEvent") as Sprite;
+		goblinTexture = Resources.Load<Sprite>("GoblinEvent") as Sprite;
     }
 
     private void FixedUpdate()
@@ -56,7 +56,7 @@ public class EventIconsBehaviour : MonoBehaviour
 
     public void GoblinsIconStart()
     {
-        this.transform.GetChild(3).GetComponent<Image>().sprite = bugsTexture;
+        this.transform.GetChild(3).GetComponent<Image>().sprite = goblinTexture;
         this.transform.GetChild(3).gameObject.SetActive(true);
     }
     public void GoblinsIconEnd()
