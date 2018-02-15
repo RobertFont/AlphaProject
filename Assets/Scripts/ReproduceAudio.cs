@@ -21,7 +21,7 @@ public class ReproduceAudio : MonoBehaviour
     public void Activated()
     {
         play = GameObject.Find("LevelManager").GetComponent<PlaySound>();
-        if(randomPitch || pitch == 0) pitch = Random.Range(0.1f, 2.5f);
+        if(randomPitch || pitch == 0) pitch = Random.Range(0.5f, 1.5f);
         play.PlayFX(newAudio, pitch, false);
         if(disableAfterPlaySound) gameObject.SetActive(false);
     }

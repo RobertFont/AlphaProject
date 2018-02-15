@@ -198,7 +198,7 @@ public class EventBehaviour : MonoBehaviour {
         if (rainStarted) return;
         if (dustStarted) return;
         dustParticle.SetActive(true);
-        if (soundFX != null) soundFX.PlayFX(4, 1f, true);
+        //if (soundFX != null) soundFX.PlayFX(4, 1f, true);
 
         dustStarted = true;
     }
@@ -278,7 +278,7 @@ public class EventBehaviour : MonoBehaviour {
     public void EndDust()
     {
         dustParticle.SetActive(false);
-        if (soundFX != null) soundFX.StopFX();
+        //if (soundFX != null) soundFX.StopFX();
         dustStarted = false;
         eventTimerDust = 0;
     }

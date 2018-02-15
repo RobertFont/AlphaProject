@@ -100,7 +100,7 @@ public class GoldMineBehaviour : MonoBehaviour
 		if (Input.GetButtonDown ("Fire1") || Input.GetButtonDown ("PlaceBuildController")) 
 		{
 			OpenInfoBuilding ();
-			soundFX.PlayFX(15, 1f, false);
+			if(soundFX != null) soundFX.PlayFX(15, 1f, false);
 		}
     }
 
