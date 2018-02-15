@@ -10,7 +10,7 @@ public class PlaySound : MonoBehaviour
     public AudioSource audioSourceFX;
 
     public float musicVolume = 0.5f;
-    public float fXVolume = 0.5f;
+    public float fXVolume = 0.7f;
     public float masterVolume = 1f;
 
     public void PlayMusic(int index, bool loop)

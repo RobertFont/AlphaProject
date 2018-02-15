@@ -186,7 +186,6 @@ public class EventBehaviour : MonoBehaviour {
         if (rainStarted) return;
         rainParticle.SetActive(true);
         //rain.SetActive(true);
-        if (soundFX != null) soundFX.PlayFX(3, 1f, true);
 
         rainStarted = true;
 
@@ -271,7 +270,6 @@ public class EventBehaviour : MonoBehaviour {
     {
         rainParticle.SetActive(false);
         //rain.SetActive(false);
-        if (soundFX != null) soundFX.StopFX();
         rainStarted = false;
         eventTimerRain = 0;
     }
