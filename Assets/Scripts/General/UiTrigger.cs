@@ -126,7 +126,7 @@ public class UiTrigger : MonoBehaviour
     {
         if (buildingSelected.tag == "Farm")
         {
-			if (resource.currentPop > 2 && buildingSelected.GetComponent<FarmBehaviour> ().state != FarmBehaviour.BuildingState.open) 
+			if (resource.currentPop >= 2 && buildingSelected.GetComponent<FarmBehaviour> ().state != FarmBehaviour.BuildingState.open) 
 			{
 				buildingSelected.GetComponent<FarmBehaviour> ().state = FarmBehaviour.BuildingState.open;
 				resource.AddCurrentPop(-2);
@@ -135,7 +135,7 @@ public class UiTrigger : MonoBehaviour
         }
         else if (buildingSelected.tag == "LumberMill")
         {
-			if (resource.currentPop > 4 && buildingSelected.GetComponent<LumberMillBehaviour> ().state != LumberMillBehaviour.BuildingState.open) 
+			if (resource.currentPop >= 4 && buildingSelected.GetComponent<LumberMillBehaviour> ().state != LumberMillBehaviour.BuildingState.open) 
 			{
 				buildingSelected.GetComponent<LumberMillBehaviour> ().state = LumberMillBehaviour.BuildingState.open;
 				resource.AddCurrentPop(-4);
@@ -144,7 +144,7 @@ public class UiTrigger : MonoBehaviour
         }
         else if (buildingSelected.tag == "GoldMine")
         {
-			if (resource.currentPop > 4 && buildingSelected.GetComponent<GoldMineBehaviour> ().state != GoldMineBehaviour.BuildingState.open) 
+			if (resource.currentPop >= 4 && buildingSelected.GetComponent<GoldMineBehaviour> ().state != GoldMineBehaviour.BuildingState.open) 
 			{
 				buildingSelected.GetComponent<GoldMineBehaviour> ().state = GoldMineBehaviour.BuildingState.open;
 				resource.AddCurrentPop(-4);
