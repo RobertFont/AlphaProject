@@ -81,7 +81,7 @@ ___
 - [X] Language Selection (Spanish, English)
 
 ### Screen: Gameplay
-- [ ] Check: Basic Mecanics
+- [X] Check: Basic Mecanics
 - [X] Check: Final Models + textures
 - [X] 8 Final Props More (Total: 16 Props)
 - [X] Final Building With Final Texture + Basic Animations (3 Building)
@@ -90,7 +90,7 @@ ___
   - [X] Custom Font
 - [X] GUI Final Art With Animations
 - [X] Custom Font
-- [ ] Control Support for Controller
+- [X] Control Support for Controller
 - [X] 5 Particle Sytems More (Total: 10)
 - [X] 5 Sound FX More (Total: 10)
 - [X] Specific Audio Track For Gameplay Screen
