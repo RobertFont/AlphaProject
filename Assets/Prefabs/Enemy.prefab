@@ -74,6 +74,7 @@ GameObject:
   - component: {fileID: 224185701015538362}
   - component: {fileID: 222646562065696832}
   - component: {fileID: 114177081233711064}
+  - component: {fileID: 114453721032917912}
   m_Layer: 5
   m_Name: HealthBG
   m_TagString: Untagged
@@ -179,6 +180,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &114453721032917912
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1747054098350726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efa515f5f94476a429c3c2379bdb223a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Camera: {fileID: 0}
 --- !u!114 &114497310803629572
 MonoBehaviour:
   m_ObjectHideFlags: 1
