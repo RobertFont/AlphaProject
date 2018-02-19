@@ -1,0 +1,5 @@
+Original  Color FFF4D6FF	(used in Beta)
+Day 	  Color BDA564FF
+Afternoon Color	564005FF
+Night 	  Color	292823FF
+Rain	  Color	747FCCFF
