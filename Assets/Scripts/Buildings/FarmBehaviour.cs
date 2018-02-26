@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class FarmBehaviour : MonoBehaviour
@@ -11,6 +12,7 @@ public class FarmBehaviour : MonoBehaviour
     //public int currentWorkers = 0;
     //public GameObject finder;
     public float counter;
+	public Image progressBar;
     public int gatherCounter = 12;
     public EventBehaviour weatherEvent;
     public Vector3 rotateBlades;
@@ -63,7 +65,7 @@ public class FarmBehaviour : MonoBehaviour
                 {
                     Debug.Log("llueve");
                     rotateBlades.z = 2 * Time.timeScale;
-                    gatherCounter = 6;
+                    counter += Time.deltaTime * 2 * Time.timeScale;
                     scaleWheat.y += 0.16f * Time.deltaTime * Time.timeScale;
                 }
                 else if(weatherEvent.dustStarted)
@@ -71,7 +73,7 @@ public class FarmBehaviour : MonoBehaviour
                     Debug.Log("dust");
 
                     rotateBlades.z = 0.5f * Time.timeScale;
-                    gatherCounter = 20;
+                    counter += Time.deltaTime/2 * Time.timeScale;
                     scaleWheat.y += 0.05f * Time.deltaTime * Time.timeScale;
                 }
                 else
@@ -79,11 +81,11 @@ public class FarmBehaviour : MonoBehaviour
                     Debug.Log("nada");
 
                     rotateBlades.z = 1 * Time.timeScale;
-                    gatherCounter = 12;
+                    counter += Time.deltaTime * Time.timeScale;
                     scaleWheat.y += Time.deltaTime * 0.083f * Time.timeScale;
                 }
 
-				counter += Time.deltaTime*Time.timeScale;
+                progressBar.fillAmount = counter / (gatherCounter / Time.timeScale);
 
                 if (scaleWheat.y > 1) scaleWheat.y = 1;
                 if (counter > gatherCounter/Time.timeScale)
@@ -91,7 +93,7 @@ public class FarmBehaviour : MonoBehaviour
                     GatherResources();
 
                     scaleWheat.y = 0.1f;
-                    counter = 0;
+                    counter = 0f;
                 }
 
                 ScaleWheat();
@@ -140,6 +142,13 @@ public class FarmBehaviour : MonoBehaviour
 			OpenInfoBuilding();
 			soundFX.PlayFX (13, 1f, false);
 		}
+
+        progressBar.gameObject.SetActive(true);
+    }
+
+    public void OnMouseExit()
+    {
+        progressBar.gameObject.SetActive(false);
     }
 
     public void OpenInfoBuilding()

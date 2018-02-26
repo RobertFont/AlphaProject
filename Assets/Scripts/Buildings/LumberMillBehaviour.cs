@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System.Linq;
 
 public class LumberMillBehaviour : MonoBehaviour
@@ -11,6 +12,7 @@ public class LumberMillBehaviour : MonoBehaviour
 	public float counter = 0;
     public UiTrigger info;
 	PlaySound soundFX;
+    public Image progressBar;
 
     [SerializeField] private bool started = true;
     [SerializeField] int numFor;
@@ -40,7 +42,9 @@ public class LumberMillBehaviour : MonoBehaviour
 
 				counter += Time.deltaTime * Time.timeScale;
 
-				if (counter > 6/Time.timeScale)
+                progressBar.fillAmount = counter / (6 / Time.timeScale);
+
+                if (counter > 6/Time.timeScale)
 				{
 					GatherResources();
 
@@ -101,6 +105,13 @@ public class LumberMillBehaviour : MonoBehaviour
 			OpenInfoBuilding ();
 			soundFX.PlayFX (14, 1f, false);
 		}
+
+        progressBar.gameObject.SetActive(true);
+    }
+
+    public void OnMouseExit()
+    {
+        progressBar.gameObject.SetActive(false);
     }
 
     public void OpenInfoBuilding()
