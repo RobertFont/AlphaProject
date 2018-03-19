@@ -12,6 +12,7 @@ public class FarmBehaviour : MonoBehaviour
     //public int currentWorkers = 0;
     //public GameObject finder;
     public float counter;
+    public GameObject bars;
 	public Image progressBar;
     public int gatherCounter = 12;
     public EventBehaviour weatherEvent;
@@ -143,12 +144,12 @@ public class FarmBehaviour : MonoBehaviour
 			soundFX.PlayFX (13, 1f, false);
 		}
 
-        progressBar.gameObject.SetActive(true);
+        bars.SetActive(true);
     }
 
     public void OnMouseExit()
     {
-        progressBar.gameObject.SetActive(false);
+        bars.SetActive(false);
     }
 
     public void OpenInfoBuilding()

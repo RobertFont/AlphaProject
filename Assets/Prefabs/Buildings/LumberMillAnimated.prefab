@@ -1649,6 +1649,7 @@ MonoBehaviour:
   resource: {fileID: 0}
   counter: 0
   info: {fileID: 0}
+  bars: {fileID: 1546921408825398}
   progressBar: {fileID: 114429766910598204}
   started: 1
   numFor: 0

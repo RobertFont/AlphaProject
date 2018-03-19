@@ -12,6 +12,7 @@ public class LumberMillBehaviour : MonoBehaviour
 	public float counter = 0;
     public UiTrigger info;
 	PlaySound soundFX;
+    public GameObject bars;
     public Image progressBar;
 
     [SerializeField] private bool started = true;
@@ -106,12 +107,12 @@ public class LumberMillBehaviour : MonoBehaviour
 			soundFX.PlayFX (14, 1f, false);
 		}
 
-        progressBar.gameObject.SetActive(true);
+        bars.SetActive(true);
     }
 
     public void OnMouseExit()
     {
-        progressBar.gameObject.SetActive(false);
+        bars.SetActive(false);
     }
 
     public void OpenInfoBuilding()
