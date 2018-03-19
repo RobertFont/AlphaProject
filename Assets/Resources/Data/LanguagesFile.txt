@@ -1,52 +1,52 @@
 id	spanish	english	catalan
 spanish	Castellano	Spanish	Castellà
-english	Ingles	English	Anglés
+english	Inglés	English	Anglés
 catala	Catalan	Catalan	Català
-continue	Continuar	Continue	continuar
+continue	Continuar	Continue	Continuar
 newGame	Nueva Partida	New Game	Nova Partida
 loadGame	Cargar Partida	Load Game	Carregar Partida
 options	Opciones	Options	Opcions
 exit	Salir	Exit	Sortir
 general	General	General	General
-graphics	Graficos	Graphics	Gráfics
-sound	Sonido	Sounds	Sons
+graphics	Gráficos	Graphics	Gràfics
+sound	Sonido	Sounds	Só
 controls	Controles	Controls	Controls
-pause	Pausa	Paues	Pausa
-defaultSettings	Configuración de Serie	Reset Settings	Restablir configuració
+pause	Pausa	Pause	Pausa
+defaultSettings	Restablecer configuración	Reset Settings	Restablir configuració
 saveSettings	Guardar Configuración	Save Settings	Desa configuració
 back	Volver	Back	Tornar
 language	Lenguaje	Language	Llenguatge
-extraInformation	Informació extra	Extra Information	Informació addicional
+extraInformation	Información extra	Extra Information	Informació adicional
 hudSize	Tamaño del HUD	HUD Size	Mida del HUD
-resolution	Resolucion	Resolution	Resolució
+resolution	Resolución	Resolution	Resolució
 fullScreen	Pantalla completa	FullScreen	Pantalla completa
 quality	Calidad	Quality	Qualitat
 vSync	VSync	VSync	VSync
-textureQyality	Calidad de texturas	Texture Quality	Qualitat de la textura
+textureQyality	Calidad de texturas	Texture Quality	Qualitat de textures
 antiAlising	Anti-Alising	Anti-Alising	Anti-Alising
 shadows	Sombras	Shadows	Ombres
 gamma	Gama	Gamma	Gamma
 masterSound	Volumen Maestro	Master Volume	Volum mestre
 fxSound	Volúmen de FX	FX Valume	Volums de FX
-musicSound	Volumen de música	Music Volume	Volum de música
-fast	Rapido	Fast	Ràpid
-good	Bueno	Good	bo
+musicSound	Volúmen de música	Music Volume	Volum de música
+fast	Rápido	Fast	Ràpid
+good	Bueno	Good	Bó
 fantastic	Fantástico	Fantastic	Fantàstic
 ultra	Ultra	Ultra	Ultra
-low	Baja	Low	baix
+low	Baja	Low	Baix
 medium	Medio	Medium	Mitjà
 high	Alto	High	Alt
 hold	Mantener	Hold	Mantenir
 press	Presionar	Press	Pressionar
 open	Abrir	Open	Obrir
-disabled	Desactivado	Disabled	desactivat
+disabled	Desactivado	Disabled	Desactivat
 close	Cerrar	Close	Tanca
 buildings	Edificios	Buildings	Edificis
 townHall	Ayuntamiento	Town Hall	Ajuntament
 house	Casa	House	Casa
 goldenMine	Mina	Golden Mine	Mina
 farm	Granja	Farm	Granja
-lumberMill	Aserradero	Lumber Mill	Serradora
+lumberMill	Aserradero	Lumber Mill	Aserreria
 warehouse	Almacen	Warehouse	Magatzem
 bridge	Puente	Bridge	Pont
 barracks	Cuartel	Barracks	Barraques
@@ -55,3 +55,4 @@ kingsHall	Salón de Reyes	Kings Hall	Saló dels reis
 church	Iglesia	Church	Església
 fireStation	Estación de bomberos	Fire Station	Estació de bombers
 huntingCamp	Campamento de caza	Hunting Camp	Campament de caça
+houseInfo	Casa: sirve para aumentar la población. Madera: 100 Oro: 100	House: allows you yo have more people Wood: 100 Gold: 100	Casa: serveix per aumentar la població. Fusta: 100 Or: 100
