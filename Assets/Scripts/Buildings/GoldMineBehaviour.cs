@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.UI;
 
 public class GoldMineBehaviour : MonoBehaviour
 {
@@ -9,7 +10,9 @@ public class GoldMineBehaviour : MonoBehaviour
     public BuildingState state;
 	public ResourceManager resource;
     public UiTrigger info;
-	public float counter = 0;
+    public GameObject bars;
+    public Image progressBar;
+    public float counter = 0;
 	PlaySound soundFX;
 
     [SerializeField] private bool started = true;
@@ -45,6 +48,8 @@ public class GoldMineBehaviour : MonoBehaviour
 
 					counter = 0;
 				}
+
+                progressBar.fillAmount = counter / (12 / Time.timeScale);
 
                 started = true;
 
@@ -102,6 +107,13 @@ public class GoldMineBehaviour : MonoBehaviour
 			OpenInfoBuilding ();
 			if(soundFX != null) soundFX.PlayFX(15, 1f, false);
 		}
+
+        bars.SetActive(true);
+    }
+
+    public void OnMouseExit()
+    {
+        bars.SetActive(false);
     }
 
     public void OpenInfoBuilding()
