@@ -266,6 +266,7 @@ GameObject:
   - component: {fileID: 224948369553737864}
   - component: {fileID: 222749726284896692}
   - component: {fileID: 114125791808777056}
+  - component: {fileID: 114819090043212188}
   m_Layer: 5
   m_Name: Progress
   m_TagString: Untagged
@@ -470,7 +471,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1588350437253022}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 18.78896, y: 2.5437741, z: 6.722156}
+  m_LocalPosition: {x: 0, y: 0, z: 11.73}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4019788447328478}
@@ -1697,6 +1698,18 @@ MonoBehaviour:
   minDelay: 1
   randomDelay: 1
   keepPositionX: 0
+--- !u!114 &114819090043212188
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1546921408825398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efa515f5f94476a429c3c2379bdb223a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Camera: {fileID: 0}
 --- !u!114 &114841859029846400
 MonoBehaviour:
   m_ObjectHideFlags: 1
