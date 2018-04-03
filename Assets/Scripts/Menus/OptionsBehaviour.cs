@@ -9,6 +9,7 @@ public class OptionsBehaviour : MonoBehaviour
     PlaySound sounds;
 
     [Header("General")]
+    public bool dontChangeMenu = false;
     public List<string> languageNames = new List<string>();
     public List<string> extraInfoNames = new List<string>();
     public List<string> qualityNames = new List<string>();
@@ -56,7 +57,7 @@ public class OptionsBehaviour : MonoBehaviour
     
     private void Start()
     {
-        SetGeneralMenu();
+        if (!dontChangeMenu) SetGeneralMenu();
         if (level != null) level = GameObject.Find("LevelManager").GetComponent<LevelLogic>();
         if (sounds != null) sounds = GameObject.Find("LevelManager").GetComponent<PlaySound>();
         //gammaLevel = RenderSettings.ambientLight.gamma;
@@ -67,6 +68,8 @@ public class OptionsBehaviour : MonoBehaviour
     #region General
     public void SetLenguage()
     {
+        if(dontChangeMenu) return;
+
         if(languageDD != null)
         {
             switch(languageDD.value)
