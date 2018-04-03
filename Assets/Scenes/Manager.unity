@@ -405,8 +405,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1218111743}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 142, y: 80, z: 0}
-  m_LocalScale: {x: 0.22187501, y: 0.22187501, z: 0.22187501}
+  m_LocalPosition: {x: 278.5, y: 156.5, z: 0}
+  m_LocalScale: {x: 0.43515626, y: 0.43515626, z: 0.43515626}
   m_Children:
   - {fileID: 989922816}
   m_Father: {fileID: 0}
@@ -506,6 +506,7 @@ GameObject:
   - component: {fileID: 1619233291}
   - component: {fileID: 1619233293}
   - component: {fileID: 1619233292}
+  - component: {fileID: 1619233294}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -609,6 +610,17 @@ MonoBehaviour:
   peripheralType: 0
   lastMousePositon: {x: 0, y: 0, z: 0}
   FollowCursor: {fileID: 989922818}
+--- !u!114 &1619233294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1619233289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18a45a56d262dc14c8a85659cc80e401, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1853417648
 GameObject:
   m_ObjectHideFlags: 0

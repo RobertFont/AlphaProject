@@ -333,9 +333,8 @@ public class ResourceManager : MonoBehaviour
             endingBackground.gameObject.SetActive(true);
             endingButton.SetActive(true);
 
-
-                endingEnterA.SetActive(true);
-                gameEndedAnimation = true;
+            endingEnterA.SetActive(true);
+            gameEndedAnimation = true;
         }
 
         //Time.timeScale = 0.0f;
@@ -349,7 +348,7 @@ public class ResourceManager : MonoBehaviour
         endingExitA.SetActive(true);
         gameEndedAnimation = false;
 
-        if (level != null) level.SetTitleScene();
+        if (level != null) level.SetLogoScene();
     }
 
     public void ContinueGame()
@@ -360,7 +359,6 @@ public class ResourceManager : MonoBehaviour
         endingExitA.SetActive(true);
         gameEnded = true;
         gameEndedAnimation = false;
-
     }
 
     public void DesactivateEndingScreen()
