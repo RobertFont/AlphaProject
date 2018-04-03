@@ -108,7 +108,7 @@ ___
 - [ ] Specific Audio Track For Options Screen
 
 ### Screen: Gameplay
-- [ ] Check: Final Models + textures + animations and sync with gameplay
+- [ ] Check all: Final Models + textures + animations and sync with gameplay
 - [ ] FX sounds to aniamated elements for UI
 - [ ] 5 Particle Sytems More (Total: 15)
 - [ ] 10 Sound FX More (Total: 25)
