@@ -92,10 +92,27 @@ ___
 - [X] Custom Font
 - [X] Control Support for Controller
 - [X] 5 Particle Sytems More (Total: 10)
-- [X] 5 Sound FX More (Total: 10)
+- [X] 5 Sound FX More (Total: 15)
 - [X] Specific Audio Track For Gameplay Screen
 
 ### Screen: Ending
 - [X] Final Art, Enter Animation For Victory/Defeat Messages
 - [X] Sounds Fx (Messages, Animations)
 - [X] Custom Fonts
+___
+## DELTA
+### General
+- [ ] Cinematica
+
+### Screen: Options
+- [ ] Specific Audio Track For Options Screen
+
+### Screen: Gameplay
+- [ ] Check: Final Models + textures + animations and sync with gameplay
+- [ ] FX sounds to aniamated elements for UI
+- [ ] 5 Particle Sytems More (Total: 15)
+- [ ] 10 Sound FX More (Total: 25)
+- [ ] Decrease music volume to pause menu
+
+### Screen: Ending
+- [ ] Specific Audio Track For Ending Screen
