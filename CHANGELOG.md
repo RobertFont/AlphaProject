@@ -103,6 +103,7 @@ ___
 ## DELTA
 ### General
 - [ ] Cinematica
+- [ ] 4 Specific Audio Track 
 
 ### Screen: Options
 - [ ] Specific Audio Track For Options Screen
@@ -112,7 +113,7 @@ ___
 - [ ] FX sounds to aniamated elements for UI
 - [ ] 5 Particle Sytems More (Total: 15)
 - [ ] 10 Sound FX More (Total: 25)
-- [ ] Decrease music volume to pause menu
+- [X] Decrease music volume to pause menu
 
 ### Screen: Ending
 - [ ] Specific Audio Track For Ending Screen
