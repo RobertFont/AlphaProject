@@ -1,21 +1,21 @@
 ## PRE-ALPHA
 ### Game Desing Document
-- [x] Create basic GDD.
-- [x] Update to advanced GDD.
+- [x] Create Basic GDD.
+- [x] Update To Advanced GDD.
 
 ### Concept Art
-- [x] 4 Building concepts
-- [x] 2 Prop concepts.
+- [x] 4 Building Concepts
+- [x] 2 Prop Concepts.
 
 ### Mockups
 - [x] 2 Gameplay.
-- [x] 1 Title screen.
-- [x] 1 Options screen.
+- [x] 1 Title Screen.
+- [x] 1 Options Screen.
 ___
 ## ALPHA
 - [X] Extended Game Design Document
 - [X] Level Design Map
-- [x] Concept Art buildings and environment
+- [x] Concept Art Buildings And Environment
 - [x] Buildings Thumbnails
 - [X] Props Thumbnails
 - [x] Buildings Size Chart
@@ -82,7 +82,7 @@ ___
 
 ### Screen: Gameplay
 - [X] Check: Basic Mecanics
-- [X] Check: Final Models + textures
+- [X] Check: Final Models + Textures
 - [X] 8 Final Props More (Total: 16 Props)
 - [X] Final Building With Final Texture + Basic Animations (3 Building)
 - Pause Menu
@@ -90,7 +90,7 @@ ___
   - [X] Custom Font
 - [X] GUI Final Art With Animations
 - [X] Custom Font
-- [X] Control Support for Controller
+- [X] Control Support For Controller
 - [X] 5 Particle Sytems More (Total: 10)
 - [X] 5 Sound FX More (Total: 15)
 - [X] Specific Audio Track For Gameplay Screen
@@ -109,12 +109,12 @@ ___
 - [ ] Specific Audio Track For Options Screen
 
 ### Screen: Gameplay
-- [ ] Check all: Final Models + textures + animations and sync with gameplay
+- [ ] Check all: Final Models + Textures + Animations And Sync With Gameplay
 - [ ] 8 Final Props More (Total: 20 Props)
-- [ ] FX sounds to aniamated elements for UI
+- [ ] FX Sounds To Animated Elements For UI
 - [ ] 5 Particle Sytems More (Total: 15)
 - [ ] 10 Sound FX More (Total: 25)
-- [X] Decrease music volume to pause menu
+- [X] Decrease Music Volume To Pause Menu
 
 ### Screen: Ending
 - [ ] Specific Audio Track For Ending Screen
