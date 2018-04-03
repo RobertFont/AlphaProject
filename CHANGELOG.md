@@ -110,6 +110,7 @@ ___
 
 ### Screen: Gameplay
 - [ ] Check all: Final Models + textures + animations and sync with gameplay
+- [ ] 8 Final Props More (Total: 20 Props)
 - [ ] FX sounds to aniamated elements for UI
 - [ ] 5 Particle Sytems More (Total: 15)
 - [ ] 10 Sound FX More (Total: 25)
