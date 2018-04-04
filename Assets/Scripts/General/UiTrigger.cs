@@ -18,6 +18,10 @@ public class UiTrigger : MonoBehaviour
     public GameObject hideSelectedObject;
     bool selectObject;
 
+    public Material defaultMaterial;
+    public Material selectedMaterial;
+
+
     int houseRestoreWood = 50;
     int houseRestoreGold = 50;
     int farmRestoreWood = 50;
@@ -25,7 +29,6 @@ public class UiTrigger : MonoBehaviour
     int goldMineRestoreWood = 75;
     int towerRestoreWood = 50;
     int towerRestoreGold = 50;
-
 
     public void SelectBuilding(GameObject building)
     {
@@ -49,6 +52,12 @@ public class UiTrigger : MonoBehaviour
             }
 
             this.transform.GetChild(0).gameObject.SetActive(true);
+            if(buildingSelected.GetComponent<Renderer>().sharedMaterials.Length >= 2)
+            {
+                buildingSelected.GetComponent<Renderer>().sharedMaterials[1] = selectedMaterial;
+                Debug.Log("Material");
+            }
+
             SelectedParticles.gameObject.SetActive(true);
             SelectedParticles.gameObject.transform.position = buildingSelected.transform.position;
         }
@@ -186,6 +195,9 @@ public class UiTrigger : MonoBehaviour
 
     public void DeselectBuilding()
     {
+        if(buildingSelected != null)
+           buildingSelected.GetComponent<Renderer>().sharedMaterials[1] = defaultMaterial;
+
         buildingSelected = null;
         events.SetSelectedObject(hideSelectedObject);
     }

@@ -477,6 +477,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 6f3895a69b13ece4d9418ebe33c17575, type: 2}
+  - {fileID: 2100000, guid: 108e136289bb7794a8ca08481d6a3db1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -644,6 +645,7 @@ MonoBehaviour:
   target: {fileID: 0}
   resource: {fileID: 0}
   info: {fileID: 0}
+  input: {fileID: 0}
   range: 15
   fireRate: 1
   projectilePrefab: {fileID: 1727446686266400, guid: 39573579b314da545983f47532370252,
