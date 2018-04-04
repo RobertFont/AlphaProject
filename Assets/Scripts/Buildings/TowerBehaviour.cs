@@ -87,7 +87,7 @@ public class TowerBehaviour : MonoBehaviour
 
     public void OpenInfoBuilding()
     {
-        if (info != null) info.buildingSelected = this.gameObject;
+        if (info != null) info.SelectBuilding(this.gameObject);
     }
 
     public void DestroyBuilding()

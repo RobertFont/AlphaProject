@@ -24,7 +24,7 @@ public class BridgeBehaviour : MonoBehaviour {
     public void OpenInfoBuilding()
     {
         if(info == null) info = GameObject.Find("InformationButton").GetComponent<UiTrigger>();
-        info.buildingSelected = this.gameObject;
+        if(info != null) info.SelectBuilding(this.gameObject);
     }
 
     public void  RepareBridge()

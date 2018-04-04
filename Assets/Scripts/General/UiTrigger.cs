@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
- using System.Linq;
+
 public class UiTrigger : MonoBehaviour
 {
     public RaycastMouseController rayCast;
@@ -32,7 +33,10 @@ public class UiTrigger : MonoBehaviour
 
     public void SelectBuilding(GameObject building)
     {
-       buildingSelected = building;
+        if (buildingSelected != null)
+            buildingSelected.GetComponent<Renderer>().materials[1].SetFloat("_OutlineWidth", 1.0f);
+        Debug.Log("ChangeBuilding");
+        buildingSelected = building;
     }
 
     public void MyUpdate()
@@ -52,10 +56,10 @@ public class UiTrigger : MonoBehaviour
             }
 
             this.transform.GetChild(0).gameObject.SetActive(true);
-            if(buildingSelected.GetComponent<Renderer>().sharedMaterials.Length >= 2)
+            if(buildingSelected.GetComponent<Renderer>().materials.Length >= 2)
             {
-                buildingSelected.GetComponent<Renderer>().sharedMaterials[1] = selectedMaterial;
-                Debug.Log("Material");
+                buildingSelected.GetComponent<Renderer>().materials[1].SetFloat("_OutlineWidth", 1.03f);
+                Debug.Log("MaterialAply");
             }
 
             SelectedParticles.gameObject.SetActive(true);
@@ -196,7 +200,10 @@ public class UiTrigger : MonoBehaviour
     public void DeselectBuilding()
     {
         if(buildingSelected != null)
-           buildingSelected.GetComponent<Renderer>().sharedMaterials[1] = defaultMaterial;
+        {
+            buildingSelected.GetComponent<Renderer>().materials[1].SetFloat("_OutlineWidth", 1.0f);
+            Debug.Log("MaterialRemove");
+        }
 
         buildingSelected = null;
         events.SetSelectedObject(hideSelectedObject);

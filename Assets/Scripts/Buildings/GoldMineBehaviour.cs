@@ -119,7 +119,7 @@ public class GoldMineBehaviour : MonoBehaviour
     public void OpenInfoBuilding()
     {
         if(started) MyStart();
-        if (info != null)info.buildingSelected = this.gameObject;
+        if(info != null) info.SelectBuilding(this.gameObject);
     }
 
     public void SetGoldOre(GameObject gameObject)

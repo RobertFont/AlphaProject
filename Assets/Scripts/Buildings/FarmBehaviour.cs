@@ -155,7 +155,7 @@ public class FarmBehaviour : MonoBehaviour
     public void OpenInfoBuilding()
     {
         if(started) MyStart();
-        info.buildingSelected = this.gameObject;
+        if(info != null) info.SelectBuilding(this.gameObject);
     }
 
 }
