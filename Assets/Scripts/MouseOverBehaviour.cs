@@ -10,12 +10,14 @@ public class MouseOverBehaviour : MonoBehaviour {
     public void OnMouseEnter()
     {
         Debug.Log("Mouse enter");
-        info.SetActive(true);
+        if (info != null)
+         info.SetActive(true);
     }
 
     public void OnMouseExit()
     {
         Debug.Log("Mouse exit");
-        info.SetActive(false);
+        if(info != null)
+            info.SetActive(false);
     }
 }

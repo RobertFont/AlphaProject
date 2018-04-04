@@ -25,7 +25,7 @@ public class GoldMineBehaviour : MonoBehaviour
     public void MyStart()
     {
         state = BuildingState.open;
-        info = GameObject.Find("InformationButton").GetComponent<UiTrigger>();
+        if (info != null) info = GameObject.Find("InformationButton").GetComponent<UiTrigger>();
 		resource = GameObject.FindGameObjectWithTag("Player").GetComponent<ResourceManager>();
 		soundFX = GameObject.Find("LevelManager").GetComponent<PlaySound>();
         goldOre.SetActive(false);

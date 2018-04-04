@@ -121,7 +121,6 @@ public class ResourceManager : MonoBehaviour
         if (happiness < 0)
         {
             happiness = 0;
-            
         }
         if (food < 0) food = 0;
         if (gold < 0) gold = 0;
@@ -134,31 +133,37 @@ public class ResourceManager : MonoBehaviour
     public void AddWood(int value)
     {
         wood += value;
+        woodUi.gameObject.GetComponent<ResourcesEasing>().StartEasing("add");
     }
 
     public void RemoveWood(int value)
     {
         wood -= value;
+        woodUi.gameObject.GetComponent<ResourcesEasing>().StartEasing("remove");
     }
 
     public void AddFood(int value)
     {
         food += value;
+        foodUi.gameObject.GetComponent<ResourcesEasing>().StartEasing("add");
     }
 
     public void RemoveFood(int value)
     {
         food -= value;
+        foodUi.gameObject.GetComponent<ResourcesEasing>().StartEasing("remove");
     }
 
     public void AddGold(int value)
     {
         gold += value;
+        goldUi.gameObject.GetComponent<ResourcesEasing>().StartEasing("add");
     }
 
     public void RemoveGold(int value)
     {
         gold -= value;
+        goldUi.gameObject.GetComponent<ResourcesEasing>().StartEasing("remove");
     }
 
     public void AddMaxPop(int value)
@@ -169,6 +174,7 @@ public class ResourceManager : MonoBehaviour
     public void AddCurrentPop(int value)
     {
         currentPop += value;
+        populationUi.gameObject.GetComponent<ResourcesEasing>().StartEasing("add");
     }
 
     public void RemoveMaxPop(int value)
@@ -179,6 +185,7 @@ public class ResourceManager : MonoBehaviour
     public void RemoveCurrentPop(int value)
     {
         currentPop -= value;
+        populationUi.gameObject.GetComponent<ResourcesEasing>().StartEasing("remove");
     }
     public void AddNonIdlePop(int value)
     {
@@ -291,20 +298,18 @@ public class ResourceManager : MonoBehaviour
         {
             if (mealTime > 12/Time.timeScale)
             {
-                
                 if (food >= necessaryFood)
                 {
-                    food -= necessaryFood;
+                    RemoveFood(food -= necessaryFood);
                     happiness += 1;
                     Debug.Log("Consumed Food; " + necessaryFood);
                 }
                 else
                 {
-                    food -= necessaryFood;
+                    RemoveFood(food -= necessaryFood);
                     happiness -= 1;
                     Debug.Log("insufficient food");
                 }
-
                 mealTime = 0;
             }
             else mealTime += Time.deltaTime;

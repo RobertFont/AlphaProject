@@ -22,7 +22,6 @@ public class UiTrigger : MonoBehaviour
     public Material defaultMaterial;
     public Material selectedMaterial;
 
-
     int houseRestoreWood = 50;
     int houseRestoreGold = 50;
     int farmRestoreWood = 50;
@@ -44,7 +43,7 @@ public class UiTrigger : MonoBehaviour
         if (buildingSelected == null)
         {
             this.transform.GetChild(0).gameObject.SetActive(false);
-            SelectedParticles.gameObject.SetActive(false);
+            //SelectedParticles.gameObject.SetActive(false);
             selectObject = false;
         }
         else
@@ -62,8 +61,8 @@ public class UiTrigger : MonoBehaviour
                 Debug.Log("MaterialAply");
             }
 
-            SelectedParticles.gameObject.SetActive(true);
-            SelectedParticles.gameObject.transform.position = buildingSelected.transform.position;
+            //SelectedParticles.gameObject.SetActive(true);
+            //SelectedParticles.gameObject.transform.position = buildingSelected.transform.position;
         }
     }
 
