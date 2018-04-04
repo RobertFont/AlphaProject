@@ -39,9 +39,10 @@ GameObject:
   - component: {fileID: 4362363108228914}
   - component: {fileID: 33929211039214868}
   - component: {fileID: 23295969064544204}
-  m_Layer: 0
+  - component: {fileID: 65430381260194516}
+  m_Layer: 8
   m_Name: ChurchV2
-  m_TagString: Untagged
+  m_TagString: Church
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -65,7 +66,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1737847530090540}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -156,6 +157,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1737847530090540}
   m_Mesh: {fileID: 4300002, guid: 2fa57803c4cfa9b408d7a47f77b16a69, type: 3}
+--- !u!65 &65430381260194516
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1737847530090540}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114856111713928094
 MonoBehaviour:
   m_ObjectHideFlags: 1

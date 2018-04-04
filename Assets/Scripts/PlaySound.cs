@@ -43,6 +43,6 @@ public class PlaySound : MonoBehaviour
 
     public void StopFX()
     {
-        audioSourceFX.Stop();
+        if (audioSourceFX != null) audioSourceFX.Stop();
     }
 }

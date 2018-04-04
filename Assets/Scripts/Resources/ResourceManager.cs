@@ -23,6 +23,7 @@ public class ResourceManager : MonoBehaviour
     public int maxFood = 500;
     public int maxGold = 500;
     public int happiness = 100;
+    public int maxHappiness = 100;
     public int currentPop = 0;
     public int maxPop = 0;
     public int nonIdlePop = 0;
@@ -35,6 +36,8 @@ public class ResourceManager : MonoBehaviour
     public int warehouse = 0;
     public int castle = 0;
     public int tower = 0;
+    public int church = 0;
+    public int barrakcs = 0;
     [Header("UI Resources")]
     public Text woodUi;
     public Text foodUi;
@@ -103,6 +106,8 @@ public class ResourceManager : MonoBehaviour
         maxGold = 500 + (200 * warehouse);
         maxWood = 500 + (200 * warehouse);
 
+        if (church > 0) maxHappiness = 150;
+
         if (food > maxFood) food = maxFood;
         if (gold > maxGold) gold = maxGold;
         if (wood > maxWood) wood = maxWood;
@@ -112,7 +117,7 @@ public class ResourceManager : MonoBehaviour
         foodUi.text = food.ToString();
         happinessUi.text = happiness + "%";
 
-        if (happiness > 100) happiness = 100;
+        if (happiness > maxHappiness) happiness = maxHappiness;
         if (happiness < 0)
         {
             happiness = 0;
@@ -267,6 +272,14 @@ public class ResourceManager : MonoBehaviour
     public void AddTower(int value)
     {
         tower += value;
+    }
+    public void AddChurch()
+    {
+        church += 1;
+    }
+    public void AddChurch(int value)
+    {
+        church += value;
     }
     #endregion
 

@@ -417,12 +417,18 @@ ModelImporter:
     4300010: pCylinder166
     4300012: pCylinder196
     4300014: FireStation
+    4300016: pCylinder210
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: UltimateTexture01
     second: {fileID: 2100000, guid: f2808966685c7a647a0d38b47dfd7ed6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: UltimateTexture02
+    second: {fileID: 2100000, guid: 6f3895a69b13ece4d9418ebe33c17575, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
