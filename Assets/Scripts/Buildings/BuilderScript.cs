@@ -534,7 +534,7 @@ public class BuilderScript : MonoBehaviour {
     {
         rotation += 90;
         if(rotation >= 360) rotation = 0;
-        build.transform.localRotation = Quaternion.Euler(0,rotation,0);
+        if(build != null) build.transform.localRotation = Quaternion.Euler(0,rotation,0);
     }
 
     public void GoldMineHit(bool found, GameObject Objectfound)

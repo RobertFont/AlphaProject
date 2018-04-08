@@ -11,11 +11,11 @@ public class UpdatesList
 
 public class UpdateManager : MonoBehaviour
 {
-    public InputManager input;
     public CameraBehaviour myCamera;
     public ResourceManager resource;
     public RaycastMouseController ray;
     public UiTrigger uIT;
+    public TutorialBehaviour tutorial;
 
     public BuilderScript builder;
     public EventBehaviour events;
@@ -47,7 +47,11 @@ public class UpdateManager : MonoBehaviour
         uIT.MyUpdate();
 
         builder.MyUpdate();
-        events.MyUpdate();
+
+        if (!tutorial.Active)
+        {
+            events.MyUpdate();
+        }
 
         water.MyUpdate();
         Debug.Log("nonIdlePop:" + resource.nonIdlePop);

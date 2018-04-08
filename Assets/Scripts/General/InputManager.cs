@@ -13,6 +13,7 @@ public class InputManager : MonoBehaviour {
     public Camera mainCamera;
     public BuilderScript builder;
     public UiTrigger uiTrigger;
+    public TutorialBehaviour tutorial;
     public UiConstruction uiConstruction;
     public GameObject pauseSystem;
     public GameObject construcionUI;
@@ -53,20 +54,54 @@ public class InputManager : MonoBehaviour {
             if (!builder.canCreateBuild) uiConstruction.StopConstruction();
             uiTrigger.DeselectBuilding();
         }
-        #region Axis
-        axis.x = Input.GetAxis("Horizontal");
-        axis.y = Input.GetAxis("Vertical");
+        if (!tutorial.Active)
+        { 
+            #region Axis
 
-        inputMouse.x = Input.GetAxis("Mouse X") * moveSpeed;
-        inputMouse.y = Input.GetAxis("Mouse Y") * moveSpeed;
+        
+            axis.x = Input.GetAxis("Horizontal");
+            axis.y = Input.GetAxis("Vertical");
 
-        //inputMouseJostick.x = Input.GetAxis("Right Joystick X");
-        //inputMouseJostick.y = Input.GetAxis("Right Joystick Y");
+            inputMouse.x = Input.GetAxis("Mouse X") * moveSpeed;
+            inputMouse.y = Input.GetAxis("Mouse Y") * moveSpeed;
 
-        realMousePosition = inputMouse;
-        //realMousePosition = inputMouseJostick;
+            //inputMouseJostick.x = Input.GetAxis("Right Joystick X");
+            //inputMouseJostick.y = Input.GetAxis("Right Joystick Y");
 
-        #endregion
+            realMousePosition = inputMouse;
+            //realMousePosition = inputMouseJostick;
+
+            #endregion
+            #region Speed
+            if (Input.GetButtonDown("Speed1")) Time.timeScale = 1.0f;
+            if (Input.GetButtonDown("Speed2")) Time.timeScale = 1.5f;
+            if (Input.GetButtonDown("Speed3")) Time.timeScale = 2.0f;
+            if (Input.GetButtonDown("ChangeSpeedController"))
+            {
+                speedController = !speedController;
+                if (!speedController) Time.timeScale = 1.0f;
+                if (speedController) Time.timeScale = 2.0f;
+                Debug.Log(Time.timeScale);
+            }
+            #endregion
+            #region Rotate
+            if (Input.GetAxis("Rotate") > 0.01f || Input.GetAxis("Rotate") < -0.01f) isRotating = Input.GetAxis("Rotate") * 2;
+            else if (Input.GetAxis("RotateController") > 0.01f || Input.GetAxis("RotateController") < -0.01f)
+            {
+                Debug.Log(Input.GetAxis("RotateController"));
+
+                isRotating = Input.GetAxis("RotateController") * 2;
+            }
+            else isRotating = 0;
+
+
+            if (isRotating >= 2) isRotating = 2;
+            else if (isRotating <= -2) isRotating = -2;
+
+            rotate = isRotating;
+
+            #endregion
+        }
 
         if (builder.canCreateBuild && Input.GetKeyDown(KeyCode.Escape))
         {
@@ -74,36 +109,7 @@ public class InputManager : MonoBehaviour {
         }
 
         if(Input.GetButtonDown("Fire2") || Input.GetButtonDown("RotateBuilding")) builder.AddRotation();
-        #region Speed
-        if (Input.GetButtonDown("Speed1") ) Time.timeScale = 1.0f;
-        if (Input.GetButtonDown("Speed2")) Time.timeScale = 1.5f;
-        if (Input.GetButtonDown("Speed3") ) Time.timeScale = 2.0f;
-        if (Input.GetButtonDown("ChangeSpeedController"))
-        {
-            speedController = !speedController;
-            if(!speedController) Time.timeScale = 1.0f;
-            if(speedController) Time.timeScale = 2.0f;
-            Debug.Log(Time.timeScale);
-        }
-        #endregion
-
-        #region Rotate
-        if (Input.GetAxis("Rotate") > 0.01f || Input.GetAxis("Rotate") < -0.01f) isRotating = Input.GetAxis("Rotate") * 2;
-        else if (Input.GetAxis("RotateController") > 0.01f || Input.GetAxis("RotateController") < -0.01f)
-        {
-            Debug.Log(Input.GetAxis("RotateController"));
-
-            isRotating = Input.GetAxis("RotateController") * 2;
-        }
-        else isRotating = 0;
-
-
-        if (isRotating >= 2) isRotating = 2;
-        else if (isRotating <= -2) isRotating = -2;
-
-        rotate = isRotating;
-
-        #endregion
+        
         #region Camera Zoom
         if (Input.GetAxis("Mouse ScrollWheel") != 0)
         {

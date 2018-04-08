@@ -15,6 +15,7 @@ public class Buildings
 public class ResourceManager : MonoBehaviour
 {
     LevelLogic level;
+    public TutorialBehaviour tutorial;
     [Header("Resources")]
     public int wood = 500;
     public int food = 500;
@@ -79,7 +80,6 @@ public class ResourceManager : MonoBehaviour
             ToggleEnding();
         }
         //AddCurrentPopFromTime();
-        EatingFood();
         if(!gameEnded)
         {
             if(castle >= 1)
@@ -108,9 +108,13 @@ public class ResourceManager : MonoBehaviour
 
         if (church > 0) maxHappiness = 150;
 
-        if (food > maxFood) food = maxFood;
-        if (gold > maxGold) gold = maxGold;
-        if (wood > maxWood) wood = maxWood;
+        if (!tutorial.Active)
+        {
+            EatingFood();
+            if (food > maxFood) food = maxFood;
+            if (gold > maxGold) gold = maxGold;
+            if (wood > maxWood) wood = maxWood;
+        }
         populationUi.text = currentPop + "/" + maxPop;
         woodUi.text = wood.ToString();
         goldUi.text = gold.ToString();
