@@ -10,12 +10,14 @@ public class TutorialBehaviour : MonoBehaviour
     public Transform arrow;
     public Transform aura;
     public bool Active;
+    public bool closedContructionButton = true;
     public int actualPos;
     public GameObject houseLock;
     public GameObject mineLock;
     public GameObject lumberLock;
     public GameObject farmLock;
     public GameObject otherLock;
+    public GameObject contructionButton;
 
     public List<Vector3> auraPositions = new List<Vector3>();
 
@@ -39,10 +41,23 @@ public class TutorialBehaviour : MonoBehaviour
     {
         if (Active)
         {
-            switch (state)
+            if (!contructionButton.activeSelf)
+            {
+                Debug.Log("XXXX");
+                if(closedContructionButton)
+                {
+                    arrow.localPosition = new Vector3(1.6f, -240.0f, 0.0f);
+                    arrowEasings.ResetEasing();
+                    closedContructionButton = false;
+                }
+                return;
+            }
+            Debug.Log("Start");
+            switch(state)
             {
                 case TutorialStates.Townhall:
-                    if (resources.townHall >= 1)
+                    Debug.Log("TH");
+                    if(resources.townHall >= 1)
                     {
                         arrow.localPosition = new Vector3(houseLock.transform.localPosition.x, houseLock.transform.localPosition.y + 100, houseLock.transform.localPosition.z);
                         arrowEasings.ResetEasing();
@@ -53,7 +68,7 @@ public class TutorialBehaviour : MonoBehaviour
                     }
                     break;
                 case TutorialStates.House:
-                    if (resources.house >= 3)
+                    if(resources.house >= 3)
                     {
                         arrow.localPosition = new Vector3(farmLock.transform.localPosition.x, farmLock.transform.localPosition.y + 100, farmLock.transform.localPosition.z);
                         arrowEasings.ResetEasing();
@@ -63,11 +78,11 @@ public class TutorialBehaviour : MonoBehaviour
                         building.canCreateBuild = false;
                         state = TutorialStates.Farm;
                     }
-                    if (resources.house == 1 && aura.transform.localPosition == auraPositions[1]) actualPos++;
-                    if (resources.house == 2 && aura.transform.localPosition == auraPositions[2]) actualPos++;
-                            break;
+                    if(resources.house == 1 && aura.transform.localPosition == auraPositions[1]) actualPos++;
+                    if(resources.house == 2 && aura.transform.localPosition == auraPositions[2]) actualPos++;
+                    break;
                 case TutorialStates.Mine:
-                    if (resources.goldMine >= 1)
+                    if(resources.goldMine >= 1)
                     {
                         mineLock.SetActive(true);
                         building.canCreateBuild = false;
@@ -75,7 +90,7 @@ public class TutorialBehaviour : MonoBehaviour
                     }
                     break;
                 case TutorialStates.Lumber:
-                    if (resources.lumberMill >= 1)
+                    if(resources.lumberMill >= 1)
                     {
                         arrow.localPosition = new Vector3(mineLock.transform.localPosition.x, mineLock.transform.localPosition.y + 100, mineLock.transform.localPosition.z);
                         arrowEasings.ResetEasing();
@@ -87,7 +102,7 @@ public class TutorialBehaviour : MonoBehaviour
                     }
                     break;
                 case TutorialStates.Farm:
-                    if (resources.farm >= 2)
+                    if(resources.farm >= 2)
                     {
                         arrow.localPosition = new Vector3(lumberLock.transform.localPosition.x, lumberLock.transform.localPosition.y + 100, lumberLock.transform.localPosition.z);
                         arrowEasings.ResetEasing();
@@ -97,7 +112,7 @@ public class TutorialBehaviour : MonoBehaviour
                         building.canCreateBuild = false;
                         state = TutorialStates.Lumber;
                     }
-                    if (resources.farm == 1 && aura.transform.localPosition == auraPositions[4]) actualPos++;
+                    if(resources.farm == 1 && aura.transform.localPosition == auraPositions[4]) actualPos++;
                     break;
                 case TutorialStates.Final:
                     houseLock.SetActive(false);
@@ -110,10 +125,17 @@ public class TutorialBehaviour : MonoBehaviour
                     Active = false;
                     break;
                 default:
+                    Debug.Log("default");
                     break;
             }
         }
-
+        Debug.Log("End");
         aura.transform.localPosition = auraPositions[actualPos];
+    }
+
+    public void OpenConstructionButton()
+    {
+        arrow.localPosition = new Vector3(-396.0f, -180.0f, 0);
+        arrowEasings.ResetEasing();
     }
 }

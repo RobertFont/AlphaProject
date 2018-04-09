@@ -394,7 +394,7 @@ public class BuilderScript : MonoBehaviour {
         else if (build.tag == "Warehouse") build.GetComponent<Renderer>().material = warehouseMaterial;
         else if (build.tag == "Castle") build.GetComponent<Renderer>().material = castleMaterial;
         else if (build.tag == "Tower") build.GetComponent<Renderer>().material = towerMaterial;
-        else if (build.tag == "Church") build.GetComponent<Renderer>().material = towerMaterial;
+        else if (build.tag == "Church") build.GetComponent<Renderer>().material = churchMaterial;
     }
 
     private void ChangeMaterialOriginal()
@@ -407,7 +407,7 @@ public class BuilderScript : MonoBehaviour {
         else if (build.tag == "Warehouse") build.GetComponent<Renderer>().material = warehouse.GetComponent<Renderer>().material;
         else if (build.tag == "Castle") build.GetComponent<Renderer>().material = castle.GetComponent<Renderer>().material;
         else if (build.tag == "Tower") build.GetComponent<Renderer>().material = tower.GetComponent<Renderer>().material;
-        else if (build.tag == "Church") build.GetComponent<Renderer>().material = tower.GetComponent<Renderer>().material;
+        else if (build.tag == "Church") build.GetComponent<Renderer>().material = church.GetComponent<Renderer>().material;
     }
 
     private void ChangeBuildName()
@@ -432,7 +432,7 @@ public class BuilderScript : MonoBehaviour {
         else if (build.tag == "Warehouse") buildingSelected = warehousePrefab;
         else if (build.tag == "LumberMill") buildingSelected = lumberMillPrefab;
         else if (build.tag == "Tower") buildingSelected = towerPrefab;
-        else if (build.tag == "Church") buildingSelected = towerPrefab;
+        else if (build.tag == "Church") buildingSelected = churchPrefab;
 
     }
 

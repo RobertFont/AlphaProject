@@ -101,12 +101,13 @@ public class InputManager : MonoBehaviour {
             rotate = isRotating;
 
             #endregion
+            if(builder.canCreateBuild && Input.GetKeyDown(KeyCode.Escape))
+            {
+                builder.CantBuild(false);
+            }
         }
 
-        if (builder.canCreateBuild && Input.GetKeyDown(KeyCode.Escape))
-        {
-            builder.CantBuild(false);
-        }
+   
 
         if(Input.GetButtonDown("Fire2") || Input.GetButtonDown("RotateBuilding")) builder.AddRotation();
         
