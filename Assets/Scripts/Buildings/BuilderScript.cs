@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BuilderScript : MonoBehaviour {
+public class BuilderScript : MonoBehaviour
+{
 
     public GameObject build;
     public EventBehaviour someEvent;
@@ -47,18 +48,18 @@ public class BuilderScript : MonoBehaviour {
     public GameObject churchPrefab;
 
     [Header("Costs")]
-    public int lumbMillCostWood = 100;
+    public static int lumbMillCostWood = 100;
     public int lumbMillCostPop = 4;
     public int farmCostWood = 100;
     public int farmCostPop = 2;
     public int mineCostWood = 100;
     public int mineCostPop = 4;
-    public int houseCostWood = 100;
-    public int houseCostGold = 100;
-    public int townHallCostWood = 150;
-    public int townHallCostGold = 150;
-    public int warehouseCostWood = 300;
-    public int warehouseCostGold = 200;
+    public static int houseCostWood = 100;
+    public static int houseCostGold = 100;
+    public static int townHallCostWood = 150;
+    public static int townHallCostGold = 150;
+    public static int warehouseCostWood = 300;
+    public static int warehouseCostGold = 200;
     public int warehouseCostPop = 8;
     public int castleCostWood = 750;
     public int castleCostGold = 750;

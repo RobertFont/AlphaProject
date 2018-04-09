@@ -55,4 +55,18 @@ kingsHall	Salón de Reyes	Kings Hall	Saló dels reis
 church	Iglesia	Church	Església
 fireStation	Estación de bomberos	Fire Station	Estació de bombers
 huntingCamp	Campamento de caza	Hunting Camp	Campament de caça
-houseInfo	Casa: sirve para aumentar la población. Madera: 100 Oro: 100	House: allows you yo have more people Wood: 100 Gold: 100	Casa: serveix per aumentar la població. Fusta: 100 Or: 100
+gold	Oro: 	Gold: 	Or: 
+foot	Comida: 	Foot: 	Menjar: 
+wood	Madera: 	Wood: 	Fusta: 
+population	Población: 	Population: 	Població: 
+houseInfo	Casa: sirve para aumentar la población.	House: allows you yo have more people.	Casa: serveix per aumentar la població.
+townHallInfo	Ayuntamiento: permite construir más edificios.	Town Hall: allows you yo build other buildings	Ayuntament: permet construir més edificis.
+goldenMineInfo	Mina: produce oro..	GoldMine: produces gold.	Mina: produeix or.
+farmInfo	Granja: produce alimento.	Farm: produces food.	Granja: produeix aliment.
+lumberMillInfo	Aserradero: produce madera.	LumberMill: produces wood.	Aserrader: produeix fusta.
+barracksInfo	Barracones: Aumentan el daño de tus torres.	Barracks: Upgrades the towers.	Barracons: Millora les torres..
+castleInfo	Castillo: GANAS FIN :D.	Castle: YOU WIN :D.	Castell: GUANYES FIN :D.
+kingsHallInfo	Granja: produce alimento.	Farm: prduces food.	Granja: produeix aliment.
+churchInfo	Iglesia: Aumenta la felicidad.	Church: Max happines upgraded.	Esglesia: Aumenta la felicitat maxima.
+fireStationInfo	Estación de bomberos: Apagan fuegos.	FireStation: (ingles)Apaga fuegos.	Estació de bombers: apaguen focs.
+warehouseInfo	Almacen: aumenta la capacidad maxima de los recursos	Warehouse: allows to storage more resources	Magatzem: permet emagatzemar més recursos

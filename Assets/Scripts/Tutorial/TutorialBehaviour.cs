@@ -39,11 +39,11 @@ public class TutorialBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update ()
     {
-        if (Active)
+        if(!Active) return;
+        else if(Active)
         {
-            if (!contructionButton.activeSelf)
+            if(!contructionButton.activeSelf)
             {
-                Debug.Log("XXXX");
                 if(closedContructionButton)
                 {
                     arrow.localPosition = new Vector3(1.6f, -240.0f, 0.0f);
@@ -52,11 +52,9 @@ public class TutorialBehaviour : MonoBehaviour
                 }
                 return;
             }
-            Debug.Log("Start");
             switch(state)
             {
                 case TutorialStates.Townhall:
-                    Debug.Log("TH");
                     if(resources.townHall >= 1)
                     {
                         arrow.localPosition = new Vector3(houseLock.transform.localPosition.x, houseLock.transform.localPosition.y + 100, houseLock.transform.localPosition.z);
@@ -123,13 +121,12 @@ public class TutorialBehaviour : MonoBehaviour
                     arrow.gameObject.SetActive(false);
                     aura.gameObject.SetActive(false);
                     Active = false;
+                    gameObject.SetActive(false);
                     break;
                 default:
-                    Debug.Log("default");
                     break;
             }
         }
-        Debug.Log("End");
         aura.transform.localPosition = auraPositions[actualPos];
     }
 
@@ -137,5 +134,18 @@ public class TutorialBehaviour : MonoBehaviour
     {
         arrow.localPosition = new Vector3(-396.0f, -180.0f, 0);
         arrowEasings.ResetEasing();
+    }
+
+    public void skipTutorial()
+    {
+        houseLock.SetActive(false);
+        farmLock.SetActive(false);
+        lumberLock.SetActive(false);
+        mineLock.SetActive(false);
+        otherLock.SetActive(false);
+        arrow.gameObject.SetActive(false);
+        aura.gameObject.SetActive(false);
+        Active = false;
+        gameObject.SetActive(false);
     }
 }
