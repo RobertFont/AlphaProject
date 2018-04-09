@@ -31,6 +31,8 @@ public class BuilderScript : MonoBehaviour {
     public Material castleMaterial;
     public GameObject tower;
     public Material towerMaterial;
+    public GameObject church;
+    public Material churchMaterial;
 
     [Header("BuildingsPrefabs")]
     public GameObject buildingSelected;
@@ -42,6 +44,7 @@ public class BuilderScript : MonoBehaviour {
     public GameObject warehousePrefab;
     public GameObject castlePrefab;
     public GameObject towerPrefab;
+    public GameObject churchPrefab;
 
     [Header("Costs")]
     public int lumbMillCostWood = 100;
@@ -62,6 +65,9 @@ public class BuilderScript : MonoBehaviour {
     public int towerCostWood = 750;
     public int towerCostGold = 750;
     public int towerCostPop = 2;
+    public int churchCostWood = 150;
+    public int churchCostGold = 300;
+    public int churchCostPop = 4;
 
     public Transform collisionChecker;
     public Vector3 colliderHalfSize;
@@ -181,7 +187,7 @@ public class BuilderScript : MonoBehaviour {
         canCreateBuild = true;
         build.SetActive(true);
     }
-
+    
     public void SelectBuildingHouse()
     {
         canCreateBuild = false;
@@ -273,6 +279,19 @@ public class BuilderScript : MonoBehaviour {
         build.SetActive(true);
     }
 
+    public void SelectBuildingChurch()
+    {
+        canCreateBuild = false;
+        DesactiveOriginalBuilding();
+        if(resource.townHall == 0 || resource.church > 0) return;
+        build = church;
+        if(!CompareResources()) return;
+        colliderHalfSize = build.GetComponent<BoxCollider>().size / 2;
+        collisionChecker = church.transform;
+        canCreateBuild = true;
+        build.SetActive(true);
+    }
+
     public void CreateBuild()
     {
         if (!CompareResources())
@@ -349,6 +368,7 @@ public class BuilderScript : MonoBehaviour {
         warehouse.SetActive(false);
         castle.SetActive(false);
         tower.SetActive(false);
+        church.SetActive(false);
     }
 
     private void OnDrawGizmos()
@@ -374,6 +394,7 @@ public class BuilderScript : MonoBehaviour {
         else if (build.tag == "Warehouse") build.GetComponent<Renderer>().material = warehouseMaterial;
         else if (build.tag == "Castle") build.GetComponent<Renderer>().material = castleMaterial;
         else if (build.tag == "Tower") build.GetComponent<Renderer>().material = towerMaterial;
+        else if (build.tag == "Church") build.GetComponent<Renderer>().material = towerMaterial;
     }
 
     private void ChangeMaterialOriginal()
@@ -386,6 +407,7 @@ public class BuilderScript : MonoBehaviour {
         else if (build.tag == "Warehouse") build.GetComponent<Renderer>().material = warehouse.GetComponent<Renderer>().material;
         else if (build.tag == "Castle") build.GetComponent<Renderer>().material = castle.GetComponent<Renderer>().material;
         else if (build.tag == "Tower") build.GetComponent<Renderer>().material = tower.GetComponent<Renderer>().material;
+        else if (build.tag == "Church") build.GetComponent<Renderer>().material = tower.GetComponent<Renderer>().material;
     }
 
     private void ChangeBuildName()
@@ -397,6 +419,7 @@ public class BuilderScript : MonoBehaviour {
         if (build.tag == "GoldMine") build.name = "GoldMine" + resource.goldMine;
         if (build.tag == "Warehouse") build.name = "WareHouse" + resource.warehouse;
         if (build.tag == "Tower") build.name = "Tower" + resource.tower;
+        if (build.tag == "Church") build.name = "Church";
     }
     
     private void SelectBuilding()
@@ -409,6 +432,7 @@ public class BuilderScript : MonoBehaviour {
         else if (build.tag == "Warehouse") buildingSelected = warehousePrefab;
         else if (build.tag == "LumberMill") buildingSelected = lumberMillPrefab;
         else if (build.tag == "Tower") buildingSelected = towerPrefab;
+        else if (build.tag == "Church") buildingSelected = towerPrefab;
 
     }
 
@@ -474,6 +498,14 @@ public class BuilderScript : MonoBehaviour {
             resource.RemoveCurrentPop(2);
             resource.AddNonIdlePop(2);
         }
+        else if(build.tag == "Church")
+        {
+            resource.RemoveWood(churchCostWood);
+            resource.RemoveGold(churchCostGold);
+            resource.AddChurch();
+            resource.RemoveCurrentPop(4);
+            resource.AddNonIdlePop(4);
+        }
     }
 
     private bool CompareResources()
@@ -520,6 +552,11 @@ public class BuilderScript : MonoBehaviour {
         else if (build.tag == "Tower")
         {
             if (resource.wood < towerCostWood || resource.gold < towerCostGold || resource.currentPop < towerCostPop) return false;
+            else return true;
+        }
+        else if(build.tag == "Church")
+        {
+            if(resource.wood < churchCostWood || resource.gold < churchCostGold || resource.currentPop < churchCostPop) return false;
             else return true;
         }
         else return false;
