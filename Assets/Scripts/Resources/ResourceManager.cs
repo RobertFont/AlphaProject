@@ -324,7 +324,7 @@ public class ResourceManager : MonoBehaviour
         wood = 5000;
         food = 5000;
         gold = 5000;
-        happiness = 100;
+		happiness = maxHappiness;
     }
 
     public void ToggleEnding()

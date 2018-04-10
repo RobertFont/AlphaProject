@@ -44,6 +44,7 @@ public class EventBehaviour : MonoBehaviour {
     public float eventTimerRain;
     public float eventTimerDust;
     public float eventTimerGoblins;
+	public float spawnTimerGoblins;
     public int eventChance;
     public int enemyChance;
     public int weatherChance;
@@ -65,6 +66,7 @@ public class EventBehaviour : MonoBehaviour {
         rainChance = 20;
         dustChance = 10;
         goblinsChance = 5;
+		spawnTimerGoblins = 10;
         soundFX = GameObject.Find("LevelManager").GetComponent<PlaySound>();
     }
 
@@ -129,7 +131,7 @@ public class EventBehaviour : MonoBehaviour {
             EndBugs();
 
         }
-        if(eventTimerGoblins > 30 / Time.timeScale) EndGoblins();
+		if(eventTimerGoblins > spawnTimerGoblins / Time.timeScale) EndGoblins();
         
         switch (state)
         {
@@ -287,6 +289,7 @@ public class EventBehaviour : MonoBehaviour {
         goblinSpawner.SetActive(false);
         goblinsStarted = false;
         icons.GoblinsIconEnd();
+		spawnTimerGoblins += 2;
         eventTimerGoblins = 0;
     }
 
