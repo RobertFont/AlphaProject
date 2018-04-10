@@ -48,27 +48,42 @@ public class BuilderScript : MonoBehaviour
     public GameObject churchPrefab;
 
     [Header("Costs")]
-    public static int lumbMillCostWood = 100;
-    public int lumbMillCostPop = 4;
-    public int farmCostWood = 100;
-    public int farmCostPop = 2;
-    public int mineCostWood = 100;
-    public int mineCostPop = 4;
-    public static int houseCostWood = 100;
-    public static int houseCostGold = 100;
     public static int townHallCostWood = 150;
     public static int townHallCostGold = 150;
+    public static int townHallCostPop = 0;
+    public static int houseCostWood = 100;
+    public static int houseCostGold = 100;
+    public static int houseCostPop = 0;
+    public static int mineCostGold = 0;
+    public static int mineCostWood = 100;
+    public static int mineCostPop = 4;
+    public static int lumbMillCostGold = 0;
+    public static int lumbMillCostWood = 100;
+    public static int lumbMillCostPop = 4;
+    public static int farmCostGold = 0;
+    public static int farmCostWood = 100;
+    public static int farmCostPop = 2;
+    public static int towerCostWood = 750;
+    public static int towerCostGold = 750;
+    public static int towerCostPop = 2;
     public static int warehouseCostWood = 300;
     public static int warehouseCostGold = 200;
-    public int warehouseCostPop = 8;
-    public int castleCostWood = 750;
-    public int castleCostGold = 750;
-    public int towerCostWood = 750;
-    public int towerCostGold = 750;
-    public int towerCostPop = 2;
-    public int churchCostWood = 150;
-    public int churchCostGold = 300;
-    public int churchCostPop = 4;
+    public static int warehouseCostPop = 8;
+    public static int barracksCostWood = 300;
+    public static int barracksCostGold = 200;
+    public static int barracksCostPop = 8;
+    public static int churchCostWood = 150;
+    public static int churchCostGold = 300;
+    public static int churchCostPop = 4;
+    public static int kingHallCostWood = 150;
+    public static int kingHallCostGold = 300;
+    public static int kingHallCostPop = 4;
+    public static int castleCostGold = 750;
+    public static int castleCostWood = 750;
+    public static int castleCostPop = 0;
+    public static int fireStationCostGold = 750;
+    public static int fireStationCostWood = 750;
+    public static int fireStationCostPop = 2;
 
     public Transform collisionChecker;
     public Vector3 colliderHalfSize;
@@ -130,7 +145,6 @@ public class BuilderScript : MonoBehaviour
         Collider[] hitCollider = Physics.OverlapBox(collisionChecker.position, colliderHalfSize, Quaternion.identity, layerBuild);
         if(hitCollider.Length != 0) buildingColliding = true;
         else buildingColliding = false;
-
 
         if (resource.townHall > 0)
         {
@@ -291,6 +305,16 @@ public class BuilderScript : MonoBehaviour
         collisionChecker = church.transform;
         canCreateBuild = true;
         build.SetActive(true);
+    }
+
+    public void SelectBuildingFireStation()
+    {
+
+    }
+
+    public void SelectBuildingBarracks()
+    {
+
     }
 
     public void CreateBuild()
