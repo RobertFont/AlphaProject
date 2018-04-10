@@ -4,7 +4,13 @@ using UnityEngine;
 
 public static class GetResourcesCost
 {
-	public static string GetResourceCost(string resource)
+    public static GameObject goldText;
+    public static GameObject foodText;
+    public static GameObject woodText;
+    public static GameObject populationText;
+    public static GameObject happinessText;
+
+    public static string GetResourceCost(string resource)
     {
         Debug.Log("ChangeInfo");
         if(resource == "townHallInfoGold")
@@ -76,4 +82,32 @@ public static class GetResourcesCost
         return "x";
     }
 	
+    public static string ShowResourcesChange(string resourceType, int value)
+    {
+        if(resourceType == "+Gold")
+        {
+            goldText.GetComponent<ShowResourcesInfo>().ShowResourceInfo(value, "+");
+        }
+        else if(resourceType == "-Gold")
+        {
+            goldText.GetComponent<ShowResourcesInfo>().ShowResourceInfo(value, "-");
+        }
+        if(resourceType == "+Foot")
+        {
+            foodText.GetComponent<ShowResourcesInfo>().ShowResourceInfo(value, "+");
+        }
+        else if(resourceType == "-Foot")
+        {
+            foodText.GetComponent<ShowResourcesInfo>().ShowResourceInfo(value, "-");
+        }
+        if(resourceType == "+Wood")
+        {
+            woodText.GetComponent<ShowResourcesInfo>().ShowResourceInfo(value, "+");
+        }
+        else if(resourceType == "-Wood")
+        {
+            woodText.GetComponent<ShowResourcesInfo>().ShowResourceInfo(value, "-");
+        }
+        return "x";
+    }
 }

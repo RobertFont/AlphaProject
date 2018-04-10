@@ -138,36 +138,43 @@ public class ResourceManager : MonoBehaviour
     {
         wood += value;
         woodUi.gameObject.GetComponent<ResourcesEasing>().StartEasing("add");
+        GetResourcesCost.ShowResourcesChange("+Wood", value);
     }
 
     public void RemoveWood(int value)
     {
         wood -= value;
         woodUi.gameObject.GetComponent<ResourcesEasing>().StartEasing("remove");
+        GetResourcesCost.ShowResourcesChange("-Wood", value);
     }
 
     public void AddFood(int value)
     {
         food += value;
         foodUi.gameObject.GetComponent<ResourcesEasing>().StartEasing("add");
+        GetResourcesCost.ShowResourcesChange("+Foot", value);
+
     }
 
     public void RemoveFood(int value)
     {
         food -= value;
         foodUi.gameObject.GetComponent<ResourcesEasing>().StartEasing("remove");
+        GetResourcesCost.ShowResourcesChange("-Foot", value);
     }
 
     public void AddGold(int value)
     {
         gold += value;
         goldUi.gameObject.GetComponent<ResourcesEasing>().StartEasing("add");
+        GetResourcesCost.ShowResourcesChange("+Gold", value);
     }
 
     public void RemoveGold(int value)
     {
         gold -= value;
         goldUi.gameObject.GetComponent<ResourcesEasing>().StartEasing("remove");
+        GetResourcesCost.ShowResourcesChange("-Gold", value);
     }
 
     public void AddMaxPop(int value)
