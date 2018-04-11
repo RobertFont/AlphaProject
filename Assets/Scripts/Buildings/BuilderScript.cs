@@ -308,7 +308,7 @@ public class BuilderScript : MonoBehaviour
     {
         canCreateBuild = false;
         DesactiveOriginalBuilding();
-        if(resource.townHall == 0 || resource.fireStation > 5) return;
+        if(resource.townHall == 0 || resource.fireStation > 4) return;
         build = fireStation;
         if(!CompareResources()) return;
         colliderHalfSize = build.GetComponent<BoxCollider>().size / 2;
@@ -548,6 +548,7 @@ public class BuilderScript : MonoBehaviour
             resource.AddFireStation();
             resource.RemoveCurrentPop(2);
             resource.AddNonIdlePop(2);
+            if(resource.fireStation > 4) DesactiveOriginalBuilding();
         }
         else if(build.tag == "Barracks")
         {

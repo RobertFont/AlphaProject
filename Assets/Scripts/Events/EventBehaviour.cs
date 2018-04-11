@@ -48,7 +48,7 @@ public class EventBehaviour : MonoBehaviour {
     public int eventChance;
     public int enemyChance;
     public int weatherChance;
-    public int fireChance;
+    public float fireChance;
     public int bugsChance;
     public int rainChance;
     public int dustChance;
@@ -75,6 +75,7 @@ public class EventBehaviour : MonoBehaviour {
     {
         UpdateHousesList();
         if (maxFarms > 5) bugsChance = 20;
+        if(resource.fireStation > 0) fireChance = 5 / resource.fireStation;
 
         if (Input.GetKeyDown(KeyCode.F)) StartEventFire();
         if (Input.GetKeyDown(KeyCode.G)) StartEventBugs();
