@@ -31,15 +31,15 @@ public class ResourceInfoBehaviour : MonoBehaviour
             Vector3 easingValue;
             float easingAlpha;
             
-             easingValue = new Vector3(Easing.ExpoEaseOut(currentTime, iniValue.x, deltaValue.x, timeDuration), 
-                                        Easing.ExpoEaseOut(currentTime, iniValue.y, deltaValue.y, timeDuration), 
-                                        Easing.ExpoEaseOut(currentTime, iniValue.z, deltaValue.z, timeDuration));
+             easingValue = new Vector3(Easing.QuartEaseIn(currentTime, iniValue.x, deltaValue.x, timeDuration), 
+                                        Easing.QuartEaseIn(currentTime, iniValue.y, deltaValue.y, timeDuration), 
+                                        Easing.QuartEaseIn(currentTime, iniValue.z, deltaValue.z, timeDuration));
 
             easingAlpha = Easing.ExpoEaseOut(currentTime, 1.0f, -1.0f, timeDuration);
             textColor.a = easingAlpha;
 
             this.gameObject.transform.localPosition = easingValue;
-            text.color = textColor;
+            //text.color = textColor;
             currentTime += Time.deltaTime;
 
             if(currentTime > timeDuration)

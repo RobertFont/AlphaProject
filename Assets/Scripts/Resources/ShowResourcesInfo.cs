@@ -5,8 +5,10 @@ using UnityEngine.UI;
 
 public class ShowResourcesInfo : MonoBehaviour
 {
+    public Transform infoPos;
     public string resource;
     public Font font;
+
 
 	void Awake ()
     {
@@ -32,13 +34,16 @@ public class ShowResourcesInfo : MonoBehaviour
         GameObject GOInfo = new GameObject("Info", typeof(Text), typeof(Outline), typeof(Shadow),typeof(ResourceInfoBehaviour));
         GOInfo.transform.SetParent(gameObject.transform);
 
+        GOInfo.transform.SetParent(gameObject.transform);
+
         Text textInfo = GOInfo.GetComponent<Text>();
         Outline outlineInfo = GOInfo.GetComponent<Outline>();
         Shadow shadowInfo = GOInfo.GetComponent<Shadow>();
 
-        GOInfo.transform.localPosition = new Vector3(transform.localPosition.x + 140.0f, transform.localPosition.y - 20.0f, transform.localPosition.z);
+        //GOInfo.transform.localPosition = new Vector3(transform.localPosition.x + 140.0f, transform.localPosition.y - 20.0f, transform.localPosition.z);
         GOInfo.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
-        GOInfo.transform.SetParent(gameObject.transform);
+        GOInfo.transform.localPosition = new Vector3(infoPos.localPosition.x, infoPos.localPosition.y + 100, infoPos.localPosition.z);
+        //GOInfo.transform.localPosition = new Vector3(infoPos.localPosition.x, infoPos.localPosition.y + 100, infoPos.localPosition.z);
 
         textInfo.text = _operator.ToString()+Mathf.Abs(value);
         textInfo.font = font;

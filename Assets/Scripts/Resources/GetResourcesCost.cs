@@ -43,7 +43,7 @@ public static class GetResourcesCost
             return BuilderScript.farmCostWood.ToString();
         else if(resource == "farmInfoPop")
             return BuilderScript.farmCostPop.ToString();
-        else if(resource == "toweInfoGold")
+        else if(resource == "towerInfoGold")
             return BuilderScript.towerCostGold.ToString();
         else if(resource == "towerInfoWood")
             return BuilderScript.towerCostWood.ToString();
