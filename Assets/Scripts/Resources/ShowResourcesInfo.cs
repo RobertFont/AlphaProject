@@ -34,17 +34,16 @@ public class ShowResourcesInfo : MonoBehaviour
         GameObject GOInfo = new GameObject("Info", typeof(Text), typeof(Outline), typeof(Shadow),typeof(ResourceInfoBehaviour));
         GOInfo.transform.SetParent(gameObject.transform);
 
-        GOInfo.transform.SetParent(gameObject.transform);
-
         Text textInfo = GOInfo.GetComponent<Text>();
         Outline outlineInfo = GOInfo.GetComponent<Outline>();
-        Shadow shadowInfo = GOInfo.GetComponent<Shadow>();
+        /*Shadow shadowInfo = GOInfo.GetComponent<Shadow>();*/
 
-        //GOInfo.transform.localPosition = new Vector3(transform.localPosition.x + 140.0f, transform.localPosition.y - 20.0f, transform.localPosition.z);
-        GOInfo.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
-        GOInfo.transform.localPosition = new Vector3(infoPos.localPosition.x, infoPos.localPosition.y + 100, infoPos.localPosition.z);
         //GOInfo.transform.localPosition = new Vector3(infoPos.localPosition.x, infoPos.localPosition.y + 100, infoPos.localPosition.z);
+        GOInfo.GetComponent<RectTransform>().anchoredPosition= new Vector2(64, -17);// infoPos.GetComponent<RectTransform>().localPosition;
+        GOInfo.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 
+
+        textInfo.alignment = TextAnchor.MiddleCenter;
         textInfo.text = _operator.ToString()+Mathf.Abs(value);
         textInfo.font = font;
         textInfo.color = Color.blue;
@@ -54,7 +53,7 @@ public class ShowResourcesInfo : MonoBehaviour
 
         outlineInfo.effectColor = Color.white;
         outlineInfo.effectDistance = new Vector2(0.5f, 0.5f);
-        /*shadowInfo.effectColor = Color.black;
+        /*shadowInfo.effectColor = Color.white;
         shadowInfo.effectDistance = new Vector2(0.5f, -4.0f);*/
     }
 }

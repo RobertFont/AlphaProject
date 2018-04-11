@@ -13,6 +13,8 @@ public class ResourceInfoBehaviour : MonoBehaviour
 
     float timeDuration = 2.0f;
     float currentTime = 0.0f;
+    float currenalphatTime = 0.0f;
+    float delayAlpha;
 
     void Start ()
     {
@@ -20,8 +22,7 @@ public class ResourceInfoBehaviour : MonoBehaviour
         finalValue = new Vector3(iniValue.x + 25.0f, iniValue.y + 15.0f, iniValue.z);
         deltaValue = finalValue - iniValue;
         text = GetComponent<Text>();
-        Debug.Log("easing start");
-
+        delayAlpha = timeDuration / 2;
     }
 
     void Update ()
@@ -29,22 +30,23 @@ public class ResourceInfoBehaviour : MonoBehaviour
         if(currentTime <= timeDuration)
         {
             Vector3 easingValue;
-            float easingAlpha;
-            
-             easingValue = new Vector3(Easing.QuartEaseIn(currentTime, iniValue.x, deltaValue.x, timeDuration), 
-                                        Easing.QuartEaseIn(currentTime, iniValue.y, deltaValue.y, timeDuration), 
-                                        Easing.QuartEaseIn(currentTime, iniValue.z, deltaValue.z, timeDuration));
+             easingValue = new Vector3(Easing.Linear(currentTime, iniValue.x, deltaValue.x, timeDuration), 
+                                        Easing.Linear(currentTime, iniValue.y, deltaValue.y, timeDuration), 0);
+            if(currentTime > delayAlpha)
+            {
+                float easingAlpha;
 
-            easingAlpha = Easing.ExpoEaseOut(currentTime, 1.0f, -1.0f, timeDuration);
-            textColor.a = easingAlpha;
+                easingAlpha = Easing.ExpoEaseOut(currenalphatTime, 1.0f, -1.0f, timeDuration - delayAlpha);
+                textColor.a = easingAlpha;
+                text.color = textColor;
+                currenalphatTime += Time.deltaTime;
+            }        
 
             this.gameObject.transform.localPosition = easingValue;
-            //text.color = textColor;
             currentTime += Time.deltaTime;
 
             if(currentTime > timeDuration)
             {
-                Debug.Log("easing end");
                 Destroy(this.gameObject);
             }
         }
