@@ -48,8 +48,8 @@ public class BuilderScript : MonoBehaviour
     public static int townHallCostWood = 150;
     public static int townHallCostGold = 150;
     public static int townHallCostPop = 0;
-    public static int houseCostWood = 100;
-    public static int houseCostGold = 100;
+    public static int houseCostWood = 50;
+    public static int houseCostGold = 50;
     public static int houseCostPop = 0;
     public static int mineCostGold = 0;
     public static int mineCostWood = 100;
@@ -60,8 +60,8 @@ public class BuilderScript : MonoBehaviour
     public static int farmCostGold = 0;
     public static int farmCostWood = 100;
     public static int farmCostPop = 2;
-    public static int towerCostWood = 750;
-    public static int towerCostGold = 750;
+    public static int towerCostWood = 100;
+    public static int towerCostGold = 150;
     public static int towerCostPop = 2;
     public static int warehouseCostWood = 300;
     public static int warehouseCostGold = 200;
@@ -78,8 +78,8 @@ public class BuilderScript : MonoBehaviour
     public static int castleCostGold = 750;
     public static int castleCostWood = 750;
     public static int castleCostPop = 0;
-    public static int fireStationCostGold = 750;
-    public static int fireStationCostWood = 750;
+    public static int fireStationCostGold = 100;
+    public static int fireStationCostWood = 200;
     public static int fireStationCostPop = 2;
 
     public Transform collisionChecker;
