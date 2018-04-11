@@ -38,7 +38,8 @@ public class ResourceManager : MonoBehaviour
     public int castle = 0;
     public int tower = 0;
     public int church = 0;
-    public int barrakcs = 0;
+    public int barracks = 0;
+    public int fireStation = 0;
     [Header("UI Resources")]
     public Text woodUi;
     public Text foodUi;
@@ -298,6 +299,22 @@ public class ResourceManager : MonoBehaviour
     public void AddChurch(int value)
     {
         church += value;
+    }
+    public void AddBarracks()
+    {
+        barracks += 1;
+    }
+    public void AddBarracks(int value)
+    {
+        barracks += value;
+    }
+    public void AddFireStation()
+    {
+        fireStation += 1;
+    }
+    public void AddFireStation(int value)
+    {
+        fireStation += value;
     }
     #endregion
 

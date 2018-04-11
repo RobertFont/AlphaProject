@@ -21,19 +21,14 @@ public class BuilderScript : MonoBehaviour
     public Material townHallMaterial;
     public Material houseMaterial;
     public GameObject farm;
-    public Material farmMaterial;
     public GameObject lumberMill;
-    public Material lumberMillMaterial;
     public GameObject goldMine;
-    public Material goldMineMaterial;
     public GameObject warehouse;
-    public Material warehouseMaterial;
     public GameObject castle;
-    public Material castleMaterial;
     public GameObject tower;
-    public Material towerMaterial;
     public GameObject church;
-    public Material churchMaterial;
+    public GameObject fireStation;
+    public GameObject barracks;
 
     [Header("BuildingsPrefabs")]
     public GameObject buildingSelected;
@@ -46,6 +41,8 @@ public class BuilderScript : MonoBehaviour
     public GameObject castlePrefab;
     public GameObject towerPrefab;
     public GameObject churchPrefab;
+    public GameObject fireStationPrefab;
+    public GameObject barracksPrefab;
 
     [Header("Costs")]
     public static int townHallCostWood = 150;
@@ -309,12 +306,28 @@ public class BuilderScript : MonoBehaviour
 
     public void SelectBuildingFireStation()
     {
-
+        canCreateBuild = false;
+        DesactiveOriginalBuilding();
+        if(resource.townHall == 0 || resource.fireStation > 5) return;
+        build = fireStation;
+        if(!CompareResources()) return;
+        colliderHalfSize = build.GetComponent<BoxCollider>().size / 2;
+        collisionChecker = fireStation.transform;
+        canCreateBuild = true;
+        build.SetActive(true);
     }
 
     public void SelectBuildingBarracks()
     {
-
+        canCreateBuild = false;
+        DesactiveOriginalBuilding();
+        if(resource.townHall == 0) return;
+        build = barracks;
+        if(!CompareResources()) return;
+        colliderHalfSize = build.GetComponent<BoxCollider>().size / 2;
+        collisionChecker = barracks.transform;
+        canCreateBuild = true;
+        build.SetActive(true);
     }
 
     public void CreateBuild()
@@ -394,6 +407,8 @@ public class BuilderScript : MonoBehaviour
         castle.SetActive(false);
         tower.SetActive(false);
         church.SetActive(false);
+        fireStation.SetActive(false);
+        barracks.SetActive(false);
     }
 
     private void OnDrawGizmos()
@@ -411,15 +426,7 @@ public class BuilderScript : MonoBehaviour
 
     private void ChangeMaterialClone()
     {
-        if (build.tag == "TownHall") build.GetComponent<Renderer>().material = townHallMaterial;
-        else if (build.tag == "House") build.GetComponent<Renderer>().material = houseMaterial;
-        else if (build.tag == "Farm") build.GetComponent<Renderer>().material = farmMaterial;
-        else if (build.tag == "LumberMill") build.GetComponent<Renderer>().material = lumberMillMaterial;
-        else if (build.tag == "GoldMine") build.GetComponent<Renderer>().material = goldMineMaterial;
-        else if (build.tag == "Warehouse") build.GetComponent<Renderer>().material = warehouseMaterial;
-        else if (build.tag == "Castle") build.GetComponent<Renderer>().material = castleMaterial;
-        else if (build.tag == "Tower") build.GetComponent<Renderer>().material = towerMaterial;
-        else if (build.tag == "Church") build.GetComponent<Renderer>().material = churchMaterial;
+        build.GetComponent<Renderer>().material = townHallMaterial;
     }
 
     private void ChangeMaterialOriginal()
@@ -458,6 +465,8 @@ public class BuilderScript : MonoBehaviour
         else if (build.tag == "LumberMill") buildingSelected = lumberMillPrefab;
         else if (build.tag == "Tower") buildingSelected = towerPrefab;
         else if (build.tag == "Church") buildingSelected = churchPrefab;
+        else if (build.tag == "FireStation") buildingSelected = fireStationPrefab;
+        else if (build.tag == "Barracks") buildingSelected = barracksPrefab;
 
     }
 
@@ -530,6 +539,23 @@ public class BuilderScript : MonoBehaviour
             resource.AddChurch();
             resource.RemoveCurrentPop(4);
             resource.AddNonIdlePop(4);
+            DesactiveOriginalBuilding();
+        }
+        else if(build.tag == "FireStation")
+        {
+            resource.RemoveWood(fireStationCostWood);
+            resource.RemoveGold(fireStationCostGold);
+            resource.AddFireStation();
+            resource.RemoveCurrentPop(2);
+            resource.AddNonIdlePop(2);
+        }
+        else if(build.tag == "Barracks")
+        {
+            resource.RemoveWood(churchCostWood);
+            resource.RemoveGold(churchCostGold);
+            resource.AddBarracks();
+            resource.RemoveCurrentPop(8);
+            resource.AddNonIdlePop(8);
         }
     }
 
@@ -582,6 +608,16 @@ public class BuilderScript : MonoBehaviour
         else if(build.tag == "Church")
         {
             if(resource.wood < churchCostWood || resource.gold < churchCostGold || resource.currentPop < churchCostPop) return false;
+            else return true;
+        }
+        else if(build.tag == "FireStation")
+        {
+            if(resource.wood < fireStationCostWood || resource.gold < fireStationCostGold || resource.currentPop < fireStationCostPop) return false;
+            else return true;
+        }
+        else if(build.tag == "Barracks")
+        {
+            if(resource.wood < barracksCostWood || resource.gold < barracksCostGold || resource.currentPop < barracksCostPop) return false;
             else return true;
         }
         else return false;

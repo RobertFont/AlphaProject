@@ -23,6 +23,8 @@ TagManager:
   - Enemy
   - PlayerCamera
   - Church
+  - FireStation
+  - Barracks
   layers:
   - Default
   - TransparentFX
