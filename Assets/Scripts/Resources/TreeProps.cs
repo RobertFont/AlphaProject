@@ -10,7 +10,6 @@ public class TreeProps : MonoBehaviour {
     // Use this for initialization
     public void MyStart ()
     {
-        Debug.Log("TreePropStarted");
         tree = this.transform;
         random = Random.Range(0.7f, 1.2f);
         treeSize = tree.localScale;
@@ -20,6 +19,5 @@ public class TreeProps : MonoBehaviour {
 
         tree.localScale = treeSize;
         tree.transform.Rotate(treeRotation);
-        Debug.Log("TreePropFinished");
     }
 }

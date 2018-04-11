@@ -164,7 +164,7 @@ public class BuilderScript : MonoBehaviour
                 if (hitColliderTree.Length > 0) treeInRange = true;
                 else treeInRange = false;
                 if (!treeInRange) buildingColliding = true;
-                Debug.Log(hitColliderTree);
+                //Debug.Log(hitColliderTree);
             }
         }
         else treeInRange = true;

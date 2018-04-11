@@ -5,10 +5,8 @@ using UnityEngine.UI;
 
 public class ShowResourcesInfo : MonoBehaviour
 {
-    public Transform infoPos;
     public string resource;
     public Font font;
-
 
 	void Awake ()
     {
@@ -24,11 +22,6 @@ public class ShowResourcesInfo : MonoBehaviour
             GetResourcesCost.happinessText = this.gameObject;
     }
 	
-	void Update ()
-    {
-		
-	}
-
     public void ShowResourceInfo(int value, string _operator)
     {
         GameObject GOInfo = new GameObject("Info", typeof(Text), typeof(Outline), typeof(Shadow),typeof(ResourceInfoBehaviour));
@@ -41,7 +34,6 @@ public class ShowResourcesInfo : MonoBehaviour
         //GOInfo.transform.localPosition = new Vector3(infoPos.localPosition.x, infoPos.localPosition.y + 100, infoPos.localPosition.z);
         GOInfo.GetComponent<RectTransform>().anchoredPosition= new Vector2(64, -17);// infoPos.GetComponent<RectTransform>().localPosition;
         GOInfo.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
-
 
         textInfo.alignment = TextAnchor.MiddleCenter;
         textInfo.text = _operator.ToString()+Mathf.Abs(value);

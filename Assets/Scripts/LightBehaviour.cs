@@ -17,7 +17,7 @@ public class LightBehaviour : MonoBehaviour {
     [SerializeField]float currentTime = 0;
     bool started = false;
     [SerializeField] Vector3 delta;
-    public Light light;
+    public Light lights;
     public EventBehaviour events;
 
 	// Use this for initialization
@@ -47,7 +47,7 @@ public class LightBehaviour : MonoBehaviour {
                     color.b = Easing.QuadEaseIn(currentTime, color.b, delta.z, 10);
                 }
                 else color = morning;
-                light.color = color;
+                lights.color = color;
                 if (counter > 10) ChangeDayStateAfternoon();
                 break;
             case DayState.Afternoon:
@@ -56,7 +56,7 @@ public class LightBehaviour : MonoBehaviour {
                 color.r = Easing.QuadEaseIn(currentTime, color.r, delta.x, 10);
                 color.g = Easing.QuadEaseIn(currentTime, color.g, delta.y, 10);
                 color.b = Easing.QuadEaseIn(currentTime, color.b, delta.z, 10);
-                light.color = color;
+                lights.color = color;
                 if (counter > 10) ChangeDayStateNight();
                 break;
             case DayState.Night:
@@ -65,7 +65,7 @@ public class LightBehaviour : MonoBehaviour {
                 color.r = Easing.QuadEaseIn(currentTime, color.r, delta.x, 10);
                 color.g = Easing.QuadEaseIn(currentTime, color.g, delta.y, 10);
                 color.b = Easing.QuadEaseIn(currentTime, color.b, delta.z, 10);
-                light.color = color;
+                lights.color = color;
                 if (counter > 10) ChangeDayStateMorning();
                 break;
             default:
@@ -75,7 +75,7 @@ public class LightBehaviour : MonoBehaviour {
 
     public void ChangeDayStateMorning()
     {
-        dayColor = light.color;
+        dayColor = lights.color;
         delta.x = (morning.r - dayColor.r);
         delta.y = (morning.g - dayColor.g);
         delta.z = (morning.b - dayColor.b);
@@ -86,7 +86,7 @@ public class LightBehaviour : MonoBehaviour {
 
     public void ChangeDayStateAfternoon()
     {
-        dayColor = light.color;
+        dayColor = lights.color;
         delta.x = (afternoon.r - dayColor.r);
         delta.y = (afternoon.g - dayColor.g);
         delta.z = (afternoon.b - dayColor.b);
@@ -97,7 +97,7 @@ public class LightBehaviour : MonoBehaviour {
 
     public void ChangeDayStateNight()
     {
-        dayColor = light.color;
+        dayColor = lights.color;
         delta.x = (night.r - dayColor.r);
         delta.y = (night.g - dayColor.g);
         delta.z = (night.b - dayColor.b);

@@ -12,7 +12,6 @@ public static class GetResourcesCost
 
     public static string GetResourceCost(string resource)
     {
-        Debug.Log("ChangeInfo");
         if(resource == "townHallInfoGold")
             return BuilderScript.townHallCostGold.ToString();
         else if(resource == "townHallInfoWood")
@@ -82,8 +81,34 @@ public static class GetResourcesCost
         return "x";
     }
 	
-    public static string ShowResourcesChange(string resourceType, int value)
+    public static void ShowResourcesChange(string resourceType, int value)
     {
+        if(goldText == null)
+        {
+            if(resourceType == "+Gold" || resourceType == "-Gold")
+                return;
+        }
+        else if(foodText == null)
+        {
+            if(resourceType == "+Food" || resourceType == "-Food")
+                return;
+        }
+        else if(woodText == null)
+        {
+            if(resourceType == "+Wood" || resourceType == "-Wood")
+                return;
+        }
+        else if(populationText == null)
+        {
+            if(resourceType == "+Population" || resourceType == "-Population")
+                return;
+        }
+        else if(happinessText == null)
+        {
+            if(resourceType == "+Happiness" || resourceType == "-Happiness")
+                return;
+        }
+
         if(resourceType == "+Gold")
         {
             goldText.GetComponent<ShowResourcesInfo>().ShowResourceInfo(value, "+");
@@ -108,6 +133,22 @@ public static class GetResourcesCost
         {
             woodText.GetComponent<ShowResourcesInfo>().ShowResourceInfo(value, "-");
         }
-        return "x";
+        if(resourceType == "+Population")
+        {
+            populationText.GetComponent<ShowResourcesInfo>().ShowResourceInfo(value, "+");
+        }
+        else if(resourceType == "-Population")
+        {
+            populationText.GetComponent<ShowResourcesInfo>().ShowResourceInfo(value, "-");
+        }
+        if(resourceType == "+Happiness")
+        {
+            happinessText.GetComponent<ShowResourcesInfo>().ShowResourceInfo(value, "+");
+        }
+        else if(resourceType == "-Happiness")
+        {
+            happinessText.GetComponent<ShowResourcesInfo>().ShowResourceInfo(value, "-");
+        }
+        return;
     }
 }

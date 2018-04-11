@@ -34,7 +34,7 @@ public class UiTrigger : MonoBehaviour
     {
         if (buildingSelected != null)
             buildingSelected.GetComponent<Renderer>().materials[1].SetFloat("_OutlineWidth", 1.0f);
-        Debug.Log("ChangeBuilding");
+        //Debug.Log("ChangeBuilding");
         buildingSelected = building;
     }
 
@@ -58,7 +58,7 @@ public class UiTrigger : MonoBehaviour
             if(buildingSelected.GetComponent<Renderer>().materials.Length >= 2)
             {
                 buildingSelected.GetComponent<Renderer>().materials[1].SetFloat("_OutlineWidth", 1.03f);
-                Debug.Log("MaterialAply");
+                //Debug.Log("MaterialAply");
             }
 
             //SelectedParticles.gameObject.SetActive(true);

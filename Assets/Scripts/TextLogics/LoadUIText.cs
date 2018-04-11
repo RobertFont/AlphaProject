@@ -28,7 +28,6 @@ public class LoadUIText : MonoBehaviour
 
     public void CallTextInfo(string key)
     {
-        Debug.Log("UpdateInfo");
         this.key = key;
         LoadText();
     }

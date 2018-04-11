@@ -252,7 +252,6 @@ GameObject:
   - component: {fileID: 989922816}
   - component: {fileID: 989922819}
   - component: {fileID: 989922818}
-  - component: {fileID: 989922817}
   m_Layer: 5
   m_Name: CursorTexture
   m_TagString: Untagged
@@ -278,18 +277,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0, y: 1}
---- !u!114 &989922817
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 989922815}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95c09a217cf3c8148b19591cd5f7d2b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myCanvas: {fileID: 1218111746}
 --- !u!114 &989922818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -405,8 +392,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1218111743}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 435, y: 244.5, z: 0}
-  m_LocalScale: {x: 0.6796875, y: 0.6796875, z: 0.6796875}
+  m_LocalPosition: {x: 383.5, y: 215.5, z: 0}
+  m_LocalScale: {x: 0.5992187, y: 0.5992187, z: 0.5992187}
   m_Children:
   - {fileID: 989922816}
   m_Father: {fileID: 0}

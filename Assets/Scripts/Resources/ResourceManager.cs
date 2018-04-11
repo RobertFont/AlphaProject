@@ -54,6 +54,13 @@ public class ResourceManager : MonoBehaviour
     public bool victory = false;
     public bool gameEnded = false;
     public bool gameEndedAnimation = false;
+    [Header("Easings")]
+    ResourcesEasing woodUiEasing;
+    ResourcesEasing foodUiEasing;
+    ResourcesEasing goldUiEasing;
+    ResourcesEasing happinessUiEasing;
+    ResourcesEasing populationUiEasing;
+    //happinessUi.gameObject.GetComponent<ResourcesEasing>()
 
     public GameObject victoryImage;
     public GameObject defeatImage;
@@ -69,6 +76,12 @@ public class ResourceManager : MonoBehaviour
     public void MyUpdate ()
     {
         if(GameObject.Find("LevelManager") != null) level = GameObject.Find("LevelManager").GetComponent<LevelLogic>();
+
+        woodUiEasing = woodUi.gameObject.GetComponent<ResourcesEasing>();
+        foodUiEasing = foodUi.gameObject.GetComponent<ResourcesEasing>();
+        goldUiEasing = goldUi.gameObject.GetComponent<ResourcesEasing>();
+        happinessUiEasing = happinessUi.gameObject.GetComponent<ResourcesEasing>();
+        populationUiEasing = populationUi.gameObject.GetComponent<ResourcesEasing>();
 
         if(Input.GetKeyDown(KeyCode.K))
         {
@@ -138,21 +151,21 @@ public class ResourceManager : MonoBehaviour
     public void AddWood(int value)
     {
         wood += value;
-        woodUi.gameObject.GetComponent<ResourcesEasing>().StartEasing("add");
+        woodUiEasing.StartEasing("add");
         GetResourcesCost.ShowResourcesChange("+Wood", value);
     }
 
     public void RemoveWood(int value)
     {
         wood -= value;
-        woodUi.gameObject.GetComponent<ResourcesEasing>().StartEasing("remove");
+        woodUiEasing.StartEasing("remove");
         GetResourcesCost.ShowResourcesChange("-Wood", value);
     }
 
     public void AddFood(int value)
     {
         food += value;
-        foodUi.gameObject.GetComponent<ResourcesEasing>().StartEasing("add");
+        foodUiEasing.StartEasing("add");
         GetResourcesCost.ShowResourcesChange("+Foot", value);
 
     }
@@ -160,21 +173,21 @@ public class ResourceManager : MonoBehaviour
     public void RemoveFood(int value)
     {
         food -= value;
-        foodUi.gameObject.GetComponent<ResourcesEasing>().StartEasing("remove");
+        foodUiEasing.StartEasing("remove");
         GetResourcesCost.ShowResourcesChange("-Foot", value);
     }
 
     public void AddGold(int value)
     {
         gold += value;
-        goldUi.gameObject.GetComponent<ResourcesEasing>().StartEasing("add");
+        goldUiEasing.StartEasing("add");
         GetResourcesCost.ShowResourcesChange("+Gold", value);
     }
 
     public void RemoveGold(int value)
     {
         gold -= value;
-        goldUi.gameObject.GetComponent<ResourcesEasing>().StartEasing("remove");
+        goldUiEasing.StartEasing("remove");
         GetResourcesCost.ShowResourcesChange("-Gold", value);
     }
 
@@ -186,7 +199,8 @@ public class ResourceManager : MonoBehaviour
     public void AddCurrentPop(int value)
     {
         currentPop += value;
-        populationUi.gameObject.GetComponent<ResourcesEasing>().StartEasing("add");
+        populationUiEasing.StartEasing("add");
+        GetResourcesCost.ShowResourcesChange("+Population", value);
     }
 
     public void RemoveMaxPop(int value)
@@ -197,7 +211,8 @@ public class ResourceManager : MonoBehaviour
     public void RemoveCurrentPop(int value)
     {
         currentPop -= value;
-        populationUi.gameObject.GetComponent<ResourcesEasing>().StartEasing("remove");
+        populationUiEasing.StartEasing("remove");
+        GetResourcesCost.ShowResourcesChange("-Population", value);
     }
     public void AddNonIdlePop(int value)
     {
@@ -207,6 +222,19 @@ public class ResourceManager : MonoBehaviour
     public void RemoveNonIdlePop(int value)
     {
         nonIdlePop -= value;
+    }
+
+    public void AddHappiness(int value)
+    {
+        happiness += value;
+        happinessUiEasing.StartEasing("Add");
+        GetResourcesCost.ShowResourcesChange("+Happiness", value);
+    }
+    public void RemoveHappiness(int value)
+    {
+        happiness -= value;
+        happinessUiEasing.StartEasing("remove");
+        GetResourcesCost.ShowResourcesChange("-Happiness", value);
     }
     #endregion
 
@@ -329,14 +357,12 @@ public class ResourceManager : MonoBehaviour
                 if (food >= necessaryFood)
                 {
                     RemoveFood(food -= necessaryFood);
-                    happiness += 1;
-                    Debug.Log("Consumed Food; " + necessaryFood);
+                    AddHappiness(1);
                 }
                 else
                 {
                     RemoveFood(food -= necessaryFood);
-                    happiness -= 1;
-                    Debug.Log("insufficient food");
+                    RemoveHappiness(1);
                 }
                 mealTime = 0;
             }
@@ -345,9 +371,9 @@ public class ResourceManager : MonoBehaviour
     }
     public void GodModePrivileges()
     {
-        wood = 5000;
-        food = 5000;
-        gold = 5000;
+        wood = maxWood;
+        food = maxFood;
+        gold = maxGold;
 		happiness = maxHappiness;
     }
 
@@ -384,7 +410,6 @@ public class ResourceManager : MonoBehaviour
         }
 
         //Time.timeScale = 0.0f;
-        Debug.Log("Ends");
     }
 
     public void EndGame()
