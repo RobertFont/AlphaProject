@@ -25,17 +25,12 @@ public class TitleBehaviour : MonoBehaviour
 
     public void NewGame()
     {
-        if (level != null) level.SetGameplayScene();
+        if (level != null) level.SetCutSceneScene();
     }
 
     public void LoadGame()
     {
 
-    }
-
-    public void SetOptionsScene()
-    {
-        if (level != null) level.SetOptionsScene();
     }
 
     public void ExitGame()

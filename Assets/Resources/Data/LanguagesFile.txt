@@ -1,4 +1,4 @@
-﻿id	spanish	english	catalan
+id	spanish	english	catalan
 spanish	Castellano	Spanish	Castellà
 english	Inglés	English	Anglés
 catala	Catalan	Catalan	Català
@@ -57,14 +57,15 @@ gold	Oro: 	Gold: 	Or:
 foot	Comida: 	Foot: 	Menjar: 
 wood	Madera: 	Wood: 	Fusta: 
 population	Población: 	Population: 	Població: 
-houseInfo	Casa: sirve para aumentar la población.	House: allows you yo have more people.	Casa: serveix per aumentar la població.
-townHallInfo	Ayuntamiento: permite construir más edificios.	Town Hall: allows you yo build other buildings	Ayuntament: permet construir més edificis.
-goldenMineInfo	Mina: produce oro.	GoldMine: produces gold.	Mina: produeix or.
-farmInfo	Granja: produce alimento.	Farm: produces food.	Granja: produeix aliment.
-lumberMillInfo	Aserradero: produce madera.	LumberMill: produces wood.	Aserrader: produeix fusta.
-barracksInfo	Barracones: Aumentan el daño de tus torres.	Barracks: Upgrades the towers.	Barracons: Millora les torres..
-castleInfo	Castillo: GANAS FIN :D.	Castle: YOU WIN :D.	Castell: GUANYES FIN :D.
-churchInfo	Iglesia: Aumenta la felicidad.	Church: Max happines upgraded.	Esglesia: Aumenta la felicitat maxima.
-fireStationInfo	Estación de bomberos: Apagan fuegos.	FireStation: (ingles)Apaga fuegos.	Estació de bombers: apaguen focs.
-warehouseInfo	Almacen: aumenta la capacidad maxima de los recursos	Warehouse: allows to storage more resources	Magatzem: permet emagatzemar més recursos
-towerInfo	tower:	tower:	tower:
+houseInfo	Casa: Sirve para aumentar la población.	House: Allows you yo have more people.	Casa: Serveix per aumentar la població.
+townHallInfo	Ayuntamiento: Permite construir más edificios.	Town Hall: Allows you yo build other buildings	Ayuntament: Permet construir més edificis.
+goldenMineInfo	Mina: Produce oro.	GoldMine: Produces gold.	Mina: Produeix or.
+farmInfo	Granja: Produce alimento.	Farm: Produces food.	Granja: Produeix aliment.
+lumberMillInfo	Aserradero: Produce madera.	LumberMill: Produces wood.	Aserrader: Produeix fusta.
+barracksInfo	Barracones: Aumentan el daño de tus torres.	Barracks: Increases towers's damage output.	Barracons: Millora la força de les torres.
+castleInfo	Castillo: Ganas la partida	Castle: You win the game.	Castell: Guanyes la partida.
+churchInfo	Iglesia: Aumenta la felicidad.	Church: Max happines upgraded.	Esglesia: Aumenta la felicitat máxima.
+fireStationInfo	Estación de bomberos: Apagan fuegos.	FireStation: Puts out the fire of buildings.	Estació de bombers: Apaguen focs.
+warehouseInfo	Almacen: Aumenta la capacidad maxima de los recursos	Warehouse: Allows to storage more resources	Magatzem: Permet emagatzemar més recursos
+towerInfo	Torre: Dispara a las unidades enemigas.	Tower: Shoots enemy units.	Torre: Dispara unitats enemiges.
+skipTutorial	Omitir Tutorial	Skip Tutorial	Saltar Tutorial

@@ -15,7 +15,7 @@ public class LightBehaviour : MonoBehaviour {
     public Color rainy;
     [SerializeField]float counter = 0;
     [SerializeField]float currentTime = 0;
-    bool started = false;
+    //bool started = false;
     [SerializeField] Vector3 delta;
     public Light lights;
     public EventBehaviour events;

@@ -29,15 +29,15 @@ public class DataLogic : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Alpha1))
+        if(Input.GetKeyDown(KeyCode.Alpha8))
         {
             Language.SetLanguage(Language.Lang.esES);
         }
-        if(Input.GetKeyDown(KeyCode.Alpha2))
+        if(Input.GetKeyDown(KeyCode.Alpha9))
         {
             Language.SetLanguage(Language.Lang.enUS);
         }
-        if(Input.GetKeyDown(KeyCode.Alpha3))
+        if(Input.GetKeyDown(KeyCode.Alpha0))
         {
             Language.SetLanguage(Language.Lang.caCa);
         }

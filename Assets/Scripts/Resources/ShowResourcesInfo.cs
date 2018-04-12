@@ -38,7 +38,8 @@ public class ShowResourcesInfo : MonoBehaviour
         textInfo.alignment = TextAnchor.MiddleCenter;
         textInfo.text = _operator.ToString()+Mathf.Abs(value);
         textInfo.font = font;
-        textInfo.color = Color.blue;
+        if (_operator == "-") textInfo.color = Color.red;
+        else if (_operator == "+") textInfo.color = Color.blue;
         textInfo.fontSize = 23;
         textInfo.horizontalOverflow = HorizontalWrapMode.Overflow;
         textInfo.verticalOverflow = VerticalWrapMode.Overflow;
