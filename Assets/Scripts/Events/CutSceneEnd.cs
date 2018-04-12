@@ -16,6 +16,9 @@ public class CutSceneEnd : MonoBehaviour
 	
 	void Update ()
     {
+        if(Input.GetButtonDown("Fire1"))
+            endVideo();
+
         if(video.isPlaying)
         {
             start = true;
@@ -23,9 +26,13 @@ public class CutSceneEnd : MonoBehaviour
 
         if(!video.isPlaying && start)
         {
-            Debug.Log("END VIDEO");
-            level.SetGameplayScene();
+            //Debug.Log("END VIDEO");
+            endVideo();
             start = false;
         }
+    }
+    void endVideo()
+    {
+        level.SetGameplayScene();
     }
 }
