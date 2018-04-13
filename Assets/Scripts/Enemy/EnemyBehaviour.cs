@@ -70,7 +70,7 @@ public class EnemyBehaviour : MonoBehaviour
 
             if (counter >= 1)
             {
-                resource.happiness -= 10;
+                resource.RemoveHappiness(10);
                 Die();
                 counter = 0f;
             }

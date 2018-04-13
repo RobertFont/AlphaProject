@@ -431,7 +431,8 @@ public class BuilderScript : MonoBehaviour
 
     private void ChangeMaterialOriginal()
     {
-        if (build.tag == "TownHall") build.GetComponent<Renderer>().material = townHall.GetComponent<Renderer>().material;
+        build.GetComponent<Renderer>().material = townHall.GetComponent<Renderer>().material;
+        /*if (build.tag == "TownHall") build.GetComponent<Renderer>().material = townHall.GetComponent<Renderer>().material;
         else if (build.tag == "House") build.GetComponent<Renderer>().material = house.GetComponent<Renderer>().material;
         else if (build.tag == "Farm") build.GetComponent<Renderer>().material = farm.GetComponent<Renderer>().material; 
         else if (build.tag == "GoldMine") build.GetComponent<Renderer>().material = goldMine.GetComponent<Renderer>().material;
@@ -440,6 +441,9 @@ public class BuilderScript : MonoBehaviour
         else if (build.tag == "Castle") build.GetComponent<Renderer>().material = castle.GetComponent<Renderer>().material;
         else if (build.tag == "Tower") build.GetComponent<Renderer>().material = tower.GetComponent<Renderer>().material;
         else if (build.tag == "Church") build.GetComponent<Renderer>().material = church.GetComponent<Renderer>().material;
+        else if (build.tag == "Barracks") build.GetComponent<Renderer>().material = barracks.GetComponent<Renderer>().material;
+        else if (build.tag == "FireStation") build.GetComponent<Renderer>().material = fireStation.GetComponent<Renderer>().material;
+        */
     }
 
     private void ChangeBuildName()
@@ -452,6 +456,8 @@ public class BuilderScript : MonoBehaviour
         if (build.tag == "Warehouse") build.name = "WareHouse" + resource.warehouse;
         if (build.tag == "Tower") build.name = "Tower" + resource.tower;
         if (build.tag == "Church") build.name = "Church";
+        if (build.tag == "Barracks") build.name = "Barracks" + resource.barracks;
+        if (build.tag == "FireStation") build.name = "FireStation" + resource.fireStation;
     }
     
     private void SelectBuilding()
