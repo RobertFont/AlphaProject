@@ -54,6 +54,7 @@ public class InputManager : MonoBehaviour {
             if (!builder.canCreateBuild) uiConstruction.StopConstruction();
             uiTrigger.DeselectBuilding();
         }
+
         if (!tutorial.Active)
         { 
             #region Axis
@@ -106,9 +107,6 @@ public class InputManager : MonoBehaviour {
                 builder.CantBuild(false);
             }
         }
-
-   
-
         if(Input.GetButtonDown("Fire2") || Input.GetButtonDown("RotateBuilding")) builder.AddRotation();
         
         #region Camera Zoom

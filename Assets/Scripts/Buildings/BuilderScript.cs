@@ -11,6 +11,7 @@ public class BuilderScript : MonoBehaviour
     ResourceManager resource;
     public InputManager input;
 	PlaySound soundFX;
+    public UiTrigger uiTrigger;
 
     public Transform builtGroup;
 
@@ -128,11 +129,11 @@ public class BuilderScript : MonoBehaviour
             build.transform.position = buildingInMouse;
             collisionZone = build.GetComponent<Renderer>().material;
             ChangeColorOnCollision();
+            uiTrigger.showRange = true;
         }
         else
         {
             if (build != null) build.SetActive(false);
-
         }
     }
 

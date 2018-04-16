@@ -30,6 +30,8 @@ public class UiTrigger : MonoBehaviour
     int towerRestoreWood = 50;
     int towerRestoreGold = 50;
 
+    public bool showRange = false;
+
     public void SelectBuilding(GameObject building)
     {
         if (buildingSelected != null)
@@ -45,9 +47,13 @@ public class UiTrigger : MonoBehaviour
             this.transform.GetChild(0).gameObject.SetActive(false);
             //SelectedParticles.gameObject.SetActive(false);
             selectObject = false;
+            showRange = false;
         }
         else
         {
+            if(buildingSelected.tag == "TownHall" || buildingSelected.tag == "Tower") showRange = true;
+            else showRange = false;
+
             if(!selectObject)
             {
                 events.SetSelectedObject(pressSelectedObject);
@@ -206,5 +212,6 @@ public class UiTrigger : MonoBehaviour
 
         buildingSelected = null;
         events.SetSelectedObject(hideSelectedObject);
+        showRange = false;
     }
 }

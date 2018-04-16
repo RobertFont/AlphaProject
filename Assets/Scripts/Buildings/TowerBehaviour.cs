@@ -15,16 +15,19 @@ public class TowerBehaviour : MonoBehaviour
     private float fireCountDown = 0f;
 
     public GameObject projectilePrefab;
+    public GameObject constructionRange;
     public Transform firePoint;
 
     // Use this for initialization
     void Start ()
     {
+        constructionRange = transform.GetChild(1).gameObject;
         // Esto hace que UpdateTarget se ejecute 2 veces por segundo en vez de cada frame
         resource = GameObject.FindGameObjectWithTag("Player").GetComponent<ResourceManager>();
         input = GameObject.FindGameObjectWithTag("PlayerCamera").GetComponent<InputManager>();
         info = GameObject.Find("InformationButton").GetComponent<UiTrigger>();
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
+
     }
     // Esta funcion busca los enemigos y coje el mas cercano
     void UpdateTarget()
@@ -56,6 +59,8 @@ public class TowerBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update ()
     {
+        if(!info.showRange && constructionRange.active) constructionRange.SetActive(false);
+
         if (target == null || input.paused) return;
 
         if (fireCountDown <= 0f)
@@ -65,7 +70,7 @@ public class TowerBehaviour : MonoBehaviour
         }
 
         fireCountDown -= Time.deltaTime / Time.timeScale;
-	}
+    }
 
     void Shoot()
     {
@@ -82,6 +87,8 @@ public class TowerBehaviour : MonoBehaviour
 
     public void OnMouseOver()
     {
+        if(info.showRange) constructionRange.SetActive(true);
+
         if(Input.GetButtonDown("Fire1") || Input.GetButtonDown("SelectBuildController")) OpenInfoBuilding();
     }
 
