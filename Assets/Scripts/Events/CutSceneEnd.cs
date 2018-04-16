@@ -26,7 +26,6 @@ public class CutSceneEnd : MonoBehaviour
 
         if(!video.isPlaying && start)
         {
-            //Debug.Log("END VIDEO");
             endVideo();
             start = false;
         }

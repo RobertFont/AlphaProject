@@ -18,7 +18,7 @@ public class LevelLogic : MonoBehaviour
     private AsyncOperation asynUnLoad = null;
     private bool loading = false;
     private int sceneToLoad;
-    public PlaySound sounds;
+    public AudioPlayer player;
     public Image blackScreen;
     public Image loadingBar;
     private float fadeTime = 0.25f;
@@ -102,29 +102,29 @@ public class LevelLogic : MonoBehaviour
 
     public void SetTitleScene()
     {
-        if(sounds != null)
+        if(player != null)
         {
-            sounds.StopMusic();
-            sounds.PlayMusic(0, true);
+            player.PlayMusic(0, 1, true);
         }
         StartLoad(2);
     }
 
     public void SetCutSceneScene()
     {
-        if(sounds != null)
+        if(player != null)
         {
-            sounds.StopMusic();
+            player.StopMusic();
+            player.PlayMusic(2, 1, true);
         }
         StartLoad(3);
     }
 
     public void SetGameplayScene()
     {
-        if(sounds != null)
+        if(player != null)
         {
-            sounds.StopMusic();
-            sounds.PlayMusic(1, true);
+            player.StopMusic();
+            player.PlayMusic(1, 1, true);
         }
         StartLoad(4);
     }
@@ -132,7 +132,7 @@ public class LevelLogic : MonoBehaviour
     public void SetEndingScene()
     {
         StartLoad(5);
-        if (sounds != null) sounds.StopMusic();
+        if (player != null) player.StopMusic();
     }
 
 	public void SaveOptionsValue(int newresolution, bool newFullScreen, bool newVSync, bool newSSAO, bool newActiveShadows, int newShadowResValue, int newQualityLevel, int newAntiAliasing, float newGammaLevel)

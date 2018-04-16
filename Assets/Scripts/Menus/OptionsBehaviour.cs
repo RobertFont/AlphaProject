@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class OptionsBehaviour : MonoBehaviour
 {
     LevelLogic level;
-    PlaySound sounds;
 
     [Header("General")]
     public bool dontChangeMenu = false;
@@ -30,7 +29,7 @@ public class OptionsBehaviour : MonoBehaviour
     bool activeShadows = true;
     public Toggle activeShadowsToggle;
     //bool particles = false;
-    ShadowResolution shadowRes = ShadowResolution.Medium;
+    ShadowResolution shadowResolution = ShadowResolution.Medium;
     int shadowResValue;
     public Dropdown shadowResDD;
     int QualityLevel = 1;
@@ -42,11 +41,12 @@ public class OptionsBehaviour : MonoBehaviour
     public RectTransform gammaLevelRectT;
 
     [Header("Sound")]
-    public float sliderMaterVolume;
-    public float sliderFXVolume;
-    public float sliderMusicVolume;
+    public Slider sliderMaterVolume;
+    public Slider sliderFXVolume;
+    public Slider sliderMusicVolume;
+    public Slider sliderAmbientVolume;
 
-    [Header("Controls")]
+   [Header("Controls")]
     //Image controls;
 
     [Header("Change SubMenus")]
@@ -58,8 +58,8 @@ public class OptionsBehaviour : MonoBehaviour
     private void Start()
     {
         if (!dontChangeMenu) SetGeneralMenu();
-        if (level != null) level = GameObject.Find("LevelManager").GetComponent<LevelLogic>();
-        if (sounds != null) sounds = GameObject.Find("LevelManager").GetComponent<PlaySound>();
+        if (GameObject.Find("LevelManager").GetComponent<LevelLogic>() != null) level = GameObject.Find("LevelManager").GetComponent<LevelLogic>();
+        //if (sounds != null) sounds = GameObject.Find("LevelManager").GetComponent<PlaySound>();
         //gammaLevel = RenderSettings.ambientLight.gamma;
         SetSavedOptionsValue();
 
@@ -190,20 +190,20 @@ public class OptionsBehaviour : MonoBehaviour
 		switch (shadowResValue)
         {
             case 0:
-                shadowRes = ShadowResolution.Low;
+                shadowResolution = ShadowResolution.Low;
                 break;
             case 1:
-                shadowRes = ShadowResolution.Medium;
+                shadowResolution = ShadowResolution.Medium;
                 break;
             case 2:
-                shadowRes = ShadowResolution.High;
+                shadowResolution = ShadowResolution.High;
                 break;
             case 3:
-                shadowRes = ShadowResolution.VeryHigh;
+                shadowResolution = ShadowResolution.VeryHigh;
                 break;
         }
 		
-        QualitySettings.shadowResolution = shadowRes;
+        QualitySettings.shadowResolution = shadowResolution;
     }
 
     public void SetAntialising()
@@ -236,20 +236,21 @@ public class OptionsBehaviour : MonoBehaviour
     #region Sounds
     public void SetGeneralSoundLevel(Slider slider)
     {
-        sliderMaterVolume = slider.value;
-        AudioListener.volume = sliderMaterVolume;
+        //sliderMaterVolume = slider.value;
+        AudioManager.SetMasterVolume(slider.value);
+        Debug.Log("CHANGE");
     }
 
     public void SetFXSoundLevel(Slider slider)
     {
-        sliderFXVolume = slider.value;
-        if (sounds != null) sounds.fXVolume = slider.value;
+        //sliderFXVolume = slider.value;
+        AudioManager.SetSFXVolume(slider.value);
     }
 
     public void SetMusicLevel(Slider slider)
     {
-        sliderMusicVolume = slider.value;
-        if (sounds != null) sounds.musicVolume = slider.value;
+        //sliderMusicVolume = slider.value;
+        AudioManager.SetMusicVolume(slider.value);
     }
     #endregion
 
@@ -307,11 +308,11 @@ public class OptionsBehaviour : MonoBehaviour
         gammaLevelSlider.value = gammaLevel / 255;
 
         //Sounds
-        sliderMaterVolume = sounds.masterVolume;
+        /*sliderMaterVolume = sounds.masterVolume;
         sliderFXVolume = sounds.fXVolume;
-        sliderMusicVolume = sounds.musicVolume;
+        sliderMusicVolume = sounds.musicVolume;*/
 
-		level.SaveOptionsValue (resolution, fullScreen, vSync, sSAO, activeShadows, shadowResValue, QualityLevel, antiAliasing, gammaLevel);
+		//level.SaveOptionsValue (resolution, fullScreen, vSync, sSAO, activeShadows, shadowResValue, QualityLevel, antiAliasing, gammaLevel);
     }
 
     public void ResetSettingOption()
@@ -333,7 +334,7 @@ public class OptionsBehaviour : MonoBehaviour
         QualitySettings.SetQualityLevel(QualityLevel);
         QualityLevelDD.value = QualityLevel;
 
-        shadowRes = ShadowResolution.High;
+        shadowResolution = ShadowResolution.High;
         shadowResDD.value = shadowResValue;
 
         antiAliasing = 2;
@@ -348,14 +349,14 @@ public class OptionsBehaviour : MonoBehaviour
         gammaLevelSlider.value = gammaLevel;
         RenderSettings.ambientLight = new Color(gammaLevel, gammaLevel, 1);
 
-        //Sounds
+        /*//Sounds
         if (sounds != null)
         {
-            sounds.masterVolume = 1.0f;
+            ounds.masterVolume = 1.0f;
             sliderMaterVolume = sounds.masterVolume;
             sounds.musicVolume = 0.5f;
             sounds.fXVolume = 0.5f;
-        }
+        }*/
 
     }
 
@@ -363,7 +364,7 @@ public class OptionsBehaviour : MonoBehaviour
 	{
         SetLenguage();
 
-        if(level == null) return;
+        /*if(level == null) return;
 
         resolution = level.resolution;
 		fullScreen = level.fullScreen;
@@ -374,8 +375,37 @@ public class OptionsBehaviour : MonoBehaviour
 		QualityLevel = level.QualityLevel;
 		antiAliasing = level.antiAliasing;
 		gammaLevel = level.gammaLevel;
-		SetSavedOptions();
-	}
+		SetSavedOptions();*/
+
+        fullScreenToggle.isOn = Screen.fullScreen;
+
+        if(QualitySettings.vSyncCount == 0) vSyncToggle.isOn = false;
+        else if(QualitySettings.vSyncCount == 1) vSyncToggle.isOn = true;
+
+        activeShadows = activeShadowsToggle.isOn;
+
+        if(QualitySettings.shadows ==  ShadowQuality.Disable) activeShadowsToggle.isOn = false;
+        else if(QualitySettings.shadows == ShadowQuality.All) activeShadowsToggle.isOn = true;
+
+        if(QualitySettings.shadowResolution == ShadowResolution.Low)
+            languageDD.value = 0;
+        else if(QualitySettings.shadowResolution == ShadowResolution.Medium)
+            languageDD.value = 1;
+        else if(QualitySettings.shadowResolution == ShadowResolution.High)
+            languageDD.value = 2;
+        else if(QualitySettings.shadowResolution == ShadowResolution.VeryHigh)
+            languageDD.value = 3;
+
+        languageDD.value = QualitySettings.GetQualityLevel();
+
+        antiAliasingDD.value = QualitySettings.antiAliasing;
+
+        sliderMaterVolume.value = AudioManager.GetMasterVolume();
+        sliderMusicVolume.value = AudioManager.GetMusicVolume();
+        sliderAmbientVolume.value = AudioManager.GetAmbientVolume();
+        sliderFXVolume.value = AudioManager.GetSFXVolume();
+
+    }
 
     public void BackToTitle()
     {

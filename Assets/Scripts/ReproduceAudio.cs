@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ReproduceAudio : MonoBehaviour
 {
-    PlaySound play;
-    public int newAudio;
+    AudioPlayer player;
+    public int playAudio;
     public float pitch;
     public bool randomPitch;
     public bool activeOnEnable;
@@ -13,16 +13,21 @@ public class ReproduceAudio : MonoBehaviour
 
     void OnEnable()
     {
-        if(play != null) play = GameObject.Find("LevelManager").GetComponent<PlaySound>();
+        player = GameObject.Find("LevelManager").GetComponent<AudioPlayer>();
         if(activeOnEnable)
             Activated();
     }
 
     public void Activated()
     {
-        play = GameObject.Find("LevelManager").GetComponent<PlaySound>();
-        if(randomPitch || pitch == 0) pitch = Random.Range(0.5f, 1.5f);
-        play.PlayFX(newAudio, pitch, false);
-        if(disableAfterPlaySound) gameObject.SetActive(false);
+        //player = GameObject.Find("LevelManager").GetComponent<AudioPlayer>();
+        if(randomPitch || pitch == 0)
+            pitch = Random.Range(0.5f, 1.5f);
+        if(player != null)
+            player.PlaySFX(playAudio, 1.0f, pitch);
+        else
+            Debug.Log("null");
+        if(disableAfterPlaySound)
+            gameObject.SetActive(false);
     }
 }
