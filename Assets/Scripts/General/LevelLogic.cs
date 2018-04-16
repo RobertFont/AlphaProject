@@ -102,31 +102,33 @@ public class LevelLogic : MonoBehaviour
 
     public void SetTitleScene()
     {
+        StartLoad(2);
+
         if(player != null)
         {
             player.PlayMusic(0, 1, true);
         }
-        StartLoad(2);
     }
 
     public void SetCutSceneScene()
     {
+        StartLoad(3);
         if(player != null)
         {
             player.StopMusic();
             player.PlayMusic(2, 1, true);
         }
-        StartLoad(3);
     }
 
     public void SetGameplayScene()
     {
+        StartLoad(4);
+
         if(player != null)
         {
             player.StopMusic();
             player.PlayMusic(1, 1, true);
         }
-        StartLoad(4);
     }
 
     public void SetEndingScene()

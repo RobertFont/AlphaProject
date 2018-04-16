@@ -15,7 +15,8 @@ public class LogoEvent : MonoBehaviour
 
     public void Update()
     {
-        if(player != null) player.PlaySFX(1);
+        //if(player != null) player.PlaySFX(1);
+
     }
 
     public void Activate()

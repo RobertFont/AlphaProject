@@ -245,22 +245,28 @@ public class OptionsBehaviour : MonoBehaviour
     {
         //sliderMaterVolume = slider.value;
         AudioManager.SetMasterVolume(slider.value);
-        Debug.Log("CHANGE");
+        if (slider.value == -40)
+            AudioManager.SetMasterVolume(-80);
     }
     public void SetFXSoundLevel(Slider slider)
     {
         //sliderFXVolume = slider.value;
         AudioManager.SetSFXVolume(slider.value);
+        if(slider.value == -40)
+            AudioManager.SetSFXVolume(-80);
     }
     public void SetMusicLevel(Slider slider)
     {
-        //sliderMusicVolume = slider.value;
         AudioManager.SetMusicVolume(slider.value);
+        if(slider.value == -40)
+            AudioManager.SetMusicVolume(-80);
     }
     public void SetAmbienteVolume(Slider slider)
     {
         //sliderMusicVolume = slider.value;
         AudioManager.SetAmbientVolume(slider.value);
+        if(slider.value == -40)
+            AudioManager.SetAmbientVolume(-80);
     }
     #endregion
 
