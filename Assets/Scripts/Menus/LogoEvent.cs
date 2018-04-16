@@ -9,7 +9,7 @@ public class LogoEvent : MonoBehaviour
 
     public void Start()
     {
-        if (player != null) player = GameObject.Find("LevelManager").GetComponent<AudioPlayer>();
+        if (GameObject.Find("LevelManager").GetComponent<AudioPlayer>() != null) player = GameObject.Find("LevelManager").GetComponent<AudioPlayer>();
         level = GameObject.Find("LevelManager").GetComponent<LevelLogic>();
     }
 

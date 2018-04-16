@@ -64,6 +64,13 @@ public class OptionsBehaviour : MonoBehaviour
         SetSavedOptionsValue();
 
     }
+    private void Update()
+    {
+        Debug.Log("master "+AudioManager.GetMasterVolume());
+        Debug.Log("music "+AudioManager.GetMusicVolume());
+        Debug.Log("SFX "+AudioManager.GetSFXVolume());
+        Debug.Log("Ambient "+AudioManager.GetAmbientVolume());
+    }
 
     #region General
     public void SetLenguage()
@@ -240,17 +247,20 @@ public class OptionsBehaviour : MonoBehaviour
         AudioManager.SetMasterVolume(slider.value);
         Debug.Log("CHANGE");
     }
-
     public void SetFXSoundLevel(Slider slider)
     {
         //sliderFXVolume = slider.value;
         AudioManager.SetSFXVolume(slider.value);
     }
-
     public void SetMusicLevel(Slider slider)
     {
         //sliderMusicVolume = slider.value;
         AudioManager.SetMusicVolume(slider.value);
+    }
+    public void SetAmbienteVolume(Slider slider)
+    {
+        //sliderMusicVolume = slider.value;
+        AudioManager.SetAmbientVolume(slider.value);
     }
     #endregion
 
@@ -363,6 +373,10 @@ public class OptionsBehaviour : MonoBehaviour
 	public void SetSavedOptionsValue()
 	{
         SetLenguage();
+        sliderMaterVolume.value = AudioManager.GetMasterVolume();
+        sliderMusicVolume.value = AudioManager.GetMusicVolume();
+        sliderAmbientVolume.value = AudioManager.GetAmbientVolume();
+        sliderFXVolume.value = AudioManager.GetSFXVolume();
 
         /*if(level == null) return;
 
@@ -399,12 +413,6 @@ public class OptionsBehaviour : MonoBehaviour
         languageDD.value = QualitySettings.GetQualityLevel();
 
         antiAliasingDD.value = QualitySettings.antiAliasing;
-
-        sliderMaterVolume.value = AudioManager.GetMasterVolume();
-        sliderMusicVolume.value = AudioManager.GetMusicVolume();
-        sliderAmbientVolume.value = AudioManager.GetAmbientVolume();
-        sliderFXVolume.value = AudioManager.GetSFXVolume();
-
     }
 
     public void BackToTitle()

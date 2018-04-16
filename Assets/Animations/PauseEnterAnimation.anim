@@ -101,7 +101,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: Menu/Portable Master Sound
+    path: Menu/Canvas/MasterSoundVolume
     classID: 1
     script: {fileID: 0}
   m_PPtrCurves: []
@@ -219,7 +219,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: Menu/Portable Master Sound
+    path: Menu/Canvas/MasterSoundVolume
     classID: 1
     script: {fileID: 0}
   m_EulerEditorCurves: []

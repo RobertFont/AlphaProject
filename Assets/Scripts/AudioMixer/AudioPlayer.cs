@@ -55,6 +55,10 @@ public class AudioPlayer : MonoBehaviour
     {
         PlayAmbient(clip, 1);
     }
+    public void PlayAmbient(int clip, bool loop)
+    {
+        Play(ambientClips[clip], 1, 1, loop, true, "Ambient");
+    }
     public void PlayAmbient(int clip, float volume)
     {
         Play(ambientClips[clip], volume, 1, true, true, "Ambient");
