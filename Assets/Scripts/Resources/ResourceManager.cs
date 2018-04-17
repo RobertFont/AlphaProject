@@ -356,12 +356,12 @@ public class ResourceManager : MonoBehaviour
             {
                 if (food >= necessaryFood)
                 {
-                    RemoveFood(food -= necessaryFood);
+                    RemoveFood(necessaryFood);
                     AddHappiness(1);
                 }
                 else
                 {
-                    RemoveFood(food -= necessaryFood);
+                    RemoveFood(necessaryFood);
                     RemoveHappiness(1);
                 }
                 mealTime = 0;
