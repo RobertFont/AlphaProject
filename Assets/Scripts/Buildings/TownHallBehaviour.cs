@@ -18,7 +18,7 @@ public class TownHallBehaviour : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if(!info.showRange && constructionRange.active) constructionRange.SetActive(false);
+        if(!info.showRange && constructionRange.activeSelf) constructionRange.SetActive(false);
         else if (info.showRange) constructionRange.SetActive(true);
     }
 

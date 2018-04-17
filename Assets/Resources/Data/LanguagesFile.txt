@@ -1,4 +1,4 @@
-id	spanish	english	catalan
+﻿id	spanish	english	catalan
 spanish	Castellano	Spanish	Castellà
 english	Inglés	English	Anglés
 catala	Catalan	Catalan	Català
@@ -12,8 +12,8 @@ graphics	Gráficos	Graphics	Gràfics
 sound	Sonido	Sounds	Só
 controls	Controles	Controls	Controls
 pause	Pausa	Pause	Pausa
-defaultSettings	Restablecer configuración	Reset Settings	Restablir configuració
-saveSettings	Guardar Configuración	Save Settings	Desa configuració
+defaultSettings	Restablecer	Reset	Restablir
+saveSettings	Guardar	Save	Desa
 back	Volver	Back	Tornar
 language	Lenguaje	Language	Llenguatge
 extraInformation	Información extra	Extra Information	Informació adicional
@@ -26,9 +26,10 @@ textureQyality	Calidad de texturas	Texture Quality	Qualitat de textures
 antiAlising	Anti-Alising	Anti-Alising	Anti-Alising
 shadows	Sombras	Shadows	Ombres
 gamma	Gama	Gamma	Gamma
-masterSound	Volumen Maestro	Master Volume	Volum mestre
-fxSound	Volúmen de FX	FX Valume	Volums de FX
-musicSound	Volúmen de música	Music Volume	Volum de música
+masterSound	Maestro	Master	Mestre
+fxSound	FX	FX	FX
+musicAmbient	Ambiente	Ambient	Ambient
+musicSound	Música	Music	Música
 fast	Rápido	Fast	Ràpid
 good	Bueno	Good	Bó
 fantastic	Fantástico	Fantastic	Fantàstic

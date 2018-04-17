@@ -4,19 +4,11 @@ using UnityEngine;
 
 public class LogoEvent : MonoBehaviour
 {
-    AudioPlayer player;
     LevelLogic level;
 
     public void Start()
     {
-        if (GameObject.Find("LevelManager").GetComponent<AudioPlayer>() != null) player = GameObject.Find("LevelManager").GetComponent<AudioPlayer>();
         level = GameObject.Find("LevelManager").GetComponent<LevelLogic>();
-    }
-
-    public void Update()
-    {
-        //if(player != null) player.PlaySFX(1);
-
     }
 
     public void Activate()

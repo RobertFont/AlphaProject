@@ -9,23 +9,18 @@ public class OptionsBehaviour : MonoBehaviour
 
     [Header("General")]
     public bool dontChangeMenu = false;
-    public List<string> languageNames = new List<string>();
-    public List<string> extraInfoNames = new List<string>();
-    public List<string> qualityNames = new List<string>();
-    public List<string> shadowsQualityNames = new List<string>();
-    public List<string> antiAliasingNames = new List<string>();
+    List<string> languageNames = new List<string>();
+    List<string> qualityNames = new List<string>();
+    List<string> shadowsQualityNames = new List<string>();
+    List<string> antiAliasingNames = new List<string>();
     
     public Dropdown languageDD;
-    public Dropdown hUDInfoDD;
 
     [Header("Graphics")]
     int resolution = 1;
     public Dropdown resolutionDD;
-    bool fullScreen = true;
     public Toggle fullScreenToggle;
-    bool vSync = false;
     public Toggle vSyncToggle;
-    bool sSAO = false;
     bool activeShadows = true;
     public Toggle activeShadowsToggle;
     //bool particles = false;
@@ -39,6 +34,10 @@ public class OptionsBehaviour : MonoBehaviour
     float gammaLevel;
     public Slider gammaLevelSlider;
     public RectTransform gammaLevelRectT;
+
+    public Dropdown detailDistanceDD;
+    //public TerrainData terrain;
+    public static float detailedDistance;
 
     [Header("Sound")]
     public Slider sliderMaterVolume;
@@ -55,21 +54,15 @@ public class OptionsBehaviour : MonoBehaviour
     public GameObject soundsMenu;
     public GameObject controlsMenu;
     
-    private void Start()
+    void Start()
     {
         if (!dontChangeMenu) SetGeneralMenu();
         if (GameObject.Find("LevelManager").GetComponent<LevelLogic>() != null) level = GameObject.Find("LevelManager").GetComponent<LevelLogic>();
         //if (sounds != null) sounds = GameObject.Find("LevelManager").GetComponent<PlaySound>();
         //gammaLevel = RenderSettings.ambientLight.gamma;
+        AddListNames();
         SetSavedOptionsValue();
 
-    }
-    private void Update()
-    {
-        Debug.Log("master "+AudioManager.GetMasterVolume());
-        Debug.Log("music "+AudioManager.GetMusicVolume());
-        Debug.Log("SFX "+AudioManager.GetSFXVolume());
-        Debug.Log("Ambient "+AudioManager.GetAmbientVolume());
     }
 
     #region General
@@ -92,22 +85,32 @@ public class OptionsBehaviour : MonoBehaviour
                     break;
             }
         }
-        languageNames[0] = TextData.GetText("spanish"); 
-        languageNames[1] = TextData.GetText("english"); 
+        ChangeNamesDD();
+    }
+
+    void AddListNames()
+    {
+        languageNames.Add("");
+        languageNames.Add("");
+        languageNames.Add("");
+        qualityNames.Add("");
+        qualityNames.Add("");
+        qualityNames.Add("");
+        qualityNames.Add("");
+        shadowsQualityNames.Add("");
+        shadowsQualityNames.Add("");
+        shadowsQualityNames.Add("");
+        shadowsQualityNames.Add("");
+        antiAliasingNames.Add("");
+    }
+    void ChangeNamesDD()
+    {
+        languageNames[0] = TextData.GetText("spanish");
+        languageNames[1] = TextData.GetText("english");
         languageNames[2] = TextData.GetText("catala");
 
         languageDD.ClearOptions();
         languageDD.AddOptions(languageNames);
-
-        ChangeNamesDD();
-    }
-
-    public void ChangeNamesDD()
-    {
-        extraInfoNames[0] = TextData.GetText("hold");
-        extraInfoNames[1] = TextData.GetText("press");
-        hUDInfoDD.ClearOptions();
-        hUDInfoDD.AddOptions(extraInfoNames);
 
         qualityNames[0] = TextData.GetText("fast");
         qualityNames[1] = TextData.GetText("good");
@@ -125,20 +128,7 @@ public class OptionsBehaviour : MonoBehaviour
 
         antiAliasingNames[0] = TextData.GetText("disabled"); ;
         antiAliasingDD.ClearOptions();
-        antiAliasingDD.AddOptions(antiAliasingNames); 
-    }
-
-    public void ShowExtraInformation()
-    {
-        switch (languageDD.value)
-        {
-            case 0:
-
-                break;
-            case 1:
-
-                break;
-        }
+        antiAliasingDD.AddOptions(antiAliasingNames);
     }
 
     public void HudSize(int value)
@@ -155,32 +145,28 @@ public class OptionsBehaviour : MonoBehaviour
         switch (resolution)
         {
             case 0:
-                Screen.SetResolution(800, 600, fullScreen);
+                Screen.SetResolution(800, 600, fullScreenToggle.isOn);
                 break;
             case 1:
-                Screen.SetResolution(1280, 720, fullScreen);
+                Screen.SetResolution(1280, 720, fullScreenToggle.isOn);
                 break;
             case 2:
-                Screen.SetResolution(1600, 1024, fullScreen);
+                Screen.SetResolution(1600, 1024, fullScreenToggle.isOn);
                 break;
             case 3:
-                Screen.SetResolution(1920, 1080, fullScreen);
+                Screen.SetResolution(1920, 1080, fullScreenToggle.isOn);
                  break;
         }      
     }
 
     public void FullScreenMode()
     {
-		fullScreen = fullScreenToggle.isOn;
-		Screen.fullScreen = fullScreen;
-        if(fullScreenToggle.isOn) Debug.Log("enable");
-        else if(!fullScreenToggle.isOn) Debug.Log("disable");
+		Screen.fullScreen = fullScreenToggle.isOn;
     }
 
     public void VSync()
     {
-		vSync = vSyncToggle.isOn;
-        if (vSync) QualitySettings.vSyncCount = 1;
+        if (vSyncToggle.isOn) QualitySettings.vSyncCount = 1;
         else QualitySettings.vSyncCount = 0;
     }
 
@@ -192,7 +178,7 @@ public class OptionsBehaviour : MonoBehaviour
 
     public void SetShadowResolution()
     {
-		shadowResValue = languageDD.value;
+		shadowResValue = shadowResDD.value;
 
 		switch (shadowResValue)
         {
@@ -237,6 +223,11 @@ public class OptionsBehaviour : MonoBehaviour
     public class ExampleClass : MonoBehaviour
     {
         public int qualityLevel = QualitySettings.GetQualityLevel();
+    }
+
+    public void SetDetaildeDistance()
+    {
+        detailedDistance = detailDistanceDD.value;
     }
     #endregion
 
@@ -305,46 +296,17 @@ public class OptionsBehaviour : MonoBehaviour
     #endregion
 
     #region ExtraOptions
-    public void SetSavedOptions()
-    {
-        resolutionDD.value = resolution;
-
-        fullScreenToggle.enabled = fullScreen;
-
-        vSyncToggle.enabled = vSync;
-
-        QualityLevelDD.value = QualityLevel;
-
-		languageDD.value = shadowResValue;
-
-        antiAliasingDD.value = antiAliasing;
-
-        activeShadowsToggle.enabled = activeShadows;
-
-        gammaLevelSlider.value = gammaLevel / 255;
-
-        //Sounds
-        /*sliderMaterVolume = sounds.masterVolume;
-        sliderFXVolume = sounds.fXVolume;
-        sliderMusicVolume = sounds.musicVolume;*/
-
-		//level.SaveOptionsValue (resolution, fullScreen, vSync, sSAO, activeShadows, shadowResValue, QualityLevel, antiAliasing, gammaLevel);
-    }
-
     public void ResetSettingOption()
     {
         //Graphics
-        if (resolutionDD != null) resolutionDD.value = 1;
         resolution = 3;
         SetResolution();
 
-        fullScreen = true;
-        Screen.fullScreen = fullScreen;
-        fullScreenToggle.enabled = fullScreen;
+        fullScreenToggle.isOn = true;
+        Screen.fullScreen = fullScreenToggle.isOn;
 
-        vSync = false;
         QualitySettings.vSyncCount = 0;
-        vSyncToggle.enabled = vSync;
+        vSyncToggle.isOn = false;
 
         QualityLevel = 2;
         QualitySettings.SetQualityLevel(QualityLevel);
@@ -365,15 +327,20 @@ public class OptionsBehaviour : MonoBehaviour
         gammaLevelSlider.value = gammaLevel;
         RenderSettings.ambientLight = new Color(gammaLevel, gammaLevel, 1);
 
-        /*//Sounds
-        if (sounds != null)
-        {
-            ounds.masterVolume = 1.0f;
-            sliderMaterVolume = sounds.masterVolume;
-            sounds.musicVolume = 0.5f;
-            sounds.fXVolume = 0.5f;
-        }*/
+        shadowResDD.value = 1;
+        QualitySettings.shadowResolution = ShadowResolution.Medium;
 
+        sliderMaterVolume.value = 1;
+        sliderMusicVolume.value = 1;
+        sliderAmbientVolume.value = 1;
+        sliderFXVolume.value = 1;
+        sliderMaterVolume.value = AudioManager.GetMasterVolume();
+        sliderMusicVolume.value = AudioManager.GetMusicVolume();
+        sliderAmbientVolume.value = AudioManager.GetAmbientVolume();
+        AudioManager.SetMasterVolume(sliderMaterVolume.value);
+        AudioManager.SetSFXVolume(sliderFXVolume.value);
+        AudioManager.SetMusicVolume(sliderMusicVolume.value);
+        AudioManager.SetAmbientVolume(sliderAmbientVolume.value);
     }
 
 	public void SetSavedOptionsValue()
@@ -384,39 +351,27 @@ public class OptionsBehaviour : MonoBehaviour
         sliderAmbientVolume.value = AudioManager.GetAmbientVolume();
         sliderFXVolume.value = AudioManager.GetSFXVolume();
 
-        /*if(level == null) return;
-
-        resolution = level.resolution;
-		fullScreen = level.fullScreen;
-		vSync = level.vSync;
-		sSAO = level.sSAO;
-		activeShadows = level.activeShadows;
-		shadowResValue = level.shadowResValue;
-		QualityLevel = level.QualityLevel;
-		antiAliasing = level.antiAliasing;
-		gammaLevel = level.gammaLevel;
-		SetSavedOptions();*/
-
         fullScreenToggle.isOn = Screen.fullScreen;
 
         if(QualitySettings.vSyncCount == 0) vSyncToggle.isOn = false;
         else if(QualitySettings.vSyncCount == 1) vSyncToggle.isOn = true;
 
-        activeShadows = activeShadowsToggle.isOn;
-
         if(QualitySettings.shadows ==  ShadowQuality.Disable) activeShadowsToggle.isOn = false;
         else if(QualitySettings.shadows == ShadowQuality.All) activeShadowsToggle.isOn = true;
 
         if(QualitySettings.shadowResolution == ShadowResolution.Low)
-            languageDD.value = 0;
+            shadowResDD.value = 0;
         else if(QualitySettings.shadowResolution == ShadowResolution.Medium)
-            languageDD.value = 1;
+            shadowResDD.value = 1;
         else if(QualitySettings.shadowResolution == ShadowResolution.High)
-            languageDD.value = 2;
+            shadowResDD.value = 2;
         else if(QualitySettings.shadowResolution == ShadowResolution.VeryHigh)
-            languageDD.value = 3;
+            shadowResDD.value = 3;
 
-        languageDD.value = QualitySettings.GetQualityLevel();
+        QualitySettings.vSyncCount = 0;
+        vSyncToggle.isOn = false;
+
+        QualityLevelDD.value = QualitySettings.GetQualityLevel();
 
         antiAliasingDD.value = QualitySettings.antiAliasing;
     }
