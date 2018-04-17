@@ -20,7 +20,6 @@ public class ReproduceAudio : MonoBehaviour
 
     public void Activated()
     {
-        //player = GameObject.Find("LevelManager").GetComponent<AudioPlayer>();
         if(randomPitch || pitch == 0)
             pitch = Random.Range(0.5f, 1.5f);
         if(player != null)

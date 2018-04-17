@@ -368,14 +368,14 @@ public class BuilderScript : MonoBehaviour
             {
                 Debug.Log("goldMineFound");
                 GameObject newBuild = Instantiate(buildingSelected, goldMineFoundObject.transform.localPosition, Quaternion.Euler(0, build.transform.localEulerAngles.y, 0));
-                player.PlaySFX(7);
+                player.Play2DSFX(7);
                 newBuild.name = build.name;
                 newBuild.GetComponent<GoldMineBehaviour>().SetGoldOre(goldMineFoundObject);
             }
             else
             {
                 GameObject newBuild = Instantiate(buildingSelected, buildingInMouse, Quaternion.Euler(0, build.transform.localEulerAngles.y, 0));
-                player.PlaySFX(7);
+                player.Play2DSFX(7);
                 newBuild.name = build.name;
             }
 

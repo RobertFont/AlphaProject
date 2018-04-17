@@ -200,7 +200,7 @@ public class EventBehaviour : MonoBehaviour {
         if (rainStarted) return;
         if (dustStarted) return;
         dustParticle.SetActive(true);
-        //if (soundFX != null) soundFX.PlayFX(4, 1f, true);
+        if (player != null) player.PlayAmbient(4, true);
 
         dustStarted = true;
     }
@@ -209,7 +209,7 @@ public class EventBehaviour : MonoBehaviour {
     {
         if(goblinsStarted) return;
         goblinSpawner.SetActive(true);
-        if(player != null) player.PlayAmbient(9, true);
+        if(player != null) player.Play2DSFX(4);
         icons.GoblinsIconStart();
 
         goblinsStarted = true;
