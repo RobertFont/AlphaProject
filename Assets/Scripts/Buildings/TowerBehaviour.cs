@@ -60,6 +60,7 @@ public class TowerBehaviour : MonoBehaviour
     void Update ()
     {
         if(!info.showRange && constructionRange.active) constructionRange.SetActive(false);
+        else if(info.showRange) constructionRange.SetActive(true);
 
         if (target == null || input.paused) return;
 
@@ -87,7 +88,7 @@ public class TowerBehaviour : MonoBehaviour
 
     public void OnMouseOver()
     {
-        if(info.showRange) constructionRange.SetActive(true);
+        //if(info.showRange) constructionRange.SetActive(true);
 
         if(Input.GetButtonDown("Fire1") || Input.GetButtonDown("SelectBuildController")) OpenInfoBuilding();
     }

@@ -19,6 +19,7 @@ public class TownHallBehaviour : MonoBehaviour {
 	void Update ()
     {
         if(!info.showRange && constructionRange.active) constructionRange.SetActive(false);
+        else if (info.showRange) constructionRange.SetActive(true);
     }
 
     public void OnMouseOver()
@@ -27,8 +28,6 @@ public class TownHallBehaviour : MonoBehaviour {
         {
             OpenInfoBuilding();
         }
-
-        if(info.showRange) constructionRange.SetActive(true);
     }
 
     public void OpenInfoBuilding()
