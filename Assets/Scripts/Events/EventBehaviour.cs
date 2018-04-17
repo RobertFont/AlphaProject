@@ -152,7 +152,7 @@ public class EventBehaviour : MonoBehaviour {
         if (fireStarted) return;
         if (rainStarted) return;
         if (player != null) player.PlayAmbient(2, false);
-        resource.happiness -= 10;
+        resource.RemoveHappiness(10);
         selectHouse = Random.Range(0, maxHouses);
         houseSelected = housesArray[selectHouse];
         Debug.Log("fuego");
@@ -244,7 +244,7 @@ public class EventBehaviour : MonoBehaviour {
     {
         if (!rainStarted)
         {
-            resource.happiness -= 10;
+            resource.RemoveHappiness(10);
             Destroy(houseSelected);
             houses.Remove(houseSelected);
             resource.RemoveMaxPop(4);
@@ -261,7 +261,7 @@ public class EventBehaviour : MonoBehaviour {
 
     public void EndBugs()
     {
-        resource.happiness -= 5;
+        resource.RemoveHappiness(5);
         icons.BugsIconEnd();
         bugParticle.SetActive(false);
         bugStarted = false;

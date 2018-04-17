@@ -127,7 +127,7 @@ public class FarmBehaviour : MonoBehaviour
 
     public void GatherResources()
     {
-        resource.AddFood(20);
+        resource.AddFood(10);
     }
 
     /*public void OnMouseUpAsButton()
