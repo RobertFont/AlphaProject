@@ -65,6 +65,7 @@ public class AudioPlayer : MonoBehaviour
     }
     public void StopAmbient()
     {
+        if(ambientSource == null) return;
         ambientSource.TryStop();
         Destroy(ambientSource);
     }

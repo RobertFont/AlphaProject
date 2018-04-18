@@ -250,7 +250,7 @@ public class EventBehaviour : MonoBehaviour {
             resource.RemoveMaxPop(4);
             resource.AddHouse(-1);
         }
-        player.StopAmbient();
+        //player.StopAmbient();
         fireParticle.SetActive(false);
         icons.FireIconEnd();
         fireStarted = false;
