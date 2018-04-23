@@ -7,6 +7,7 @@ public class SpawnEnemyBehaviour : MonoBehaviour
     public ResourceManager resources;
     public GameObject enemy;
     public float counter = 0;
+    public List<Transform> spawnersPosition;
 
 	// Update is called once per frame
 	void Update ()
@@ -19,9 +20,16 @@ public class SpawnEnemyBehaviour : MonoBehaviour
             {
                 Instantiate(enemy, transform.position, transform.rotation);
 
+                this.transform.position = spawnersPosition[RandomPosition()].position;
                 counter = 0;
             }
         }
         else counter = 0;
 	}
+
+    int RandomPosition()
+    {
+        int value = Random.RandomRange(0, 10);
+        return value;
+    }
 }
