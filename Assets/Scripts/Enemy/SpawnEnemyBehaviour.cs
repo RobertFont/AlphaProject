@@ -29,7 +29,8 @@ public class SpawnEnemyBehaviour : MonoBehaviour
 
     int RandomPosition()
     {
-        int value = Random.RandomRange(0, 10);
+        //int value = Random.RandomRange(0, 10);
+        int value = Random.Range(0, 10);
         return value;
     }
 }

@@ -1,4 +1,4 @@
-﻿id	spanish	english	catalan
+id	spanish	english	catalan
 spanish	Castellano	Spanish	Castellà
 english	Inglés	English	Anglés
 catala	Catalan	Catalan	Català
@@ -26,10 +26,10 @@ textureQyality	Calidad de texturas	Texture Quality	Qualitat de textures
 antiAlising	Anti-Alising	Anti-Alising	Anti-Alising
 shadows	Sombras	Shadows	Ombres
 gamma	Gama	Gamma	Gamma
-masterSound	Maestro	Master	Mestre
-fxSound	FX	FX	FX
+masterSound	Volumen Maestro	Master Volume	Volum mestre
+fxSound	Volúmen de FX	FX Valume	Volums de FX
 musicAmbient	Ambiente	Ambient	Ambient
-musicSound	Música	Music	Música
+musicSound	Volúmen de música	Music Volume	Volum de música
 fast	Rápido	Fast	Ràpid
 good	Bueno	Good	Bó
 fantastic	Fantástico	Fantastic	Fantàstic
@@ -70,3 +70,11 @@ fireStationInfo	Estación de bomberos: Apagan fuegos.	FireStation: Puts out the 
 warehouseInfo	Almacen: Aumenta la capacidad maxima de los recursos	Warehouse: Allows to storage more resources	Magatzem: Permet emagatzemar més recursos
 towerInfo	Torre: Dispara a las unidades enemigas.	Tower: Shoots enemy units.	Torre: Dispara unitats enemiges.
 skipTutorial	Omitir Tutorial	Skip Tutorial	Saltar Tutorial
+tutorialDialog1	Hola y bienvenido a Settlemen.		
+tutorialDialog2	Clica en el botón inferior "Edificios" que señala la flecha, para desplegar el menú de edificaciones.		
+tutorialDialog3	Para empezar, haz click en el icono del ayuntamiento para seleccionar el edificio y luego haz click en el marco amarillo señalado en la pantalla para empezar a construirlo.		
+tutorialDialog4	Perfecto! Ahora que dispones de un ayutamiento, puedes empezar a construir casas. Estas casas aumentan la población y proporcionan la mano de obra necesaria para recolectar los recursos requeridos para expandir tu ciudad.		
+tutorialDialog5	Bien! Ahora que dispones de trabajadores necesitaras proporcionarles el sustento necesario para sobrevivir. Empezemos por construir una granja y asi empezar a producir comida.		
+tutorialDialog6	Seria conveniente contruir algunas más.		
+tutorialDialog7	Fantástico		
+tutorialDialog8	afafasfas.		
