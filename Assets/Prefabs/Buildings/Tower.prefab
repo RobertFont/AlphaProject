@@ -731,8 +731,6 @@ MonoBehaviour:
   resource: {fileID: 0}
   info: {fileID: 0}
   input: {fileID: 0}
-  range: 15
-  fireRate: 1
   projectilePrefab: {fileID: 1727446686266400, guid: 39573579b314da545983f47532370252,
     type: 2}
   constructionRange: {fileID: 0}

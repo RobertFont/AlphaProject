@@ -10,8 +10,8 @@ public class TowerBehaviour : MonoBehaviour
     public InputManager input;
 
     [Header("Attributes")]
-    public float range = 15f;
-    public float fireRate = 1f;
+    public static float range = 15f;
+    public static float fireRate = 1f;
     private float fireCountDown = 0f;
 
     public GameObject projectilePrefab;
@@ -109,5 +109,21 @@ public class TowerBehaviour : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, range);
+    }
+
+    public static void ChangeStats(float newRange, float newFireRate)
+    {
+        range = newRange;
+        fireRate = newFireRate;
+    }
+
+    public static void ChangeRange(float newRange)
+    {
+        range += newRange;
+    }
+
+    public static void ChangeFireRate(float newFireRate)
+    {
+        fireRate += newFireRate;
     }
 }

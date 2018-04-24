@@ -110,6 +110,8 @@ public class ResourceManager : MonoBehaviour
         }
         UpdateUI();
 
+        if (barracks >= 1) TowerBehaviour.ChangeStats(30, 2);
+
     }
 
     public void UpdateUI()

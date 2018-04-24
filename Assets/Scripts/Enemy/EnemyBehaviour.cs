@@ -9,6 +9,7 @@ public class EnemyBehaviour : MonoBehaviour
     [Header("Enemy Variables")]
     public float velocity;
     public Vector3 target;
+    public Transform targetTransform;
     public Vector3 destination;
     public bool canAttackX;
     public bool canAttackZ;
@@ -41,7 +42,9 @@ public class EnemyBehaviour : MonoBehaviour
         }
 
         target = GameObject.FindGameObjectWithTag("TownHall").GetComponent<Transform>().position;
+        targetTransform = GameObject.FindGameObjectWithTag("TownHall").GetComponent<Transform>();
 
+        /*
         if(transform.position.x <= target.x - 1)
         {
             destination.x += Time.deltaTime * velocity / Time.timeScale;
@@ -63,8 +66,37 @@ public class EnemyBehaviour : MonoBehaviour
         else canAttackZ = true;
 
         transform.position = destination;
-        
-        if(canAttackX && canAttackZ)
+        */
+        if (((transform.position.x <= target.x - 7) || (transform.position.x >= target.x + 7)) || ((transform.position.z <= target.z - 7) || (transform.position.z >= target.z + 7)))
+        {
+            transform.LookAt(target);
+            transform.Translate(Vector3.forward * Time.deltaTime * 4);
+            transform.position = new Vector3(transform.position.x, destination.y, transform.position.z);
+            transform.localRotation = Quaternion.Euler(new Vector3(0, transform.localRotation.y, 0));
+        }
+        else if (((transform.position.x <= target.x - 2) || (transform.position.x >= target.x + 2)) || ((transform.position.z <= target.z - 2) || (transform.position.z >= target.z + 2)))
+        {
+            transform.LookAt(target);
+            transform.Translate(Vector3.forward * Time.deltaTime * 4);
+            //transform.position = new Vector3(transform.position.x, destination.y, transform.position.z);
+            destination = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
+            transform.localRotation = Quaternion.Euler(new Vector3(0, transform.localRotation.y, 0));
+        }
+        else if (((transform.position.x <= target.x - 1) || (transform.position.x >= target.x + 1)) || ((transform.position.z <= target.z - 1) || (transform.position.z >= target.z + 1)))
+        {
+
+            transform.LookAt(target);
+            transform.Translate(Vector3.forward * Time.deltaTime * 4);
+            transform.position = new Vector3(transform.position.x, destination.y, transform.position.z);
+            transform.localRotation = Quaternion.Euler(new Vector3(0, transform.localRotation.y, 0));
+        }
+        else
+        {
+            canAttackX = true;
+            canAttackZ = true;
+        }
+
+        if (canAttackX && canAttackZ)
         {
             counter += Time.deltaTime*Time.timeScale;
 
