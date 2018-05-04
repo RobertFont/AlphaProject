@@ -26,10 +26,10 @@ textureQyality	Calidad de texturas	Texture Quality	Qualitat de textures
 antiAlising	Anti-Alising	Anti-Alising	Anti-Alising
 shadows	Sombras	Shadows	Ombres
 gamma	Gama	Gamma	Gamma
-masterSound	Volumen Maestro	Master Volume	Volum mestre
-fxSound	Volúmen de FX	FX Valume	Volums de FX
+masterSound	Maestro	Master	Mestre
+fxSound	FX	FX	FX
 musicAmbient	Ambiente	Ambient	Ambient
-musicSound	Volúmen de música	Music Volume	Volum de música
+musicSound	Música	Music	Música
 fast	Rápido	Fast	Ràpid
 good	Bueno	Good	Bó
 fantastic	Fantástico	Fantastic	Fantàstic
