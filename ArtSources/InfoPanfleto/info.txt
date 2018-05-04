@@ -1,0 +1,22 @@
+---------------------------------
+ALPHA ENTERTAINMENT - SETTLEMEN
+---------------------------------
+
+-> Nombre del Grupo:
+	- Alpha Entertainment
+
+-> Nombre del Proyecto:
+	- Settlemen
+
+-> Integrantes del Grupo:
+	- Adrià Arranz
+	- Robert Font
+	- Jordi Jorba
+	- Cristian Luzón
+
+-> Sinopsis del Proyecto:
+	- Settlemen is a Medieval CityBuilder game, where some of the buildings produce resources that 
+will be managed by the player in order to increase the size of the city. 
+From time to time there will spawn challenging events that the player must resolve, so the city can 
+thrive and prosper in an increasingly difficult environment, because as we know, where there are resources,
+there are enemies.
