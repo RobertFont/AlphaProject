@@ -1,4 +1,4 @@
-id	spanish	english	catalan
+﻿id	spanish	english	catalan
 spanish	Castellano	Spanish	Castellà
 english	Inglés	English	Anglés
 catala	Catalan	Catalan	Català
@@ -76,5 +76,5 @@ tutorialDialog3	Para empezar, haz click en el icono del ayuntamiento para selecc
 tutorialDialog4	Perfecto! Ahora que dispones de un ayutamiento, puedes empezar a construir casas. Estas casas aumentan la población y proporcionan la mano de obra necesaria para recolectar los recursos requeridos para expandir tu ciudad.		
 tutorialDialog5	Bien! Ahora que dispones de trabajadores necesitaras proporcionarles el sustento necesario para sobrevivir. Empezemos por construir una granja y asi empezar a producir comida.		
 tutorialDialog6	Seria conveniente contruir algunas más.		
-tutorialDialog7	Fantástico		
+tutorialDialog7	Fantástico.		
 tutorialDialog8	afafasfas.		
