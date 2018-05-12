@@ -21,20 +21,15 @@ public class TutorialBehaviour : MonoBehaviour
     public GameObject contructionButton;
 
 	public Text tutorialDialog;
-	public Image tutorialBackground;
+	public Button tutorialBackground;
+
+    public bool advanceTutorial = false;
 
     public List<Vector3> auraPositions = new List<Vector3>();
 
-    public enum TutorialStates
-    {
-        Townhall, House, Mine, Lumber, Farm, Final
-    }
-
-    public TutorialStates state;
-
 	public enum DialogStates
 	{
-		Intro=0, Start, Townhall, House, Mine, Lumber, Farm, Final, EndTutorial
+		Intro=0, Start, Construction,Townhall, House, Mine, Lumber, Farm, Final, EndTutorial
 	}
 
 	public DialogStates dialogStates;
@@ -46,6 +41,9 @@ public class TutorialBehaviour : MonoBehaviour
         aura.gameObject.SetActive(true);
         actualPos = 0;
 		tutorialDialog.gameObject.SetActive(true);
+
+        arrow.localPosition = new Vector3(1.6f, -240.0f, 0.0f);
+        arrowEasings.ResetEasing();
     }
 
     // Update is called once per frame
@@ -57,8 +55,9 @@ public class TutorialBehaviour : MonoBehaviour
         {
 			//dialog switch
 
-            if(!contructionButton.activeSelf)
+            /*if(!contructionButton.activeSelf)
             {
+
                 if(closedContructionButton)
                 {
                     arrow.localPosition = new Vector3(1.6f, -240.0f, 0.0f);
@@ -70,23 +69,47 @@ public class TutorialBehaviour : MonoBehaviour
                 }
                 return;
             }
-            switch(state)
+            tutorialBackground.gameObject.SetActive(true);*/
+            switch(dialogStates)
             {
-				/*case TutorialStates.Intro:
+				case DialogStates.Intro:
 					{
 						tutorialDialog.text = TextData.GetText("tutorialDialog1");
-						if(AdvanceTutorial())
-							state = TutorialStates.Start;
+                        if(advanceTutorial)
+                        {
+                            advanceTutorial = false;
+                            tutorialBackground.gameObject.SetActive(false);
+                            dialogStates = DialogStates.Construction;
+                        }
 					}
 					break;
-				case TutorialStates.Start:
+                case DialogStates.Construction:
+                    {
+                        tutorialDialog.text = TextData.GetText("tutorialDialog2");
+                        if(!closedContructionButton)
+                        {
+                            arrow.localPosition = new Vector3(1.6f, -240.0f, 0.0f);
+                            arrowEasings.ResetEasing();
+                            closedContructionButton = false;
+                            Debug.Log("Construction");
+                            dialogStates = DialogStates.Start;
+                        }
+                    }
+                    break;
+                case DialogStates.Start:
 					{
+                        Debug.Log("start");
 						tutorialDialog.text = TextData.GetText("tutorialDialog3");
-						if(AdvanceTutorial())
-							state = TutorialStates.Townhall;
+                        if(advanceTutorial)
+                        {
+                            advanceTutorial = false;
+                            tutorialDialog.text = TextData.GetText("tutorialDialog3");
+                            dialogStates = DialogStates.Townhall;
+                            //tutorialBackground.gameObject.SetActive(true);
+                        }
 					}
-					break;*/
-               case TutorialStates.Townhall:
+					break;
+                case DialogStates.Townhall:
                     if(resources.townHall >= 1)
                     {
                         arrow.localPosition = new Vector3(houseLock.transform.localPosition.x, houseLock.transform.localPosition.y + 100, houseLock.transform.localPosition.z);
@@ -94,11 +117,11 @@ public class TutorialBehaviour : MonoBehaviour
                         houseLock.SetActive(false);
                         actualPos++;
                         building.canCreateBuild = false;
-                        state = TutorialStates.House;
+                        dialogStates = DialogStates.House;
 						tutorialDialog.text = TextData.GetText("tutorialDialog4");
                     }
                     break;
-                case TutorialStates.House:
+                case DialogStates.House:
                     if(resources.house >= 3)
                     {
                         arrow.localPosition = new Vector3(farmLock.transform.localPosition.x, farmLock.transform.localPosition.y + 100, farmLock.transform.localPosition.z);
@@ -107,35 +130,13 @@ public class TutorialBehaviour : MonoBehaviour
                         farmLock.SetActive(false);
                         actualPos++;
                         building.canCreateBuild = false;
-                        state = TutorialStates.Farm;
+                        dialogStates = DialogStates.Farm;
 						tutorialDialog.text = TextData.GetText("tutorialDialog5");
                     }
                     if(resources.house == 1 && aura.transform.localPosition == auraPositions[1]) actualPos++;
                     if(resources.house == 2 && aura.transform.localPosition == auraPositions[2]) actualPos++;
                     break;
-                case TutorialStates.Mine:
-                    if(resources.goldMine >= 1)
-                    {
-                        mineLock.SetActive(true);
-                        building.canCreateBuild = false;
-                        state = TutorialStates.Final;
-						tutorialDialog.text = TextData.GetText("tutorialDialog8");
-                    }
-                    break;
-                case TutorialStates.Lumber:
-                    if(resources.lumberMill >= 1)
-                    {
-                        arrow.localPosition = new Vector3(mineLock.transform.localPosition.x, mineLock.transform.localPosition.y + 100, mineLock.transform.localPosition.z);
-                        arrowEasings.ResetEasing();
-                        lumberLock.SetActive(true);
-                        mineLock.SetActive(false);
-                        actualPos++;
-                        building.canCreateBuild = false;
-                        state = TutorialStates.Mine;
-						tutorialDialog.text = TextData.GetText("tutorialDialog7");
-                    }
-                    break;
-                case TutorialStates.Farm:
+                case DialogStates.Farm:
                     if(resources.farm >= 2)
                     {
                         arrow.localPosition = new Vector3(lumberLock.transform.localPosition.x, lumberLock.transform.localPosition.y + 100, lumberLock.transform.localPosition.z);
@@ -144,12 +145,34 @@ public class TutorialBehaviour : MonoBehaviour
                         lumberLock.SetActive(false);
                         actualPos++;
                         building.canCreateBuild = false;
-                        state = TutorialStates.Lumber;
-						tutorialDialog.text = TextData.GetText("tutorialDialog6");
+                        dialogStates = DialogStates.Lumber;
+                        tutorialDialog.text = TextData.GetText("tutorialDialog6");
                     }
                     if(resources.farm == 1 && aura.transform.localPosition == auraPositions[4]) actualPos++;
                     break;
-                case TutorialStates.Final:
+                case DialogStates.Lumber:
+                    if(resources.lumberMill >= 1)
+                    {
+                        arrow.localPosition = new Vector3(mineLock.transform.localPosition.x, mineLock.transform.localPosition.y + 100, mineLock.transform.localPosition.z);
+                        arrowEasings.ResetEasing();
+                        lumberLock.SetActive(true);
+                        mineLock.SetActive(false);
+                        actualPos++;
+                        building.canCreateBuild = false;
+                        dialogStates = DialogStates.Mine;
+						tutorialDialog.text = TextData.GetText("tutorialDialog7");
+                    }
+                    break;
+                case DialogStates.Mine:
+                    if(resources.goldMine >= 1)
+                    {
+                        mineLock.SetActive(true);
+                        building.canCreateBuild = false;
+                        dialogStates = DialogStates.Final;
+                        tutorialDialog.text = TextData.GetText("tutorialDialog8");
+                    }
+                    break;
+                case DialogStates.Final:
                     houseLock.SetActive(false);
                     farmLock.SetActive(false);
                     lumberLock.SetActive(false);
@@ -157,8 +180,15 @@ public class TutorialBehaviour : MonoBehaviour
                     otherLock.SetActive(false);
                     arrow.gameObject.SetActive(false);
                     aura.gameObject.SetActive(false);
-                    Active = false;
-                    gameObject.SetActive(false);
+                    tutorialBackground.gameObject.SetActive(true);
+                    //tutorialDialog.text = TextData.GetText("tutorialDialog9");
+
+                    if(advanceTutorial)
+                    {
+                        tutorialBackground.gameObject.SetActive(false);
+                        Active = false;
+                        gameObject.SetActive(false);
+                    }
                     break;
                 default:
                     break;
@@ -171,7 +201,7 @@ public class TutorialBehaviour : MonoBehaviour
     {
         arrow.localPosition = new Vector3(-396.0f, -180.0f, 0);
         arrowEasings.ResetEasing();
-		//state = TutorialStates.Start;
+		dialogStates = DialogStates.Townhall;
     }
 
     public void skipTutorial()
@@ -187,8 +217,8 @@ public class TutorialBehaviour : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-	public bool AdvanceTutorial()
+	public void AdvanceTutorial()
 	{
-		return true;
-	}
+        advanceTutorial = true;
+    }
 }
