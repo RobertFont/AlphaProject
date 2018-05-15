@@ -42,7 +42,7 @@ public class TutorialBehaviour : MonoBehaviour
         actualPos = 0;
 		tutorialDialog.gameObject.SetActive(true);
 
-        arrow.localPosition = new Vector3(1.6f, -240.0f, 0.0f);
+        arrow.localPosition = new Vector3(0.0f, 1000.0f, 0);
         arrowEasings.ResetEasing();
     }
 
@@ -79,7 +79,10 @@ public class TutorialBehaviour : MonoBehaviour
                         {
                             advanceTutorial = false;
                             tutorialBackground.gameObject.SetActive(false);
-                            dialogStates = DialogStates.Construction;
+                            arrow.localPosition = new Vector3(-396.0f, -180.0f, 0);
+                            arrowEasings.ResetEasing();
+                            tutorialDialog.text = TextData.GetText("tutorialDialog3");
+                            dialogStates = DialogStates.Townhall;
                         }
 					}
 					break;
@@ -99,13 +102,13 @@ public class TutorialBehaviour : MonoBehaviour
                 case DialogStates.Start:
 					{
                         Debug.Log("start");
-						tutorialDialog.text = TextData.GetText("tutorialDialog3");
+						tutorialDialog.text = TextData.GetText("tutorialDialog2");
                         if(advanceTutorial)
                         {
                             advanceTutorial = false;
                             tutorialDialog.text = TextData.GetText("tutorialDialog3");
                             dialogStates = DialogStates.Townhall;
-                            //tutorialBackground.gameObject.SetActive(true);
+                            tutorialBackground.gameObject.SetActive(true);
                         }
 					}
 					break;
@@ -197,12 +200,12 @@ public class TutorialBehaviour : MonoBehaviour
         aura.transform.localPosition = auraPositions[actualPos];
     }
 
-    public void OpenConstructionButton()
+    /*public void OpenConstructionButton()
     {
         arrow.localPosition = new Vector3(-396.0f, -180.0f, 0);
         arrowEasings.ResetEasing();
 		dialogStates = DialogStates.Townhall;
-    }
+    }*/
 
     public void skipTutorial()
     {

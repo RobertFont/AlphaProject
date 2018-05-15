@@ -88,6 +88,8 @@ public class UiTrigger : MonoBehaviour
 
     public void DestroyBuilding() 
     {
+        if(buildingSelected == null) return;
+
         if (buildingSelected.tag == "House")
         {
             resource.AddWood(houseRestoreWood);
