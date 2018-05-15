@@ -86,10 +86,10 @@ public class FarmBehaviour : MonoBehaviour
                     scaleWheat.y += Time.deltaTime * 0.083f * Time.timeScale;
                 }
 
-                progressBar.fillAmount = counter / (gatherCounter / Time.timeScale);
+                progressBar.fillAmount = counter* Time.timeScale / gatherCounter;
 
                 if (scaleWheat.y > 1) scaleWheat.y = 1;
-                if (counter > gatherCounter/Time.timeScale)
+                if (counter* Time.timeScale > gatherCounter)
                 {
                     GatherResources();
 

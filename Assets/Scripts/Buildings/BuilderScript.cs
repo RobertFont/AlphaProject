@@ -322,7 +322,7 @@ public class BuilderScript : MonoBehaviour
     {
         canCreateBuild = false;
         DesactiveOriginalBuilding();
-        if(resource.townHall == 0) return;
+        if((resource.townHall == 0) || (resource.barracks > 0)) return;
         build = barracks;
         if(!CompareResources()) return;
         colliderHalfSize = build.GetComponent<BoxCollider>().size / 2;

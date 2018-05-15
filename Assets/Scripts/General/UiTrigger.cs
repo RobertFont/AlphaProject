@@ -30,6 +30,9 @@ public class UiTrigger : MonoBehaviour
     int towerRestoreWood = 50;
     int towerRestoreGold = 50;
 
+    public GameObject upgradeTowerRange;
+    public GameObject upgradeTowerFireRate;
+
     public bool showRange = false;
 
     public void SelectBuilding(GameObject building)
@@ -44,7 +47,7 @@ public class UiTrigger : MonoBehaviour
     {
         if (buildingSelected == null)
         {
-            this.transform.GetChild(0).gameObject.SetActive(false);
+            //this.transform.GetChild(0).gameObject.SetActive(false);
             //SelectedParticles.gameObject.SetActive(false);
             selectObject = false;
             showRange = false;
@@ -53,6 +56,17 @@ public class UiTrigger : MonoBehaviour
         {
             if(buildingSelected.tag == "TownHall" || buildingSelected.tag == "Tower") showRange = true;
             else showRange = false;
+
+            if(buildingSelected.tag == "Barracks" || buildingSelected.tag == "Tower")
+            {
+                upgradeTowerRange.SetActive(true);
+                upgradeTowerFireRate.SetActive(true);
+            }
+            else
+            {
+                upgradeTowerRange.SetActive(false);
+                upgradeTowerFireRate.SetActive(false);
+            }
 
             if(!selectObject)
             {
