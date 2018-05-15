@@ -78,7 +78,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1758514284680308
 GameObject:
   m_ObjectHideFlags: 0
@@ -304,7 +304,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1305442559
+  randomSeed: -1693620152
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3618,7 +3618,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 2
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: -547300939
@@ -6938,7 +6938,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -370112156
+  randomSeed: -2083775795
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -10255,7 +10255,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 939132955
+  randomSeed: 1890998651
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -13527,8 +13527,8 @@ ParticleSystemRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: 108e136289bb7794a8ca08481d6a3db1, type: 2}
-  - {fileID: 2100000, guid: 108e136289bb7794a8ca08481d6a3db1, type: 2}
+  - {fileID: 2100000, guid: c64d94b324ff01044a8e6d48f4b09cb0, type: 2}
+  - {fileID: 2100000, guid: c64d94b324ff01044a8e6d48f4b09cb0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
