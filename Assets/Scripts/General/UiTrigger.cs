@@ -235,7 +235,7 @@ public class UiTrigger : MonoBehaviour
 
     public void UpgradeTowerRange()
     {
-        if ((resource.wood >= 50 + (50 * towerUpgradeCostRange)) && (resource.gold >= 50 + (50 * towerUpgradeCostRange)))
+        if ((resource.wood >= 50 + (50 * towerUpgradeCostRange)) && (resource.gold >= 50 + (50 * towerUpgradeCostRange)) && (resource.barracks > 1))
         {
             TowerBehaviour.ChangeRange(1);
             resource.RemoveGold(50 + (50 * towerUpgradeCostRange));
@@ -246,7 +246,7 @@ public class UiTrigger : MonoBehaviour
 
     public void UpgradeTowerFireRate()
     {
-        if ((resource.wood >= 50 + (50 * towerUpgradeCostFireRate)) && (resource.gold >= 50 + (50 * towerUpgradeCostFireRate)))
+        if ((resource.wood >= 50 + (50 * towerUpgradeCostFireRate)) && (resource.gold >= 50 + (50 * towerUpgradeCostFireRate)) && (resource.barracks > 1))
         {
             TowerBehaviour.ChangeFireRate(0.1f);
             resource.RemoveGold(50 + (50 * towerUpgradeCostFireRate));
