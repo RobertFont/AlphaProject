@@ -135,8 +135,11 @@ public class InputManager : MonoBehaviour {
         #endregion
         #endregion
 
-        if (Input.GetButtonDown("GodMode")) godMode = !godMode;
-
+		if (Input.GetButtonDown ("GodMode"))
+		{
+			godMode = !godMode;
+			Debug.Log("GodMode:" + godMode);
+		}
         if (Input.GetKey(KeyCode.AltGr) && level != null)
         {
             if (Input.GetKeyDown(KeyCode.N)) level.StartLoad(level.nextScene);
@@ -145,7 +148,7 @@ public class InputManager : MonoBehaviour {
             if (Input.GetKeyDown(KeyCode.C)) level.StartLoad(level.menuScene);
         }
 
-        Debug.Log("GodMode:" + godMode);
+        
 
         myCamera.GetAxis(axis.x, axis.y);
         myCamera.GetRotate(rotate);

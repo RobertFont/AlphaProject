@@ -10,6 +10,7 @@ public class ConstructionBehavior : MonoBehaviour
     public GameObject BuldBase;
     public GameObject BuldMid;
     public GameObject BuldFinal;
+	public GameObject constructionParticles;
 
     void Start()
     {
@@ -19,11 +20,11 @@ public class ConstructionBehavior : MonoBehaviour
     {
 		currentTime += Time.deltaTime;
 
-		if ((currentTime >= (constructionTime/2)) && !BuldMid.activeSelf)
-			Phase2();
+		if ((currentTime >= (constructionTime / 2)) && !BuldMid.activeSelf)
+			Phase2 ();
 
 		if (currentTime >= constructionTime && !BuldFinal.activeSelf)
-			Phase3();
+			Phase3 ();
     }
 
     void Phase1()
@@ -39,6 +40,7 @@ public class ConstructionBehavior : MonoBehaviour
     }
     void Phase3()
     {
+		constructionParticles.SetActive (false);
 		BuldMid.SetActive(false);
 		BuldFinal.SetActive(true);
 		GetComponent<ConstructionBehavior>().enabled = false;
