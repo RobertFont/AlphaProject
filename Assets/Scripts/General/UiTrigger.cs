@@ -29,6 +29,8 @@ public class UiTrigger : MonoBehaviour
     int goldMineRestoreWood = 75;
     int towerRestoreWood = 50;
     int towerRestoreGold = 50;
+    int towerUpgradeCostRange = 0;
+    int towerUpgradeCostFireRate = 0;
 
     public GameObject upgradeTowerRange;
     public GameObject upgradeTowerFireRate;
@@ -229,5 +231,27 @@ public class UiTrigger : MonoBehaviour
         buildingSelected = null;
         events.SetSelectedObject(hideSelectedObject);
         showRange = false;
+    }
+
+    public void UpgradeTowerRange()
+    {
+        if ((resource.wood >= 50 + (50 * towerUpgradeCostRange)) && (resource.gold >= 50 + (50 * towerUpgradeCostRange)))
+        {
+            TowerBehaviour.ChangeRange(1);
+            resource.RemoveGold(50 + (50 * towerUpgradeCostRange));
+            resource.RemoveWood(50 + (50 * towerUpgradeCostRange));
+            towerUpgradeCostRange++;     
+        }
+    }
+
+    public void UpgradeTowerFireRate()
+    {
+        if ((resource.wood >= 50 + (50 * towerUpgradeCostFireRate)) && (resource.gold >= 50 + (50 * towerUpgradeCostFireRate)))
+        {
+            TowerBehaviour.ChangeFireRate(0.1f);
+            resource.RemoveGold(50 + (50 * towerUpgradeCostFireRate));
+            resource.RemoveWood(50 + (50 * towerUpgradeCostFireRate));
+            towerUpgradeCostFireRate++;
+        }
     }
 }
