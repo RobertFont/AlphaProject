@@ -8,7 +8,9 @@ public class goblinsKami : MonoBehaviour
     public Transform target;
     public int speed = 0;
     public int framesCounter = 0;
+    public int framesToDeath = 0;
     public Vector3 destination;
+    public GameObject impactEffect;
 
     // Use this for initialization
     void Start ()
@@ -41,12 +43,18 @@ public class goblinsKami : MonoBehaviour
             }
             else if (((transform.position.x <= target.position.x) || (transform.position.x >= target.position.x)) || ((transform.position.z <= target.position.z) || (transform.position.z >= target.position.z)))
             {
-
                 transform.LookAt(target);
                 transform.Translate(Vector3.forward * Time.deltaTime * speed);
                 transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
                 transform.localRotation = Quaternion.Euler(new Vector3(0, transform.localRotation.y, 0));
             }
+        }
+        if (framesCounter >= framesToDeath)
+        {
+            GameObject effectIns = Instantiate(impactEffect, transform.position, transform.rotation);
+            Destroy(effectIns, 2f);
+
+            Destroy(this.gameObject);
         }
     }
 }
