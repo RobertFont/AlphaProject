@@ -234,12 +234,13 @@ MonoBehaviour:
   input: {fileID: 0}
   velocity: 2
   target: {x: 0, y: 0, z: 0}
+  targetTransform: {fileID: 0}
   destination: {x: 0, y: 0, z: 0}
   canAttackX: 0
   canAttackZ: 0
   counter: 0
   startHealth: 100
-  deathEffect: {fileID: 1038464622310954, guid: 1b9937f42b1304642a7a89b856d481c7,
+  deathEffect: {fileID: 1445974190198602, guid: e003ee4510c8c5045b64c0ab72f465af,
     type: 2}
   healthBar: {fileID: 114497310803629572}
 --- !u!114 &114668621396647054
