@@ -62,3 +62,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Fire
+    uniqueID: 3582759117
+    locked: 0

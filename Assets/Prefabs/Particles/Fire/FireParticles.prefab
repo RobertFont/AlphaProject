@@ -83,7 +83,7 @@ Transform:
   m_GameObject: {fileID: 1282096184211034}
   m_LocalRotation: {x: -0, y: -0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.32145032, y: 0.32145053, z: 0.32145053}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4945651004535006}
   m_RootOrder: 0
@@ -94,15 +94,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1861657668376304}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.29815012, y: 0.29815012, z: 0.29815012}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 38.9, y: 0.053123176, z: 49.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4684198779616658}
   - {fileID: 4651819365224928}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!198 &198372703942331798
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -163,7 +163,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1848972321
+  randomSeed: 680123620
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -253,7 +253,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.9448277, g: 0.478, b: 0, a: 1}
+      maxColor: {r: 0.13088238, g: 0.6544118, b: 0, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -3480,7 +3480,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -604610540
+  randomSeed: 536428413
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -6797,7 +6797,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 93537917
+  randomSeed: 631085576
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -10141,8 +10141,8 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -712208179
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_RenderMode: 4
   m_SortMode: 0
@@ -10195,9 +10195,9 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -712208179
+  m_SortingLayer: 1
+  m_SortingOrder: -5
   m_RenderMode: 4
   m_SortMode: 0
   m_MinParticleSize: 0

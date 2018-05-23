@@ -7,8 +7,8 @@ public class goblinsKami : MonoBehaviour
     Transform goblinPos;
     public Transform target;
     public int speed = 0;
-    public int framesCounter = 0;
-    public int framesToDeath = 0;
+    public float framesCounter = 0;
+    public float framesToDeath = 0;
     public Vector3 destination;
     public GameObject impactEffect;
 
@@ -22,9 +22,9 @@ public class goblinsKami : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        framesCounter++;
+        framesCounter += Time.deltaTime;
 
-        if (framesCounter >= 2100)
+        if (framesCounter >= 35)
         {
             if (((transform.position.x <= target.position.x) || (transform.position.x >= target.position.x)) || ((transform.position.z <= target.position.z) || (transform.position.z >= target.position.z)))
             {

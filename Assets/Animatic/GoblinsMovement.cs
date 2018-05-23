@@ -6,7 +6,7 @@ public class GoblinsMovement : MonoBehaviour
 {
     Transform goblinPos;
     public int speed = 0;
-    public int framesCounter = 0;
+    public float framesCounter = 0;
 
 	// Use this for initialization
 	void Start ()
@@ -17,8 +17,8 @@ public class GoblinsMovement : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        framesCounter++;
+        framesCounter += Time.deltaTime;
 
-        if (framesCounter >= 2100) goblinPos.localPosition += new Vector3(speed * Time.deltaTime, 0, 0);
+        if (framesCounter >= 35) goblinPos.localPosition += new Vector3(speed * Time.deltaTime, 0, 0);
 	}
 }
