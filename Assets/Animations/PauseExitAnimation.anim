@@ -92,7 +92,7 @@ AnimationClip:
         outSlope: Infinity
         tangentMode: 103
       - serializedVersion: 2
-        time: 0.033333335
+        time: 0.5
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -101,7 +101,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: Menu/Portable Master Sound
+    path: Menu
     classID: 1
     script: {fileID: 0}
   - curve:
@@ -114,7 +114,7 @@ AnimationClip:
         outSlope: Infinity
         tangentMode: 103
       - serializedVersion: 2
-        time: 0.5
+        time: 0.15
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -123,7 +123,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: Menu
+    path: Menu/Canvas/MasterSoundVolume
     classID: 1
     script: {fileID: 0}
   m_PPtrCurves: []
@@ -232,7 +232,7 @@ AnimationClip:
         outSlope: Infinity
         tangentMode: 103
       - serializedVersion: 2
-        time: 0.033333335
+        time: 0.5
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -241,7 +241,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: Menu/Portable Master Sound
+    path: Menu
     classID: 1
     script: {fileID: 0}
   - curve:
@@ -254,7 +254,7 @@ AnimationClip:
         outSlope: Infinity
         tangentMode: 103
       - serializedVersion: 2
-        time: 0.5
+        time: 0.15
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -263,7 +263,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: Menu
+    path: Menu/Canvas/MasterSoundVolume
     classID: 1
     script: {fileID: 0}
   m_EulerEditorCurves: []

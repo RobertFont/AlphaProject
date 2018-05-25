@@ -11,7 +11,7 @@ public class CutSceneEnd : MonoBehaviour
 	void Start ()
     {
         video = GetComponent<VideoPlayer>();
-        level = GameObject.Find("LevelManager").GetComponent<LevelLogic>();
+        if (GameObject.Find("LevelManager") != null) level = GameObject.Find("LevelManager").GetComponent<LevelLogic>();
     }
 	
 	void Update ()

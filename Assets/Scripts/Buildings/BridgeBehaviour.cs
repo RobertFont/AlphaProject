@@ -8,6 +8,7 @@ public class BridgeBehaviour : MonoBehaviour {
 
     public GameObject broken;
     public GameObject repared;
+    public GameObject bridgeMenu;
     /*public void OnMouseUpAsButton()
     {
         if(info == null) info = GameObject.Find("InformationButton").GetComponent<UiTrigger>();
@@ -18,7 +19,11 @@ public class BridgeBehaviour : MonoBehaviour {
     public void OnMouseOver()
     {
         Debug.Log("Bridge");
-        if(Input.GetButtonDown("Fire1") || Input.GetButtonDown("SelectBuildController")) OpenInfoBuilding();
+        if(Input.GetButtonDown("Fire1") || Input.GetButtonDown("SelectBuildController"))
+        {
+            OpenInfoBuilding();
+            bridgeMenu.SetActive(true);
+        }
     }
 
     public void OpenInfoBuilding()

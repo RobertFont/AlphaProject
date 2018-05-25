@@ -177,13 +177,13 @@ public class InputManager : MonoBehaviour {
             paused = true;
             pauseSystem.SetActive(true);
             pauseEnterA.SetActive(true);
-            construcionUI.SetActive(false);
+            //construcionUI.SetActive(false);
         }
         else if(paused)
         {
             Time.timeScale = 1.0f;
             pauseExitA.SetActive(true);
-            construcionUI.SetActive(true);
+            //construcionUI.SetActive(true);
             Debug.Log("Here");
         }
     }

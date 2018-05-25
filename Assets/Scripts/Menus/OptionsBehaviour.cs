@@ -351,6 +351,8 @@ public class OptionsBehaviour : MonoBehaviour
         sliderAmbientVolume.value = AudioManager.GetAmbientVolume();
         sliderFXVolume.value = AudioManager.GetSFXVolume();
 
+        if(fullScreenToggle == null) return;
+
         fullScreenToggle.isOn = Screen.fullScreen;
 
         if(QualitySettings.vSyncCount == 0) vSyncToggle.isOn = false;
