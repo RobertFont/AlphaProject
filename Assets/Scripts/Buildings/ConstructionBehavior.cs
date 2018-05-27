@@ -10,7 +10,8 @@ public class ConstructionBehavior : MonoBehaviour
     public GameObject BuldBase;
     public GameObject BuldMid;
     public GameObject BuldFinal;
-	public GameObject constructionParticles;
+    public GameObject townHallRange;
+    public GameObject constructionParticles;
 
     void Start()
     {
@@ -32,6 +33,8 @@ public class ConstructionBehavior : MonoBehaviour
         BuldBase.SetActive(true);
 		BuldMid.SetActive(false);
 		BuldFinal.SetActive(false);
+        if(townHallRange != null)
+            townHallRange.SetActive(false);
     }
     void Phase2()
     {
@@ -43,6 +46,8 @@ public class ConstructionBehavior : MonoBehaviour
 		constructionParticles.SetActive (false);
 		BuldMid.SetActive(false);
 		BuldFinal.SetActive(true);
+        if(townHallRange != null)
+            townHallRange.SetActive(true);
 		GetComponent<ConstructionBehavior>().enabled = false;
     }
 }

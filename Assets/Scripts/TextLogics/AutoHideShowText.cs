@@ -8,6 +8,7 @@ public class AutoHideShowText : MonoBehaviour
     public GameObject tarjet;
     Text textInfo;
     int defaultSize;
+
     private void Start()
     {
         textInfo = GetComponent<Text>();

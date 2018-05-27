@@ -35,6 +35,9 @@ public class UiTrigger : MonoBehaviour
     public GameObject upgradeTowerRange;
     public GameObject upgradeTowerFireRate;
 
+    public GameObject upgradesHide;
+    public GameObject destroyHide;
+
     public bool showRange = false;
 
     public void SelectBuilding(GameObject building)
@@ -86,11 +89,15 @@ public class UiTrigger : MonoBehaviour
             //SelectedParticles.gameObject.SetActive(true);
             //SelectedParticles.gameObject.transform.position = buildingSelected.transform.position;
         }
+
+        HideShowIcons();
     }
 
     public void DestroyBuilding() 
     {
         if(buildingSelected == null) return;
+
+        Debug.Log("Destroy");
 
         if (buildingSelected.tag == "House")
         {
@@ -107,12 +114,14 @@ public class UiTrigger : MonoBehaviour
         }
         else if (buildingSelected.tag == "Farm")
         {
+            Debug.Log("farm");
             resource.AddWood(farmRestoreWood);
             resource.AddFarm(-1);
 
             buildingSelected.GetComponent<FarmBehaviour>().DestroyBuilding(); 
            
             buildingSelected = null;
+            Debug.Log("Destroy farm");
         }
         else if (buildingSelected.tag == "LumberMill")
         {
@@ -253,5 +262,18 @@ public class UiTrigger : MonoBehaviour
             resource.RemoveWood(50 + (50 * towerUpgradeCostFireRate));
             towerUpgradeCostFireRate++;
         }
+    }
+
+    void HideShowIcons()
+    {
+        if(buildingSelected != null)
+            destroyHide.SetActive(false);
+        else
+            destroyHide.SetActive(true);
+
+        if(resource.barracks <= 0)
+            upgradesHide.SetActive(true);
+        else
+            upgradesHide.SetActive(false);
     }
 }

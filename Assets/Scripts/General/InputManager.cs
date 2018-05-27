@@ -51,7 +51,7 @@ public class InputManager : MonoBehaviour {
 
         if (Input.GetButtonDown("Cancel"))
         {
-            if (!builder.canCreateBuild) uiConstruction.StopConstruction();
+            //if (!builder.canCreateBuild) uiConstruction.StopConstruction();
             uiTrigger.DeselectBuilding();
         }
 

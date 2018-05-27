@@ -78,7 +78,8 @@ tutorialDialog5	Bien! Ahora que dispones de trabajadores necesitaras proporciona
 tutorialDialog6	Seria conveniente contruir aserraderos para empezar a generar madera.	It would be a good idea to build a lumber mill to gather wood.	Seria convenient construir una aserradora per recolectar fusta.
 tutorialDialog7	Construye una mina para generar oro.	Build a mine to collect gold.	Construeix una mina per recolectar or.
 tutorialDialog8	Tutorial terminado.	Tutorial completed.	Tutorial completat.
-upgrade	Mejorar.	Upgrade.	Millorar.
+upgrade	Mejorar	Upgrade	Millorar
 repareBridge	Reparar el puente	Repair Bridge	Reparació de pont
 bridgeInfo	Puente, cuesta tanto	Puente, cuesta tanto	Puente, cuesta tanto
-repareBridge	Reparar	Repair	Reparació
+repare	Reparar	Repair	Reparació
+cancel	Cancelar	Cancel	cancel·lar

@@ -12,7 +12,7 @@ public class TownHallBehaviour : MonoBehaviour {
     {
         input = GameObject.FindGameObjectWithTag("PlayerCamera").GetComponent<InputManager>();
         info = GameObject.Find("InformationButton").GetComponent<UiTrigger>();
-        constructionRange = transform.GetChild(1).gameObject;
+        constructionRange = transform.GetChild(0).gameObject;
     }
 	
 	// Update is called once per frame
