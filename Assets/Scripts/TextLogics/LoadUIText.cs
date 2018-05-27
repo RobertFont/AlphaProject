@@ -18,9 +18,11 @@ public class LoadUIText : MonoBehaviour
     public void LoadText()
     {
         if(text == null) text = GetComponent<Text>();
-        if (loadExtraInfo)
-            text.text = TextData.GetText(key) + "\n" + TextData.GetText("gold") + GetResourcesCost.GetResourceCost(key + "Gold") + "\n" + 
-                                                       TextData.GetText("wood") + GetResourcesCost.GetResourceCost(key + "Wood") + "\n" + 
+        if(key == "destroyInfo")
+            text.text = TextData.GetText(key);
+        else if(loadExtraInfo)
+            text.text = TextData.GetText(key) + "\n" + TextData.GetText("gold") + GetResourcesCost.GetResourceCost(key + "Gold") + "\n" +
+                                                       TextData.GetText("wood") + GetResourcesCost.GetResourceCost(key + "Wood") + "\n" +
                                                        TextData.GetText("population") + GetResourcesCost.GetResourceCost(key + "Pop");
         else if(!loadExtraInfo)
             text.text = TextData.GetText(key);

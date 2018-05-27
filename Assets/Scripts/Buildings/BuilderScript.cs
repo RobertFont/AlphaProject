@@ -152,7 +152,7 @@ public class BuilderScript : MonoBehaviour
                 if (hitColliderRange.Length > 0) buildingInRange = true;
                 else buildingInRange = false;
                 if (!buildingInRange) buildingColliding = true;
-                Debug.Log(hitColliderRange);
+                //Debug.Log(hitColliderRange);
             }
         }
         else buildingInRange = true;

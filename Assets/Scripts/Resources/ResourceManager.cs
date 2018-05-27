@@ -48,7 +48,7 @@ public class ResourceManager : MonoBehaviour
     public Text populationUi;
     [Header("Utilities")]
     public float timer = 0;
-    public int bridgeCost = 1;
+    public static int bridgeCost = 1;
     public float mealTime = 0;
     public InputManager input;
     public bool victory = false;

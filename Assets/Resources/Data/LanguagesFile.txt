@@ -80,6 +80,9 @@ tutorialDialog7	Construye una mina para generar oro.	Build a mine to collect gol
 tutorialDialog8	Tutorial terminado.	Tutorial completed.	Tutorial completat.
 upgrade	Mejorar	Upgrade	Millorar
 repareBridge	Reparar el puente	Repair Bridge	Reparació de pont
-bridgeInfo	Puente, cuesta tanto	Puente, cuesta tanto	Puente, cuesta tanto
+bridgeInfo	Al reconstruir un puente podás expandir tus dominios al otro lado del mismo.	When rebuilding a bridge you can expand your domains to the other side of it.	A l'reconstruir un pont podes expandir els teus dominis a l'altra banda del mateix.
 repare	Reparar	Repair	Reparació
 cancel	Cancelar	Cancel	cancel·lar
+destroyInfo	Destruye el edificio seleccionado, y devuelve una parte de recursos usados para contruirlo.	Destroy the selected building, and return a portion of the resources used to build it.	Destrueix l'edifici seleccionat, i retorna una part de recursos usats per contruirlo.
+upgradeRangeInfo	Aumenta el rango de ataque de las torres.	Increase the attack range of the towers.	Augmenta el rang d'atac de les torres.
+upgradeFireRateInfo	Aumenta la velocidad de disparo de las torres.	Increase the fire rate of the towers.	Augmenta la velocitat de foc de les torres.

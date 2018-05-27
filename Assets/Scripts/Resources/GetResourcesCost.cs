@@ -78,6 +78,26 @@ public static class GetResourcesCost
             return BuilderScript.castleCostWood.ToString();
         else if(resource == "castleInfoPop")
             return BuilderScript.castleCostPop.ToString();
+        else if(resource == "castleInfoWood")
+            return BuilderScript.castleCostPop.ToString();
+        else if(resource == "upgradeRangeInfoGold")
+             return (50 + (50 * UiTrigger.towerUpgradeCostRange)).ToString();
+        else if(resource == "upgradeRangeInfoWood")
+            return (50 + (50 * UiTrigger.towerUpgradeCostRange)).ToString();
+        else if(resource == "upgradeRangeInfoPop")
+            return "0";
+        else if(resource == "upgradeFireRateInfoGold")
+            return (50 + (50 * UiTrigger.towerUpgradeCostFireRate)).ToString();
+        else if(resource == "upgradeFireRateInfoWood")
+            return (50 + (50 * UiTrigger.towerUpgradeCostFireRate)).ToString();
+        else if(resource == "upgradeFireRateInfoPop")
+            return "0";
+        else if(resource == "bridgeInfoGold")
+            return (50 * ResourceManager.bridgeCost).ToString();
+        else if(resource == "bridgeInfoWood")
+            return (100 * ResourceManager.bridgeCost).ToString();
+        else if(resource == "bridgeInfoPop")
+            return "0";
         return "x";
     }
 	

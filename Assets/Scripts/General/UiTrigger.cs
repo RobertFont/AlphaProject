@@ -29,8 +29,8 @@ public class UiTrigger : MonoBehaviour
     int goldMineRestoreWood = 75;
     int towerRestoreWood = 50;
     int towerRestoreGold = 50;
-    int towerUpgradeCostRange = 0;
-    int towerUpgradeCostFireRate = 0;
+    public static int towerUpgradeCostRange = 0;
+    public static int towerUpgradeCostFireRate = 0;
 
     public GameObject upgradeTowerRange;
     public GameObject upgradeTowerFireRate;
@@ -146,10 +146,12 @@ public class UiTrigger : MonoBehaviour
         }
         else if (buildingSelected.tag == "Bridge")
         {
-            if(resource.wood > 100 * resource.bridgeCost)
+            if(resource.wood > 100 * ResourceManager.bridgeCost)
             {
-                resource.wood -= 100 * resource.bridgeCost;
-                resource.bridgeCost++;
+                //resource.wood -= 100 * resource.bridgeCost;
+                resource.RemoveWood(100 * ResourceManager.bridgeCost);
+                resource.RemoveGold(50 * ResourceManager.bridgeCost);
+                ResourceManager.bridgeCost++;
                 //buildingSelected.SetActive(false);
                 buildingSelected.GetComponent<BridgeBehaviour>().RepareBridge();
             }
@@ -244,7 +246,7 @@ public class UiTrigger : MonoBehaviour
 
     public void UpgradeTowerRange()
     {
-        if ((resource.wood >= 50 + (50 * towerUpgradeCostRange)) && (resource.gold >= 50 + (50 * towerUpgradeCostRange)) && (resource.barracks > 1))
+        if ((resource.wood >= 50 + (50 * towerUpgradeCostRange)) && (resource.gold >= 50 + (50 * towerUpgradeCostRange)) && (resource.barracks >= 1))
         {
             TowerBehaviour.ChangeRange(1);
             resource.RemoveGold(50 + (50 * towerUpgradeCostRange));
@@ -255,7 +257,7 @@ public class UiTrigger : MonoBehaviour
 
     public void UpgradeTowerFireRate()
     {
-        if ((resource.wood >= 50 + (50 * towerUpgradeCostFireRate)) && (resource.gold >= 50 + (50 * towerUpgradeCostFireRate)) && (resource.barracks > 1))
+        if ((resource.wood >= 50 + (50 * towerUpgradeCostFireRate)) && (resource.gold >= 50 + (50 * towerUpgradeCostFireRate)) && (resource.barracks >= 1))
         {
             TowerBehaviour.ChangeFireRate(0.1f);
             resource.RemoveGold(50 + (50 * towerUpgradeCostFireRate));
