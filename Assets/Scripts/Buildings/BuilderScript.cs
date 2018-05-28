@@ -322,13 +322,14 @@ public class BuilderScript : MonoBehaviour
     {
         canCreateBuild = false;
         DesactiveOriginalBuilding();
-        if((resource.townHall == 0) || (resource.barracks > 0)) return;
+        if((resource.townHall == 0) || (resource.barracks >= 1)) return;
         build = barracks;
         if(!CompareResources()) return;
         colliderHalfSize = build.GetComponent<BoxCollider>().size / 2;
         collisionChecker = barracks.transform;
         canCreateBuild = true;
         build.SetActive(true);
+        
     }
 
     public void CreateBuild()
@@ -364,6 +365,12 @@ public class BuilderScript : MonoBehaviour
             building.transform.localRotation = Quaternion.Euler(0, build.transform.localRotation.y, 0);*/
 
             //Debug.Log("Build rotation: " + build.transform.localEulerAngles.y);
+            if(buildingSelected.tag == "Barracks" && resource.barracks > 0)
+                 return;
+
+            if(buildingSelected.tag == "Church" && resource.church > 0)
+                return;
+
             if(goldMineFound && build == goldMine)
             {
                 Debug.Log("goldMineFound");
@@ -378,6 +385,8 @@ public class BuilderScript : MonoBehaviour
                 player.Play2DSFX(7);
                 newBuild.name = build.name;
             }
+
+
 
             RemoveResources();
             build.layer = 8;

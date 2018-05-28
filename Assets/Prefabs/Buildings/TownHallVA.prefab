@@ -468,7 +468,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 6f3895a69b13ece4d9418ebe33c17575, type: 2}
-  - {fileID: 2100000, guid: d8a1a8b6b7d15394eaa4feddb9898ee3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -584,7 +583,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 7, y: 2, z: 4.5}
+  m_Size: {x: 7, y: 10.63, z: 4.5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114033472743288012
 MonoBehaviour:
@@ -677,7 +676,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1641114218
+  randomSeed: 1004586442
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3994,7 +3993,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1313909351
+  randomSeed: 532515486
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -7311,7 +7310,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -489993476
+  randomSeed: -1361567390
   InitialModule:
     serializedVersion: 3
     enabled: 1

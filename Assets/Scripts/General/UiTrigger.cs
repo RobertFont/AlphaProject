@@ -40,10 +40,12 @@ public class UiTrigger : MonoBehaviour
 
     public bool showRange = false;
 
+    public Color selectedColor;
+
     public void SelectBuilding(GameObject building)
     {
-        if (buildingSelected != null)
-            buildingSelected.GetComponent<Renderer>().materials[1].SetFloat("_OutlineWidth", 1.0f);
+        if(buildingSelected != null)
+            buildingSelected.GetComponent<Renderer>().materials[0].color = Color.white;
         //Debug.Log("ChangeBuilding");
         buildingSelected = building;
     }
@@ -69,11 +71,7 @@ public class UiTrigger : MonoBehaviour
             }
 
             this.transform.GetChild(0).gameObject.SetActive(true);
-            if(buildingSelected.GetComponent<Renderer>().materials.Length >= 2)
-            {
-                buildingSelected.GetComponent<Renderer>().materials[1].SetFloat("_OutlineWidth", 1.03f);
-                //Debug.Log("MaterialAply");
-            }
+            buildingSelected.GetComponent<Renderer>().materials[0].color = selectedColor;
 
             //SelectedParticles.gameObject.SetActive(true);
             //SelectedParticles.gameObject.transform.position = buildingSelected.transform.position;
@@ -224,7 +222,7 @@ public class UiTrigger : MonoBehaviour
     {
         if(buildingSelected != null)
         {
-            buildingSelected.GetComponent<Renderer>().materials[1].SetFloat("_OutlineWidth", 1.0f);
+            buildingSelected.GetComponent<Renderer>().materials[0].color = Color.white;
             Debug.Log("MaterialRemove");
         }
 
