@@ -62,17 +62,6 @@ public class UiTrigger : MonoBehaviour
             if(buildingSelected.tag == "TownHall" || buildingSelected.tag == "Tower") showRange = true;
             else showRange = false;
 
-            if(buildingSelected.tag == "Barracks" || buildingSelected.tag == "Tower")
-            {
-                upgradeTowerRange.SetActive(true);
-                upgradeTowerFireRate.SetActive(true);
-            }
-            else
-            {
-                upgradeTowerRange.SetActive(false);
-                upgradeTowerFireRate.SetActive(false);
-            }
-
             if(!selectObject)
             {
                 events.SetSelectedObject(pressSelectedObject);
@@ -248,7 +237,7 @@ public class UiTrigger : MonoBehaviour
     {
         if ((resource.wood >= 50 + (50 * towerUpgradeCostRange)) && (resource.gold >= 50 + (50 * towerUpgradeCostRange)) && (resource.barracks >= 1))
         {
-            TowerBehaviour.ChangeRange(1);
+            TowerBehaviour.ChangeRange(0.25f);
             resource.RemoveGold(50 + (50 * towerUpgradeCostRange));
             resource.RemoveWood(50 + (50 * towerUpgradeCostRange));
             towerUpgradeCostRange++;     
