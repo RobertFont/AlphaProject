@@ -421,7 +421,7 @@ public class ResourceManager : MonoBehaviour
         endingExitA.SetActive(true);
         gameEndedAnimation = false;
 
-        if (level != null) level.SetLogoScene();
+        if (level != null) level.SetTitleScene();
     }
 
     public void ContinueGame()

@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 4195772720233276}
   - component: {fileID: 33419738743724410}
   - component: {fileID: 23739552828583166}
+  - component: {fileID: 65703669752515564}
   m_Layer: 9
   m_Name: Barracks
   m_TagString: Barracks
@@ -420,6 +421,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.5, y: 1, z: 5.5}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65703669752515564
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1774037002991784}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5, y: 4, z: 5}
+  m_Center: {x: 0, y: 1.5, z: 0}
 --- !u!114 &114670391809840504
 MonoBehaviour:
   m_ObjectHideFlags: 1

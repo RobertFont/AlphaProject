@@ -36,11 +36,15 @@ public class UiTrigger : MonoBehaviour
     public GameObject upgradeTowerFireRate;
 
     public GameObject upgradesHide;
-    public GameObject destroyHide;
+    public Button destroyButton;
 
     public bool showRange = false;
 
     public Color selectedColor;
+
+    public Button townHall;
+    public Button barracks;
+    public Button church;
 
     public void SelectBuilding(GameObject building)
     {
@@ -78,6 +82,7 @@ public class UiTrigger : MonoBehaviour
         }
 
         HideShowIcons();
+        CheckDisableButton();
     }
 
     public void DestroyBuilding() 
@@ -256,13 +261,31 @@ public class UiTrigger : MonoBehaviour
     void HideShowIcons()
     {
         if(buildingSelected != null)
-            destroyHide.SetActive(false);
+            destroyButton.interactable = true;
         else
-            destroyHide.SetActive(true);
+            destroyButton.interactable = false;
 
         if(resource.barracks <= 0)
             upgradesHide.SetActive(true);
         else
             upgradesHide.SetActive(false);
+    }
+
+    void CheckDisableButton()
+    {
+        if(resource.townHall > 0)
+            townHall.interactable = false;
+        else if (resource.townHall < 1)
+            townHall.interactable = true;
+
+        if(resource.barracks > 0)
+            barracks.interactable = false;
+        else if(resource.barracks < 1)
+            barracks.interactable = true;
+
+        if(resource.church > 0)
+            church.interactable = false;
+        else if(resource.church < 1)
+            church.interactable = true;
     }
 }

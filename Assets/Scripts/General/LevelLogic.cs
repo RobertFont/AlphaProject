@@ -95,14 +95,9 @@ public class LevelLogic : MonoBehaviour
         loadingBar.CrossFadeAlpha(1, fadeTime, true);
     }
 
-    public void SetLogoScene()
-    {
-        StartLoad(1);
-    }
-
     public void SetTitleScene()
     {
-        StartLoad(2);
+        StartLoad(1);
 
         if(player != null)
         {
@@ -112,17 +107,16 @@ public class LevelLogic : MonoBehaviour
 
     public void SetCutSceneScene()
     {
-        StartLoad(3);
+        StartLoad(2);
         if(player != null)
         {
             player.StopMusic();
-            player.PlayMusic(2, 1, true);
         }
     }
 
     public void SetGameplayScene()
     {
-        StartLoad(4);
+        StartLoad(3);
 
         if(player != null)
         {
@@ -133,7 +127,7 @@ public class LevelLogic : MonoBehaviour
 
     public void SetEndingScene()
     {
-        StartLoad(5);
+        StartLoad(4);
         if (player != null) player.StopMusic();
     }
 

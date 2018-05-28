@@ -16,7 +16,7 @@ public class CutSceneEnd : MonoBehaviour
 	
 	void Update ()
     {
-        if(Input.GetButtonDown("Fire1"))
+        if(Input.GetButtonDown("Pause"))
             endVideo();
 
         if(video.isPlaying)

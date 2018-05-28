@@ -119,6 +119,7 @@ GameObject:
   - component: {fileID: 4033892535789504}
   - component: {fileID: 33188970803887352}
   - component: {fileID: 23789781351646980}
+  - component: {fileID: 65155131666312252}
   m_Layer: 9
   m_Name: WareHouseV2
   m_TagString: Untagged
@@ -346,6 +347,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1733168296319036}
   m_Mesh: {fileID: 4300000, guid: 83ad0ec5dbd268e499ba98e9164a93a5, type: 3}
+--- !u!65 &65155131666312252
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1936614382765824}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.5, y: 3.6, z: 4}
+  m_Center: {x: 0, y: 1.7291763, z: 0}
 --- !u!65 &65786006482842864
 BoxCollider:
   m_ObjectHideFlags: 1

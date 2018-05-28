@@ -1,6 +1,6 @@
 id	spanish	english	catalan
 spanish	Castellano	Spanish	Castellà
-english	Inglés	English	Anglés
+english	Inglés	English	Anglès
 catala	Catalan	Catalan	Català
 continue	Continuar	Continue	Continuar
 newGame	Nueva Partida	New Game	Nova Partida
@@ -9,11 +9,11 @@ options	Opciones	Options	Opcions
 exit	Salir	Exit	Sortir
 general	General	General	General
 graphics	Gráficos	Graphics	Gràfics
-sound	Sonido	Sounds	Só
+sound	Sonido	Sounds	Sò
 controls	Controles	Controls	Controls
 pause	Pausa	Pause	Pausa
 defaultSettings	Restablecer	Reset	Restablir
-saveSettings	Guardar	Save	Desa
+saveSettings	Guardar	Save	Desar
 back	Volver	Back	Tornar
 language	Lenguaje	Language	Llenguatge
 extraInformation	Información extra	Extra Information	Informació adicional
@@ -31,7 +31,7 @@ fxSound	FX	FX	FX
 musicAmbient	Ambiente	Ambient	Ambient
 musicSound	Música	Music	Música
 fast	Rápido	Fast	Ràpid
-good	Bueno	Good	Bó
+good	Bueno	Good	Bò
 fantastic	Fantástico	Fantastic	Fantàstic
 ultra	Ultra	Ultra	Ultra
 low	Baja	Low	Baix
@@ -58,31 +58,32 @@ gold	Oro: 	Gold: 	Or:
 foot	Comida: 	Foot: 	Menjar: 
 wood	Madera: 	Wood: 	Fusta: 
 population	Población: 	Population: 	Població: 
-houseInfo	Casa: Sirve para aumentar la población.	House: Allows you yo have more people.	Casa: Serveix per aumentar la població.
-townHallInfo	Ayuntamiento: Permite construir más edificios.	Town Hall: Allows you yo build other buildings	Ayuntament: Permet construir més edificis.
+houseInfo	Casa: Sirve para aumentar la población.	House: Allows you yo have more people.	Casa: Augmenta la població.
+townHallInfo	Ayuntamiento: Permite construir más edificios.	Town Hall: Allows you yo build other buildings	Ajuntament: Permet construir més edificis.
 goldenMineInfo	Mina: Produce oro.	GoldMine: Produces gold.	Mina: Produeix or.
 farmInfo	Granja: Produce alimento.	Farm: Produces food.	Granja: Produeix aliment.
 lumberMillInfo	Aserradero: Produce madera.	LumberMill: Produces wood.	Aserradora: Produeix fusta.
-barracksInfo	Barracones: Aumentan el daño de tus torres.	Barracks: Increases towers's damage output.	Barracons: Millora la força de les torres.
+barracksInfo	Barracones: Aumentan el daño de tus torres.	Barracks: Increases towers's damage output.	Barracons: Millora el poder de les torres.
 castleInfo	Castillo: Ganas la partida	Castle: You win the game.	Castell: Guanyes la partida.
-churchInfo	Iglesia: Aumenta la felicidad.	Church: Max happines upgraded.	Esglesia: Aumenta la felicitat máxima.
-fireStationInfo	Estación de bomberos: Apagan fuegos.	FireStation: Puts out the fire of buildings.	Estació de bombers: Apaguen focs.
+churchInfo	Iglesia: Aumenta la felicidad máxima	Church: Upgrades max happines.	Esglesia: Aumenta la felicitat máxima.
+fireStationInfo	Estación de bomberos: Reduce los incendios.	FireStation: Reduce fires.	Estació de bombers: Redueix els incendis.
 warehouseInfo	Almacen: Aumenta la capacidad maxima de los recursos	Warehouse: Allows to storage more resources	Magatzem: Permet emagatzemar més recursos
-towerInfo	Torre: Dispara a las unidades enemigas.	Tower: Shoots enemy units.	Torre: Dispara unitats enemiges.
+towerInfo	Torre: Dispara a las unidades enemigas.	Tower: Shoots enemy units.	Torre: Dispara a les unitats enemigues.
 skipTutorial	Omitir Tutorial	Skip Tutorial	Saltar Tutorial
-tutorialDialog1	Hola y bienvenido a Settlemen.	Hello and welcome to Settlemen	Hola y benvingut a Settlemen.
+tutorialDialog1	Hola y bienvenido a Settlemen! Puedes omitir este tutorial en cualquier momento pulsando el boton situado en la parte superior de la pantalla.	Hello and welcome to Settlemen! You can sip it any time pressing the button on the top of the screen.	Hola y benvingut a Settlemen! Pots saltar-te'l en qualsevol moment prement el botó situat a la part superior de la pantalla.
 tutorialDialog2	Clica en el botón inferior "Edificios" que señala la flecha, para desplegar el menú de edificaciones.	Click on the lower button "Buildings" indicated by the arrow, to display the buildings menu.	Fes clic al botó inferior "Edificis" que assenyala la fletxa, per desplegar el menú d'edificacions.
-tutorialDialog3	Para empezar, haz click en el icono del ayuntamiento para seleccionar el edificio y luego haz click en el marco amarillo señalado en la pantalla para empezar a construirlo.	To begin, click on the icon of the town hall to select the building and then click on the yellow frame indicated on the screen to start building it.	Per començar, fes click a la icona de l'ajuntament per seleccionar l'edifici i després fes click en el marc groc assenyalat a la pantalla per començar a construir-lo.
-tutorialDialog4	Perfecto! Ahora que dispones de un ayuntamiento, puedes empezar a construir casas. Estas casas aumentan la población y proporcionan la mano de obra necesaria para recolectar los recursos requeridos para expandir tu ciudad.	Perfect! Now that you have a town hall, you can start building houses. These houses increase the population and provide the labor needed to collect the resources required to expand your city.	Perfecte! Ara que disposes d'un ajuntament, pots començar a construir cases. Aquestes cases augmenten la població i proporcionen la mà d'obra necessària per recol·lectar els recursos requerits per expandir la teva ciutat.
-tutorialDialog5	Bien! Ahora que dispones de trabajadores necesitaras proporcionarles el sustento necesario para sobrevivir. Empezemos por construir una granja y asi empezar a producir comida.	Good! Now that you have some workers they will need to have access to food. Let's start by building a farm and start gathering food.	Bé! Ara que disposes de treballadors necessitaran que els proporcionis menja. Comencem construint una granja per produir aliments.
-tutorialDialog6	Seria conveniente contruir aserraderos para empezar a generar madera.	It would be a good idea to build a lumber mill to gather wood.	Seria convenient construir una aserradora per recolectar fusta.
-tutorialDialog7	Construye una mina para generar oro.	Build a mine to collect gold.	Construeix una mina per recolectar or.
-tutorialDialog8	Tutorial terminado.	Tutorial completed.	Tutorial completat.
+tutorialDialog3	Para empezar, haz click en el icono del ayuntamiento para seleccionar el edificio y luego haz click en la zona marcada para empezar a construirlo. El ayuntamiento es el edificio mas importante de tu aldea, protégelo! Como puedes ver, la zona amarilla es el limite de influencia del edificio. no puedes contruir fuera de ella.	To begin, click on the icon of the town hall to select the building and then click on the mared area to start building it. The Townhall is the most important building of your town, protect it! As you can see, the yellow zone is the influence limit of the building, you can't build outside it.	Per començar, fes click a la icona de l'ajuntament per seleccionar l'edifici i després fes click en la zona marcada per començar a construir-lo. L'ajuntament es l'edifici mes important del teu poble, pretegeix-lo! Com pots veure, la zona groga es el limit d'influència de l'edifici, no pots contruir fora d'ell.
+tutorialDialog4	Perfecto! Ahora que dispones de un ayuntamiento, puedes empezar a construir casas. Las casas aumentan la población y proporcionan trabajadores, no somos nada sin ellos!	Perfect! Now that you have a town hall, you can start building houses. Houses increase the population and provide worers, we are nothing without them!	Perfecte! Ara que disposes d'un ajuntament, pots començar a construir cases. Les cases augmenten la població i proporcionen treballadors, no som res sense ells!
+tutorialDialog5	Bien! Ahora que dispones de trabajadores, es hora de ponerse a generar recursos, empezando por la comida. Por cierto, has probado a mover la rueda del ratón?	Good! Now that you have some workers it's time to gather resources, starting with food. By the way, have you tried to move the mouse wheel?	Bé! Ara que disposes de treballadors es hora de posar-se a generar recursos, començant pel menjar. Per cert, has provat a moure la roda del ratolí?
+tutorialDialog6	Sería conveniente contruir aserraderos para empezar a generar madera, pruébalo! Por si te apasiona el feng shui, puedes rotar el edificio con el botón derecho del ratón... 	it's useful to build in certain zones. It would be a good idea to build a lumber mill to gather wood, try it! Just in case you love feng shui, you can rotate the building with the right mouse button.	Amb el botó dret del ratolí pots rotar l'edifici, va be per construir a zones determinades. Seria convenient construir una aserradora per recolectar fusta, prova-ho! Per si t'agrada el feng shui, pots rotar l'edifici amb el botó dret del ratolí.
+tutorialDialog7	Genial, ahora vamos a por el oro! Construye una mina, para crearla situa el edificio sobre una mina sin edificar.	Great, now let's get some gold! Build a mine, to build it, locate the building above a mine that is not already built.	Genial, ara anem a per l'or! Construeix una mina, per construir-la has de posar l'edifici sobre una mina no edificada.
+tutorialDialog8	Enhorabuena! Has terminado el tutorial! Ahora puedes moverte libremente por el mundo expandiendo tu imeprio! Por cierto! Si se te quedas sin espacio, puedes desbloquear más islas reconstruyendo los puentes! Buena suerte!	Congratulations! You finished the tutorial! Now you can move freely around the world expanding your empire! By the way! If you run out of space, you can rebuild the bridges to keep expanding! good luck!	Enhorabona! Has acabat el tutorial! Ara pots moure't lliurement pel mon expandint el teu imperi! Per cert! Si et quedes sense espai, pots reparar els ponts per seguir expandin-te!
 upgrade	Mejorar	Upgrade	Millorar
-repareBridge	Reparar el puente	Repair Bridge	Reparació de pont
-bridgeInfo	Al reconstruir un puente podás expandir tus dominios al otro lado del mismo.	When rebuilding a bridge you can expand your domains to the other side of it.	A l'reconstruir un pont podes expandir els teus dominis a l'altra banda del mateix.
+repareBridge	Reparar el puente	Repair Bridge	Reparar el pont
+bridgeInfo	Al reconstruir un puente podás expandir tus dominios al otro lado del mismo.	When rebuilding a bridge you can expand your domains to the other side of it.	Al reconstruir un pont pots expandir els teus dominis a l'altra banda del mateix.
 repare	Reparar	Repair	Reparació
 cancel	Cancelar	Cancel	cancel·lar
 destroyInfo	Destruye el edificio seleccionado, y devuelve una parte de recursos usados para contruirlo.	Destroy the selected building, and return a portion of the resources used to build it.	Destrueix l'edifici seleccionat, i retorna una part de recursos usats per contruirlo.
 upgradeRangeInfo	Aumenta el rango de ataque de las torres.	Increase the attack range of the towers.	Augmenta el rang d'atac de les torres.
-upgradeFireRateInfo	Aumenta la velocidad de disparo de las torres.	Increase the fire rate of the towers.	Augmenta la velocitat de foc de les torres.
+upgradeFireRateInfo	Aumenta la velocidad de disparo de las torres.	Increase the fire rate of the towers.	Augmenta la velocitat de tret de les torres.
+click	- Click para continuar -	- Click to continue -	- Click per continuar -
