@@ -87,3 +87,11 @@ destroyInfo	Destruye el edificio seleccionado, y devuelve una parte de recursos 
 upgradeRangeInfo	Aumenta el rango de ataque de las torres.	Increase the attack range of the towers.	Augmenta el rang d'atac de les torres.
 upgradeFireRateInfo	Aumenta la velocidad de disparo de las torres.	Increase the fire rate of the towers.	Augmenta la velocitat de tret de les torres.
 click	- Click para continuar -	- Click to continue -	- Click per continuar -
+esc	Cancelar	Cancel	Cancel·lar
+speed	Velocidades	Game Speed	Velocitats
+move	Movimiento	Movement	Moviment
+rotate	Rotar	Rotate	Rotar
+pause	Pausa	Pause	Pause
+mouseLC	Colocar edificios	Place Buildings	Posar edificis
+mouseRC	Rotar edificios	Rotate buildings	rotar edificis
+mouseWheel	Zoom	Zoom	Zoom

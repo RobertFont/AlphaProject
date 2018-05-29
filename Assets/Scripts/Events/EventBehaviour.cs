@@ -54,7 +54,8 @@ public class EventBehaviour : MonoBehaviour {
     public int dustChance;
     public int goblinsChance;
 
-    // Use this for initialization
+    public GameObject playerTarjet;
+
     public void MyStart()
     {
         state = EventSelection.Idle;
@@ -99,7 +100,7 @@ public class EventBehaviour : MonoBehaviour {
         if (bugStarted)
         {
             eventTimerBugs += Time.deltaTime;
-            farmSelected.GetComponent<FarmBehaviour>().counter = 0;
+            farmSelected.GetComponentInChildren<FarmBehaviour>().counter = 0;
         }
         if (rainStarted)
         {
@@ -324,6 +325,20 @@ public class EventBehaviour : MonoBehaviour {
                 else break;
             }
         }*/
+    }
+
+    public void TraslatePlayerToHouseEvent()
+    {
+        if(houseSelected != null)
+            playerTarjet.transform.localPosition = houseSelected.transform.localPosition;
+
+    }
+
+    public void TraslatePlayerToFarmEvent()
+    {
+        if(farmSelected != null)
+            playerTarjet.transform.localPosition = farmSelected.transform.localPosition;
+
     }
 
     IEnumerator WaitTimerFire()

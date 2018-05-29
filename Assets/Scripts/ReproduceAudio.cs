@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class ReproduceAudio : MonoBehaviour
 {
-    AudioPlayer player;
+    public AudioPlayer player;
     public int playAudio;
     public float pitch;
     public bool randomPitch;
     public bool activeOnEnable;
     public bool disableAfterPlaySound;
 
-    void OnEnable()
+    void Start()
     {
         player = GameObject.Find("LevelManager").GetComponent<AudioPlayer>();
+
         if(activeOnEnable)
             Activated();
     }

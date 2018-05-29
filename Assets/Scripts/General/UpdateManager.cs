@@ -11,7 +11,7 @@ public class UpdatesList
 
 public class UpdateManager : MonoBehaviour
 {
-    AudioPlayer player;
+    public AudioPlayer player;
     public CameraBehaviour myCamera;
     public ResourceManager resource;
     public RaycastMouseController ray;
@@ -29,8 +29,7 @@ public class UpdateManager : MonoBehaviour
     {
         myCamera.MyStart();
         ray.MyStart();
-        if(GameObject.Find("LevelManager").GetComponent<AudioPlayer>() != null)
-            player = GameObject.Find("LevelManager").GetComponent<AudioPlayer>();
+        player = GameObject.Find("LevelManager").GetComponent<AudioPlayer>();
         player.PlayMusic(3);
 
         builder.MyStart();

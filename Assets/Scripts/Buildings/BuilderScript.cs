@@ -8,7 +8,7 @@ public class BuilderScript : MonoBehaviour
     public GameObject build;
     public EventBehaviour someEvent;
     public Vector3 buildingInMouse;
-    ResourceManager resource;
+    public ResourceManager resource;
     public InputManager input;
 	AudioPlayer player;
     public UiTrigger uiTrigger;
@@ -111,7 +111,7 @@ public class BuilderScript : MonoBehaviour
         build = null;
         buildingInMouse = new Vector3(0, 0, 0);
         DesactiveOriginalBuilding();
-        resource = this.GetComponent<ResourceManager>();
+        //resource = GetComponent<ResourceManager>();
         player = GameObject.Find("LevelManager").GetComponent<AudioPlayer>();
         //colliderHalfSize = build.GetComponent<BoxCollider>().size/2;
     }

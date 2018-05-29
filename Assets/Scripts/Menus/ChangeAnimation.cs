@@ -14,10 +14,11 @@ public class ChangeAnimation : MonoBehaviour
 	
 	void OnEnable()
     {
-        myAnimation.clip = animationClip;
         myAnimation.Stop();
-        myAnimation.Play();
+        myAnimation.clip = animationClip;
         myAnimation.Rewind();
+        myAnimation.Play();
+        
         if (!notDisable) gameObject.SetActive(false);
     }
 }

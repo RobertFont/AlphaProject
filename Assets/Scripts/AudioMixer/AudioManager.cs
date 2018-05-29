@@ -173,7 +173,7 @@ public static class AudioManager
     }
     public static bool TryStop(this AudioSource source)
     {
-        if(source.isPlaying)
+        if(source != null && source.isPlaying)
         {
             source.Stop();
             return true;
