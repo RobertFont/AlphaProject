@@ -1,4 +1,4 @@
-﻿id	spanish	english	catalan
+id	spanish	english	catalan
 spanish	Castellano	Spanish	Castellà
 english	Inglés	English	Anglès
 catala	Catalan	Catalan	Català
@@ -54,19 +54,20 @@ barracks	Cuartel	Barracks	Barraques
 castle	Castillo	Castle	Castell
 church	Iglesia	Church	Església
 fireStation	Estación de bomberos	Fire Station	Estació de bombers
+tower	Torre	Tower	Torre
 gold	Oro: 	Gold: 	Or: 
 foot	Comida: 	Foot: 	Menjar: 
 wood	Madera: 	Wood: 	Fusta: 
 population	Población: 	Population: 	Població: 
 houseInfo	Casa: Sirve para aumentar la población.	House: Allows you yo have more people.	Casa: Augmenta la població.
-townHallInfo	Ayuntamiento: Permite construir más edificios.	Town Hall: Allows you yo build other buildings	Ajuntament: Permet construir més edificis.
-goldenMineInfo	Mina: Produce oro.	GoldMine: Produces gold.	Mina: Produeix or.
+townHallInfo	Ayuntamiento: Permite construir más edificios.	Town Hall: Allows you to build other buildings	Ajuntament: Permet construir més edificis.
+goldenMineInfo	Mina: Produce oro. Solo se puede colocar en menas de oro.	GoldMine: Produces gold. It can only be placed in gold ores.	Mina: Produeix or. Només es pot posar en menes d'or.
 farmInfo	Granja: Produce alimento.	Farm: Produces food.	Granja: Produeix aliment.
-lumberMillInfo	Aserradero: Produce madera.	LumberMill: Produces wood.	Aserradora: Produeix fusta.
-barracksInfo	Barracones: Aumentan el daño de tus torres.	Barracks: Increases towers's damage output.	Barracons: Millora el poder de les torres.
+lumberMillInfo	Aserradero: Produce madera. Necesita estar cerca de bosques.	Produces wood. It needs to be close to forests.	Serradora: Produeix fusta. Necessita estar a prop de boscos.
+barracksInfo	Barracones: Te permite mejorar tus torres. Solo necesitas uno.	Barracks: It allows you to improve your towers. You only need one.	Barracons: Et permet millorar les torres. Només necessites un.
 castleInfo	Castillo: Ganas la partida	Castle: You win the game.	Castell: Guanyes la partida.
-churchInfo	Iglesia: Aumenta la felicidad máxima	Church: Upgrades max happines.	Esglesia: Aumenta la felicitat máxima.
-fireStationInfo	Estación de bomberos: Reduce los incendios.	FireStation: Reduce fires.	Estació de bombers: Redueix els incendis.
+churchInfo	Iglesia: Aumenta la felicidad máxima. Sólo puedes construir una.	Church: Upgrades max happines. You can only build one.	Esglesia: Aumenta la felicitat máxima. Només pots construir un.
+fireStationInfo	Estación de bomberos: Reduce los incendios. Un máximo de 4.	FireStation: Reduce fires. A maximum of 4.	Estació de bombers: Redueix els incendis. Un màxim de 4.
 warehouseInfo	Almacen: Aumenta la capacidad maxima de los recursos	Warehouse: Allows to storage more resources	Magatzem: Permet emagatzemar més recursos
 towerInfo	Torre: Dispara a las unidades enemigas.	Tower: Shoots enemy units.	Torre: Dispara a les unitats enemigues.
 skipTutorial	Omitir Tutorial	Skip Tutorial	Saltar Tutorial

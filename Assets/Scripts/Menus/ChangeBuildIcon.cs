@@ -10,7 +10,7 @@ public class ChangeBuildIcon : MonoBehaviour
     public Text IName;
     public Sprite townHall;
     public Sprite house;
-    public Sprite warHouse;
+    public Sprite wareHouse;
     public Sprite farm;
     public Sprite lumberMill;
     public Sprite tower;
@@ -57,14 +57,14 @@ public class ChangeBuildIcon : MonoBehaviour
             IName.text = TextData.GetText("house");
             icon.sprite = house;
         }
-        else if(uI.buildingSelected.tag == "WarHouse")
+        else if(uI.buildingSelected.tag == "Warehouse")
         {
-            IName.text = TextData.GetText("warHouse");
-            icon.sprite = warHouse;
+            IName.text = TextData.GetText("warehouse");
+            icon.sprite = wareHouse;
         }
         else if(uI.buildingSelected.tag == "GoldMine")
         {
-            IName.text = TextData.GetText("goldMine");
+            IName.text = TextData.GetText("goldenMine");
             icon.sprite = goldMine;
         }
         else if(uI.buildingSelected.tag == "Church")

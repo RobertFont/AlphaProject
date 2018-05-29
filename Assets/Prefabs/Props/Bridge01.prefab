@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4462835388320236}
   - component: {fileID: 33725604615151092}
   - component: {fileID: 23500684517606724}
-  - component: {fileID: 114792632429995320}
   m_Layer: 9
   m_Name: BridgeTile
   m_TagString: Untagged
@@ -39,7 +38,6 @@ GameObject:
   - component: {fileID: 4259668159229810}
   - component: {fileID: 33060382671972952}
   - component: {fileID: 23774711788230586}
-  - component: {fileID: 114394990463171618}
   m_Layer: 9
   m_Name: BridgeEnd
   m_TagString: Untagged
@@ -58,7 +56,6 @@ GameObject:
   - component: {fileID: 33694164442529962}
   - component: {fileID: 65522154974159870}
   - component: {fileID: 23656301418397094}
-  - component: {fileID: 114571514181625440}
   - component: {fileID: 114091143971843750}
   m_Layer: 9
   m_Name: BridgeBroken
@@ -92,7 +89,6 @@ GameObject:
   - component: {fileID: 4563385852507878}
   - component: {fileID: 33023979045155532}
   - component: {fileID: 23148375911956934}
-  - component: {fileID: 114781355240003466}
   m_Layer: 9
   m_Name: BridgeFirst
   m_TagString: Untagged
@@ -356,47 +352,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37bd04f5e0aa07944be16051159ff032, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114394990463171618
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1045414123119076}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09473d119d316304d987f31380190eaa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114571514181625440
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1285220852227460}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09473d119d316304d987f31380190eaa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114781355240003466
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1752960146649030}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09473d119d316304d987f31380190eaa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114792632429995320
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1024124442797922}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09473d119d316304d987f31380190eaa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  broken: {fileID: 0}
+  repared: {fileID: 0}
+  bridgeMenu: {fileID: 0}

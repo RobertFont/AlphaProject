@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -80,6 +81,7 @@ public class LevelLogic : MonoBehaviour
 		if (currentScene != managerScene) asynUnLoad = SceneManager.UnloadSceneAsync(currentScene);
 		asynLoad = SceneManager.LoadSceneAsync(sceneToLoad, LoadSceneMode.Additive);
         StartCoroutine(Loading());
+        //Thread loadingThread = new Thread(new ThreadStart(Loading));
         FadeIn();
     }
 
@@ -146,8 +148,7 @@ public class LevelLogic : MonoBehaviour
         while (loading)
         {
             Debug.Log("Loading");
-            loadingBar.rectTransform.Rotate(0, 0, 1);
-
+            
             Debug.Log(asynLoad.progress);
             if((asynUnLoad == null || asynUnLoad.isDone) && asynLoad.isDone)
             {

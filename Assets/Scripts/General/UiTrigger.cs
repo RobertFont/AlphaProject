@@ -42,6 +42,8 @@ public class UiTrigger : MonoBehaviour
     public bool showRange = false;
 
     public Color selectedColor;
+    public Texture ultimateTexture;
+    public Texture selectedTexture;
 
     public Button townHall;
     public Button barracks;
@@ -51,7 +53,7 @@ public class UiTrigger : MonoBehaviour
     public void SelectBuilding(GameObject building)
     {
         if(buildingSelected != null)
-            buildingSelected.GetComponent<Renderer>().materials[0].color = Color.white;
+            buildingSelected.GetComponent<Renderer>().materials[0].mainTexture = ultimateTexture;
         //Debug.Log("ChangeBuilding");
         buildingSelected = building;
     }
@@ -77,7 +79,7 @@ public class UiTrigger : MonoBehaviour
             }
 
             this.transform.GetChild(0).gameObject.SetActive(true);
-            buildingSelected.GetComponent<Renderer>().materials[0].color = selectedColor;
+            buildingSelected.GetComponent<Renderer>().materials[0].mainTexture = selectedTexture;
 
             //SelectedParticles.gameObject.SetActive(true);
             //SelectedParticles.gameObject.transform.position = buildingSelected.transform.position;
@@ -111,6 +113,8 @@ public class UiTrigger : MonoBehaviour
             Debug.Log("farm");
             resource.AddWood(BuilderScript.farmCostWood / 2);
             resource.AddGold(BuilderScript.farmCostGold / 2);
+            /*resource.RemoveCurrentPop(BuilderScript.farmCostPop);
+            resource.AddNonIdlePop(-BuilderScript.farmCostPop);*/
             resource.AddFarm(-1);
 
             buildingSelected.GetComponent<FarmBehaviour>().DestroyBuilding(); 
@@ -265,7 +269,7 @@ public class UiTrigger : MonoBehaviour
     {
         if(buildingSelected != null)
         {
-            buildingSelected.GetComponent<Renderer>().materials[0].color = Color.white;
+            buildingSelected.GetComponent<Renderer>().materials[0].mainTexture = ultimateTexture;
             Debug.Log("MaterialRemove");
         }
 
