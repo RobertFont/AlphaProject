@@ -82,9 +82,9 @@ public class LumberMillBehaviour : MonoBehaviour
     public void DestroyBuilding()
     {
 		Debug.Log("destroy activo");
-		resource.AddCurrentPop(4);
-		resource.AddNonIdlePop(4);
-        Destroy(this.gameObject);
+		resource.AddCurrentPop(BuilderScript.lumbMillCostPop);
+		resource.AddNonIdlePop(-BuilderScript.lumbMillCostPop);
+        Destroy(transform.parent.gameObject);
     }
 
 	public void GatherResources()

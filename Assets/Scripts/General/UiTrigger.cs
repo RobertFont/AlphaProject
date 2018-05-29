@@ -21,7 +21,7 @@ public class UiTrigger : MonoBehaviour
 
     public Material defaultMaterial;
     public Material selectedMaterial;
-
+    /*
     int houseRestoreWood = 50;
     int houseRestoreGold = 50;
     int farmRestoreWood = 50;
@@ -29,6 +29,7 @@ public class UiTrigger : MonoBehaviour
     int goldMineRestoreWood = 75;
     int towerRestoreWood = 50;
     int towerRestoreGold = 50;
+    */
     public static int towerUpgradeCostRange = 0;
     public static int towerUpgradeCostFireRate = 0;
 
@@ -93,21 +94,22 @@ public class UiTrigger : MonoBehaviour
 
         if (buildingSelected.tag == "House")
         {
-            resource.AddWood(houseRestoreWood);
-            resource.AddFood(houseRestoreGold);
-            resource.RemoveMaxPop(4); 
-            resource.RemoveCurrentPop(4);
-            resource.AddNonIdlePop(-4);
+            resource.AddWood(BuilderScript.houseCostWood / 2);
+            resource.AddGold(BuilderScript.houseCostGold / 2);
+            resource.RemoveMaxPop(BuilderScript.houseCostPop); 
+            resource.RemoveCurrentPop(BuilderScript.houseCostPop);
+            resource.AddNonIdlePop(-BuilderScript.houseCostPop);
             resource.AddHouse(-1);
 
-            Destroy(buildingSelected);
+            Destroy(buildingSelected.transform.parent.gameObject);
             buildingSelected = null;
 
         }
         else if (buildingSelected.tag == "Farm")
         {
             Debug.Log("farm");
-            resource.AddWood(farmRestoreWood);
+            resource.AddWood(BuilderScript.farmCostWood / 2);
+            resource.AddGold(BuilderScript.farmCostGold / 2);
             resource.AddFarm(-1);
 
             buildingSelected.GetComponent<FarmBehaviour>().DestroyBuilding(); 
@@ -117,23 +119,26 @@ public class UiTrigger : MonoBehaviour
         }
         else if (buildingSelected.tag == "LumberMill")
         {
-            resource.AddWood(lumberMillRestoreWood);
+            resource.AddWood(BuilderScript.lumbMillCostWood / 2);
+            resource.AddGold(BuilderScript.lumbMillCostGold / 2);
             buildingSelected.GetComponent<LumberMillBehaviour>().DestroyBuilding();
             buildingSelected = null;
         }
         else if (buildingSelected.tag == "GoldMine")
         {
-            resource.AddWood(goldMineRestoreWood);
+            resource.AddWood(BuilderScript.mineCostWood / 2);
+            resource.AddGold(BuilderScript.mineCostGold / 2);
             buildingSelected.GetComponent<GoldMineBehaviour>().DestroyBuilding();
             buildingSelected = null;
         }
-        else if (buildingSelected.tag == "Warehouse")
+        else if (buildingSelected.tag == "WareHouse")
         {
-            resource.AddWood(goldMineRestoreWood);
+            resource.AddWood(BuilderScript.warehouseCostWood/2);
+            resource.AddGold(BuilderScript.warehouseCostGold/2);
             resource.AddWareHouse(-1);
-			resource.AddCurrentPop(8);
-            resource.AddNonIdlePop(-8);
-            Destroy(buildingSelected);
+			resource.AddCurrentPop(BuilderScript.warehouseCostPop);
+            resource.AddNonIdlePop(-BuilderScript.warehouseCostPop);
+            Destroy(buildingSelected.transform.parent.gameObject);
             buildingSelected = null;
         }
         else if (buildingSelected.tag == "Bridge")
@@ -150,12 +155,44 @@ public class UiTrigger : MonoBehaviour
         }
         else if (buildingSelected.tag == "Tower")
         {
-            resource.AddWood(towerRestoreWood);
-            resource.AddGold(towerRestoreGold);
+            resource.AddWood(BuilderScript.towerCostWood / 2);
+            resource.AddGold(BuilderScript.towerCostGold / 2);
             resource.AddTower(-1);
+            resource.AddCurrentPop(BuilderScript.towerCostPop);
+            resource.AddNonIdlePop(-BuilderScript.towerCostPop);
 
             buildingSelected.GetComponent<TowerBehaviour>().DestroyBuilding();
 
+            buildingSelected = null;
+        }
+        else if (buildingSelected.tag == "Barracks")
+        {
+            resource.AddWood(BuilderScript.barracksCostWood/2);
+            resource.AddGold(BuilderScript.barracksCostGold/2);
+            resource.AddBarracks(-1);
+            resource.AddCurrentPop(BuilderScript.warehouseCostPop);
+            resource.AddNonIdlePop(-BuilderScript.warehouseCostPop);
+            Destroy(buildingSelected.transform.parent.gameObject);
+            buildingSelected = null;
+        }
+        else if (buildingSelected.tag == "Church")
+        {
+            resource.AddWood(BuilderScript.churchCostWood / 2);
+            resource.AddGold(BuilderScript.churchCostGold / 2);
+            resource.AddChurch(-1);
+            resource.AddCurrentPop(BuilderScript.churchCostPop);
+            resource.AddNonIdlePop(-BuilderScript.churchCostPop);
+            Destroy(buildingSelected.transform.parent.gameObject);
+            buildingSelected = null;
+        }
+        else if (buildingSelected.tag == "FireStation")
+        {
+            resource.AddWood(BuilderScript.fireStationCostWood / 2);
+            resource.AddGold(BuilderScript.fireStationCostGold / 2);
+            resource.AddFireStation(-1);
+            resource.AddCurrentPop(BuilderScript.fireStationCostPop);
+            resource.AddNonIdlePop(-BuilderScript.fireStationCostPop);
+            Destroy(buildingSelected.transform.parent.gameObject);
             buildingSelected = null;
         }
         else Debug.Log("Edificio" + buildingSelected + "no se puede destruir");

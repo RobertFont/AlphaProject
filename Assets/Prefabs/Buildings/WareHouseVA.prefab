@@ -120,6 +120,7 @@ GameObject:
   - component: {fileID: 33188970803887352}
   - component: {fileID: 23789781351646980}
   - component: {fileID: 65155131666312252}
+  - component: {fileID: 114711557016662098}
   m_Layer: 9
   m_Name: WareHouseV2
   m_TagString: Untagged
@@ -388,6 +389,18 @@ MonoBehaviour:
   BuldFinal: {fileID: 1936614382765824}
   townHallRange: {fileID: 0}
   constructionParticles: {fileID: 1341981275730296}
+--- !u!114 &114711557016662098
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1936614382765824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67e6f516974268a439aa0454710a4ae2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  info: {fileID: 0}
 --- !u!198 &198923612672720426
 ParticleSystem:
   m_ObjectHideFlags: 1

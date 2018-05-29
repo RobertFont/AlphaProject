@@ -100,9 +100,9 @@ public class TowerBehaviour : MonoBehaviour
 
     public void DestroyBuilding()
     {
-        resource.AddCurrentPop(2);
-        resource.AddNonIdlePop(-2);
-        Destroy(gameObject);
+        resource.AddCurrentPop(BuilderScript.towerCostPop);
+        resource.AddNonIdlePop(-BuilderScript.towerCostPop);
+        Destroy(transform.parent.gameObject);
     }
 
     private void OnDrawGizmosSelected()

@@ -106,9 +106,9 @@ public class FarmBehaviour : MonoBehaviour
 
     public void DestroyBuilding()
     {
-		resource.AddCurrentPop(2);
-		resource.AddNonIdlePop(-2);
-        Destroy(this.gameObject);
+		resource.AddCurrentPop(BuilderScript.farmCostPop);
+		resource.AddNonIdlePop(-BuilderScript.farmCostPop);
+        Destroy(transform.parent.gameObject);
     }
 
     public void ScaleWheat()

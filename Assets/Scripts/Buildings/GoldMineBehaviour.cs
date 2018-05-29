@@ -82,10 +82,10 @@ public class GoldMineBehaviour : MonoBehaviour
 
     public void DestroyBuilding()
     {
-		resource.AddCurrentPop(4);
-		resource.AddNonIdlePop(-4);
+		resource.AddCurrentPop(BuilderScript.mineCostPop);
+		resource.AddNonIdlePop(-BuilderScript.mineCostPop);
         goldOre.SetActive(true);
-        Destroy(this.gameObject);
+        Destroy(this.gameObject); // works, don't fix it
     }
 
 	public void GatherResources()
