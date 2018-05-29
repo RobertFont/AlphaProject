@@ -152,6 +152,7 @@ public class LevelLogic : MonoBehaviour
             Debug.Log(asynLoad.progress);
             if((asynUnLoad == null || asynUnLoad.isDone) && asynLoad.isDone)
             {
+                loadingBar.rectTransform.Rotate(0, 0, 1);
 
                 SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(sceneToLoad));
                 UpdateSceneState();
