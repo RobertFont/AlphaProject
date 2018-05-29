@@ -15,7 +15,7 @@ public class LogoEvent : MonoBehaviour
 
     public void Activate()
     {
-        player.PlayMusic(1, 1, true);
+        player.PlayMusic(0, 1, true);
         Tile.SetActive(true);
         Logo.SetActive(false);
     }

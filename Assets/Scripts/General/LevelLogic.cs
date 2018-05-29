@@ -118,18 +118,15 @@ public class LevelLogic : MonoBehaviour
     {
         StartLoad(3);
 
-        if(player != null)
-        {
-            player.StopMusic();
-            player.PlayMusic(1, 1, true);
-        }
+        player.StopMusic();
+        player.PlayMusic(1, 1, true);
     }
 
-    public void SetEndingScene()
+    /*public void SetEndingScene()
     {
         StartLoad(4);
         if (player != null) player.StopMusic();
-    }
+    }*/
 
 	public void SaveOptionsValue(int newresolution, bool newFullScreen, bool newVSync, bool newSSAO, bool newActiveShadows, int newShadowResValue, int newQualityLevel, int newAntiAliasing, float newGammaLevel)
 	{

@@ -30,7 +30,7 @@ public class UpdateManager : MonoBehaviour
         myCamera.MyStart();
         ray.MyStart();
         player = GameObject.Find("LevelManager").GetComponent<AudioPlayer>();
-        player.PlayMusic(3);
+        player.PlayAmbient(0, true);
 
         builder.MyStart();
         events.MyStart();

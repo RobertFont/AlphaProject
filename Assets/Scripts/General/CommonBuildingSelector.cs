@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CommonBuildingSelector : MonoBehaviour {
+public class CommonBuildingSelector : MonoBehaviour
+{
 
     // Use this for initialization
     public UiTrigger info;
@@ -22,7 +23,12 @@ public class CommonBuildingSelector : MonoBehaviour {
     public void OnMouseOver()
     {
         Debug.Log("beep boop on mouse over");
-        if (Input.GetButtonDown("Fire1") || Input.GetButtonDown("SelectBuildController")) OpenInfoBuilding();
+        if(Input.GetButtonDown("Fire1") || Input.GetButtonDown("SelectBuildController"))
+        {
+            OpenInfoBuilding();
+
+            //if()
+        }
     }
 
     public void OpenInfoBuilding()

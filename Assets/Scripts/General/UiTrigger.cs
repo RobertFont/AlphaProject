@@ -36,7 +36,7 @@ public class UiTrigger : MonoBehaviour
     public GameObject upgradeTowerRange;
     public GameObject upgradeTowerFireRate;
 
-    public GameObject upgradesHide;
+    //public GameObject upgradesHide;
     public Button destroyButton;
 
     public bool showRange = false;
@@ -46,6 +46,7 @@ public class UiTrigger : MonoBehaviour
     public Button townHall;
     public Button barracks;
     public Button church;
+    public Button fireStation;
 
     public void SelectBuilding(GameObject building)
     {
@@ -303,26 +304,37 @@ public class UiTrigger : MonoBehaviour
             destroyButton.interactable = false;
 
         if(resource.barracks <= 0)
-            upgradesHide.SetActive(true);
+        {
+            upgradeTowerFireRate.GetComponent<Button>().interactable = false;
+            upgradeTowerRange.GetComponent<Button>().interactable = false;
+        }
         else
-            upgradesHide.SetActive(false);
+        {
+            upgradeTowerFireRate.GetComponent<Button>().interactable = true;
+            upgradeTowerRange.GetComponent<Button>().interactable = true;
+        }
     }
 
     void CheckDisableButton()
     {
         if(resource.townHall > 0)
             townHall.interactable = false;
-        else if (resource.townHall < 1)
+        else
             townHall.interactable = true;
 
         if(resource.barracks > 0)
             barracks.interactable = false;
-        else if(resource.barracks < 1)
+        else
             barracks.interactable = true;
 
         if(resource.church > 0)
             church.interactable = false;
-        else if(resource.church < 1)
+        else
             church.interactable = true;
+
+        if(resource.fireStation >= 5)
+            fireStation.interactable = false;
+        else
+            fireStation.interactable = true;
     }
 }
