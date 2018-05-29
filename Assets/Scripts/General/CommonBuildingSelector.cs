@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class CommonBuildingSelector : MonoBehaviour
 {
-
-    // Use this for initialization
     public UiTrigger info;
     public AudioPlayer sound;
     bool started = true;
+    bool overUI;
 
     void MyStart ()
     {
@@ -16,15 +15,11 @@ public class CommonBuildingSelector : MonoBehaviour
         sound = GameObject.Find("LevelManager").GetComponent<AudioPlayer>();
         if (info != null) started = false;
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
     public void OnMouseOver()
     {
         Debug.Log("beep boop on mouse over");
+
         if(Input.GetButtonDown("Fire1") || Input.GetButtonDown("SelectBuildController"))
         {
             OpenInfoBuilding();
@@ -34,6 +29,7 @@ public class CommonBuildingSelector : MonoBehaviour
     public void OpenInfoBuilding()
     {
         if (started) MyStart();
+
         if (info != null) info.SelectBuilding(this.gameObject);
 
         if (this.gameObject.tag == "House") sound.Play2DSFX(12);

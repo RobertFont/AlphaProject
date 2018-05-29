@@ -437,6 +437,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   info: {fileID: 0}
+  sound: {fileID: 0}
+  mouse: {fileID: 0}
 --- !u!198 &198197287391108390
 ParticleSystem:
   m_ObjectHideFlags: 1

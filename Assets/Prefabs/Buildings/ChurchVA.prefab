@@ -457,6 +457,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   info: {fileID: 0}
+  sound: {fileID: 0}
+  mouse: {fileID: 0}
 --- !u!114 &114323436747142178
 MonoBehaviour:
   m_ObjectHideFlags: 1

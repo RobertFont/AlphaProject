@@ -95,3 +95,7 @@ rotate	Rotar	Rotate	Rotar
 mouseLC	Colocar edificios	Place Buildings	Posar edificis
 mouseRC	Rotar edificios	Rotate buildings	rotar edificis
 mouseWheel	Zoom	Zoom	Zoom
+objective	Objetivos:	Objectives:	Objectius:
+buildBarracks	Contruye un barrracon	Build a barracks	Construeix un barracón
+buildChurch	Construye una iglesia	Build a church	Construeix una església
+buildCastle	Construye el castillo	Build the castle	Construeix el castell
