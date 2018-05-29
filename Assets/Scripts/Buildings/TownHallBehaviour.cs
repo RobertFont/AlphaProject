@@ -7,11 +7,13 @@ public class TownHallBehaviour : MonoBehaviour {
     // Use this for initialization
     public GameObject constructionRange;
     public UiTrigger info;
+    public AudioPlayer audio;
     public InputManager input;
     void Start ()
     {
         input = GameObject.FindGameObjectWithTag("PlayerCamera").GetComponent<InputManager>();
         info = GameObject.Find("InformationButton").GetComponent<UiTrigger>();
+        audio = GameObject.Find("LevelManager").GetComponent<AudioPlayer>();
         constructionRange = transform.GetChild(0).gameObject;
     }
 	
@@ -33,5 +35,7 @@ public class TownHallBehaviour : MonoBehaviour {
     public void OpenInfoBuilding()
     {
         if(info != null) info.SelectBuilding(this.gameObject);
+
+        audio.Play2DSFX(11);
     }
 }

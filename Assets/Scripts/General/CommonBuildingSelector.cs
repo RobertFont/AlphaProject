@@ -7,11 +7,13 @@ public class CommonBuildingSelector : MonoBehaviour
 
     // Use this for initialization
     public UiTrigger info;
+    public AudioPlayer sound;
     bool started = true;
 
     void MyStart ()
     {
         info = GameObject.Find("InformationButton").GetComponent<UiTrigger>();
+        sound = GameObject.Find("LevelManager").GetComponent<AudioPlayer>();
         if (info != null) started = false;
     }
 	
@@ -26,8 +28,6 @@ public class CommonBuildingSelector : MonoBehaviour
         if(Input.GetButtonDown("Fire1") || Input.GetButtonDown("SelectBuildController"))
         {
             OpenInfoBuilding();
-
-            //if()
         }
     }
 
@@ -35,5 +35,13 @@ public class CommonBuildingSelector : MonoBehaviour
     {
         if (started) MyStart();
         if (info != null) info.SelectBuilding(this.gameObject);
+
+        if (this.gameObject.tag == "House") sound.Play2DSFX(12);
+        else if (this.gameObject.tag == "Church") sound.Play2DSFX(16);
+        else if (this.gameObject.tag == "Barracks") sound.Play2DSFX(15);
+        else if (this.gameObject.tag == "Warehouse") sound.Play2DSFX(14);
+        else if (this.gameObject.tag == "GoldMine") sound.Play2DSFX(10);
+        else if (this.gameObject.tag == "FireStation") sound.Play2DSFX(17);
+        Debug.Log("beeb boob");
     }
 }

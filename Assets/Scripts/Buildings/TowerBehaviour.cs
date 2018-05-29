@@ -7,6 +7,7 @@ public class TowerBehaviour : MonoBehaviour
     public Transform target;
     public ResourceManager resource;
     public UiTrigger info;
+    public AudioPlayer audio;
     public InputManager input;
 
     [Header("Attributes")]
@@ -25,6 +26,7 @@ public class TowerBehaviour : MonoBehaviour
         // Esto hace que UpdateTarget se ejecute 2 veces por segundo en vez de cada frame
         resource = GameObject.FindGameObjectWithTag("Player").GetComponent<ResourceManager>();
         input = GameObject.FindGameObjectWithTag("PlayerCamera").GetComponent<InputManager>();
+        audio = GameObject.Find("LevelManager").GetComponent<AudioPlayer>();
         info = GameObject.Find("InformationButton").GetComponent<UiTrigger>();
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
 
@@ -96,6 +98,8 @@ public class TowerBehaviour : MonoBehaviour
     public void OpenInfoBuilding()
     {
         if (info != null) info.SelectBuilding(this.gameObject);
+
+        audio.Play2DSFX(13);
     }
 
     public void DestroyBuilding()

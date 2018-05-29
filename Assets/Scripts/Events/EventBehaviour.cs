@@ -169,7 +169,7 @@ public class EventBehaviour : MonoBehaviour {
     public void StartEventBugs()
     {
         if (bugStarted) return;
-        if(player != null) player.PlayAmbient(1, true);
+        if(player != null) player.PlayAmbient(1, false);
         selectFarm = Random.Range(0, maxFarms);
         farmSelected = farmsArray[selectFarm];
 
