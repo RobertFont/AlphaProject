@@ -131,7 +131,7 @@ public class UiTrigger : MonoBehaviour
             buildingSelected.GetComponent<GoldMineBehaviour>().DestroyBuilding();
             buildingSelected = null;
         }
-        else if (buildingSelected.tag == "WareHouse")
+        else if (buildingSelected.tag == "Warehouse")
         {
             resource.AddWood(BuilderScript.warehouseCostWood/2);
             resource.AddGold(BuilderScript.warehouseCostGold/2);
