@@ -434,6 +434,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 91b389d801073c4428afe03e9ddec3f4, type: 3}
   - {fileID: 8300000, guid: e998c8433301b104a9a8a195106105e6, type: 3}
   - {fileID: 8300000, guid: 2591ecc5cbdfacb4b93aaa4edb97d099, type: 3}
+  - {fileID: 8300000, guid: fa8f8c698353148429e2f08442209ea7, type: 3}
+  - {fileID: 8300000, guid: ab5822fa5d4da3540b7bddb15c586922, type: 3}
+  - {fileID: 8300000, guid: 4118c94225068db488fc3c000b11a9df, type: 3}
+  - {fileID: 8300000, guid: 508e61b91ce10fd45b473dbfa91c0ee1, type: 3}
+  - {fileID: 8300000, guid: 257e5689fb014d546ac0d1b6a3e1bdf4, type: 3}
+  - {fileID: 8300000, guid: be934db8b346876428180340c5471ec4, type: 3}
   ambientClips:
   - {fileID: 8300000, guid: 3e80feb72939bcb42b64624bde96cb1f, type: 3}
   - {fileID: 8300000, guid: 6880014ee2abb1042a4779c556b383bb, type: 3}
