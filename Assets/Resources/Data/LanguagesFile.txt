@@ -1,4 +1,4 @@
-id	spanish	english	catalan
+﻿id	spanish	english	catalan
 spanish	Castellano	Spanish	Castellà
 english	Inglés	English	Anglès
 catala	Catalan	Catalan	Català
@@ -91,7 +91,6 @@ esc	Cancelar	Cancel	Cancel·lar
 speed	Velocidades	Game Speed	Velocitats
 move	Movimiento	Movement	Moviment
 rotate	Rotar	Rotate	Rotar
-pause	Pausa	Pause	Pause
 mouseLC	Colocar edificios	Place Buildings	Posar edificis
 mouseRC	Rotar edificios	Rotate buildings	rotar edificis
 mouseWheel	Zoom	Zoom	Zoom

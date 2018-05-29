@@ -384,10 +384,10 @@ public class ResourceManager : MonoBehaviour
         if(!gameEndedAnimation)
         {
             canvas.transform.GetChild(1).gameObject.SetActive(false);
-            canvas.transform.GetChild(2).gameObject.SetActive(false);
-            canvas.transform.GetChild(3).gameObject.SetActive(false);
-            canvas.transform.GetChild(4).gameObject.SetActive(false);
-            canvas.transform.GetChild(5).gameObject.SetActive(false);
+            //canvas.transform.GetChild(2).gameObject.SetActive(false);
+            //canvas.transform.GetChild(3).gameObject.SetActive(false);
+            //canvas.transform.GetChild(4).gameObject.SetActive(false);
+            //canvas.transform.GetChild(5).gameObject.SetActive(false);
             GetComponent<BuilderScript>().CantBuild(false);
         
             if(victory)
