@@ -23,6 +23,7 @@ public class FarmBehaviour : MonoBehaviour
     public UiTrigger info;
     public ResourceManager resource;
     AudioPlayer player;
+    public bool alreadyPlaying = false;
 
     [SerializeField] private bool started = true;
 
@@ -141,7 +142,9 @@ public class FarmBehaviour : MonoBehaviour
 		if (Input.GetButtonDown ("Fire1") || Input.GetButtonDown ("SelectBuildController")) 
 		{
 			OpenInfoBuilding();
-            player.PlaySFX(8);
+
+            if(!alreadyPlaying) player.PlaySFX(8);
+            alreadyPlaying = true;
 		}
 
         bars.SetActive(true);
@@ -156,6 +159,11 @@ public class FarmBehaviour : MonoBehaviour
     {
         if(started) MyStart();
         if(info != null) info.SelectBuilding(this.gameObject);
+    }
+
+    public void deselectBuilding()
+    {
+        alreadyPlaying = false;
     }
 
 }

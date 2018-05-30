@@ -14,6 +14,7 @@ public class LumberMillBehaviour : MonoBehaviour
 	AudioPlayer player;
     public GameObject bars;
     public Image progressBar;
+    public bool alreadyPlaying = false;
 
     [SerializeField] private bool started = true;
     [SerializeField] int numFor;
@@ -104,7 +105,9 @@ public class LumberMillBehaviour : MonoBehaviour
 		if (Input.GetButtonDown ("Fire1") || Input.GetButtonDown ("SelectBuildController")) 
 		{
 			OpenInfoBuilding ();
-			player.Play2DSFX(9);
+
+			if (!alreadyPlaying) player.Play2DSFX(9);
+            alreadyPlaying = true;
 		}
 
         bars.SetActive(true);
@@ -119,5 +122,10 @@ public class LumberMillBehaviour : MonoBehaviour
     {
         if(started) MyStart();
         if(info != null) info.SelectBuilding(this.gameObject);
+    }
+
+    public void deselectBuilding()
+    {
+        alreadyPlaying = false;
     }
 }

@@ -53,7 +53,24 @@ public class UiTrigger : MonoBehaviour
     public void SelectBuilding(GameObject building)
     {
         if(buildingSelected != null)
+        {
             buildingSelected.GetComponent<Renderer>().materials[0].mainTexture = ultimateTexture;
+
+            if(buildingSelected != building)
+            {
+                if(buildingSelected.GetComponent<CommonBuildingSelector>() != null)
+                    buildingSelected.GetComponent<CommonBuildingSelector>().deselectBuilding();
+
+                if(buildingSelected.GetComponent<FarmBehaviour>() != null)
+                    buildingSelected.GetComponent<FarmBehaviour>().deselectBuilding();
+
+                if(buildingSelected.GetComponent<LumberMillBehaviour>() != null)
+                    buildingSelected.GetComponent<LumberMillBehaviour>().deselectBuilding();
+
+                if(buildingSelected.GetComponent<TownHallBehaviour>() != null)
+                    buildingSelected.GetComponent<TownHallBehaviour>().deselectBuilding();
+            }
+        }
         //Debug.Log("ChangeBuilding");
         buildingSelected = building;
     }
@@ -271,6 +288,18 @@ public class UiTrigger : MonoBehaviour
         {
             buildingSelected.GetComponent<Renderer>().materials[0].mainTexture = ultimateTexture;
             Debug.Log("MaterialRemove");
+
+            if(buildingSelected.GetComponent<CommonBuildingSelector>() != null)
+                buildingSelected.GetComponent<CommonBuildingSelector>().deselectBuilding();
+
+            if(buildingSelected.GetComponent<FarmBehaviour>() != null)
+                buildingSelected.GetComponent<FarmBehaviour>().deselectBuilding();
+
+            if(buildingSelected.GetComponent<LumberMillBehaviour>() != null)
+                buildingSelected.GetComponent<LumberMillBehaviour>().deselectBuilding();
+
+            if(buildingSelected.GetComponent<TownHallBehaviour>() != null)
+                buildingSelected.GetComponent<TownHallBehaviour>().deselectBuilding();
         }
 
         buildingSelected = null;

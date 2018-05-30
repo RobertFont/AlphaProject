@@ -8,6 +8,7 @@ public class TownHallBehaviour : MonoBehaviour {
     public GameObject constructionRange;
     public UiTrigger info;
     public AudioPlayer audio;
+    public bool alreadyPlaying = false;
     public InputManager input;
     void Start ()
     {
@@ -29,13 +30,20 @@ public class TownHallBehaviour : MonoBehaviour {
         if(Input.GetButtonDown("Fire1") || Input.GetButtonDown("SelectBuildController"))
         {
             OpenInfoBuilding();
+
+            if(!alreadyPlaying) audio.Play2DSFX(11);
+            alreadyPlaying = true;
         }
     }
 
     public void OpenInfoBuilding()
     {
         if(info != null) info.SelectBuilding(this.gameObject);
+    }
 
-        audio.Play2DSFX(11);
+    public void deselectBuilding()
+    {
+        alreadyPlaying = false;
+        Debug.Log("beeb boob");
     }
 }
