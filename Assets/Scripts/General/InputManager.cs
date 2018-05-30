@@ -24,7 +24,7 @@ public class InputManager : MonoBehaviour {
     public float rotate = 0;
     public float isRotating = 0;
     public float zoomSpeed = 15f;
-    public float moveSpeed = 5f;
+    public float moveSpeed = 2;
     public Vector3 zoom;
     public float rotatateSpeed;
 
@@ -60,8 +60,8 @@ public class InputManager : MonoBehaviour {
             #region Axis
 
         
-            axis.x = Input.GetAxis("Horizontal");
-            axis.y = Input.GetAxis("Vertical");
+            axis.x = Input.GetAxis("Horizontal") * moveSpeed;
+            axis.y = Input.GetAxis("Vertical") * moveSpeed;
 
             inputMouse.x = Input.GetAxis("Mouse X") * moveSpeed;
             inputMouse.y = Input.GetAxis("Mouse Y") * moveSpeed;
