@@ -32,7 +32,7 @@ public class CommonBuildingSelector : MonoBehaviour
         if (info != null) info.SelectBuilding(this.gameObject);
 
 
-        if(!alreadyPlaying)
+        if(!alreadyPlaying && !info.mouseOverUI)
         {
             if(this.gameObject.tag == "House") sound.Play2DSFX(12);
             else if(this.gameObject.tag == "Church") sound.Play2DSFX(16);

@@ -106,7 +106,7 @@ public class LumberMillBehaviour : MonoBehaviour
 		{
 			OpenInfoBuilding ();
 
-			if (!alreadyPlaying) player.Play2DSFX(9);
+			if (!alreadyPlaying && !info.mouseOverUI) player.Play2DSFX(9);
             alreadyPlaying = true;
 		}
 

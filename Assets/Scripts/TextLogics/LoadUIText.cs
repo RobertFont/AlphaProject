@@ -25,7 +25,7 @@ public class LoadUIText : MonoBehaviour
                                                        TextData.GetText("wood") + GetResourcesCost.GetResourceCost(key + "Wood") + "\n" +
                                                        TextData.GetText("population") + GetResourcesCost.GetResourceCost(key + "Pop");
         else if(!loadExtraInfo)
-            text.text = TextData.GetText(key);
+         text.text = TextData.GetText(key);
     }
 
     public void CallTextInfo(string key)

@@ -143,7 +143,7 @@ public class FarmBehaviour : MonoBehaviour
 		{
 			OpenInfoBuilding();
 
-            if(!alreadyPlaying) player.PlaySFX(8);
+            if(!alreadyPlaying && !info.mouseOverUI) player.PlaySFX(8);
             alreadyPlaying = true;
 		}
 

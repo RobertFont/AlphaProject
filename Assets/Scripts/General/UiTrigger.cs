@@ -50,9 +50,11 @@ public class UiTrigger : MonoBehaviour
     public Button church;
     public Button fireStation;
 
+    public bool mouseOverUI = false;
+
     public void SelectBuilding(GameObject building)
     {
-        if(buildingSelected != null)
+        if(buildingSelected != null && !mouseOverUI)
         {
             buildingSelected.GetComponent<Renderer>().materials[0].mainTexture = ultimateTexture;
 
@@ -70,14 +72,24 @@ public class UiTrigger : MonoBehaviour
                 if(buildingSelected.GetComponent<TownHallBehaviour>() != null)
                     buildingSelected.GetComponent<TownHallBehaviour>().deselectBuilding();
             }
+            
         }
+
+        if (!mouseOverUI)
+            buildingSelected = building;
         //Debug.Log("ChangeBuilding");
-        buildingSelected = building;
+
     }
 
     public void MyUpdate()
     {
-        if (buildingSelected == null)
+        if(!EventSystem.current.IsPointerOverGameObject())
+            mouseOverUI = false;
+        else
+            mouseOverUI = true;
+
+
+        if(buildingSelected == null)
         {
             //this.transform.GetChild(0).gameObject.SetActive(false);
             //SelectedParticles.gameObject.SetActive(false);
@@ -108,7 +120,7 @@ public class UiTrigger : MonoBehaviour
 
     public void DestroyBuilding() 
     {
-        if(buildingSelected == null) return;
+        if(buildingSelected == null && mouseOverUI) return;
 
         Debug.Log("Destroy");
 

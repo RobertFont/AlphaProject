@@ -8,6 +8,7 @@ public class TowerBehaviour : MonoBehaviour
     public ResourceManager resource;
     public UiTrigger info;
     public AudioPlayer audio;
+    AudioPlayer play;
     public InputManager input;
 
     [Header("Attributes")]
@@ -22,6 +23,8 @@ public class TowerBehaviour : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
+        play = GameObject.Find("LevelManager").GetComponent<AudioPlayer>();
+
         constructionRange = transform.GetChild(1).gameObject;
         // Esto hace que UpdateTarget se ejecute 2 veces por segundo en vez de cada frame
         resource = GameObject.FindGameObjectWithTag("Player").GetComponent<ResourceManager>();
@@ -79,7 +82,7 @@ public class TowerBehaviour : MonoBehaviour
     {
         GameObject projectileGO = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
         ProjectileBehaviour projectile = projectileGO.GetComponent<ProjectileBehaviour>();
-
+        play.Play2DSFX(17);
         if (projectile != null) projectile.Seek(target);
     }
 

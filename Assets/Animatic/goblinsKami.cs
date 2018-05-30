@@ -11,10 +11,12 @@ public class goblinsKami : MonoBehaviour
     public float framesToDeath = 0;
     public Vector3 destination;
     public GameObject impactEffect;
+    AudioPlayer play;
 
     // Use this for initialization
     void Start ()
     {
+        play = GameObject.Find("LevelManager").GetComponent<AudioPlayer>();
         goblinPos = this.transform;
         destination = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
     }
@@ -53,7 +55,7 @@ public class goblinsKami : MonoBehaviour
         {
             GameObject effectIns = Instantiate(impactEffect, transform.position, transform.rotation);
             Destroy(effectIns, 2f);
-
+            play.Play2DSFX(19);
             Destroy(this.gameObject);
         }
     }

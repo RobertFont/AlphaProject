@@ -1,4 +1,4 @@
-id	spanish	english	catalan
+﻿id	spanish	english	catalan
 spanish	Castellano	Spanish	Castellà
 english	Inglés	English	Anglès
 catala	Catalan	Catalan	Català
