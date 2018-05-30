@@ -19,8 +19,9 @@ public class DataLogic : MonoBehaviour
 
     void Awake ()
     {      
-        Language.Initialize();        
-	}
+        Language.Initialize();
+        TextData.Initialize();
+    }
 
     private void Start()
     {

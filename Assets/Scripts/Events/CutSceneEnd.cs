@@ -8,6 +8,7 @@ public class CutSceneEnd : MonoBehaviour
     VideoPlayer video;
     LevelLogic level;
     bool start = false;
+    bool skipScene = false;
 	void Start ()
     {
         video = GetComponent<VideoPlayer>();
@@ -16,22 +17,30 @@ public class CutSceneEnd : MonoBehaviour
 	
 	void Update ()
     {
-        if(Input.GetButtonDown("Pause"))
-            endVideo();
 
-        if(video.isPlaying)
+        if (Input.GetButtonDown("Pause"))
+        {
+            video.Stop();
+            skipScene = true;
+            endVideo();
+        }
+        else if (!video.isPlaying && start && !skipScene)
+        {
+            Debug.Log("bep bop");
+            endVideo();
+            start = false;
+        }
+
+        if (video.isPlaying)
         {
             start = true;
         }
 
-        if(!video.isPlaying && start)
-        {
-            endVideo();
-            start = false;
-        }
+        
     }
     void endVideo()
     {
         level.SetGameplayScene();
+        return;
     }
 }

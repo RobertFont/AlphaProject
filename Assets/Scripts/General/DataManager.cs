@@ -165,6 +165,10 @@ public static class TextData
             uiText[i].LoadText();
         }
     }
+    public static void ClearList()
+    {
+        uiText = new List<LoadUIText>();
+    }
     //DIALOG TEXT
     public static List<DialogText> dialogText;
     public static void AddDialogText(DialogText dialog)

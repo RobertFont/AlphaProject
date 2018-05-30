@@ -11,8 +11,7 @@ public class LevelLogic : MonoBehaviour
     public int backScene;
     public int currentScene;
     public int nextScene;
-    private int managerScene = 0; //realmente sobra
-    public int menuScene = 1; 
+    public int menuScene = 0; 
     private int sceneCountInBuildSettings;
     [Header("Load parameters")]
     private AsyncOperation asynLoad = null;
@@ -38,12 +37,21 @@ public class LevelLogic : MonoBehaviour
 
     void Start ()
     {
+        if(GameObject.FindGameObjectsWithTag("LevelManager").Length > 1)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+        DontDestroyOnLoad(this.gameObject);
+
+        AudioManager.Initialize();
+
         blackScreen.color = Color.black;
         if(SceneManager.sceneCount >= 2) SceneManager.SetActiveScene(SceneManager.GetSceneAt(1));
 
         UpdateSceneState();
 
-        if (currentScene == managerScene) StartLoad(nextScene);
+        FadeIn();
 	}
 
     void UpdateSceneState()
@@ -51,10 +59,11 @@ public class LevelLogic : MonoBehaviour
         sceneCountInBuildSettings = SceneManager.sceneCountInBuildSettings;
         currentScene = SceneManager.GetActiveScene().buildIndex;
 
-        if(currentScene + 1 >= sceneCountInBuildSettings) nextScene = managerScene + 1; // nextScene = 1 tambien serviría
+
+        if(currentScene + 1 >= sceneCountInBuildSettings) nextScene = 0; // nextScene = 1 tambien serviría
         else nextScene = currentScene + 1;
 
-        if(currentScene - 1 <= managerScene) backScene = SceneManager.sceneCountInBuildSettings - 1;
+        if(currentScene - 1 <= 0) backScene = SceneManager.sceneCountInBuildSettings - 1;
         else backScene = currentScene - 1;
         
     }
@@ -78,10 +87,12 @@ public class LevelLogic : MonoBehaviour
 
     void Load()
     {
-		if (currentScene != managerScene) asynUnLoad = SceneManager.UnloadSceneAsync(currentScene);
-		asynLoad = SceneManager.LoadSceneAsync(sceneToLoad, LoadSceneMode.Additive);
+        //if (currentScene != managerScene) asynUnLoad = SceneManager.UnloadSceneAsync(currentScene);
+        TextData.ClearList();
+		asynLoad = SceneManager.LoadSceneAsync(sceneToLoad, LoadSceneMode.Single);
+        //StartCoroutine(Loading());
         StartCoroutine(Loading());
-        //Thread loadingThread = new Thread(new ThreadStart(Loading));
+        //Thread loadingThread = new Thread(new ThreadStart(LogoLoading));
         FadeIn();
     }
 
@@ -99,7 +110,7 @@ public class LevelLogic : MonoBehaviour
 
     public void SetTitleScene()
     {
-        StartLoad(1);
+        StartLoad(menuScene);
 
         if(player != null)
         {
@@ -109,7 +120,7 @@ public class LevelLogic : MonoBehaviour
 
     public void SetCutSceneScene()
     {
-        StartLoad(2);
+        StartLoad(nextScene);
         if(player != null)
         {
             player.StopMusic();
@@ -118,7 +129,7 @@ public class LevelLogic : MonoBehaviour
 
     public void SetGameplayScene()
     {
-        StartLoad(3);
+        StartLoad(nextScene);
 
         player.StopMusic();
         player.PlayMusic(1, 1, true);
@@ -143,21 +154,33 @@ public class LevelLogic : MonoBehaviour
 		gammaLevel = newGammaLevel;
 	}
 
+    IEnumerator LogoLoading()
+    {
+        while (loading)
+        {
+            loadingBar.rectTransform.Rotate(0, 0, 100 * Time.unscaledDeltaTime);
+            yield return null;
+        }
+    }
+
     IEnumerator Loading()
     {
         while (loading)
         {
             Debug.Log("Loading");
-            
             Debug.Log(asynLoad.progress);
-            if((asynUnLoad == null || asynUnLoad.isDone) && asynLoad.isDone)
-            {
-                loadingBar.rectTransform.Rotate(0, 0, 1);
 
+            loadingBar.rectTransform.Rotate(0, 0, 100 * Time.unscaledDeltaTime);
+
+            if ((asynUnLoad == null || asynUnLoad.isDone) && asynLoad.isDone)
+            {
                 SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(sceneToLoad));
                 UpdateSceneState();
                 loading = false;
+
+                Debug.Log("Scene loaded!");
             }
+
             yield return null;
         }
     }

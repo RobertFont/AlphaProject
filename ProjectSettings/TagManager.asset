@@ -25,6 +25,7 @@ TagManager:
   - Church
   - FireStation
   - Barracks
+  - LevelManager
   layers:
   - Default
   - TransparentFX
