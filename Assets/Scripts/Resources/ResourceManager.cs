@@ -424,6 +424,12 @@ public class ResourceManager : MonoBehaviour
         if (level != null) level.SetTitleScene();
     }
 
+    public void ToTitle()
+    {
+        Time.timeScale = 1;
+        if(level != null) level.SetTitleScene();
+    }
+
     public void ContinueGame()
     {
         //Time.timeScale = 1.0f;

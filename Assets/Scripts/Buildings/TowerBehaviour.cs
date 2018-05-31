@@ -1,13 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TowerBehaviour : MonoBehaviour
 {
     public Transform target;
     public ResourceManager resource;
     public UiTrigger info;
-    public AudioPlayer audio;
     AudioPlayer play;
     public InputManager input;
 
@@ -20,6 +20,8 @@ public class TowerBehaviour : MonoBehaviour
     public GameObject constructionRange;
     public Transform firePoint;
 
+    Text debug;
+
     // Use this for initialization
     void Start ()
     {
@@ -29,7 +31,6 @@ public class TowerBehaviour : MonoBehaviour
         // Esto hace que UpdateTarget se ejecute 2 veces por segundo en vez de cada frame
         resource = GameObject.FindGameObjectWithTag("Player").GetComponent<ResourceManager>();
         input = GameObject.FindGameObjectWithTag("PlayerCamera").GetComponent<InputManager>();
-        audio = GameObject.Find("LevelManager").GetComponent<AudioPlayer>();
         info = GameObject.Find("InformationButton").GetComponent<UiTrigger>();
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
 
@@ -67,23 +68,26 @@ public class TowerBehaviour : MonoBehaviour
         if(!info.showRange && constructionRange.activeSelf) constructionRange.SetActive(false);
         else if(info.showRange) constructionRange.SetActive(true);
 
-        if (target == null || input.paused) return;
-
-        if (fireCountDown <= 0f)
+        if(target == null || input.paused)
+        {
+            return;
+        }
+        
+        if (fireCountDown >= 1.0f)
         {
             Shoot();
-            fireCountDown = 1f / fireRate;
+            fireCountDown = 0.0f / fireRate;
         }
-
-        fireCountDown -= Time.deltaTime / Time.timeScale;
+        
+        fireCountDown += Time.deltaTime / Time.timeScale;
     }
 
     void Shoot()
     {
         GameObject projectileGO = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
         ProjectileBehaviour projectile = projectileGO.GetComponent<ProjectileBehaviour>();
-        play.Play2DSFX(17);
-        if (projectile != null) projectile.Seek(target);
+        if(projectile != null) projectile.Seek(target);
+         //play.Play2DSFX(17); SI LO PONES PETA        
     }
 
    /* public void OnMouseUpAsButton()
@@ -102,7 +106,7 @@ public class TowerBehaviour : MonoBehaviour
     {
         if (info != null) info.SelectBuilding(this.gameObject);
 
-        audio.Play2DSFX(13);
+        play.Play2DSFX(13);
     }
 
     public void DestroyBuilding()

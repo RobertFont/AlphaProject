@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -3023,8 +3023,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 326513251}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 517.5, y: 291, z: 0}
-  m_LocalScale: {x: 0.80859375, y: 0.80859375, z: 0.80859375}
+  m_LocalPosition: {x: 434.5, y: 244.5, z: 0}
+  m_LocalScale: {x: 0.67890626, y: 0.67890626, z: 0.67890626}
   m_Children:
   - {fileID: 1460984244}
   - {fileID: 1886756028}
@@ -5569,7 +5569,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 575446306}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c39a61780c142d84da8fff8493e95a1b, type: 3}
   m_Name: 
@@ -6457,12 +6457,12 @@ Prefab:
     - target: {fileID: 224099140461032954, guid: 81a284886b8e31246bf5638069b32ba8,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 517.5
+      value: 434.5
       objectReference: {fileID: 0}
     - target: {fileID: 224099140461032954, guid: 81a284886b8e31246bf5638069b32ba8,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 291
+      value: 244.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 81a284886b8e31246bf5638069b32ba8, type: 2}
@@ -6684,8 +6684,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 696353501}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 517.5, y: 291, z: 0}
-  m_LocalScale: {x: 0.5390625, y: 0.5390625, z: 0.5390625}
+  m_LocalPosition: {x: 434.5, y: 244.5, z: 0}
+  m_LocalScale: {x: 0.45260417, y: 0.45260417, z: 0.45260417}
   m_Children:
   - {fileID: 377865060}
   - {fileID: 537098427}

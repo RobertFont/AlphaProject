@@ -5,12 +5,9 @@ public class ProjectileBehaviour : MonoBehaviour
     private Transform target;
     private float speed = 30f;
     public GameObject impactEffect;
-    AudioPlayer play;
 
     public void Seek(Transform _target)
     {
-        play = GameObject.Find("LevelManager").GetComponent<AudioPlayer>();
-
         target = _target;
     }
 	
