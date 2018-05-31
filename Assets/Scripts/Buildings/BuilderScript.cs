@@ -76,8 +76,8 @@ public class BuilderScript : MonoBehaviour
     public static int kingHallCostWood = 150;
     public static int kingHallCostGold = 300;
     public static int kingHallCostPop = 4;
-    public static int castleCostGold = 750;
-    public static int castleCostWood = 750;
+    public static int castleCostGold = 1750;
+    public static int castleCostWood = 1750;
     public static int castleCostPop = 0;
     public static int fireStationCostGold = 100;
     public static int fireStationCostWood = 200;
