@@ -350,21 +350,25 @@ public class ResourceManager : MonoBehaviour
 
     public void EatingFood()
     {
-        int necessaryFood = (nonIdlePop + currentPop) * 2;
+        int necessaryFood;
 
-        if ((nonIdlePop) >= 1 || (currentPop >= 1))
+        if (currentPop < 0) necessaryFood = nonIdlePop * 2;
+        else necessaryFood = (nonIdlePop + currentPop) * 2;
+
+        if ((nonIdlePop) >= 1)
         {
             if (mealTime > 12/Time.timeScale)
             {
                 if (food >= necessaryFood)
                 {
                     RemoveFood(necessaryFood);
-                    AddHappiness(1);
+                    if (currentPop > 0) AddHappiness(2);
                 }
                 else
                 {
                     RemoveFood(necessaryFood);
-                    RemoveHappiness(1);
+                    if (currentPop < 0) RemoveHappiness(4);
+                    else RemoveHappiness(2);
                 }
                 mealTime = 0;
             }

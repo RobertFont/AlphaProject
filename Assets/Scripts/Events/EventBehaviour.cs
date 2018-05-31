@@ -249,6 +249,7 @@ public class EventBehaviour : MonoBehaviour {
             Destroy(houseSelected);
             houses.Remove(houseSelected);
             resource.RemoveMaxPop(4);
+            resource.RemoveCurrentPop(4);
             resource.AddHouse(-1);
         }
         //player.StopAmbient();
@@ -327,6 +328,7 @@ public class EventBehaviour : MonoBehaviour {
         }*/
     }
 
+    /*
     public void TraslatePlayerToHouseEvent()
     {
         if(houseSelected != null)
@@ -340,6 +342,7 @@ public class EventBehaviour : MonoBehaviour {
             playerTarjet.transform.localPosition = farmSelected.transform.localPosition;
 
     }
+    */
 
     IEnumerator WaitTimerFire()
     {
