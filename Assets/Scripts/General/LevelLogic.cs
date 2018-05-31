@@ -37,7 +37,7 @@ public class LevelLogic : MonoBehaviour
 
     void Start ()
     {
-        if(GameObject.FindGameObjectsWithTag("LevelManager").Length > 1)
+        if (GameObject.FindGameObjectsWithTag("LevelManager").Length > 1)
         {
             Destroy(this.gameObject);
             return;
@@ -46,7 +46,7 @@ public class LevelLogic : MonoBehaviour
 
         AudioManager.Initialize();
 
-        blackScreen.color = Color.black;
+        blackScreen.color = Color.white;
         if(SceneManager.sceneCount >= 2) SceneManager.SetActiveScene(SceneManager.GetSceneAt(1));
 
         UpdateSceneState();
