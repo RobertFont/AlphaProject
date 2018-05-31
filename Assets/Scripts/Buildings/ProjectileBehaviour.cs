@@ -5,7 +5,12 @@ public class ProjectileBehaviour : MonoBehaviour
     private Transform target;
     private float speed = 30f;
     public GameObject impactEffect;
+    AudioPlayer play;
 
+    public void Start()
+    {
+        play = GameObject.Find("LevelManager").GetComponent<AudioPlayer>();
+    }
     public void Seek(Transform _target)
     {
         target = _target;
@@ -36,7 +41,7 @@ public class ProjectileBehaviour : MonoBehaviour
     {
         GameObject effectIns = Instantiate(impactEffect, transform.position, transform.rotation);
         Destroy(effectIns, 2f);
-        
+        play.Play2DSFX(17);
         target.GetComponent<EnemyBehaviour>().TakeDamage(30);
         Destroy(gameObject);
     }

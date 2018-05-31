@@ -17,6 +17,7 @@ public class EnemyBehaviour : MonoBehaviour
     public float startHealth = 100f;
     private float health;
     public GameObject deathEffect;
+    AudioPlayer play;
 
     [Header("Enemy lifeBar")]
     public Image healthBar;
@@ -26,6 +27,7 @@ public class EnemyBehaviour : MonoBehaviour
     {
         resource = GameObject.FindGameObjectWithTag("Player").GetComponent<ResourceManager>();
         input = GameObject.FindGameObjectWithTag("PlayerCamera").GetComponent<InputManager>();
+        play = GameObject.Find("LevelManager").GetComponent<AudioPlayer>();
         destination = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
         canAttackX = false;
         canAttackZ = false;
@@ -98,7 +100,7 @@ public class EnemyBehaviour : MonoBehaviour
 
         if (canAttackX && canAttackZ)
         {
-            counter += Time.deltaTime*Time.timeScale;
+            counter++;
 
             if (counter >= 1)
             {
@@ -114,6 +116,7 @@ public class EnemyBehaviour : MonoBehaviour
         health -= damage;
 
         healthBar.fillAmount = health/startHealth;
+        play.Play2DSFX(17);
 
         if (health <= 0) Die();
     }
@@ -122,6 +125,7 @@ public class EnemyBehaviour : MonoBehaviour
     {
         GameObject effectIns = Instantiate(deathEffect, transform.position, transform.rotation);
         Destroy(effectIns, 2f);
+        play.Play2DSFX(18);
 
         Destroy(this.gameObject);
     }

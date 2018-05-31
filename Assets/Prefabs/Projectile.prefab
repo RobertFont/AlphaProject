@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47afe58955df10f428cdcca01cfbfe8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  impactEffect: {fileID: 1038464622310954, guid: a2c041b14d793434e97d425c0ebc9bc9,
+  impactEffect: {fileID: 1038464622310954, guid: 1b9937f42b1304642a7a89b856d481c7,
     type: 2}
 --- !u!198 &198146545929695788
 ParticleSystem:
@@ -3535,7 +3535,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 609835008
+  randomSeed: -158476165
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3931,7 +3931,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0.48
-    maxNumParticles: 1000
+    maxNumParticles: 5
     size3D: 0
     rotation3D: 0
     gravityModifier:

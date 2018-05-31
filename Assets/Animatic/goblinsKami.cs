@@ -55,7 +55,7 @@ public class goblinsKami : MonoBehaviour
         {
             GameObject effectIns = Instantiate(impactEffect, transform.position, transform.rotation);
             Destroy(effectIns, 2f);
-            play.Play2DSFX(19);
+            play.Play2DSFX(18);
             Destroy(this.gameObject);
         }
     }
