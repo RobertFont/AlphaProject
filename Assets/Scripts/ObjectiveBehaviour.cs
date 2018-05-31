@@ -12,20 +12,26 @@ public class ObjectiveBehaviour : MonoBehaviour
     public Text church;
     public Text castle;
 
+    public bool goldObjective = false;
+    public bool popObjective = false;
+
     int maxGold = 1000;
     int maxPop = 50;
 
-    void Start ()
-    {
-		
-	}
-	
 	void Update ()
     {
         if(resources.gold >= maxGold)
+        {
+            goldObjective = true;
             gold.color = Color.green;
+        }
+
         if(resources.maxPop >= maxPop)
+        {
+            popObjective = true;
             pop.color = Color.green;
+        }
+
         if(resources.barracks >= 1)
             barracks.color = Color.green;
         if(resources.church >= 1)
@@ -33,7 +39,10 @@ public class ObjectiveBehaviour : MonoBehaviour
         if(resources.castle >= 1)
             castle.color = Color.green;
 
-        gold.text = TextData.GetText("gold") + resources.gold + " / " + maxGold;
-        pop.text = TextData.GetText("population") + resources.maxPop + " / " + maxPop;
+        if (!goldObjective) gold.text = TextData.GetText("gold") + resources.gold + " / " + maxGold;
+        else gold.text = TextData.GetText("gold") + maxGold + " / " + maxGold;
+
+        if (!popObjective) pop.text = TextData.GetText("population") + resources.maxPop + " / " + maxPop;
+        else pop.text = TextData.GetText("population") + maxPop + " / " + maxPop;
     }
 }

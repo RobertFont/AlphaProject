@@ -362,7 +362,7 @@ public class ResourceManager : MonoBehaviour
                 if (food >= necessaryFood)
                 {
                     RemoveFood(necessaryFood);
-                    if (currentPop > 0) AddHappiness(2);
+                    if (currentPop >= 0) AddHappiness(2);
                 }
                 else
                 {

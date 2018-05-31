@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -3023,8 +3023,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 326513251}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 434.5, y: 244.5, z: 0}
-  m_LocalScale: {x: 0.67890626, y: 0.67890626, z: 0.67890626}
+  m_LocalPosition: {x: 458.5, y: 258, z: 0}
+  m_LocalScale: {x: 0.7164062, y: 0.7164062, z: 0.7164062}
   m_Children:
   - {fileID: 1460984244}
   - {fileID: 1886756028}
@@ -5171,7 +5171,8 @@ AudioSource:
   m_GameObject: {fileID: 537098426}
   m_Enabled: 0
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 243820115120409942, guid: a4cbd1aaac9285647972f1a8d1faeabb,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 7d6e61fcfb2a5a14ab53b34e9fec6161, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -6457,12 +6458,12 @@ Prefab:
     - target: {fileID: 224099140461032954, guid: 81a284886b8e31246bf5638069b32ba8,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 434.5
+      value: 458.5
       objectReference: {fileID: 0}
     - target: {fileID: 224099140461032954, guid: 81a284886b8e31246bf5638069b32ba8,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 244.5
+      value: 258
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 81a284886b8e31246bf5638069b32ba8, type: 2}
@@ -6684,8 +6685,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 696353501}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 434.5, y: 244.5, z: 0}
-  m_LocalScale: {x: 0.45260417, y: 0.45260417, z: 0.45260417}
+  m_LocalPosition: {x: 458.5, y: 258, z: 0}
+  m_LocalScale: {x: 0.47760418, y: 0.47760418, z: 0.47760418}
   m_Children:
   - {fileID: 377865060}
   - {fileID: 537098427}
